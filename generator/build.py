@@ -35,6 +35,9 @@ AUDIO_DIR = os.path.join(ROOT, "content", "audio")
 
 SITE_URL = os.environ.get("SITE_URL", "https://analisis.com").rstrip("/")
 ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com (Plausible)
+GA4_ID = os.environ.get("GA4_ID", "")                      # id de medición GA4 (G-XXXX) para el tracking
+PANEL_PASSWORD = os.environ.get("PANEL_PASSWORD") or "analisis"  # clave del panel privado (/panel.html)
+ANALYTICS_JSON = os.path.join(ROOT, "content", "analytics.json")
 ADS = os.environ.get("ADS", "") == "1"
 
 COVER = {}
@@ -484,10 +487,16 @@ def build_ticker():
 
 
 def analytics_tag():
-    if not ANALYTICS_DOMAIN:
-        return ""
-    return (f'<script defer data-domain="{ANALYTICS_DOMAIN}" '
-            f'src="https://plausible.io/js/script.js"></script>')
+    tags = []
+    if ANALYTICS_DOMAIN:
+        tags.append(f'<script defer data-domain="{ANALYTICS_DOMAIN}" '
+                    f'src="https://plausible.io/js/script.js"></script>')
+    if GA4_ID:
+        tags.append(
+            f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>'
+            f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
+            f'gtag("js",new Date());gtag("config","{GA4_ID}");</script>')
+    return "".join(tags)
 
 
 def head(title, active="", depth=0, description="", image="", ld=None, extra_js=""):
@@ -701,6 +710,7 @@ def build():
     _buscar()
     _asistente()
     _datos()
+    _panel()
     _boletin(arts)
     _seo(arts, temas)
 
@@ -901,6 +911,129 @@ def _datos():
     write(os.path.join(OUT, "datos.html"), h)
 
 
+PANEL_HTML = """
+<style>
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi .v{font-size:30px;font-weight:800;font-family:var(--sans);color:var(--ink)}
+.kpi .l{font-family:var(--sans);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 130px;gap:10px;align-items:center;padding:5px 0;font-family:var(--sans);font-size:13px}
+.bar-row .bl{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bt{background:var(--wash);border-radius:6px;height:12px;overflow:hidden}
+.bar-row .bt i{display:block;height:100%;background:var(--brand-2)}
+.bar-row .bt i.alt{background:var(--brand-3)}
+.bar-row .bv{color:var(--muted);text-align:right}
+.pbox{border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.pbox h3{font-family:var(--sans);font-size:13px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 10px}
+#focos ul{margin:0;padding-left:18px}
+#focos li{font-family:var(--sans);font-size:14px;margin:6px 0;line-height:1.45;color:var(--ink)}
+@media(max-width:700px){.pgrid{grid-template-columns:repeat(2,1fr)!important}.bar-row{grid-template-columns:110px 1fr 88px}}
+</style>
+<div id="gate" style="max-width:420px;margin:50px auto;text-align:center">
+  <div class="section-head" style="justify-content:center;border-color:var(--ink)"><h2>Panel privado</h2></div>
+  <p class="meta">Ingresa la clave para ver las estadísticas de visitas.</p>
+  <input id="pw" type="password" autocomplete="off" placeholder="Clave"
+    style="font-size:16px;padding:10px 12px;width:100%;border:1px solid var(--line2);border-radius:8px;margin:6px 0;background:var(--bg);color:var(--ink)">
+  <button onclick="entrar()" style="padding:10px 20px;border:1px solid var(--ink);border-radius:8px;cursor:pointer;font-family:var(--sans);background:var(--bg);color:var(--ink)">Entrar</button>
+  <p id="err" class="meta" style="color:var(--red);display:none">Clave incorrecta.</p>
+</div>
+<div id="panel" style="display:none">
+  <div class="section-head"><h2>Visitas del sitio</h2><span class="d" id="rango"></span>
+    <button onclick="salir()" class="tb" style="margin-left:auto;border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer;background:var(--bg);color:var(--muted)">Salir</button></div>
+  <div id="nodata" style="display:none"><p class="meta">Aún no hay datos. Conecta GA4 (secrets <code>GA4_PROPERTY_ID</code> + <code>GA4_CREDENTIALS</code>) y espera a la próxima actualización diaria.</p></div>
+  <div class="pgrid">
+    <div class="kpi"><div class="v" id="k-ses">–</div><div class="l">Sesiones</div></div>
+    <div class="kpi"><div class="v" id="k-usr">–</div><div class="l">Usuarios únicos</div></div>
+    <div class="kpi"><div class="v" id="k-vis">–</div><div class="l">Vistas de página</div></div>
+    <div class="kpi"><div class="v" id="k-ret">–</div><div class="l">% recurrentes</div></div>
+  </div>
+  <div class="pbox"><h3>Interés por sección</h3><div id="secs"></div></div>
+  <div class="pbox"><h3>Focos sugeridos (inteligencia)</h3><div id="focos"></div></div>
+  <div class="pgrid" style="grid-template-columns:1fr 1fr">
+    <div class="pbox"><h3>Origen por país</h3><div id="countries"></div></div>
+    <div class="pbox"><h3>Nuevos vs recurrentes</h3><div id="nvr"></div></div>
+  </div>
+</div>
+"""
+
+PANEL_JS = r"""
+(function(){
+  var d=document;
+  function n(x){return (x||0).toLocaleString('es-CL');}
+  function pct(x){return Math.round((x||0)*100)+'%';}
+  function set(id,v){var e=d.getElementById(id); if(e)e.textContent=v;}
+  window.salir=function(){try{sessionStorage.removeItem('panel_ok');}catch(e){} location.reload();};
+  window.entrar=async function(){
+    var pw=(d.getElementById('pw').value||'');
+    var buf=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+    var hex=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+    if(hex===window.__PANEL_HASH__){ try{sessionStorage.setItem('panel_ok','1');}catch(e){} mostrar(); }
+    else { d.getElementById('err').style.display='block'; }
+  };
+  function mostrar(){ d.getElementById('gate').style.display='none'; d.getElementById('panel').style.display='block'; render(window.__ANALYTICS__); }
+  function barras(host, filas, campo, alt){
+    var max=Math.max.apply(null, filas.map(function(f){return f[campo];}).concat([1]));
+    d.getElementById(host).innerHTML = filas.length ? filas.map(function(f){
+      return '<div class="bar-row"><span class="bl">'+f.label+'</span>'+
+        '<span class="bt"><i class="'+(alt||'')+'" style="width:'+Math.round(100*f[campo]/max)+'%"></i></span>'+
+        '<span class="bv">'+f.right+'</span></div>';
+    }).join('') : '<p class="meta">Sin datos.</p>';
+  }
+  function render(a){
+    if(!a){ d.getElementById('nodata').style.display='block'; return; }
+    var r=a.new_vs_returning||{new:0,returning:0};
+    var totU=(r.new+r.returning)||a.totals.users||0;
+    var pRet=totU? r.returning/totU : 0;
+    set('k-ses',n(a.totals.sessions)); set('k-usr',n(a.totals.users));
+    set('k-vis',n(a.totals.pageviews)); set('k-ret',pct(pRet));
+    set('rango','Últimos '+a.range_days+' días · actualizado '+a.updated);
+    var secs=(a.sections||[]);
+    barras('secs', secs.map(function(s){return {label:s.name, pageviews:s.pageviews, right:n(s.pageviews)+' · '+pct(s.share)};}), 'pageviews');
+    barras('countries', (a.countries||[]).map(function(c){return {label:c.country, sessions:c.sessions, right:n(c.sessions)};}), 'sessions');
+    barras('nvr', [
+      {label:'Nuevos', v:r.new, right:n(r.new)},
+      {label:'Recurrentes', v:r.returning, right:n(r.returning)}
+    ], 'v');
+    // colorear la barra de recurrentes distinto
+    var nvr=d.getElementById('nvr'); if(nvr && nvr.querySelectorAll('i')[1]) nvr.querySelectorAll('i')[1].classList.add('alt');
+    d.getElementById('focos').innerHTML=insight(secs.filter(function(s){return s.section!=='portada'&&s.section!=='otras';}), pRet);
+  }
+  function insight(secs, pRet){
+    if(!secs.length) return '<p class="meta">Cuando haya tráfico por sección, aquí verás recomendaciones de foco.</p>';
+    var top=secs.slice(0,2).map(function(s){return s.name;});
+    var bottom=secs.slice(-2).map(function(s){return s.name;});
+    var shareTop=secs.slice(0,3).reduce(function(x,s){return x+s.share;},0);
+    var out='<ul>';
+    out+='<li><strong>Mayor interés:</strong> '+top.join(' y ')+'. Concentran el grueso del tráfico; conviene <b>reforzar cobertura y frecuencia</b> ahí.</li>';
+    out+='<li>Las 3 secciones más leídas suman el <strong>'+pct(shareTop)+'</strong> del tráfico por sección.</li>';
+    if(secs.length>3) out+='<li><strong>Menor tracción:</strong> '+bottom.join(' y ')+'. Evalúa mejorar titulares/portadas o reenfocar el esfuerzo.</li>';
+    out+='<li><strong>'+pct(pRet)+'</strong> de los visitantes son <b>recurrentes</b>'+(pRet>=0.3?' — buena fidelización; potencia boletín y alertas.':' — hay margen para fidelizar (boletín, "Para ti", WhatsApp).')+'</li>';
+    return out+'</ul>';
+  }
+  try{ if(sessionStorage.getItem('panel_ok')==='1'){ mostrar(); } }catch(e){}
+  var pw=d.getElementById('pw'); if(pw) pw.addEventListener('keydown',function(e){ if(e.key==='Enter') entrar(); });
+})();
+"""
+
+
+def _panel():
+    h = head(f"Panel privado — {SITE['name']}", depth=0,
+             description="Panel privado de estadísticas de visitas")
+    # excluir de buscadores
+    h = h.replace('<meta name="theme-color"',
+                  '<meta name="robots" content="noindex,nofollow">'
+                  '<meta name="theme-color"')
+    phash = hashlib.sha256(PANEL_PASSWORD.encode("utf-8")).hexdigest()
+    datos = "null"
+    if os.path.exists(ANALYTICS_JSON):
+        with open(ANALYTICS_JSON, encoding="utf-8") as f:
+            datos = f.read()
+    h += PANEL_HTML
+    h += f'<script>window.__PANEL_HASH__="{phash}";window.__ANALYTICS__={datos};</script>'
+    h += foot(0, extra_js=PANEL_JS)
+    write(os.path.join(OUT, "panel.html"), h)
+
+
 def _boletin(arts):
     by_date = {}
     for a in arts:
@@ -971,7 +1104,8 @@ def _seo(arts, temas):
     write(os.path.join(OUT, "sitemap-news.xml"), ns)
 
     write(os.path.join(OUT, "robots.txt"),
-          f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
+          f"User-agent: *\nAllow: /\nDisallow: /panel.html\n"
+          f"Sitemap: {SITE_URL}/sitemap.xml\n"
           f"Sitemap: {SITE_URL}/sitemap-news.xml\n")
 
     # RSS general

@@ -36,7 +36,7 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependencias
-        run: pip install feedparser openai anthropic requests
+        run: pip install feedparser openai anthropic requests google-analytics-data
 
       - name: Ejecutar pipeline editorial (recolectar + redactar + guardar)
         # Solo genera en el cron diario y en ejecuciones manuales, NO en cada push
@@ -52,6 +52,12 @@ jobs:
 
       - name: Actualizar datos regionales (tablero)
         run: python3 generator/fetch_data.py || echo "Datos - se conserva el ultimo valor"
+
+      - name: Analítica de visitas (GA4 -> panel privado)
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}   # id numérico de la propiedad GA4
+          GA4_CREDENTIALS: ${{ secrets.GA4_CREDENTIALS }}   # JSON de la cuenta de servicio
+        run: python3 generator/analytics.py || echo "Analítica omitida (panel sin datos)"
 
       - name: (Opcional) Traducir a PT/EN
         env:
@@ -70,6 +76,8 @@ jobs:
           TTS_VOICE: ${{ vars.TTS_VOICE }}   # opcional: nova, alloy, shimmer, ...
           SITE_URL: https://analisis.com
           ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
+          GA4_ID: ${{ vars.GA4_ID }}                        # id de medición GA4 (G-XXXX) para el tracking
+          PANEL_PASSWORD: ${{ secrets.PANEL_PASSWORD }}     # clave del panel privado /panel.html
           ADS: ${{ vars.ADS }}                              # "1" para mostrar slots de anuncios
         run: python3 generator/build.py
 
@@ -87,7 +95,7 @@ jobs:
         run: |
           git config user.name "Análisis Bot"
           git config user.email "bot@analisis.com"
-          git add content/articles.json content/covers content/audio content/data.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
+          git add content/articles.json content/covers content/audio content/data.json content/analytics.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
           git commit -m "Actualización automática $(date -u +%Y-%m-%d)" || echo "Sin cambios que guardar"
           git push || echo "Nada que empujar"
 
