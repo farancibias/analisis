@@ -83,9 +83,15 @@ header.site{border-bottom:2px solid var(--ink);background:var(--bg)}
 .masthead{text-align:center;padding:15px 0 9px}
 .brand{display:inline-flex;align-items:center;gap:13px}
 .brand .mark{width:48px;height:48px;flex:none;display:block}
-.brand .mark .r1{stroke:var(--brand-1)}
-.brand .mark .r2{stroke:var(--brand-2)}
-.brand .mark .r3{stroke:var(--brand-3)}
+.brand .mark circle{transform-box:fill-box;transform-origin:center}
+.brand .mark .r1{stroke:var(--brand-1);animation:girar 14s linear infinite}
+.brand .mark .r2{stroke:var(--brand-2);animation:girar 9s linear infinite reverse}
+.brand .mark .r3{stroke:var(--brand-3);animation:girar 6s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.brand .mark .r1,.brand .mark .r2,.brand .mark .r3{animation:none}}
+.brand:hover .mark .r1{animation-duration:7s}
+.brand:hover .mark .r2{animation-duration:4.5s}
+.brand:hover .mark .r3{animation-duration:3s}
 .brand .wm{font-family:var(--sans);font-weight:800;font-size:40px;letter-spacing:-1px;line-height:1;color:var(--brand-3)}
 .masthead .sub{font-family:var(--sans);font-size:12px;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-top:2px}
 nav.main{border-top:1px solid var(--line);border-bottom:1px solid var(--ink)}
@@ -369,12 +375,12 @@ self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;
 
 FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">'
            '<rect width="120" height="120" rx="26" fill="#ffffff"/>'
-           '<circle cx="60" cy="60" r="42" fill="none" stroke="#241a9c" stroke-width="12" '
-           'stroke-dasharray="209 280" transform="rotate(-8 60 60)"/>'
-           '<circle cx="60" cy="60" r="28" fill="none" stroke="#3f2be6" stroke-width="11" '
-           'stroke-dasharray="141 180" transform="rotate(150 60 60)"/>'
-           '<circle cx="60" cy="60" r="15" fill="none" stroke="#ec1414" stroke-width="10" '
-           'stroke-dasharray="70 100" transform="rotate(255 60 60)"/></svg>')
+           '<circle cx="60" cy="60" r="44" fill="none" stroke="#241a9c" stroke-width="12" '
+           'stroke-linecap="round" stroke-dasharray="203 277" transform="rotate(-20 60 60)"/>'
+           '<circle cx="60" cy="60" r="30" fill="none" stroke="#3f2be6" stroke-width="11" '
+           'stroke-linecap="round" stroke-dasharray="131 189" transform="rotate(120 60 60)"/>'
+           '<circle cx="60" cy="60" r="17" fill="none" stroke="#ec1414" stroke-width="10" '
+           'stroke-linecap="round" stroke-dasharray="68 107" transform="rotate(240 60 60)"/></svg>')
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -466,13 +472,13 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
     </span>
   </div>
   <div class="masthead">
-    <a href="{base}index.html" class="brand" aria-label="Análisis.com — inicio">
+    <a href="{base}index.html" class="brand" aria-label="analisis.com — inicio">
       <svg class="mark" viewBox="0 0 120 120" role="img" aria-hidden="true">
-        <circle class="r1" cx="60" cy="60" r="46" fill="none" stroke-width="13" stroke-dasharray="229 300" transform="rotate(-8 60 60)"></circle>
-        <circle class="r2" cx="60" cy="60" r="31" fill="none" stroke-width="12" stroke-dasharray="157 200" transform="rotate(150 60 60)"></circle>
-        <circle class="r3" cx="60" cy="60" r="17" fill="none" stroke-width="11" stroke-dasharray="79 110" transform="rotate(255 60 60)"></circle>
+        <circle class="r1" cx="60" cy="60" r="47" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="213 296"></circle>
+        <circle class="r2" cx="60" cy="60" r="32" fill="none" stroke-width="11" stroke-linecap="round" stroke-dasharray="140 201"></circle>
+        <circle class="r3" cx="60" cy="60" r="18" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="72 113"></circle>
       </svg>
-      <span class="wm">análisis.com</span>
+      <span class="wm">analisis.com</span>
     </a>
     <div class="sub">{escape(SITE['tagline'])}</div>
   </div>
