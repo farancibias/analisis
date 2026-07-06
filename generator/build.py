@@ -54,6 +54,7 @@ ENGAGEMENT = {}    # id de artículo -> nº de interacciones (GA4), señal de in
 # Sección -> serie de datos a incrustar como mini-gráfico en sus artículos.
 SECTION_SERIE = {"mineria": "cobre", "mercados": "oro", "agricultura": "trigo"}
 TICKER_HTML = ""
+ASSET_VER = ""  # hash del bundle (CSS+JS) para versionar app.css/app.js y bustear la caché de Cloudflare
 
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio",
          "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
@@ -733,7 +734,7 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{base}favicon.svg"><link rel="manifest" href="{base}manifest.webmanifest">
 <meta name="theme-color" content="#111417">
-{FONTS}<link rel="stylesheet" href="{base}assets/app.css">
+{FONTS}<link rel="stylesheet" href="{base}assets/app.css?v={ASSET_VER}">
 {ldjson}{analytics_tag()}
 </head><body>
 {'<div class="progress"></div>' if active=='_article' else ''}
@@ -766,7 +767,7 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
 def foot(depth=0, extra_js=""):
     base = "../" * depth
     y = datetime.now().year
-    js = f'<script src="{base}assets/app.js"></script>'
+    js = f'<script src="{base}assets/app.js?v={ASSET_VER}"></script>'
     if extra_js:
         js += f'<script>{extra_js}</script>'
     return f"""</main>
@@ -1011,7 +1012,9 @@ def build():
     write(os.path.join(OUT, "favicon.svg"), FAVICON)
     # Versiona la caché del SW con un hash de los assets: cualquier cambio
     # invalida la caché vieja y llega a los visitantes recurrentes.
+    global ASSET_VER
     swver = hashlib.md5((CSS + app_js).encode("utf-8")).hexdigest()[:8]
+    ASSET_VER = swver  # versiona las URLs de app.css/app.js (busta la caché de Cloudflare)
     write(os.path.join(OUT, "sw.js"), SW_JS.replace("__SWVER__", swver))
     write(os.path.join(OUT, "manifest.webmanifest"), json.dumps({
         "name": "Análisis.com", "short_name": "Análisis", "start_url": "/",
