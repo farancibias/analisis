@@ -22,6 +22,10 @@ permissions:
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    # deploy-pages@v4 exige que el job apunte al entorno github-pages.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
@@ -84,4 +88,5 @@ jobs:
           path: site
 
       - name: Desplegar en GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
