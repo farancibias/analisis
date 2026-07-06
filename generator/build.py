@@ -147,6 +147,10 @@ article.post p{font-size:18.5px;line-height:1.62;margin:1.05em 0}
 footer.site{border-top:2px solid var(--ink);margin-top:48px;padding:26px 0;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
 footer.site a{color:var(--muted);text-decoration:underline}
 footer.site strong{color:var(--ink)}
+.brand-foot{gap:10px;margin-bottom:4px}
+.brand-foot .mark{width:30px;height:30px}
+.brand-foot .wm{font-size:23px}
+footer.site .foot-tag{margin-bottom:10px}
 .searchbox{width:100%;font-family:var(--sans);font-size:18px;padding:14px 16px;border:2px solid var(--ink);border-radius:6px;background:var(--card);color:var(--ink)}
 .ans{background:var(--wash);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:16px 0;font-size:18px;line-height:1.5}
 .ad{background:var(--wash);border:1px dashed var(--line2);border-radius:6px;text-align:center;color:var(--muted);
@@ -382,6 +386,14 @@ FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">'
            '<circle cx="60" cy="60" r="17" fill="none" stroke="#ec1414" stroke-width="10" '
            'stroke-linecap="round" stroke-dasharray="68 107" transform="rotate(240 60 60)"/></svg>')
 
+# Símbolo animado de la marca (los anillos giran vía CSS: .brand .mark). Reutilizado
+# en la cabecera y el footer.
+MARK_SVG = ('<svg class="mark" viewBox="0 0 120 120" role="img" aria-hidden="true">'
+            '<circle class="r1" cx="60" cy="60" r="47" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="213 296"></circle>'
+            '<circle class="r2" cx="60" cy="60" r="32" fill="none" stroke-width="11" stroke-linecap="round" stroke-dasharray="140 201"></circle>'
+            '<circle class="r3" cx="60" cy="60" r="18" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="72 113"></circle>'
+            '</svg>')
+
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?'
@@ -472,14 +484,7 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
     </span>
   </div>
   <div class="masthead">
-    <a href="{base}index.html" class="brand" aria-label="analisis.com — inicio">
-      <svg class="mark" viewBox="0 0 120 120" role="img" aria-hidden="true">
-        <circle class="r1" cx="60" cy="60" r="47" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="213 296"></circle>
-        <circle class="r2" cx="60" cy="60" r="32" fill="none" stroke-width="11" stroke-linecap="round" stroke-dasharray="140 201"></circle>
-        <circle class="r3" cx="60" cy="60" r="18" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="72 113"></circle>
-      </svg>
-      <span class="wm">analisis.com</span>
-    </a>
+    <a href="{base}index.html" class="brand" aria-label="analisis.com — inicio">{MARK_SVG}<span class="wm">analisis.com</span></a>
     <div class="sub">{escape(SITE['tagline'])}</div>
   </div>
 </div>
@@ -499,7 +504,8 @@ def foot(depth=0, extra_js=""):
         js += f'<script>{extra_js}</script>'
     return f"""</main>
 <footer class="site"><div class="wrap">
-  <strong>Análisis.com</strong> — {escape(SITE['tagline'])}<br>
+  <a href="{base}index.html" class="brand brand-foot" aria-label="analisis.com — inicio">{MARK_SVG}<span class="wm">analisis.com</span></a>
+  <div class="foot-tag">{escape(SITE['tagline'])}</div>
   Artículos originales a partir del contraste de múltiples fuentes internacionales.
   Actualización cada 24 h. ·
   <a href="{base}boletin/index.html">Boletín</a> ·
