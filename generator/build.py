@@ -149,15 +149,15 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .paispick{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:auto;display:flex;align-items:center;gap:6px}
 .paispick select{font-family:var(--sans);font-size:12px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:4px 6px;cursor:pointer}
 .claves-dia{margin:16px 0 6px;padding:14px 18px 16px;background:var(--wash);border:1px solid var(--line);border-radius:6px}
-.claves-dia .section-head{margin:0 0 8px;border-bottom-width:1px}
+.claves-dia .section-head{margin:0 0 8px;border-bottom-width:1px;align-items:center}
 .cd-intro{font-family:var(--serif);font-size:15px;color:var(--ink);margin:0 0 10px}
 .cd-list{margin:0;padding-left:22px}
 .cd-list li{margin:5px 0;font-family:var(--sans);font-size:14px}
 .cd-list a{color:var(--ink);text-decoration:none}
 .cd-list a:hover{color:var(--red)}
 .cd-list .kicker{margin-right:6px}
-.cd-audio{margin:0 0 10px}
-.cd-audio audio{width:100%;max-width:340px;height:34px}
+.cd-audio{margin-left:auto}
+.cd-audio audio{width:260px;max-width:48vw;height:32px;vertical-align:middle}
 .cd-listen{font-family:var(--sans);font-size:12.5px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}
 .cd-listen:hover{color:var(--red);border-color:var(--red)}
 .tool .toolrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
@@ -1039,15 +1039,17 @@ def _home(arts):
         intro = _digest_intro(claves[0]["date"])
         h += '<section class="claves-dia">'
         h += (f'<div class="section-head"><h2>Las 5 claves de hoy</h2>'
-              f'<span class="d">{fecha_larga(claves[0]["date"])}</span></div>')
-        if intro:
-            h += f'<p class="cd-intro">{escape(intro)}</p>'
+              f'<span class="d">{fecha_larga(claves[0]["date"])}</span>')
+        # Botón/reproductor del resumen: a la derecha, sobre la línea de la cabecera.
         if BRIEFING:
             h += (f'<div class="cd-audio"><audio controls preload="none" '
                   f'src="audio/{BRIEFING}"></audio></div>')
         else:
             h += ('<div class="cd-audio"><button class="cd-listen" '
                   'onclick="leerResumen(this)">▶ Escuchar el resumen del día</button></div>')
+        h += '</div>'
+        if intro:
+            h += f'<p class="cd-intro">{escape(intro)}</p>'
         h += '<ol class="cd-list">'
         for a in claves:
             s = SECTION_BY_SLUG[a["section"]]
