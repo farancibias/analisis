@@ -36,6 +36,10 @@ SIMILARITY = 0.42
 # nº mínimo de fuentes distintas que deben cubrir un tema para publicarlo
 MIN_SOURCES = 2
 
+# Modelo de redacción (configurable). Por defecto Claude Opus 4.8.
+MODEL = os.environ.get("PIPELINE_MODEL", "claude-opus-4-8")
+MAX_TOKENS = int(os.environ.get("PIPELINE_MAX_TOKENS", "8000"))
+
 
 # ------------------------------------------------------------- 1. RECOLECTAR
 def recolectar(sources):
@@ -88,62 +92,86 @@ def agrupar(items):
 
 
 # -------------------------------------------------------------- 3. REDACTAR
-REDACCION_PROMPT = """Eres redactor de Análisis.com, un portal de noticias serio en español.
-A continuación tienes varios resúmenes de una MISMA noticia publicados por
-distintos medios internacionales. Tu tarea:
+SYSTEM_PROMPT = (
+    "Eres redactor de Análisis.com, un portal de noticias serio en español "
+    "(estilo editorial El País / WSJ). Redactas notas ORIGINALES, informativas "
+    "y CONCRETAS en español neutro. Nunca copias ni parafraseas frases de las "
+    "fuentes: sintetizas los hechos con tus propias palabras y aportas contexto."
+)
 
-1. Verifica qué hechos aparecen confirmados por 2 o más fuentes.
-2. Escribe un artículo COMPLETAMENTE ORIGINAL en español neutro.
-   - NO copies ni parafrasees frases; redacta desde cero.
-   - NO inventes datos: usa sólo hechos presentes en los resúmenes.
-   - Atribuye declaraciones o cifras exclusivas ("según X").
-   - Tono informativo, contextualizado, sin opinión.
-3. Devuelve JSON con: title, subtitle, tags (3), body (5-6 párrafos).
+REDACCION_PROMPT = """Tienes varios resúmenes de UNA MISMA noticia publicados por distintos medios internacionales.
+
+Redacta un artículo COMPLETAMENTE ORIGINAL en español que sintetice los hechos y aporte contexto.
+
+Reglas:
+- Usa SOLO hechos presentes en los resúmenes; NO inventes datos.
+- Sé CONCRETO: incluye los NOMBRES PROPIOS, LUGARES, EMPRESAS, INSTITUCIONES, CIFRAS, PORCENTAJES y FECHAS que aparezcan en las fuentes (personas, países, ciudades, compañías, montos). Cuanto más específico, mejor; evita frases genéricas.
+- Atribuye lo que provenga de una sola fuente ("según X").
+- NO copies ni parafrasees frases: redacta desde cero.
+- Tono informativo y contextualizado, sin opinión ni relleno.
+- EXTENSIÓN: el cuerpo (body) debe tener entre 6 y 8 párrafos y en total unas 250-350 palabras (una nota desarrollada, no un resumen breve).
+
+Entrega estos campos:
+- title: titular claro y específico.
+- subtitle: bajada de una frase.
+- tags: 3 o 4 etiquetas (entidades o temas concretos, útiles para buscar una foto).
+- key_points: 3 o 4 viñetas de "claves en 30 segundos".
+- lead: 1 o 2 frases de entrada.
+- body: lista de párrafos (6 a 8).
+- image_prompt: descripción visual para una foto editorial, sin texto ni logos.
+- image_alt: texto alternativo accesible de la imagen.
 
 RESÚMENES DE LAS FUENTES:
 {fuentes}
 """
 
+# Esquema para forzar una salida JSON válida (structured outputs).
+_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "title": {"type": "string"},
+        "subtitle": {"type": "string"},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "key_points": {"type": "array", "items": {"type": "string"}},
+        "lead": {"type": "string"},
+        "body": {"type": "array", "items": {"type": "string"}},
+        "image_prompt": {"type": "string"},
+        "image_alt": {"type": "string"},
+    },
+    "required": ["title", "subtitle", "tags", "key_points", "lead", "body",
+                 "image_prompt", "image_alt"],
+    "additionalProperties": False,
+}
+
 
 def redactar(cluster):
+    """Escribe un artículo original con Claude a partir del cluster de fuentes.
+
+    Devuelve un dict con las claves del esquema, o None si la API falla (para
+    que el pipeline continúe con los demás temas sin romperse).
     """
-    Escribe un artículo original a partir del cluster de fuentes.
-
-    >>> AQUÍ SE CONECTA EL MODELO DE IA <<<
-    Ejemplo con la API de Anthropic (pseudocódigo):
-
-        import anthropic
-        client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-        fuentes = "\\n\\n".join(f"[{i['source']}] {i['title']}\\n{i['summary']}"
-                                for i in cluster)
-        msg = client.messages.create(
-            model="claude-sonnet-5",
-            max_tokens=1500,
+    import anthropic  # import diferido: sólo si se usa
+    fuentes = "\n\n".join(
+        f"[{i['source']}] {i['title']}\n{i['summary']}" for i in cluster)
+    try:
+        client = anthropic.Anthropic()  # lee ANTHROPIC_API_KEY del entorno
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=MAX_TOKENS,
+            system=SYSTEM_PROMPT,
             messages=[{"role": "user",
                        "content": REDACCION_PROMPT.format(fuentes=fuentes)}],
+            output_config={"format": {"type": "json_schema", "schema": _SCHEMA}},
         )
-        data = json.loads(msg.content[0].text)
-
-    El bloque de abajo es un marcador de posición para poder ejecutar el
-    pipeline de punta a punta sin clave de API.
-    """
-    base = cluster[0]
-    return {
-        "title": base["title"][:110],
-        "subtitle": "Síntesis original a partir de múltiples fuentes.",
-        "tags": [base.get("section_hint") or "Actualidad"],
-        "image_prompt": f"Ilustración editorial sobre {base['title'][:70]}, sin texto",
-        "body": [
-            "[Borrador automático] Este párrafo sería redactado por el modelo de "
-            "IA a partir del contraste de las fuentes del cluster.",
-            f"Fuentes que cubren el tema: "
-            f"{', '.join(sorted({i['source'] for i in cluster}))}.",
-        ],
-    }
+        texto = next((b.text for b in resp.content if b.type == "text"), "")
+        return json.loads(texto)
+    except Exception as e:  # noqa: BLE001
+        print(f"  aviso: falló la redacción con IA ({e}); se omite este tema.")
+        return None
 
 
 # ---------------------------------------------------------------- 4. GUARDAR
-def guardar(articulo_ia, section):
+def guardar(articulo_ia, section, cluster):
     with open(CONTENT, encoding="utf-8") as f:
         data = json.load(f)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -152,6 +180,7 @@ def guardar(articulo_ia, section):
     aid = f"{today}-{slug}-{hashlib.md5(articulo_ia['title'].encode()).hexdigest()[:6]}"
     if any(a["id"] == aid for a in data["articles"]):
         return None  # ya existe: evita duplicados
+    body = articulo_ia.get("body") or []
     data["articles"].append({
         "id": aid,
         "section": section,
@@ -161,10 +190,11 @@ def guardar(articulo_ia, section):
         "author": "Redacción Análisis.com",
         "tags": articulo_ia.get("tags", []),
         "image_prompt": articulo_ia.get("image_prompt", ""),
-        "image_alt": articulo_ia["title"],
-        "lead": articulo_ia["body"][0],
-        "body": articulo_ia["body"],
-        "sources_consulted": [],
+        "image_alt": articulo_ia.get("image_alt") or articulo_ia["title"],
+        "key_points": articulo_ia.get("key_points", []),
+        "lead": articulo_ia.get("lead") or (body[0] if body else ""),
+        "body": body,
+        "sources_consulted": sorted({i["source"] for i in cluster}),
     })
     with open(CONTENT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -173,13 +203,12 @@ def guardar(articulo_ia, section):
 
 # -------------------------------------------------------------------- MAIN
 def main():
-    # Guarda: no publicar borradores automáticos hasta conectar el modelo de
-    # redacción. Mientras no exista la clave, el pipeline no toca articles.json
-    # (el sitio se publica solo con el contenido curado existente).
+    # La redacción con IA requiere la clave. Sin ANTHROPIC_API_KEY el pipeline
+    # no toca articles.json (el sitio se publica con el contenido existente).
     if not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("PIPELINE_LLM")):
         print("pipeline: sin ANTHROPIC_API_KEY -> no se generan artículos "
-              "automáticos (se conserva el contenido actual). Conecta el modelo "
-              "en redactar() para activar la redacción.")
+              "automáticos (se conserva el contenido actual). Añade el secret "
+              "ANTHROPIC_API_KEY para activar la redacción con Claude.")
         return
     with open(SOURCES, encoding="utf-8") as f:
         sources = json.load(f)["feeds"]
@@ -193,8 +222,10 @@ def main():
     nuevos = 0
     for c in clusters:
         art = redactar(c)
+        if not art:
+            continue  # la IA falló para este tema: se omite, no se rompe el build
         section = c[0].get("section_hint") or "internacional"
-        if guardar(art, section):
+        if guardar(art, section, c):
             nuevos += 1
     print(f"      {nuevos} artículos nuevos guardados.")
     print("[4/5] Guardado en content/articles.json (archivo histórico).")

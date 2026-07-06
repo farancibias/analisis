@@ -36,13 +36,14 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependencias
-        run: pip install feedparser openai requests
+        run: pip install feedparser openai anthropic requests
 
       - name: Ejecutar pipeline editorial (recolectar + redactar + guardar)
         env:
           # Guarda tus claves en: Settings > Secrets and variables > Actions
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 generator/pipeline.py
+          PIPELINE_MODEL: ${{ vars.PIPELINE_MODEL }}   # opcional: p.ej. claude-sonnet-5 (más barato)
+        run: python3 generator/pipeline.py || echo "Pipeline omitido (se conserva el contenido actual)"
 
       - name: Actualizar datos regionales (tablero)
         run: python3 generator/fetch_data.py || echo "Datos - se conserva el ultimo valor"
