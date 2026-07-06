@@ -37,13 +37,15 @@ SIMILARITY = 0.42
 MIN_SOURCES = 2
 
 # Modelo de redacción (configurable). Por defecto Claude Opus 4.8.
-MODEL = os.environ.get("PIPELINE_MODEL", "claude-opus-4-8")
-MAX_TOKENS = int(os.environ.get("PIPELINE_MAX_TOKENS", "8000"))
+# Nota: se usa `or` (no el default de get) porque el workflow puede pasar la
+# variable como cadena VACÍA cuando no está definida en el repo.
+MODEL = os.environ.get("PIPELINE_MODEL") or "claude-opus-4-8"
+MAX_TOKENS = int(os.environ.get("PIPELINE_MAX_TOKENS") or "8000")
 
 # --- Modo prueba controlada ---
 # PIPELINE_LIMIT: nº máximo de notas a redactar por corrida (0 = sin límite).
 # PIPELINE_DRY_RUN=1: genera y MUESTRA las notas en el log, sin guardarlas ni publicar.
-PIPELINE_LIMIT = int(os.environ.get("PIPELINE_LIMIT", "0"))
+PIPELINE_LIMIT = int(os.environ.get("PIPELINE_LIMIT") or "0")
 PIPELINE_DRY_RUN = os.environ.get("PIPELINE_DRY_RUN", "") == "1"
 
 
