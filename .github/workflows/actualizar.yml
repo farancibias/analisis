@@ -74,7 +74,7 @@ jobs:
           IMAGE_SIZE: 1536x1024
           AUDIO_TTS: ${{ vars.AUDIO_TTS }}   # "1" para generar voz neuronal por nota (necesita OPENAI_API_KEY)
           TTS_VOICE: ${{ vars.TTS_VOICE }}   # opcional: nova, alloy, shimmer, ...
-          SITE_URL: https://analisis.com
+          SITE_URL: https://www.analisis.com
           ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
           GA4_ID: ${{ vars.GA4_ID }}                        # id de medición GA4 (G-XXXX) para el tracking
           PANEL_PASSWORD: ${{ secrets.PANEL_PASSWORD }}     # clave del panel privado /panel.html
@@ -88,7 +88,7 @@ jobs:
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_ID: ${{ secrets.WHATSAPP_PHONE_ID }}
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
-          SITE_URL: https://analisis.com
+          SITE_URL: https://www.analisis.com
         run: python3 generator/distribute.py || echo "Distribución omitida"
 
       - name: Guardar nuevas publicaciones en el repo (archivo histórico)

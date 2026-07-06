@@ -33,7 +33,7 @@ COVERS_DIR = os.path.join(ROOT, "content", "covers")
 AUDIO_OUT = os.path.join(OUT, "audio")
 AUDIO_DIR = os.path.join(ROOT, "content", "audio")
 
-SITE_URL = os.environ.get("SITE_URL", "https://analisis.com").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://www.analisis.com").rstrip("/")
 ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com (Plausible)
 GA4_ID = os.environ.get("GA4_ID", "")                      # id de medición GA4 (G-XXXX) para el tracking
 PANEL_PASSWORD = os.environ.get("PANEL_PASSWORD") or "analisis"  # clave del panel privado (/panel.html)
@@ -691,7 +691,7 @@ def build():
     if os.path.exists(DATA):
         shutil.copy(DATA, os.path.join(OUT, "data.json"))
     # GitHub Pages: dominio propio + desactivar Jekyll
-    cname = os.environ.get("CNAME", "analisis.com").strip()
+    cname = os.environ.get("CNAME", "www.analisis.com").strip()
     if cname:
         write(os.path.join(OUT, "CNAME"), cname + "\n")
     write(os.path.join(OUT, ".nojekyll"), "")
