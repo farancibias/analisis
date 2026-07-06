@@ -56,6 +56,15 @@ def fecha_larga(iso):
     return f"{d.day} de {MESES[d.month]} de {d.year}"
 
 
+def fecha_hora(a):
+    """Fecha (y hora UTC si se guardó) de última actualización de la nota."""
+    upd = a.get("updated")
+    if upd and "T" in upd:
+        dia, hora = upd.split("T")
+        return f"{fecha_larga(dia)}, {hora[:5]} UTC"
+    return fecha_larga(a["date"])
+
+
 def slugify(t):
     t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
@@ -148,6 +157,9 @@ article.post .dek{font-size:21px;color:var(--muted);line-height:1.4;margin:.1em 
 .byline .acts{display:flex;gap:6px}
 .byline button{font-family:var(--sans);font-size:12px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:5px 10px;cursor:pointer}
 .byline button:hover{color:var(--red);border-color:var(--red)}
+.trust{font-family:var(--sans);font-size:12px;color:var(--muted);margin:-6px 0 18px}
+.trust a{color:var(--muted);text-decoration:underline}
+.trust a:hover{color:var(--red)}
 figure.hero{margin:0 0 20px}
 figure.hero .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--wash)}
 figure.hero figcaption{font-family:var(--sans);font-size:12px;color:var(--muted);padding-top:7px;border-bottom:1px solid var(--line);padding-bottom:12px}
@@ -570,6 +582,7 @@ def foot(depth=0, extra_js=""):
   <a href="{base}boletin/index.html">Boletín</a> ·
   <a href="{base}datos.html">Datos</a> ·
   <a href="{base}asistente.html">Asistente</a> ·
+  <a href="{base}correcciones.html">Correcciones</a> ·
   <a href="{base}rss.xml">RSS</a><br>
   © {y} {escape(SITE['domain'])}. Portadas propias o con licencia libre, atribuidas a su autor.
 </div></footer>
@@ -720,6 +733,7 @@ def build():
     _buscar()
     _asistente()
     _datos()
+    _correcciones()
     _panel()
     _boletin(arts)
     _seo(arts, temas)
@@ -848,11 +862,18 @@ def _articles(arts, temas):
         h += f'<span class="kicker">{escape(sec["name"])}</span>'
         h += f'<h1>{escape(a["title"])}</h1>'
         h += f'<p class="dek">{escape(a["subtitle"])}</p>'
+        n_fuentes = len(a.get("sources_consulted") or [])
+        sello_f = f' · <strong>{n_fuentes} fuentes contrastadas</strong>' if n_fuentes else ''
         h += ('<div class="byline"><span>Por ' + escape(a["author"]) + ' · '
-              + fecha_larga(a["date"]) + ' · ' + str(reading_time(a)) + ' min</span>'
+              + fecha_larga(a["date"]) + ' · ' + str(reading_time(a)) + ' min'
+              + sello_f + '</span>'
               '<span class="acts">'
               '<button onclick="leer(this)">▶ Escuchar</button>'
               '<button onclick="compartir()">Compartir</button></span></div>')
+        # Franja de confianza (T4): actualización con hora + política de correcciones.
+        h += (f'<div class="trust">Actualizado: {fecha_hora(a)}'
+              + (f' · {n_fuentes} fuentes contrastadas' if n_fuentes else '')
+              + ' · <a href="../correcciones.html">Política de correcciones</a></div>')
         if AUDIO.get(a["id"]):
             h += (f'<audio class="tts" preload="none" '
                   f'src="../audio/{AUDIO[a["id"]]}"></audio>')
@@ -951,6 +972,32 @@ def _asistente():
           '<div id="respuesta"></div>')
     h += foot(0, extra_js=ASK_JS)
     write(os.path.join(OUT, "asistente.html"), h)
+
+
+def _correcciones():
+    dominio = SITE.get("domain", "analisis.com")
+    h = head(f"Política de correcciones — {SITE['name']}", depth=0,
+             description="Cómo Análisis.com verifica, actualiza y corrige sus publicaciones.")
+    h += ('<div class="section-head"><h2>Política de correcciones</h2>'
+          '<span class="d">Transparencia editorial</span></div>')
+    h += '<article class="post">'
+    h += ('<p>En Análisis.com publicamos <strong>artículos originales</strong> redactados a '
+          'partir del contraste de información de <strong>varias fuentes</strong> '
+          'internacionales y regionales. Cada nota indica su <strong>fecha y hora de '
+          'actualización</strong> y el <strong>número de fuentes contrastadas</strong>.</p>')
+    h += ('<p>La exactitud es una prioridad. Si detectas un error de hecho —un dato, una cifra, '
+          'un nombre o una fecha— queremos corregirlo cuanto antes.</p>')
+    h += (f'<p><strong>Cómo reportar un error:</strong> escríbenos a '
+          f'<a href="mailto:correcciones@{dominio}">correcciones@{dominio}</a> indicando el '
+          'título de la nota, el dato en cuestión y, si es posible, la fuente correcta.</p>')
+    h += ('<p><strong>Cómo corregimos:</strong> verificamos el reporte contra las fuentes; si '
+          'procede, actualizamos la nota, dejamos constancia de la corrección y renovamos la '
+          'marca de actualización. Las correcciones de fondo se señalan al pie del artículo.</p>')
+    h += ('<p>Las notas se generan y actualizan de forma automatizada cada 24 horas; esta '
+          'política aplica por igual a todo el contenido publicado.</p>')
+    h += '</article>'
+    h += foot(0)
+    write(os.path.join(OUT, "correcciones.html"), h)
 
 
 def _datos():
@@ -1138,7 +1185,7 @@ def _seo(arts, temas):
     now = datetime.now().strftime("%Y-%m-%d")
     urls = [f"{SITE_URL}/", f"{SITE_URL}/archivo.html", f"{SITE_URL}/buscar.html",
             f"{SITE_URL}/asistente.html", f"{SITE_URL}/datos.html",
-            f"{SITE_URL}/boletin/index.html"]
+            f"{SITE_URL}/correcciones.html", f"{SITE_URL}/boletin/index.html"]
     urls += [f"{SITE_URL}/seccion/{s['slug']}.html" for s in SECTIONS]
     urls += [f"{SITE_URL}/tema/{slug}.html" for slug in temas]
     urls += [f"{SITE_URL}/articulo/{a['id']}.html" for a in arts]

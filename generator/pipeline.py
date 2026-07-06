@@ -301,6 +301,7 @@ def guardar(articulo_ia, section, cluster):
         "title": articulo_ia["title"],
         "subtitle": articulo_ia["subtitle"],
         "date": today,
+        "updated": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "author": "Redacción Análisis.com",
         "tags": articulo_ia.get("tags", []),
         "image_prompt": articulo_ia.get("image_prompt", ""),
