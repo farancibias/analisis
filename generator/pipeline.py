@@ -40,6 +40,12 @@ MIN_SOURCES = 2
 MODEL = os.environ.get("PIPELINE_MODEL", "claude-opus-4-8")
 MAX_TOKENS = int(os.environ.get("PIPELINE_MAX_TOKENS", "8000"))
 
+# --- Modo prueba controlada ---
+# PIPELINE_LIMIT: nº máximo de notas a redactar por corrida (0 = sin límite).
+# PIPELINE_DRY_RUN=1: genera y MUESTRA las notas en el log, sin guardarlas ni publicar.
+PIPELINE_LIMIT = int(os.environ.get("PIPELINE_LIMIT", "0"))
+PIPELINE_DRY_RUN = os.environ.get("PIPELINE_DRY_RUN", "") == "1"
+
 
 # ------------------------------------------------------------- 1. RECOLECTAR
 def recolectar(sources):
@@ -171,6 +177,24 @@ def redactar(cluster):
 
 
 # ---------------------------------------------------------------- 4. GUARDAR
+def previsualizar(articulo_ia, section, cluster):
+    """Imprime la nota generada (modo dry-run) para revisar calidad sin publicar."""
+    palabras = sum(len(p.split()) for p in articulo_ia.get("body", []))
+    print("\n" + "=" * 72)
+    print(f"[PRUEBA · {section}]  {articulo_ia.get('title', '')}")
+    print(f"  bajada: {articulo_ia.get('subtitle', '')}")
+    print(f"  tags: {articulo_ia.get('tags', [])}")
+    print(f"  fuentes: {sorted({i['source'] for i in cluster})}")
+    print(f"  extensión: {len(articulo_ia.get('body', []))} párrafos · {palabras} palabras")
+    print("  claves en 30s:")
+    for k in articulo_ia.get("key_points", []):
+        print(f"    - {k}")
+    print("  cuerpo:")
+    for p in articulo_ia.get("body", []):
+        print(f"    {p}\n")
+    print("=" * 72)
+
+
 def guardar(articulo_ia, section, cluster):
     with open(CONTENT, encoding="utf-8") as f:
         data = json.load(f)
@@ -218,6 +242,15 @@ def main():
     print("[2/5] Agrupando notas sobre la misma noticia...")
     clusters = agrupar(items)
     print(f"      {len(clusters)} temas con >= {MIN_SOURCES} fuentes.")
+    # Modo prueba: quedarse con los temas MEJOR cubiertos (más fuentes distintas).
+    if PIPELINE_LIMIT > 0:
+        clusters = sorted(
+            clusters, key=lambda c: len({i["source"] for i in c}), reverse=True
+        )[:PIPELINE_LIMIT]
+        print(f"      modo prueba: se procesan {len(clusters)} temas "
+              f"(PIPELINE_LIMIT={PIPELINE_LIMIT}).")
+    if PIPELINE_DRY_RUN:
+        print("      DRY-RUN activo: se mostrarán las notas SIN guardarlas ni publicar.")
     print("[3/5] Redactando artículos originales...")
     nuevos = 0
     for c in clusters:
@@ -225,9 +258,17 @@ def main():
         if not art:
             continue  # la IA falló para este tema: se omite, no se rompe el build
         section = c[0].get("section_hint") or "internacional"
+        if PIPELINE_DRY_RUN:
+            previsualizar(art, section, c)
+            nuevos += 1
+            continue
         if guardar(art, section, c):
             nuevos += 1
-    print(f"      {nuevos} artículos nuevos guardados.")
+    if PIPELINE_DRY_RUN:
+        print(f"      MODO PRUEBA: {nuevos} nota(s) generada(s) y mostrada(s); "
+              "NO se guardó nada (revisa la calidad arriba).")
+    else:
+        print(f"      {nuevos} artículos nuevos guardados.")
     print("[4/5] Guardado en content/articles.json (archivo histórico).")
     print("[5/5] Ejecuta 'python3 generator/build.py' para publicar.")
 

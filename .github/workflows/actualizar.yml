@@ -42,7 +42,9 @@ jobs:
         env:
           # Guarda tus claves en: Settings > Secrets and variables > Actions
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          PIPELINE_MODEL: ${{ vars.PIPELINE_MODEL }}   # opcional: p.ej. claude-sonnet-5 (más barato)
+          PIPELINE_MODEL: ${{ vars.PIPELINE_MODEL }}       # opcional: p.ej. claude-sonnet-5 (más barato)
+          PIPELINE_LIMIT: ${{ vars.PIPELINE_LIMIT }}       # prueba: nº máx. de notas por corrida (0 = sin límite)
+          PIPELINE_DRY_RUN: ${{ vars.PIPELINE_DRY_RUN }}   # prueba: "1" = generar y mostrar sin publicar
         run: python3 generator/pipeline.py || echo "Pipeline omitido (se conserva el contenido actual)"
 
       - name: Actualizar datos regionales (tablero)
