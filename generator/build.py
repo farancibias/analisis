@@ -24,7 +24,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from images import cover_svg, build_cover, SECTION_VISUAL  # noqa: E402
 from audio import build_audio, build_briefing  # noqa: E402
-from pipeline import puntaje_regional, paises_de  # noqa: E402
+from pipeline import (puntaje_regional, paises_de, empresas_de,  # noqa: E402
+                      PAIS_NOMBRE, EMPRESAS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
@@ -736,6 +737,50 @@ def build_temas(arts):
     return temas
 
 
+def _empresas(a):
+    """Slugs de empresas de una nota: usa el campo guardado o lo calcula al vuelo."""
+    if "companies" in a:
+        return a["companies"]
+    return empresas_de(a.get("title", "") + " " + a.get("subtitle", "") + " "
+                       + " ".join(a.get("body", [])) + " " + " ".join(a.get("tags", [])))
+
+
+def build_hubs(arts):
+    """Agrupa notas por PAÍS y por EMPRESA/entidad para las páginas hub (T9).
+    Devuelve dos dicts slug -> {name, arts}."""
+    paises, empresas = {}, {}
+    for a in arts:
+        for code in _paises(a):
+            nombre = PAIS_NOMBRE.get(code, code.upper())
+            paises.setdefault(slugify(nombre),
+                              {"name": nombre, "arts": []})["arts"].append(a)
+        for slug in _empresas(a):
+            empresas.setdefault(slug,
+                                {"name": EMPRESAS[slug]["name"], "arts": []})["arts"].append(a)
+    return paises, empresas
+
+
+def _hub_pages(grupos, carpeta, etiqueta):
+    """Escribe una página hub (línea de tiempo) por país o empresa."""
+    for slug, g in grupos.items():
+        arts_h = sorted(g["arts"], key=lambda x: x["date"], reverse=True)
+        h = head(f"{g['name']} — {etiqueta} — {SITE['name']}", depth=1,
+                 description=f"Toda la cobertura de Análisis.com sobre {g['name']}.")
+        h += (f'<div class="section-head"><h2>{escape(etiqueta)}: {escape(g["name"])}</h2>'
+              f'<span class="d">Cobertura y línea de tiempo · {len(arts_h)} nota'
+              f'{"s" if len(arts_h) != 1 else ""}</span></div>')
+        h += '<div class="tl">'
+        for a in arts_h:
+            sec = SECTION_BY_SLUG[a["section"]]
+            h += (f'<div class="it"><span class="kicker">{escape(sec["name"])} · '
+                  f'{fecha_larga(a["date"])}</span>'
+                  f'<div class="wn-item" style="border:0;padding-top:2px">'
+                  f'<div class="t"><a href="../articulo/{a["id"]}.html">{escape(a["title"])}</a></div>'
+                  f'<p class="dek">{escape(a["subtitle"])}</p></div></div>')
+        h += '</div>' + foot(1)
+        write(os.path.join(OUT, carpeta, f"{slug}.html"), h)
+
+
 def article_ld(a):
     sec = SECTION_BY_SLUG[a["section"]]
     return {"@context": "https://schema.org", "@type": "NewsArticle",
@@ -807,16 +852,20 @@ def build():
     _articles(arts, temas)
     _archivo(arts)
     _temas(temas)
+    paises, empresas = build_hubs(arts)
+    _hub_pages(paises, "pais", "País")
+    _hub_pages(empresas, "empresa", "Empresa")
     _buscar()
     _asistente()
     _datos()
     _correcciones()
     _panel()
     _boletin(arts)
-    _seo(arts, temas)
+    _seo(arts, temas, paises, empresas)
 
     print(f"OK — sitio generado en {OUT}")
-    print(f"     {len(arts)} artículos · {len(SECTIONS)} secciones · {len(temas)} temas")
+    print(f"     {len(arts)} artículos · {len(SECTIONS)} secciones · {len(temas)} temas"
+          f" · {len(paises)} hubs país · {len(empresas)} hubs empresa")
     print(f"     páginas: portada, secciones, artículos, archivo, buscar, asistente, "
           f"datos, boletín, temas + SEO/PWA")
 
@@ -1022,6 +1071,14 @@ def _articles(arts, temas):
             h += '<div style="margin-top:22px">' + "".join(
                 f'<a class="tag" href="../tema/{slugify(t)}.html">{escape(t)}</a>'
                 for t in a["tags"]) + '</div>'
+        # Hubs (T9): chips de país y empresa que enlazan a su línea de tiempo.
+        hubs = [(f'../pais/{slugify(PAIS_NOMBRE.get(c, c))}.html', PAIS_NOMBRE.get(c, c))
+                for c in _paises(a)]
+        hubs += [(f'../empresa/{s}.html', EMPRESAS[s]["name"]) for s in _empresas(a)]
+        if hubs:
+            h += '<div style="margin-top:8px">' + "".join(
+                f'<a class="tag" href="{href}">🧭 {escape(nombre)}</a>'
+                for href, nombre in hubs) + '</div>'
         if a.get("sources_consulted"):
             fuentes = ", ".join(escape(s) for s in a["sources_consulted"])
             h += (f'<div class="note">Artículo original de Análisis.com, redactado a partir del '
@@ -1309,13 +1366,15 @@ def _boletin(arts):
         write(os.path.join(OUT, "boletin", f"{slugify(date)}.html"), h)
 
 
-def _seo(arts, temas):
+def _seo(arts, temas, paises=None, empresas=None):
     now = datetime.now().strftime("%Y-%m-%d")
     urls = [f"{SITE_URL}/", f"{SITE_URL}/archivo.html", f"{SITE_URL}/buscar.html",
             f"{SITE_URL}/asistente.html", f"{SITE_URL}/datos.html",
             f"{SITE_URL}/correcciones.html", f"{SITE_URL}/boletin/index.html"]
     urls += [f"{SITE_URL}/seccion/{s['slug']}.html" for s in SECTIONS]
     urls += [f"{SITE_URL}/tema/{slug}.html" for slug in temas]
+    urls += [f"{SITE_URL}/pais/{slug}.html" for slug in (paises or {})]
+    urls += [f"{SITE_URL}/empresa/{slug}.html" for slug in (empresas or {})]
     urls += [f"{SITE_URL}/articulo/{a['id']}.html" for a in arts]
     sm = ('<?xml version="1.0" encoding="UTF-8"?>'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'

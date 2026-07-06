@@ -180,11 +180,49 @@ COUNTRIES = {
 }
 
 
+PAIS_NOMBRE = {
+    "cl": "Chile", "ar": "Argentina", "br": "Brasil", "mx": "México",
+    "pe": "Perú", "co": "Colombia", "uy": "Uruguay", "py": "Paraguay",
+    "bo": "Bolivia", "ec": "Ecuador", "ve": "Venezuela",
+}
+
+# Empresas/entidades emblemáticas de LatAm para los hubs (T9). Solo nombres
+# DISTINTIVOS (se evitan términos ambiguos como "vale" o "santander").
+EMPRESAS = {
+    "codelco": {"name": "Codelco", "terms": ["codelco"]},
+    "petrobras": {"name": "Petrobras", "terms": ["petrobras"]},
+    "ypf": {"name": "YPF", "terms": ["ypf"]},
+    "pemex": {"name": "Pemex", "terms": ["pemex"]},
+    "ecopetrol": {"name": "Ecopetrol", "terms": ["ecopetrol"]},
+    "falabella": {"name": "Falabella", "terms": ["falabella"]},
+    "cencosud": {"name": "Cencosud", "terms": ["cencosud"]},
+    "mercadolibre": {"name": "MercadoLibre", "terms": ["mercadolibre", "mercado libre"]},
+    "nubank": {"name": "Nubank", "terms": ["nubank"]},
+    "bradesco": {"name": "Bradesco", "terms": ["bradesco"]},
+    "itau": {"name": "Itaú", "terms": ["itaú", "itau"]},
+    "bancolombia": {"name": "Bancolombia", "terms": ["bancolombia"]},
+    "cmpc": {"name": "CMPC", "terms": ["cmpc"]},
+    "arauco": {"name": "Arauco", "terms": ["arauco"]},
+    "sqm": {"name": "SQM", "terms": ["sqm"]},
+    "cemex": {"name": "Cemex", "terms": ["cemex"]},
+    "femsa": {"name": "Femsa", "terms": ["femsa"]},
+    "bimbo": {"name": "Bimbo", "terms": ["bimbo"]},
+    "copec": {"name": "Copec", "terms": ["copec"]},
+}
+
+
 def paises_de(texto):
     """Códigos ISO de país mencionados en el texto (para personalizar portada)."""
     n = _norm_txt(texto)
     return sorted(code for code, terms in COUNTRIES.items()
                   if any(t in n for t in terms))
+
+
+def empresas_de(texto):
+    """Slugs de empresas/entidades emblemáticas mencionadas (para los hubs T9)."""
+    n = _norm_txt(texto)
+    return sorted(slug for slug, info in EMPRESAS.items()
+                  if any(t in n for t in info["terms"]))
 
 
 def es_no_noticia(item):
@@ -347,6 +385,9 @@ def guardar(articulo_ia, section, cluster):
             articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
             + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
         "countries": paises_de(
+            articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
+            + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
+        "companies": empresas_de(
             articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
             + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
     })
