@@ -6,10 +6,10 @@ fuentes internacionales, genera portadas por IA, se actualiza cada 24 h, guarda
 todo el histórico y se publica como sitio estático. Estilo editorial (El País /
 WSJ). Sin equipo de redacción.
 
-Este README es el punto de entrada. Documentos de apoyo:
-`PLAN.md` (arquitectura), `ROADMAP-MEJORAS.md` (estrategia y futuro),
-`FUNCIONES.md` (qué está activo / qué requiere claves), `SETUP-IMAGENES.md`
-(imágenes por IA).
+Este README es el punto de entrada. **Estado vivo y traspaso: `ESTADO.md`.**
+Documentos de apoyo: `PLAN.md` (arquitectura), `ROADMAP-MEJORAS.md` (estrategia y futuro),
+`FUNCIONES.md` (qué está activo / qué requiere claves), `DESPLIEGUE.md` (deploy y DNS),
+`SETUP-IMAGENES.md` (imágenes por IA).
 
 ---
 
@@ -71,9 +71,11 @@ tablero `/datos.html`; boletín diario; personalización "Para ti"; PWA
 traducción PT/EN, Telegram/WhatsApp/email, asistente RAG generativo, analítica,
 anuncios. Ver `FUNCIONES.md`.
 
-**Pendiente principal:** desplegar (crear repo GitHub + Pages + DNS a
-analisis.com) y conectar las claves. El código nunca se rompe si falta una clave:
-degrada con gracia.
+**Ya desplegado y operando** en https://analisis.com: pipeline conectado a Claude
+(2 notas por sección en el cron diario), fotos reales de Pexels, panel privado de
+analítica (`/panel.html`, falta conectar GA4). Ver **`ESTADO.md`** para el detalle
+completo, secrets configurados, problemas conocidos y pendientes. El código nunca
+se rompe si falta una clave: degrada con gracia.
 
 ## Uso local
 
