@@ -1445,6 +1445,42 @@
         "Bloomberg Línea",
         "Reuters"
       ]
+    },
+    {
+      "id": "2026-07-06-los-compradores-del-token-trump-acumulan-p-rdidas-por-3-800-d20740",
+      "section": "mercados",
+      "title": "Los compradores del token $TRUMP acumulan pérdidas por 3.800 millones de dólares",
+      "subtitle": "Un análisis de datos de blockchain revela que cerca de un millón de personas perdieron dinero con la criptomoneda del presidente estadounidense.",
+      "date": "2026-07-06",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "$TRUMP",
+        "criptomonedas",
+        "Donald Trump",
+        "memecoins"
+      ],
+      "image_prompt": "Pantalla de una plataforma de intercambio de criptomonedas mostrando un gráfico descendente, con reflejos de luz azul y tonos oscuros, sobre un escritorio con un teléfono móvil, ambiente de oficina financiera moderna, sin texto ni logos.",
+      "image_alt": "Gráfico financiero descendente en la pantalla de una computadora que ilustra pérdidas en el mercado de criptomonedas.",
+      "key_points": [
+        "Cerca de un millón de compradores del token $TRUMP acumulan pérdidas por 3.800 millones de dólares.",
+        "El entorno de Donald Trump habría obtenido 636 millones de dólares, según TechCrunch.",
+        "Los datos provienen del análisis de registros públicos en la cadena de bloques."
+      ],
+      "lead": "Casi un millón de personas que adquirieron el token $TRUMP, la memecoin vinculada al presidente estadounidense Donald Trump, acumulan pérdidas conjuntas por 3.800 millones de dólares, según análisis de datos de blockchain difundidos por medios especializados.",
+      "body": [
+        "Un examen de los registros públicos en la cadena de bloques concluye que los compradores del token $TRUMP han perdido en conjunto 3.800 millones de dólares desde su lanzamiento, de acuerdo con datos citados por CoinDesk y TechCrunch.",
+        "Según ese análisis, cerca de un millón de personas participaron en la compra del activo digital, lo que da cuenta de la amplitud del alcance que tuvo la memecoin entre pequeños inversores.",
+        "Frente a esas pérdidas, Donald Trump habría obtenido 636 millones de dólares vinculados al token, según la cifra difundida por TechCrunch, lo que refleja la asimetría entre los promotores del proyecto y quienes compraron a precios más altos.",
+        "Las memecoins son criptomonedas que suelen carecer de un valor o utilidad subyacente y cuyo precio depende en gran medida de la especulación y del respaldo mediático de figuras públicas, lo que las expone a fuertes oscilaciones.",
+        "El caso del token $TRUMP resulta particularmente sensible por tratarse de un activo asociado directamente a la figura de un presidente en ejercicio, lo que plantea interrogantes sobre posibles conflictos de interés.",
+        "La trazabilidad de las operaciones en la cadena de bloques permite a analistas independientes reconstruir el flujo de fondos y estimar tanto las ganancias de los promotores como las pérdidas de los compradores.",
+        "Los resúmenes disponibles no detallan el periodo exacto de las mediciones ni la evolución del precio del token, aunque coinciden en la magnitud global de las pérdidas registradas.",
+        "El episodio se suma al debate sobre la regulación de los activos digitales y sobre la protección de los inversores minoristas frente a productos de alta volatilidad promovidos por celebridades y figuras políticas."
+      ],
+      "sources_consulted": [
+        "CoinDesk",
+        "TechCrunch"
+      ]
     }
   ],
   "placeholders": []
