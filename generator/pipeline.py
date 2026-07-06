@@ -33,7 +33,7 @@ CONTENT = os.path.join(ROOT, "content", "articles.json")
 SOURCES = os.path.join(ROOT, "generator", "sources.json")
 
 # umbral de similitud de titulares para considerar que dos notas hablan de lo mismo
-SIMILARITY = 0.5
+SIMILARITY = 0.42
 # nº mínimo de fuentes distintas que deben cubrir un tema para publicarlo
 MIN_SOURCES = 2
 
