@@ -118,6 +118,19 @@ def fetch_analytics():
              for s, v in por_sec.items()),
             key=lambda x: x["pageviews"], reverse=True)
 
+        # --- engagement por artículo (reacciones + votos de encuesta) ---
+        # Cuenta los eventos GA4 'reaccion' y 'encuesta_voto' por ruta de artículo.
+        # Es la señal de interés que build.py usa para ordenar la portada.
+        engagement = {}
+        r = run(dimensions=["pagePath", "eventName"],
+                metrics=["eventCount"], limit=1000)
+        for row in r.rows:
+            path = row.dimension_values[0].value or ""
+            ev = row.dimension_values[1].value or ""
+            if ev in ("reaccion", "encuesta_voto") and path.startswith("/articulo/"):
+                aid = path.split("/articulo/")[1].split(".html")[0]
+                engagement[aid] = engagement.get(aid, 0) + int(row.metric_values[0].value)
+
         import datetime
         return {
             "updated": datetime.date.today().isoformat(),
@@ -126,6 +139,7 @@ def fetch_analytics():
             "new_vs_returning": nvr,
             "countries": countries,
             "sections": sections,
+            "engagement": engagement,
         }
     except Exception as e:  # noqa: BLE001
         print(f"analytics: falló la consulta a GA4 ({e}); panel sin datos.")

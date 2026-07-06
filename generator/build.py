@@ -49,6 +49,7 @@ CREDIT = {}   # id de artículo -> crédito de la foto (atribución), si aplica
 AUDIO = {}    # id de artículo -> nombre del MP3 de voz neuronal, si existe
 BRIEFING = None  # nombre del MP3 del briefing del día, si existe
 SERIES_BY_ID = {}  # id de serie (data.json) -> serie, para los mini-gráficos (T11)
+ENGAGEMENT = {}    # id de artículo -> nº de interacciones (GA4), señal de interés
 # Sección -> serie de datos a incrustar como mini-gráfico en sus artículos.
 SECTION_SERIE = {"mineria": "cobre", "mercados": "oro", "agricultura": "trigo"}
 TICKER_HTML = ""
@@ -171,6 +172,17 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .faq details{border-bottom:1px solid var(--line);padding:9px 0}
 .faq summary{font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;color:var(--ink)}
 .faq details p{font-family:var(--serif);font-size:15px;color:var(--ink);margin:8px 0 2px}
+.react{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:22px 0 6px;font-family:var(--sans)}
+.react-q{font-size:13px;color:var(--muted);margin-right:2px}
+.react button,.poll-opts button{font-family:var(--sans);font-size:13px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer}
+.react button:hover,.poll-opts button:hover{border-color:var(--red)}
+.react button.on,.poll-opts button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.poll-opts button:disabled{cursor:default;opacity:.85}
+.poll{margin:14px 0 6px;padding:14px 16px;background:var(--wash);border:1px solid var(--line);border-radius:6px}
+.poll h4{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:0 0 6px}
+.poll-q{font-family:var(--serif);font-size:16px;font-weight:600;margin:0 0 10px}
+.poll-opts{display:flex;gap:8px;flex-wrap:wrap}
+.poll-thanks{font-family:var(--sans);font-size:12.5px;color:var(--red);margin:10px 0 0}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -521,6 +533,42 @@ ART_CHART_JS = (
     "backgroundColor:'rgba(192,0,0,.08)',fill:true,tension:.3,pointRadius:2}]},"
     "options:{plugins:{legend:{display:false}},maintainAspectRatio:false,"
     "scales:{x:{ticks:{color:col}},y:{ticks:{color:col}}}}});})();")
+
+REACT_JS = r"""
+(function(){var d=document,ls=window.localStorage;
+  // Reacciones: una por nota (se puede cambiar/quitar). Estado en localStorage.
+  d.querySelectorAll('.react').forEach(function(box){
+    var aid=box.getAttribute('data-aid'),key='react:'+aid,saved=ls.getItem(key);
+    box.querySelectorAll('button').forEach(function(b){
+      if(saved===b.getAttribute('data-r'))b.classList.add('on');
+      b.addEventListener('click',function(){
+        var r=b.getAttribute('data-r');
+        box.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        if(saved===r){ls.removeItem(key);saved=null;return;}
+        b.classList.add('on');ls.setItem(key,r);saved=r;
+        if(window.gtag)gtag('event','reaccion',{article_id:aid,tipo:r});
+      });
+    });
+  });
+  // Encuesta: un voto por navegador; tras votar se bloquea.
+  d.querySelectorAll('.poll').forEach(function(box){
+    var aid=box.getAttribute('data-aid'),key='poll:'+aid,saved=ls.getItem(key);
+    var thanks=box.querySelector('.poll-thanks');
+    var btns=box.querySelectorAll('.poll-opts button');
+    btns.forEach(function(b){
+      if(saved===b.getAttribute('data-i')){b.classList.add('on');if(thanks)thanks.hidden=false;}
+      b.addEventListener('click',function(){
+        if(ls.getItem(key)!==null)return;
+        var i=b.getAttribute('data-i');
+        b.classList.add('on');ls.setItem(key,i);if(thanks)thanks.hidden=false;
+        btns.forEach(function(x){x.disabled=true;});
+        if(window.gtag)gtag('event','encuesta_voto',{article_id:aid,opcion:i});
+      });
+    });
+    if(saved!==null)btns.forEach(function(x){x.disabled=true;});
+  });
+})();
+"""
 
 SW_JS = r"""
 const C='analisis-__SWVER__';
@@ -880,7 +928,7 @@ def build():
             pass
     os.makedirs(OUT, exist_ok=True)
 
-    global TICKER_HTML, SERIES_BY_ID
+    global TICKER_HTML, SERIES_BY_ID, ENGAGEMENT
     TICKER_HTML = build_ticker()
     # Series de datos (data.json) indexadas por id, para los mini-gráficos (T11).
     if os.path.exists(DATA):
@@ -889,6 +937,13 @@ def build():
                 SERIES_BY_ID = {s["id"]: s for s in json.load(f).get("series", [])}
         except Exception:  # noqa: BLE001
             SERIES_BY_ID = {}
+    # Engagement por artículo (analytics.json de GA4): señal de interés (portada).
+    if os.path.exists(ANALYTICS_JSON):
+        try:
+            with open(ANALYTICS_JSON, encoding="utf-8") as f:
+                ENGAGEMENT = json.load(f).get("engagement", {}) or {}
+        except Exception:  # noqa: BLE001
+            ENGAGEMENT = {}
     # Orden de portada: primero por fecha (frescura) y, dentro del mismo día,
     # por IMPORTANCIA (sección prioritaria + fuentes contrastadas + relevancia
     # regional). Así el líder es la nota más relevante del día, no la primera.
@@ -899,7 +954,7 @@ def build():
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
-    app_js = APP_JS + TICKER_JS + WEATHER_JS
+    app_js = APP_JS + TICKER_JS + WEATHER_JS + REACT_JS
     write(os.path.join(OUT, "assets", "app.css"), CSS)
     write(os.path.join(OUT, "assets", "app.js"), app_js)
     write(os.path.join(OUT, "favicon.svg"), FAVICON)
@@ -972,14 +1027,24 @@ SECTION_PRIORITY = {
 }
 
 
+def _engagement(a):
+    """Interacciones (reacciones + votos) de la nota según GA4; 0 si no hay datos."""
+    try:
+        return int(ENGAGEMENT.get(a["id"], 0))
+    except (TypeError, ValueError):
+        return 0
+
+
 def _importancia(a):
     """Score de importancia (T3): prioridad de sección + nº de fuentes
-    contrastadas (tope 4) + relevancia regional. La recencia se aplica como
-    clave primaria en el orden, no aquí, para no anteponer notas viejas."""
+    contrastadas (tope 4) + relevancia regional + señal de interés (interacción
+    de los lectores, con tope). La recencia se aplica como clave primaria en el
+    orden, no aquí, para no anteponer notas viejas."""
     fuentes = len(a.get("sources_consulted") or [])
     return (SECTION_PRIORITY.get(a["section"], 1)
             + min(fuentes, 4)
-            + _region_score(a))
+            + _region_score(a)
+            + min(_engagement(a), 6))
 
 
 def _mismo_tema(a, b):
@@ -1187,6 +1252,23 @@ def _articles(arts, temas):
             h += (f'<div class="note">Artículo original de Análisis.com, redactado a partir del '
                   f'contraste de información publicada por múltiples medios. Fuentes consultadas: '
                   f'{fuentes}. No reproduce texto de terceros.</div>')
+        # Reacciones + encuesta (interacción y señal de interés). Estado en
+        # localStorage; los clics disparan eventos GA4 (agregado para la portada).
+        h += (f'<div class="react" data-aid="{a["id"]}">'
+              '<span class="react-q">¿Qué te pareció?</span>'
+              '<button data-r="interesante">👍 Interesante</button>'
+              '<button data-r="importante">🔥 Importante</button>'
+              '<button data-r="pensar">🤔 Me hace pensar</button>'
+              '<button data-r="sorprende">😮 Sorprendente</button></div>')
+        poll = a.get("poll") or {}
+        opciones = poll.get("options") or []
+        if poll.get("question") and len(opciones) >= 2:
+            h += (f'<div class="poll" data-aid="{a["id"]}">'
+                  f'<h4>Encuesta</h4><p class="poll-q">{escape(poll["question"])}</p>'
+                  '<div class="poll-opts">')
+            for i, opt in enumerate(opciones[:4]):
+                h += f'<button data-i="{i}">{escape(opt)}</button>'
+            h += '</div><p class="poll-thanks" hidden>¡Gracias por tu voto!</p></div>'
         # relacionados
         rel = [b for b in arts if b["id"] != a["id"]
                and set(b.get("tags", [])) & set(a.get("tags", []))][:3]
