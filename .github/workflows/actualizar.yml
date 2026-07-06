@@ -41,7 +41,7 @@ jobs:
         run: python3 generator/pipeline.py
 
       - name: Actualizar datos regionales (tablero)
-        run: python3 generator/fetch_data.py || echo "Datos: se conserva el último valor"
+        run: python3 generator/fetch_data.py || echo "Datos - se conserva el ultimo valor"
 
       - name: (Opcional) Traducir a PT/EN
         env:
