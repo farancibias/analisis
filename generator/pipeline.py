@@ -155,6 +155,38 @@ def puntaje_regional(texto):
     return sum(1 for term in REGION_TERMS if term in n)
 
 
+# Países LatAm por código ISO -> términos DISTINTIVOS (país, gentilicio, capital,
+# empresas/figuras emblemáticas). Se usan para priorizar la portada según el país
+# del lector (T5). Se evitan términos ambiguos ("real", "vale", "petro", "peso").
+COUNTRIES = {
+    "cl": ["chile", "chileno", "chilena", "santiago", "codelco", "sqm",
+           "cencosud", "falabella", "copec", "enap", "cmpc", "arauco",
+           "antofagasta", "escondida", "banco de chile"],
+    "ar": ["argentina", "argentino", "argentina", "buenos aires", "ypf",
+           "milei", "merval", "banco nación"],
+    "br": ["brasil", "brasileño", "brasileña", "brasilena", "sao paulo",
+           "são paulo", "petrobras", "bradesco", "itaú", "itau", "nubank",
+           "bovespa", "lula", "río de janeiro"],
+    "mx": ["méxico", "mexico", "mexicano", "mexicana", "pemex", "cemex",
+           "femsa", "bimbo", "banxico", "ciudad de méxico"],
+    "pe": ["perú", "peru", "peruano", "peruana", "lima"],
+    "co": ["colombia", "colombiano", "colombiana", "bogotá", "bogota",
+           "ecopetrol", "bancolombia"],
+    "uy": ["uruguay", "uruguayo", "montevideo"],
+    "py": ["paraguay", "paraguayo", "asunción", "asuncion"],
+    "bo": ["bolivia", "boliviano", "la paz"],
+    "ec": ["ecuador", "ecuatoriano", "quito", "guayaquil"],
+    "ve": ["venezuela", "venezolano", "caracas", "pdvsa"],
+}
+
+
+def paises_de(texto):
+    """Códigos ISO de país mencionados en el texto (para personalizar portada)."""
+    n = _norm_txt(texto)
+    return sorted(code for code, terms in COUNTRIES.items()
+                  if any(t in n for t in terms))
+
+
 def es_no_noticia(item):
     """True si el título parece opinión, carta, live-blog, obituario o pasatiempo."""
     t = item.get("title", "")
@@ -312,6 +344,9 @@ def guardar(articulo_ia, section, cluster):
         "body": body,
         "sources_consulted": sorted({i["source"] for i in cluster}),
         "region_score": puntaje_regional(
+            articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
+            + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
+        "countries": paises_de(
             articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
             + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
     })

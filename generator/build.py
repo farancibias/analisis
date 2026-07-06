@@ -24,7 +24,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from images import cover_svg, build_cover, SECTION_VISUAL  # noqa: E402
 from audio import build_audio  # noqa: E402
-from pipeline import puntaje_regional  # noqa: E402
+from pipeline import puntaje_regional, paises_de  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
@@ -140,6 +140,8 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .section-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);margin:28px 0 16px;padding-bottom:6px;flex-wrap:wrap}
 .section-head h2{font-family:var(--sans);font-size:15px;text-transform:uppercase;letter-spacing:1px;margin:0}
 .section-head .d{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.paispick{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:auto;display:flex;align-items:center;gap:6px}
+.paispick select{font-family:var(--sans);font-size:12px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:4px 6px;cursor:pointer}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -277,16 +279,34 @@ APP_JS = r"""
   window.seguir=function(slug,el){var s=seguidas(),i=s.indexOf(slug);
     if(i<0)s.push(slug);else s.splice(i,1);ls.setItem('seguidas',JSON.stringify(s));
     if(el)el.classList.toggle('on');paraTi();};
-  function paraTi(){var box=d.getElementById('parati');if(!box)return;var s=seguidas();
-    box.style.display=s.length?'block':'none';
-    var chips=d.querySelectorAll('[data-follow]');chips.forEach(function(c){
+  // --- personalización de portada: país del lector (T5) + secciones seguidas ---
+  function paisSel(){return ls.getItem('pais')||'';}   // elección explícita del usuario
+  var paisAuto='';                                     // país detectado por IP (fallback)
+  function paisActivo(){return paisSel()||paisAuto;}
+  function rankCard(c,s,pc){var r=0;
+    if(pc&&(c.getAttribute('data-countries')||'').split(' ').indexOf(pc)>=0)r-=2; // país: +peso
+    if(s.indexOf(c.getAttribute('data-sec'))>=0)r-=1;                              // sección seguida
+    return r;}
+  function ordenarPortada(){var grid=d.getElementById('masgrid');if(!grid)return;
+    var s=seguidas(),pc=paisActivo(),cards=[].slice.call(grid.children);
+    cards.sort(function(a,b){return rankCard(a,s,pc)-rankCard(b,s,pc);});
+    cards.forEach(function(c){grid.appendChild(c);});}
+  window.setPais=function(code){if(code)ls.setItem('pais',code);else ls.removeItem('pais');
+    var lbl=d.getElementById('paisAuto');if(lbl&&code)lbl.textContent='';ordenarPortada();};
+  function paraTi(){var box=d.getElementById('parati'),s=seguidas();
+    if(box)box.style.display=s.length?'block':'none';
+    d.querySelectorAll('[data-follow]').forEach(function(c){
       c.classList.toggle('on',s.indexOf(c.getAttribute('data-follow'))>=0);});
-    // reordenar cards de portada: primero las secciones seguidas
-    var grid=d.getElementById('masgrid');if(grid&&s.length){var cards=[].slice.call(grid.children);
-      cards.sort(function(a,b){var A=s.indexOf(a.getAttribute('data-sec'))>=0?0:1;
-        var B=s.indexOf(b.getAttribute('data-sec'))>=0?0:1;return A-B;});
-      cards.forEach(function(c){grid.appendChild(c);});}}
-  d.addEventListener('DOMContentLoaded',paraTi);
+    ordenarPortada();}
+  d.addEventListener('DOMContentLoaded',function(){
+    paraTi();
+    var sel=d.getElementById('paisSel');
+    if(sel){sel.value=paisSel();sel.addEventListener('change',function(){setPais(sel.value);});}
+    if(!paisSel())fetch('https://ipwho.is/').then(function(r){return r.json();})
+      .then(function(j){if(j&&j.country_code){paisAuto=j.country_code.toLowerCase();ordenarPortada();
+        var lbl=d.getElementById('paisAuto');
+        if(lbl&&!paisSel())lbl.textContent='(detectamos: '+(j.country||j.country_code)+')';}})
+      .catch(function(){});});
   // PWA
   if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js').catch(function(){});
 })();
@@ -598,6 +618,14 @@ def alt_for(a):
     return escape(a.get("image_alt") or a["title"])
 
 
+def _paises(a):
+    """Códigos de país de una nota: usa el campo guardado o lo calcula al vuelo."""
+    if "countries" in a:
+        return a["countries"]
+    return paises_de(a.get("title", "") + " " + a.get("subtitle", "") + " "
+                     + " ".join(a.get("body", [])) + " " + " ".join(a.get("tags", [])))
+
+
 def card(a, depth=1, placeholder=False):
     base = "../" * depth
     sec = SECTION_BY_SLUG[a["section"]]
@@ -607,7 +635,8 @@ def card(a, depth=1, placeholder=False):
                 f'<div class="thumb"><img src="{src}" alt=""></div>'
                 f'<span class="kicker">{escape(sec["name"])}</span><h3>{escape(a["title"])}</h3>'
                 f'<span class="badge">Ejemplo — se generará automáticamente</span></a>')
-    return (f'<a class="card" data-sec="{a["section"]}" href="{base}articulo/{a["id"]}.html">'
+    return (f'<a class="card" data-sec="{a["section"]}" '
+            f'data-countries="{" ".join(_paises(a))}" href="{base}articulo/{a["id"]}.html">'
             f'<div class="thumb"><img src="{img_path(a, base)}" alt="{alt_for(a)}"></div>'
             f'<span class="kicker">{escape(sec["name"])}</span><h3>{escape(a["title"])}</h3>'
             f'<p class="dek">{escape(a["subtitle"])}</p>'
@@ -722,6 +751,7 @@ def build():
             "date": a["date"], "dateLong": fecha_larga(a["date"]),
             "url": f"articulo/{a['id']}.html",
             "tags": a.get("tags", []),
+            "countries": _paises(a),
             "text": " ".join(a["body"])[:1200]} for a in arts]
     write(os.path.join(OUT, "search-index.json"), json.dumps(idx, ensure_ascii=False))
 
@@ -818,8 +848,16 @@ def _home(arts):
     h += '</div></aside></section>'
     if ADS:
         h += '<div class="ad">Espacio publicitario</div>'
+    paises_ui = [("cl", "Chile"), ("ar", "Argentina"), ("br", "Brasil"),
+                 ("mx", "México"), ("co", "Colombia"), ("pe", "Perú"),
+                 ("uy", "Uruguay"), ("ec", "Ecuador"), ("bo", "Bolivia"),
+                 ("py", "Paraguay"), ("ve", "Venezuela")]
+    opciones = '<option value="">Todos los países</option>' + "".join(
+        f'<option value="{c}">{escape(n)}</option>' for c, n in paises_ui)
     h += ('<div class="section-head"><h2>Más noticias</h2>'
-          '<span class="d">Se reordena según las secciones que sigas</span></div>')
+          '<span class="d">Prioriza tu país y las secciones que sigas</span>'
+          f'<label class="paispick">Tu país: <select id="paisSel">{opciones}</select>'
+          '<span id="paisAuto" class="d"></span></label></div>')
     h += '<div class="grid" id="masgrid">'
     for a in rest:
         h += card(a, depth=0)
