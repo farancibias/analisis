@@ -20,7 +20,9 @@ from datetime import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
-SITE_URL = os.environ.get("SITE_URL", "https://analisis.com")
+DIGEST = os.path.join(ROOT, "content", "digest.json")
+AUDIO_DIR = os.path.join(ROOT, "content", "audio")
+SITE_URL = os.environ.get("SITE_URL", "https://www.analisis.com").rstrip("/")
 
 
 def titulares_de_hoy():
@@ -29,13 +31,37 @@ def titulares_de_hoy():
     hoy = datetime.utcnow().strftime("%Y-%m-%d")
     dia = [a for a in arts if a["date"] == hoy] or sorted(
         arts, key=lambda x: x["date"], reverse=True)[:5]
-    return dia
+    return dia[:5]
+
+
+def _sintesis_y_audio(arts):
+    """Devuelve (sintesis_del_dia, url_audio) si existen para la fecha de la tanda."""
+    if not arts:
+        return "", ""
+    fecha = arts[0]["date"]
+    sintesis = ""
+    try:
+        with open(DIGEST, encoding="utf-8") as f:
+            dg = json.load(f)
+        if dg.get("date") == fecha:
+            sintesis = dg.get("intro", "") or ""
+    except Exception:  # noqa: BLE001
+        pass
+    audio = ""
+    if os.path.exists(os.path.join(AUDIO_DIR, f"briefing-{fecha}.mp3")):
+        audio = f"{SITE_URL}/audio/briefing-{fecha}.mp3"
+    return sintesis, audio
 
 
 def _mensaje(arts):
+    sintesis, audio = _sintesis_y_audio(arts)
     lineas = ["*Análisis.com — lo más importante de hoy*", ""]
+    if sintesis:
+        lineas += [sintesis, ""]
     for a in arts:
         lineas.append(f"• {a['title']}\n{SITE_URL}/articulo/{a['id']}.html")
+    if audio:
+        lineas += ["", f"🎧 Escucha el resumen del día: {audio}"]
     return "\n".join(lineas)
 
 

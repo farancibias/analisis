@@ -23,7 +23,7 @@ from html import escape
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from images import cover_svg, build_cover, SECTION_VISUAL  # noqa: E402
-from audio import build_audio  # noqa: E402
+from audio import build_audio, build_briefing  # noqa: E402
 from pipeline import puntaje_regional, paises_de  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -46,6 +46,7 @@ ADS = os.environ.get("ADS", "") == "1"
 COVER = {}
 CREDIT = {}   # id de artículo -> crédito de la foto (atribución), si aplica
 AUDIO = {}    # id de artículo -> nombre del MP3 de voz neuronal, si existe
+BRIEFING = None  # nombre del MP3 del briefing del día, si existe
 TICKER_HTML = ""
 
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio",
@@ -151,6 +152,10 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .cd-list a{color:var(--ink);text-decoration:none}
 .cd-list a:hover{color:var(--red)}
 .cd-list .kicker{margin-right:6px}
+.cd-audio{margin:0 0 10px}
+.cd-audio audio{width:100%;max-width:340px;height:34px}
+.cd-listen{font-family:var(--sans);font-size:12.5px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}
+.cd-listen:hover{color:var(--red);border-color:var(--red)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -279,6 +284,14 @@ APP_JS = r"""
     if(sy.speaking||sy.pending){sy.cancel();btn.textContent='▶ Escuchar';return;}
     var t=d.getElementById('cuerpo');if(!t)return;
     btn.textContent='⏹ Detener';_cargarVoces(function(){_hablar(t.innerText,btn);});};
+  // resumen del día (voz del navegador) cuando no hay MP3 pregenerado
+  window.leerResumen=function(btn){var sy=window.speechSynthesis;
+    if(!sy){alert('Tu navegador no soporta lectura de voz.');return;}
+    if(sy.speaking||sy.pending){sy.cancel();btn.textContent='▶ Escuchar el resumen del día';return;}
+    var box=d.querySelector('.claves-dia');if(!box)return;
+    var intro=box.querySelector('.cd-intro'),list=box.querySelector('.cd-list');
+    var txt=(intro?intro.innerText+'. ':'')+'Las claves de hoy. '+(list?list.innerText:'');
+    btn.textContent='⏹ Detener';_cargarVoces(function(){_hablar(txt,btn);});};
   // compartir
   window.compartir=function(){var u=location.href,t=d.title;
     if(navigator.share)navigator.share({title:t,url:u}).catch(function(){});
@@ -690,6 +703,30 @@ def write_audio(arts):
             shutil.copy(os.path.join(AUDIO_DIR, fn), os.path.join(AUDIO_OUT, fn))
 
 
+def write_briefing(arts):
+    """Briefing de audio del día (podcast corto del resumen + las 5 claves). Usa
+    el MP3 cacheado/generado si AUDIO_TTS y clave; si no, deja BRIEFING en None y
+    la portada ofrece la voz del navegador. Ver generator/audio.py."""
+    global BRIEFING
+    claves = _claves_hoy(arts)
+    if not claves:
+        return
+    fecha = claves[0]["date"]
+    intro = _digest_intro(fecha)
+    partes = [f"Resumen de Análisis punto com para el {fecha_larga(fecha)}."]
+    if intro:
+        partes.append(intro)
+    partes.append("Estas son las claves de hoy.")
+    for a in claves:
+        partes.append(a["title"] + ". " + (a.get("subtitle") or ""))
+    fn = build_briefing("\n\n".join(partes),
+                        audiodir=AUDIO_DIR, basename=f"briefing-{fecha}")
+    if fn:
+        BRIEFING = fn
+        os.makedirs(AUDIO_OUT, exist_ok=True)
+        shutil.copy(os.path.join(AUDIO_DIR, fn), os.path.join(AUDIO_OUT, fn))
+
+
 # ---- temas (entidades) a partir de tags ----
 def build_temas(arts):
     temas = {}
@@ -729,6 +766,7 @@ def build():
     arts = sorted(ARTICLES, key=lambda x: (x["date"], _importancia(x)), reverse=True)
     write_covers(arts)
     write_audio(arts)
+    write_briefing(arts)
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
@@ -871,6 +909,12 @@ def _home(arts):
               f'<span class="d">{fecha_larga(claves[0]["date"])}</span></div>')
         if intro:
             h += f'<p class="cd-intro">{escape(intro)}</p>'
+        if BRIEFING:
+            h += (f'<div class="cd-audio"><audio controls preload="none" '
+                  f'src="audio/{BRIEFING}"></audio></div>')
+        else:
+            h += ('<div class="cd-audio"><button class="cd-listen" '
+                  'onclick="leerResumen(this)">▶ Escuchar el resumen del día</button></div>')
         h += '<ol class="cd-list">'
         for a in claves:
             s = SECTION_BY_SLUG[a["section"]]

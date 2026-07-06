@@ -86,3 +86,28 @@ def build_audio(article, audiodir, basename):
         except Exception as e:  # noqa: BLE001
             print(f"  aviso: falló el TTS ({e}); uso la voz del navegador.")
     return None
+
+
+def build_briefing(texto, audiodir, basename):
+    """Briefing de audio del día (podcast corto del resumen). Devuelve el nombre
+    del MP3 (cacheado o generado) o None.
+
+    Prioridad:
+      1. Si ya existe el MP3 del día -> se reutiliza (no se regenera).
+      2. Si AUDIO_TTS=1 y hay clave -> genera la voz neuronal del resumen.
+      3. En cualquier otro caso -> None (el sitio ofrece la voz del navegador).
+    """
+    mp3, path = basename + ".mp3", os.path.join(audiodir, basename + ".mp3")
+    if os.path.exists(path):
+        return mp3
+    if AUDIO_TTS and os.environ.get("OPENAI_API_KEY") and texto.strip():
+        try:
+            os.makedirs(audiodir, exist_ok=True)
+            data = generar_tts(texto)
+            with open(path, "wb") as f:
+                f.write(data)
+            print(f"  briefing de audio generado: {mp3}")
+            return mp3
+        except Exception as e:  # noqa: BLE001
+            print(f"  aviso: falló el briefing TTS ({e}); uso la voz del navegador.")
+    return None
