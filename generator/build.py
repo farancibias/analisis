@@ -29,7 +29,7 @@ OUT = os.path.join(ROOT, "site")
 IMGDIR = os.path.join(OUT, "img")
 COVERS_DIR = os.path.join(ROOT, "content", "covers")
 
-SITE_URL = os.environ.get("SITE_URL", "https://analisis.com").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://www.analisis.com").rstrip("/")
 ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com (Plausible)
 ADS = os.environ.get("ADS", "") == "1"
 
@@ -619,7 +619,7 @@ def build():
     if os.path.exists(DATA):
         shutil.copy(DATA, os.path.join(OUT, "data.json"))
     # GitHub Pages: dominio propio + desactivar Jekyll
-    cname = os.environ.get("CNAME", "analisis.com").strip()
+    cname = os.environ.get("CNAME", "www.analisis.com").strip()
     if cname:
         write(os.path.join(OUT, "CNAME"), cname + "\n")
     write(os.path.join(OUT, ".nojekyll"), "")
