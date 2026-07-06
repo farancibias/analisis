@@ -48,6 +48,9 @@ COVER = {}
 CREDIT = {}   # id de artículo -> crédito de la foto (atribución), si aplica
 AUDIO = {}    # id de artículo -> nombre del MP3 de voz neuronal, si existe
 BRIEFING = None  # nombre del MP3 del briefing del día, si existe
+SERIES_BY_ID = {}  # id de serie (data.json) -> serie, para los mini-gráficos (T11)
+# Sección -> serie de datos a incrustar como mini-gráfico en sus artículos.
+SECTION_SERIE = {"mineria": "cobre", "mercados": "oro", "agricultura": "trigo"}
 TICKER_HTML = ""
 
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio",
@@ -157,6 +160,12 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .cd-audio audio{width:100%;max-width:340px;height:34px}
 .cd-listen{font-family:var(--sans);font-size:12.5px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}
 .cd-listen:hover{color:var(--red);border-color:var(--red)}
+.tool .toolrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.tool input,.tool select{font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:6px 8px}
+.tool input{width:96px}
+.toolout{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);margin:4px 0 2px}
+.art-chart{margin:22px 0;padding:12px 14px}
+.art-chart canvas{max-height:220px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -464,9 +473,49 @@ DATOS_JS = r"""
     var rt=d.getElementById('rates');if(rt&&j.rates){rt.innerHTML=
       '<tr><th>Banco central</th><th>Tasa</th><th>Sesgo</th></tr>'+
       j.rates.map(function(r){return '<tr><td>'+r.pais+'</td><td>'+r.tasa.toFixed(2)+'%</td><td>'+r.sesgo+'</td></tr>';}).join('');}
+    // --- conversor de divisas (rates en vivo, con respaldo del tablero) ---
+    var MON=['USD','CLP','BRL','MXN','ARS','COP','PEN','EUR'];
+    var rates={USD:1};
+    (j.series||[]).forEach(function(s){var m={clp:'CLP',brl:'BRL',mxn:'MXN'}[s.id];
+      if(m)rates[m]=s.points[s.points.length-1][1];});
+    var from=d.getElementById('cv-from'),to=d.getElementById('cv-to'),
+        amt=d.getElementById('cv-amt'),cvout=d.getElementById('cv-out'),cvsrc=d.getElementById('cv-src');
+    if(from&&to){MON.forEach(function(m){from.innerHTML+='<option>'+m+'</option>';to.innerHTML+='<option>'+m+'</option>';});
+      from.value='USD';to.value='CLP';
+      function conv(){var a=parseFloat(amt.value)||0,rf=rates[from.value],rt2=rates[to.value];
+        if(!rf||!rt2){cvout.textContent='—';return;}
+        var v=a*(rt2/rf);
+        cvout.textContent=a.toLocaleString('es')+' '+from.value+' = '+
+          v.toLocaleString('es',{maximumFractionDigits:2})+' '+to.value;}
+      [amt,from,to].forEach(function(el){el.addEventListener('input',conv);});
+      fetch('https://open.er-api.com/v6/latest/USD').then(function(r){return r.json();}).then(function(x){
+        if(x&&x.rates){MON.forEach(function(m){if(x.rates[m])rates[m]=x.rates[m];});
+          if(cvsrc)cvsrc.textContent='Tipo de cambio en vivo';}conv();}).catch(function(){
+          if(cvsrc)cvsrc.textContent='Tipo de cambio del tablero (sin conexión)';conv();});
+      conv();}
+    // --- calculadora de commodities (último valor del tablero) ---
+    var comm=(j.series||[]).filter(function(s){return (s.unit||'').indexOf('US$')===0;});
+    var cs=d.getElementById('cc-serie'),qty=d.getElementById('cc-qty'),ccout=d.getElementById('cc-out');
+    if(cs){comm.forEach(function(s,i){cs.innerHTML+='<option value="'+i+'">'+s.name+' ('+s.unit+')</option>';});
+      function calc(){var s=comm[cs.value|0];if(!s)return;var q=parseFloat(qty.value)||0,
+        price=s.points[s.points.length-1][1],tot=q*price;
+        ccout.textContent=q.toLocaleString('es')+' × '+price+' '+s.unit+' = US$ '+
+          tot.toLocaleString('es',{maximumFractionDigits:2});}
+      [qty,cs].forEach(function(el){el.addEventListener('input',calc);});calc();}
   });
 })();
 """
+
+ART_CHART_JS = (
+    "(function(){var c=document.getElementById('artchart');"
+    "if(!c||!window.Chart||!window.__SERIE__)return;var s=window.__SERIE__;"
+    "var dark=document.documentElement.getAttribute('data-tema')==='oscuro';"
+    "var col=dark?'#e9eaec':'#111417';"
+    "new Chart(c,{type:'line',data:{labels:s.points.map(function(p){return p[0];}),"
+    "datasets:[{data:s.points.map(function(p){return p[1];}),borderColor:'#c00000',"
+    "backgroundColor:'rgba(192,0,0,.08)',fill:true,tension:.3,pointRadius:2}]},"
+    "options:{plugins:{legend:{display:false}},maintainAspectRatio:false,"
+    "scales:{x:{ticks:{color:col}},y:{ticks:{color:col}}}}});})();")
 
 SW_JS = r"""
 const C='analisis-__SWVER__';
@@ -745,6 +794,11 @@ def _empresas(a):
                        + " ".join(a.get("body", [])) + " " + " ".join(a.get("tags", [])))
 
 
+def _serie_seccion(section):
+    """Serie de datos (data.json) asociada a una sección, o None (T11)."""
+    return SERIES_BY_ID.get(SECTION_SERIE.get(section, ""))
+
+
 def build_hubs(arts):
     """Agrupa notas por PAÍS y por EMPRESA/entidad para las páginas hub (T9).
     Devuelve dos dicts slug -> {name, arts}."""
@@ -803,8 +857,15 @@ def build():
             pass
     os.makedirs(OUT, exist_ok=True)
 
-    global TICKER_HTML
+    global TICKER_HTML, SERIES_BY_ID
     TICKER_HTML = build_ticker()
+    # Series de datos (data.json) indexadas por id, para los mini-gráficos (T11).
+    if os.path.exists(DATA):
+        try:
+            with open(DATA, encoding="utf-8") as f:
+                SERIES_BY_ID = {s["id"]: s for s in json.load(f).get("series", [])}
+        except Exception:  # noqa: BLE001
+            SERIES_BY_ID = {}
     # Orden de portada: primero por fecha (frescura) y, dentro del mismo día,
     # por IMPORTANCIA (sección prioritaria + fuentes contrastadas + relevancia
     # regional). Así el líder es la nota más relevante del día, no la primera.
@@ -1067,6 +1128,15 @@ def _articles(arts, temas):
         for p in a["body"]:
             h += f'<p>{escape(p)}</p>'
         h += '</div>'
+        # Mini-gráfico del indicador relacionado con la sección (T11).
+        serie = _serie_seccion(a["section"])
+        if serie:
+            h += (f'<div class="art-chart dcard"><div class="kicker">Indicador · '
+                  f'{escape(serie["name"])} <span class="meta">({escape(serie["unit"])})</span>'
+                  f'</div><canvas id="artchart"></canvas></div>'
+                  f'<script>window.__SERIE__={json.dumps(serie, ensure_ascii=False)}</script>'
+                  f'<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>'
+                  f'<script>{ART_CHART_JS}</script>')
         if a.get("tags"):
             h += '<div style="margin-top:22px">' + "".join(
                 f'<a class="tag" href="../tema/{slugify(t)}.html">{escape(t)}</a>'
@@ -1192,6 +1262,20 @@ def _datos():
           '<span class="d" id="dupd">Cargando…</span></div>')
     h += ('<p class="meta">Indicadores clave para América Latina. Actualizables '
           'automáticamente con <code>generator/fetch_data.py</code>.</p>')
+    # Herramientas interactivas (T11): conversor de divisas + calculadora de commodities.
+    h += ('<div class="section-head"><h2>Herramientas</h2></div>'
+          '<div class="dgrid" style="margin:14px 0 8px">'
+          '<div class="dcard tool"><div class="kicker">Conversor de divisas</div>'
+          '<div class="toolrow"><input id="cv-amt" type="number" value="100" min="0" step="any">'
+          '<select id="cv-from"></select><span>→</span><select id="cv-to"></select></div>'
+          '<div class="toolout" id="cv-out">—</div>'
+          '<div class="meta" id="cv-src">Tipo de cambio en vivo</div></div>'
+          '<div class="dcard tool"><div class="kicker">Calculadora de commodities</div>'
+          '<div class="toolrow"><input id="cc-qty" type="number" value="1" min="0" step="any">'
+          '<select id="cc-serie"></select></div>'
+          '<div class="toolout" id="cc-out">—</div>'
+          '<div class="meta">Con el último valor del tablero</div></div>'
+          '</div>')
     h += '<div id="charts" class="dgrid" style="margin:18px 0"></div>'
     h += ('<div class="section-head"><h2>Tasas de política monetaria</h2></div>'
           '<div class="dcard"><table class="rates" id="rates"></table></div>')
