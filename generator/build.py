@@ -59,11 +59,13 @@ def reading_time(a):
 CSS = """
 :root{
   --ink:#111417;--muted:#6b7178;--line:#e2e2e0;--line2:#c9c9c6;--red:#c00000;
+  --brand-1:#241a9c;--brand-2:#3f2be6;--brand-3:#ec1414;
   --bg:#ffffff;--wash:#f6f5f2;--card:#ffffff;
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --sans:'Libre Franklin',system-ui,-apple-system,Helvetica,Arial,sans-serif;}
 html[data-tema=oscuro]{--ink:#e9eaec;--muted:#9aa1a9;--line:#2a2d31;--line2:#3a3d42;
-  --bg:#0f1113;--wash:#17191c;--card:#141619;--red:#ff5a4d;}
+  --bg:#0f1113;--wash:#17191c;--card:#141619;--red:#ff5a4d;
+  --brand-1:#5b4fe6;--brand-2:#7c6bff;--brand-3:#ff5a4d;}
 html{font-size:var(--fs,17px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.5}
@@ -79,8 +81,12 @@ header.site{border-bottom:2px solid var(--ink);background:var(--bg)}
   border:1px solid var(--line);border-radius:4px;padding:3px 8px;cursor:pointer}
 .tools button:hover,.tools a.tb:hover{color:var(--red);border-color:var(--red)}
 .masthead{text-align:center;padding:15px 0 9px}
-.logo{font-family:var(--serif);font-weight:900;font-size:44px;letter-spacing:-1.5px;color:var(--ink)}
-.logo .dot{color:var(--red)}
+.brand{display:inline-flex;align-items:center;gap:13px}
+.brand .mark{width:48px;height:48px;flex:none;display:block}
+.brand .mark .r1{stroke:var(--brand-1)}
+.brand .mark .r2{stroke:var(--brand-2)}
+.brand .mark .r3{stroke:var(--brand-3)}
+.brand .wm{font-family:var(--sans);font-weight:800;font-size:40px;letter-spacing:-1px;line-height:1;color:var(--brand-3)}
 .masthead .sub{font-family:var(--sans);font-size:12px;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-top:2px}
 nav.main{border-top:1px solid var(--line);border-bottom:1px solid var(--ink)}
 nav.main .wrap{display:flex;flex-wrap:wrap;justify-content:center}
@@ -104,7 +110,7 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .section-head .d{font-family:var(--sans);font-size:12px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.logo{font-size:34px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
 .card{background:var(--card)}
 .card .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--wash);margin-bottom:11px}
 .card h3{font-size:21px;line-height:1.18;font-weight:700;margin:.25em 0 .2em}
@@ -361,11 +367,14 @@ self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;
     var cp=res.clone();caches.open(C).then(c=>c.put(e.request,cp));return res;}).catch(()=>r)));});
 """
 
-FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-           '<rect width="64" height="64" rx="10" fill="#111417"/>'
-           '<text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" '
-           'font-family="Georgia,serif" font-weight="900" font-size="34" fill="#fff">A</text>'
-           '<circle cx="50" cy="46" r="5" fill="#c00000"/></svg>')
+FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">'
+           '<rect width="120" height="120" rx="26" fill="#ffffff"/>'
+           '<circle cx="60" cy="60" r="42" fill="none" stroke="#241a9c" stroke-width="12" '
+           'stroke-dasharray="209 280" transform="rotate(-8 60 60)"/>'
+           '<circle cx="60" cy="60" r="28" fill="none" stroke="#3f2be6" stroke-width="11" '
+           'stroke-dasharray="141 180" transform="rotate(150 60 60)"/>'
+           '<circle cx="60" cy="60" r="15" fill="none" stroke="#ec1414" stroke-width="10" '
+           'stroke-dasharray="70 100" transform="rotate(255 60 60)"/></svg>')
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -457,7 +466,14 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
     </span>
   </div>
   <div class="masthead">
-    <a href="{base}index.html" class="logo">Análisis<span class="dot">.</span>com</a>
+    <a href="{base}index.html" class="brand" aria-label="Análisis.com — inicio">
+      <svg class="mark" viewBox="0 0 120 120" role="img" aria-hidden="true">
+        <circle class="r1" cx="60" cy="60" r="46" fill="none" stroke-width="13" stroke-dasharray="229 300" transform="rotate(-8 60 60)"></circle>
+        <circle class="r2" cx="60" cy="60" r="31" fill="none" stroke-width="12" stroke-dasharray="157 200" transform="rotate(150 60 60)"></circle>
+        <circle class="r3" cx="60" cy="60" r="17" fill="none" stroke-width="11" stroke-dasharray="79 110" transform="rotate(255 60 60)"></circle>
+      </svg>
+      <span class="wm">análisis.com</span>
+    </a>
     <div class="sub">{escape(SITE['tagline'])}</div>
   </div>
 </div>
