@@ -114,17 +114,73 @@ def _clusterizar(items):
     return clusters
 
 
+# ---- Relevancia regional (LatAm) y filtro de no-noticias (T2) ----
+# Señales de que una nota importa a América Latina. Se eligen términos
+# DISTINTIVOS (países, región y empresas emblemáticas) evitando palabras
+# genéricas ("real", "sol", "peso", "vale") que darían falsos positivos.
+REGION_TERMS = {
+    "chile", "chileno", "chilena", "argentina", "argentino", "brasil",
+    "brasileño", "brasileno", "brasilena", "méxico", "mexico", "mexicano",
+    "perú", "peru", "peruano", "colombia", "colombiano", "uruguay", "uruguayo",
+    "paraguay", "bolivia", "boliviano", "ecuador", "ecuatoriano", "venezuela",
+    "venezolano", "panamá", "panama", "guatemala", "honduras", "nicaragua",
+    "república dominicana", "dominicana", "latinoamérica", "latinoamerica",
+    "latam", "américa latina", "america latina", "sudamérica", "sudamerica",
+    "mercosur", "alianza del pacífico", "codelco", "petrobras", "pemex",
+    "ecopetrol", "falabella", "cencosud", "mercadolibre", "mercado libre",
+    "nubank", "itaú", "itau", "bradesco", "bancolombia", "cmpc", "arauco",
+    "antofagasta", "escondida", "copec", "enap", "américa móvil",
+    "america movil", "cemex", "femsa", "bimbo", "ypf",
+}
+
+# Patrones de "no-noticia". Se separan en dos: frases inequívocas (se buscan en
+# cualquier parte) y ETIQUETAS de sección ambiguas (opinión/editorial/columna...)
+# que solo cuentan si aparecen como rótulo (inicio del título o tras | - : ),
+# para no descartar notas legítimas con "la opinión pública", etc.
+NONEWS_RE = re.compile(
+    r"(cartas? al director|cartas? del lector|letters to the editor|en vivo|"
+    r"minuto a minuto|as[íi] lo vivimos|live ?blog|obituari|necrol[óo]gic|"
+    r"\bobituary\b|horóscopo|horoscopo|crucigrama|pasatiempo)", re.I)
+NONEWS_LABEL_RE = re.compile(
+    r"(^|[|\-–—:])\s*(opini[óo]n|opinion|editorial|columna|tribuna|comment)\b", re.I)
+
+
+def _norm_txt(t):
+    return re.sub(r"[^a-záéíóúñü0-9 ]", " ", (t or "").lower())
+
+
+def puntaje_regional(texto):
+    """Nº de señales regionales DISTINTAS en el texto (0 = sin foco LatAm)."""
+    n = _norm_txt(texto)
+    return sum(1 for term in REGION_TERMS if term in n)
+
+
+def es_no_noticia(item):
+    """True si el título parece opinión, carta, live-blog, obituario o pasatiempo."""
+    t = item.get("title", "")
+    return bool(NONEWS_RE.search(t) or NONEWS_LABEL_RE.search(t))
+
+
+def _region_cluster(cluster):
+    txt = " ".join(i.get("title", "") + " " + i.get("summary", "") for i in cluster)
+    return puntaje_regional(txt)
+
+
 def seleccionar_por_seccion(items, por_seccion):
-    """Elige hasta `por_seccion` temas por CADA sección. Prioriza los temas
-    contrastados por >= MIN_SOURCES fuentes distintas; si una sección no tiene
-    suficientes, completa con las notas de fuente única más recientes."""
+    """Elige hasta `por_seccion` temas por CADA sección. Descarta no-noticias
+    (opinión, cartas, live-blogs...) y prioriza los temas con mayor RELEVANCIA
+    REGIONAL y más fuentes distintas; completa con lo más contrastado."""
     por_sec = defaultdict(list)
     for it in items:
+        if es_no_noticia(it):
+            continue  # fuera opinión, cartas al director, live-blogs, obituarios
         por_sec[it.get("section_hint") or "internacional"].append(it)
     elegidos = []
     for sec in sorted(por_sec):
         grupos = _clusterizar(por_sec[sec])
-        grupos.sort(key=lambda c: len({i["source"] for i in c}), reverse=True)
+        # regional primero; a igualdad, el tema con más fuentes contrastadas.
+        grupos.sort(key=lambda c: (_region_cluster(c),
+                                   len({i["source"] for i in c})), reverse=True)
         elegidos.extend(grupos[:por_seccion])
     return elegidos
 
@@ -254,6 +310,9 @@ def guardar(articulo_ia, section, cluster):
         "lead": articulo_ia.get("lead") or (body[0] if body else ""),
         "body": body,
         "sources_consulted": sorted({i["source"] for i in cluster}),
+        "region_score": puntaje_regional(
+            articulo_ia["title"] + " " + (articulo_ia.get("subtitle") or "")
+            + " " + " ".join(body) + " " + " ".join(articulo_ia.get("tags", []))),
     })
     with open(CONTENT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

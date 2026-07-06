@@ -23,6 +23,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from images import cover_svg, build_cover, SECTION_VISUAL  # noqa: E402
 from audio import build_audio  # noqa: E402
+from pipeline import puntaje_regional  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
@@ -670,7 +671,10 @@ def build():
 
     global TICKER_HTML
     TICKER_HTML = build_ticker()
-    arts = sorted(ARTICLES, key=lambda x: x["date"], reverse=True)
+    # Orden de portada: primero por fecha (frescura) y, dentro del mismo día,
+    # por RELEVANCIA REGIONAL (LatAm). Usa region_score si el pipeline lo guardó;
+    # si no (notas antiguas), lo calcula al vuelo desde el propio texto.
+    arts = sorted(ARTICLES, key=lambda x: (x["date"], _region_score(x)), reverse=True)
     write_covers(arts)
     write_audio(arts)
     temas = build_temas(arts)
@@ -723,6 +727,16 @@ def build():
     print(f"     {len(arts)} artículos · {len(SECTIONS)} secciones · {len(temas)} temas")
     print(f"     páginas: portada, secciones, artículos, archivo, buscar, asistente, "
           f"datos, boletín, temas + SEO/PWA")
+
+
+def _region_score(a):
+    """Relevancia regional de una nota: usa region_score si existe; si no (notas
+    previas a T2), lo calcula desde título + bajada + cuerpo + tags."""
+    if "region_score" in a:
+        return a["region_score"]
+    return puntaje_regional(
+        a.get("title", "") + " " + a.get("subtitle", "") + " "
+        + " ".join(a.get("body", [])) + " " + " ".join(a.get("tags", [])))
 
 
 def _home(arts):

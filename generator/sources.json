@@ -36,6 +36,20 @@
     { "name": "The Guardian World",    "region": "europa",  "section": "internacional", "url": "https://www.theguardian.com/world/rss" },
 
     { "name": "TechCrunch",            "region": "america", "section": "startups",      "url": "https://techcrunch.com/feed/" },
-    { "name": "Sifted",                "region": "europa",  "section": "startups",      "url": "https://sifted.eu/feed" }
+    { "name": "Sifted",                "region": "europa",  "section": "startups",      "url": "https://sifted.eu/feed" },
+
+    { "name": "GN Economía LatAm",     "region": "america", "section": "economia",      "url": "https://news.google.com/rss/search?q=econom%C3%ADa%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Mercados LatAm",     "region": "america", "section": "mercados",      "url": "https://news.google.com/rss/search?q=mercados%20bolsa%20d%C3%B3lar%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Banca LatAm",        "region": "america", "section": "banca",         "url": "https://news.google.com/rss/search?q=banca%20bancos%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Energía LatAm",      "region": "america", "section": "energia",       "url": "https://news.google.com/rss/search?q=energ%C3%ADa%20petr%C3%B3leo%20gas%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Retail LatAm",       "region": "america", "section": "retail",        "url": "https://news.google.com/rss/search?q=retail%20comercio%20consumo%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Tecnología LatAm",   "region": "america", "section": "tecnologia",    "url": "https://news.google.com/rss/search?q=tecnolog%C3%ADa%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Startups LatAm",     "region": "america", "section": "startups",      "url": "https://news.google.com/rss/search?q=startups%20emprendimiento%20latinoam%C3%A9rica%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+    { "name": "GN Internacional LatAm","region": "america", "section": "internacional", "url": "https://news.google.com/rss/search?q=am%C3%A9rica%20latina%20when:7d&hl=es-419&gl=CL&ceid=CL:es" },
+
+    { "name": "Ámbito (AR)",           "region": "america", "section": "economia",      "url": "https://www.ambito.com/rss/economia.xml" },
+    { "name": "Expansión (MX)",        "region": "america", "section": "economia",      "url": "https://expansion.mx/rss" },
+    { "name": "El Tiempo (CO)",        "region": "america", "section": "economia",      "url": "https://www.eltiempo.com/rss/economia.xml" },
+    { "name": "Folha Mercado (BR)",    "region": "america", "section": "economia",      "url": "https://feeds.folha.uol.com.br/mercado/rss091.xml" }
   ]
 }
