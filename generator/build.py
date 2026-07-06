@@ -10,6 +10,7 @@ Estilo editorial (El País / WSJ) + suite de funciones:
 Ejecutar:  python3 generator/build.py
 """
 
+import hashlib
 import json
 import os
 import re
@@ -406,14 +407,19 @@ DATOS_JS = r"""
 """
 
 SW_JS = r"""
-const C='analisis-v1';
+const C='analisis-__SWVER__';
 self.addEventListener('install',e=>{self.skipWaiting();
   e.waitUntil(caches.open(C).then(c=>c.addAll(['/','/index.html','/assets/app.css','/assets/app.js'])));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(
   k.filter(x=>x!==C).map(x=>caches.delete(x)))));self.clients.claim();});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;
-  e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{
-    var cp=res.clone();caches.open(C).then(c=>c.put(e.request,cp));return res;}).catch(()=>r)));});
+  var req=e.request,esHTML=req.mode==='navigate'||(req.headers.get('accept')||'').indexOf('text/html')>=0;
+  if(esHTML){ // network-first: páginas siempre frescas online, respaldo offline
+    e.respondWith(fetch(req).then(res=>{var cp=res.clone();caches.open(C).then(c=>c.put(req,cp));return res;})
+      .catch(()=>caches.match(req).then(r=>r||caches.match('/index.html'))));return;}
+  // cache-first para assets (la caché se versiona con C en cada build)
+  e.respondWith(caches.match(req).then(r=>r||fetch(req).then(res=>{
+    var cp=res.clone();caches.open(C).then(c=>c.put(req,cp));return res;}).catch(()=>r)));});
 """
 
 FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">'
@@ -656,10 +662,14 @@ def build():
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
+    app_js = APP_JS + TICKER_JS + WEATHER_JS
     write(os.path.join(OUT, "assets", "app.css"), CSS)
-    write(os.path.join(OUT, "assets", "app.js"), APP_JS + TICKER_JS + WEATHER_JS)
+    write(os.path.join(OUT, "assets", "app.js"), app_js)
     write(os.path.join(OUT, "favicon.svg"), FAVICON)
-    write(os.path.join(OUT, "sw.js"), SW_JS)
+    # Versiona la caché del SW con un hash de los assets: cualquier cambio
+    # invalida la caché vieja y llega a los visitantes recurrentes.
+    swver = hashlib.md5((CSS + app_js).encode("utf-8")).hexdigest()[:8]
+    write(os.path.join(OUT, "sw.js"), SW_JS.replace("__SWVER__", swver))
     write(os.path.join(OUT, "manifest.webmanifest"), json.dumps({
         "name": "Análisis.com", "short_name": "Análisis", "start_url": "/",
         "display": "standalone", "background_color": "#ffffff",
