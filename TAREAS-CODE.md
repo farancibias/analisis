@@ -145,6 +145,18 @@ B2B**; publicidad contextual por sección.
 
 ---
 
+## T15 · "Pregúntale a Análisis" como barra principal (interna + web)  ⭐ NUEVA prioridad P1
+Barra prominente en la portada, **sobre "Las 5 claves de hoy"**, que responde
+cualquier pregunta elaborando la respuesta con información **interna + web** (vía
+backend serverless), **cita fuentes externas** y **lista artículos de Análisis
+relacionados** clicables. Requiere un endpoint `/ask` (no se puede en cliente puro).
+**Spec completa, arquitectura, seguridad y prompt:** ver **`TAREA-ASISTENTE.md`**.
+**Archivos:** nuevo backend `api/ask`; `generator/build.py` (`_home`, `ASK_JS`,
+`asistente.html`). **Degrada** al modo interno si no hay backend.
+
+---
+
 ## Orden sugerido de ejecución
-T1 → T2 → T3 → T4 (calidad) → T5 → T7 → T8 (valor y hábito) → T9–T12 → P2.
-Haz T1–T4 primero: son los que hoy afectan la credibilidad del sitio.
+Pendientes: **T15** (asistente barra principal) → T6 (Mi Análisis/Login) → T10
+(traducción PT/EN) → P2. (T1–T5, T7–T9, T11–T12 ya hechas y en vivo.)
+Haz T15 pronto: es lo que Felipe quiere priorizar ahora.
