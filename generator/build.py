@@ -744,7 +744,6 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
     <span class="tools">
       <a class="tb" href="{base}buscar.html">Buscar</a>
       <a class="tb" href="{base}panel.html">LogIn</a>
-      <a class="tb" href="{base}asistente.html">Pregúntale a Análisis</a>
       <a class="tb" href="{base}datos.html">Datos</a>
       <button onclick="fuente(-1)" title="Reducir texto">A-</button>
       <button onclick="fuente(1)" title="Aumentar texto">A+</button>
