@@ -1,21 +1,41 @@
 {
-  "_comment": "Fuentes fiables por región y sección. Feeds RSS públicos. Amplía o ajusta según tu línea editorial. Verifica los términos de uso de cada medio; los RSS están pensados para consumo de titulares/resúmenes, y los artículos que publiques deben ser redacción propia y original.",
+  "_comment": "Fuentes fiables por región y sección. Feeds RSS públicos VERIFICADOS (vivos). Cada sección tiene >=2 fuentes para permitir contraste. Amplía o ajusta según tu línea editorial. Verifica los términos de uso de cada medio; los RSS son para consumo de titulares/resúmenes, y los artículos publicados deben ser redacción propia y original.",
   "feeds": [
-    { "name": "Reuters World",        "region": "global",  "section": "internacional", "url": "https://www.reutersagency.com/feed/?best-topics=international&post_type=best" },
-    { "name": "BBC Business",         "region": "europa",  "section": "economia",      "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
-    { "name": "BBC Technology",       "region": "europa",  "section": "tecnologia",    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml" },
-    { "name": "The Guardian Business","region": "europa",  "section": "economia",      "url": "https://www.theguardian.com/uk/business/rss" },
-    { "name": "El País Economía",     "region": "europa",  "section": "economia",      "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada" },
-    { "name": "AP Technology",        "region": "america", "section": "tecnologia",    "url": "https://apnews.com/hub/technology?output=rss" },
-    { "name": "CNBC Economy",         "region": "america", "section": "economia",      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258" },
-    { "name": "Nikkei Asia",          "region": "asia",    "section": "internacional", "url": "https://www.nikkei.com/rss/" },
-    { "name": "Mining.com",           "region": "global",  "section": "mineria",       "url": "https://www.mining.com/feed/" },
-    { "name": "Reporte Minero",       "region": "america", "section": "mineria",       "url": "https://www.reporteminero.cl/rss" },
-    { "name": "Reuters Agriculture",  "region": "global",  "section": "agricultura",   "url": "https://www.reutersagency.com/feed/?best-sectors=commodities&post_type=best" },
-    { "name": "Retail Dive",          "region": "america", "section": "retail",        "url": "https://www.retaildive.com/feeds/news/" },
-    { "name": "Finextra",             "region": "europa",  "section": "banca",         "url": "https://www.finextra.com/rss/headlines.aspx" },
-    { "name": "OilPrice",             "region": "global",  "section": "energia",       "url": "https://oilprice.com/rss/main" },
-    { "name": "CoinDesk",             "region": "global",  "section": "mercados",      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/" },
-    { "name": "TechCrunch",           "region": "america", "section": "startups",      "url": "https://techcrunch.com/feed/" }
+    { "name": "BBC Technology",        "region": "europa",  "section": "tecnologia",    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml" },
+    { "name": "The Verge",             "region": "america", "section": "tecnologia",    "url": "https://www.theverge.com/rss/index.xml" },
+    { "name": "Ars Technica",          "region": "america", "section": "tecnologia",    "url": "https://feeds.arstechnica.com/arstechnica/index" },
+
+    { "name": "BBC Business",          "region": "europa",  "section": "economia",      "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
+    { "name": "The Guardian Business", "region": "europa",  "section": "economia",      "url": "https://www.theguardian.com/uk/business/rss" },
+    { "name": "El País Economía",      "region": "europa",  "section": "economia",      "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada" },
+    { "name": "CNBC Economy",          "region": "america", "section": "economia",      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258" },
+
+    { "name": "Mining.com",            "region": "global",  "section": "mineria",       "url": "https://www.mining.com/feed/" },
+    { "name": "Google News Minería",   "region": "america", "section": "mineria",       "url": "https://news.google.com/rss/search?q=miner%C3%ADa%20cobre%20litio&hl=es-419&gl=CL&ceid=CL:es" },
+
+    { "name": "The Guardian Farming",  "region": "europa",  "section": "agricultura",   "url": "https://www.theguardian.com/environment/farming/rss" },
+    { "name": "Google News Agro",      "region": "america", "section": "agricultura",   "url": "https://news.google.com/rss/search?q=agricultura%20commodities%20alimentos&hl=es-419&gl=CL&ceid=CL:es" },
+
+    { "name": "Retail Dive",           "region": "america", "section": "retail",        "url": "https://www.retaildive.com/feeds/news/" },
+    { "name": "RetailWire",            "region": "america", "section": "retail",        "url": "https://retailwire.com/feed/" },
+    { "name": "The Guardian Retail",   "region": "europa",  "section": "retail",        "url": "https://www.theguardian.com/business/retail/rss" },
+
+    { "name": "Finextra",              "region": "europa",  "section": "banca",         "url": "https://www.finextra.com/rss/headlines.aspx" },
+    { "name": "The Guardian Banking",  "region": "europa",  "section": "banca",         "url": "https://www.theguardian.com/business/banking/rss" },
+
+    { "name": "OilPrice",              "region": "global",  "section": "energia",       "url": "https://oilprice.com/rss/main" },
+    { "name": "The Guardian Energy",   "region": "europa",  "section": "energia",       "url": "https://www.theguardian.com/environment/energy/rss" },
+    { "name": "Rigzone",               "region": "america", "section": "energia",       "url": "https://www.rigzone.com/news/rss/rigzone_latest.aspx" },
+
+    { "name": "Cointelegraph",         "region": "global",  "section": "mercados",      "url": "https://cointelegraph.com/rss" },
+    { "name": "CNBC Markets",          "region": "america", "section": "mercados",      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839135" },
+    { "name": "MarketWatch",           "region": "america", "section": "mercados",      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories" },
+
+    { "name": "BBC World",             "region": "europa",  "section": "internacional", "url": "https://feeds.bbci.co.uk/news/world/rss.xml" },
+    { "name": "Al Jazeera",            "region": "global",  "section": "internacional", "url": "https://www.aljazeera.com/xml/rss/all.xml" },
+    { "name": "The Guardian World",    "region": "europa",  "section": "internacional", "url": "https://www.theguardian.com/world/rss" },
+
+    { "name": "TechCrunch",            "region": "america", "section": "startups",      "url": "https://techcrunch.com/feed/" },
+    { "name": "Sifted",                "region": "europa",  "section": "startups",      "url": "https://sifted.eu/feed" }
   ]
 }

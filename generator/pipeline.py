@@ -24,7 +24,7 @@ import json
 import os
 import re
 import hashlib
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 
@@ -34,8 +34,10 @@ SOURCES = os.path.join(ROOT, "generator", "sources.json")
 
 # umbral de similitud de titulares para considerar que dos notas hablan de lo mismo
 SIMILARITY = 0.42
-# nº mínimo de fuentes distintas que deben cubrir un tema para publicarlo
+# nº mínimo de fuentes distintas para considerar un tema "contrastado" (se prioriza)
 MIN_SOURCES = 2
+# nº de notas a generar por CADA sección en cada tanda
+PER_SECTION = int(os.environ.get("PIPELINE_PER_SECTION") or "2")
 
 # Modelo de redacción (configurable). Por defecto Claude Opus 4.8.
 # Nota: se usa `or` (no el default de get) porque el workflow puede pasar la
@@ -99,25 +101,32 @@ def _seccion(cluster):
     return cnt.most_common(1)[0][0] if cnt else "internacional"
 
 
-def agrupar(items):
-    """Agrupa entradas que hablan de la misma noticia (por similitud de título)."""
+def _clusterizar(items):
+    """Agrupa por misma noticia; devuelve TODOS los grupos (incl. de una fuente)."""
     clusters = []
     for it in items:
-        colocado = False
         for c in clusters:
             if _misma_noticia(it, c[0]):
                 c.append(it)
-                colocado = True
                 break
-        if not colocado:
+        else:
             clusters.append([it])
-    # sólo temas cubiertos por >=MIN_SOURCES fuentes DISTINTAS
-    validos = []
-    for c in clusters:
-        fuentes = {i["source"] for i in c}
-        if len(fuentes) >= MIN_SOURCES:
-            validos.append(c)
-    return validos
+    return clusters
+
+
+def seleccionar_por_seccion(items, por_seccion):
+    """Elige hasta `por_seccion` temas por CADA sección. Prioriza los temas
+    contrastados por >= MIN_SOURCES fuentes distintas; si una sección no tiene
+    suficientes, completa con las notas de fuente única más recientes."""
+    por_sec = defaultdict(list)
+    for it in items:
+        por_sec[it.get("section_hint") or "internacional"].append(it)
+    elegidos = []
+    for sec in sorted(por_sec):
+        grupos = _clusterizar(por_sec[sec])
+        grupos.sort(key=lambda c: len({i["source"] for i in c}), reverse=True)
+        elegidos.extend(grupos[:por_seccion])
+    return elegidos
 
 
 # -------------------------------------------------------------- 3. REDACTAR
@@ -128,7 +137,7 @@ SYSTEM_PROMPT = (
     "fuentes: sintetizas los hechos con tus propias palabras y aportas contexto."
 )
 
-REDACCION_PROMPT = """Tienes varios resúmenes de UNA MISMA noticia publicados por distintos medios internacionales.
+REDACCION_PROMPT = """Tienes uno o varios resúmenes de UNA MISMA noticia (si hay más de una fuente, procede de distintos medios internacionales).
 
 Redacta un artículo COMPLETAMENTE ORIGINAL en español que sintetice los hechos y aporte contexto.
 
@@ -262,21 +271,20 @@ def main():
     print(f"[1/5] Recolectando de {len(sources)} fuentes...")
     items = recolectar(sources)
     print(f"      {len(items)} entradas descargadas.")
-    print("[2/5] Agrupando notas sobre la misma noticia...")
-    clusters = agrupar(items)
-    print(f"      {len(clusters)} temas con >= {MIN_SOURCES} fuentes.")
-    # Modo prueba: quedarse con los temas MEJOR cubiertos (más fuentes distintas).
+    print(f"[2/5] Eligiendo hasta {PER_SECTION} temas por sección...")
+    seleccion = seleccionar_por_seccion(items, PER_SECTION)
+    reparto = Counter(_seccion(c) for c in seleccion)
+    print(f"      {len(seleccion)} temas. Reparto por sección: {dict(sorted(reparto.items()))}")
+    # Modo prueba: tope global de notas (además de la cuota por sección).
     if PIPELINE_LIMIT > 0:
-        clusters = sorted(
-            clusters, key=lambda c: len({i["source"] for i in c}), reverse=True
-        )[:PIPELINE_LIMIT]
-        print(f"      modo prueba: se procesan {len(clusters)} temas "
+        seleccion = seleccion[:PIPELINE_LIMIT]
+        print(f"      modo prueba: se procesan {len(seleccion)} temas "
               f"(PIPELINE_LIMIT={PIPELINE_LIMIT}).")
     if PIPELINE_DRY_RUN:
         print("      DRY-RUN activo: se mostrarán las notas SIN guardarlas ni publicar.")
     print("[3/5] Redactando artículos originales...")
     nuevos = 0
-    for c in clusters:
+    for c in seleccion:
         art = redactar(c)
         if not art:
             continue  # la IA falló para este tema: se omite, no se rompe el build
