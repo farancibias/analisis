@@ -217,7 +217,10 @@ def buscar_foto_pexels(query):
             return None
         p = fotos[0]
         src = p.get("src", {})
-        url = src.get("large2x") or src.get("large") or src.get("original")
+        base = src.get("large2x") or src.get("large") or src.get("original") or ""
+        # Forzar JPEG comprimido y ancho acotado: evita descargar PNG originales
+        # de varios MB y mantiene las portadas livianas.
+        url = base.split("?")[0] + "?auto=compress&cs=tinysrgb&fm=jpg&w=1600"
         img = requests.get(url, timeout=30)
         img.raise_for_status()
         return img.content, f"Foto: {p.get('photographer', 'Pexels')} / Pexels"
@@ -263,12 +266,14 @@ def build_cover(seed, section, prompt, imgdir, basename, query=""):
     foto = buscar_foto_pexels(query)
     if foto:
         data, credito = foto
-        jpg = basename + ".jpg"
-        with open(os.path.join(imgdir, jpg), "wb") as f:
+        # Extensión según el formato real de los bytes (Pexels puede dar PNG).
+        ext = ".png" if data[:8] == b"\x89PNG\r\n\x1a\n" else ".jpg"
+        name = basename + ext
+        with open(os.path.join(imgdir, name), "wb") as f:
             f.write(data)
         _guardar_credito(imgdir, basename, credito)
-        print(f"  foto real (Pexels): {jpg}")
-        return jpg, credito
+        print(f"  foto real (Pexels): {name}")
+        return name, credito
     # 3) imagen fotorrealista de IA (opcional, de pago)
     if os.environ.get("OPENAI_API_KEY") and prompt:
         try:

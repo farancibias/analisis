@@ -5,16 +5,56 @@
     "domain": "analisis.com"
   },
   "sections": [
-    { "slug": "tecnologia",   "name": "Tecnología",              "desc": "Inteligencia artificial, software, semiconductores e innovación global." },
-    { "slug": "economia",     "name": "Economía",                "desc": "Macroeconomía, bancos centrales, comercio y política fiscal." },
-    { "slug": "mineria",      "name": "Minería",                 "desc": "Cobre, litio, oro y la cadena de minerales críticos." },
-    { "slug": "agricultura",  "name": "Agricultura",             "desc": "Commodities agrícolas, alimentos y mercados globales." },
-    { "slug": "retail",       "name": "Retail",                  "desc": "Consumo, comercio minorista y e-commerce." },
-    { "slug": "banca",        "name": "Banca",                   "desc": "Bancos, fintech, crédito y regulación financiera." },
-    { "slug": "energia",      "name": "Energía y Medioambiente", "desc": "Petróleo, gas, renovables, transición energética y clima." },
-    { "slug": "mercados",     "name": "Mercados y Cripto",       "desc": "Bolsas, divisas, materias primas y activos digitales." },
-    { "slug": "internacional","name": "Internacional",           "desc": "Geopolítica, comercio y política internacional." },
-    { "slug": "startups",     "name": "Startups",                "desc": "Venture capital, emprendimiento e innovación de LatAm y el mundo." }
+    {
+      "slug": "tecnologia",
+      "name": "Tecnología",
+      "desc": "Inteligencia artificial, software, semiconductores e innovación global."
+    },
+    {
+      "slug": "economia",
+      "name": "Economía",
+      "desc": "Macroeconomía, bancos centrales, comercio y política fiscal."
+    },
+    {
+      "slug": "mineria",
+      "name": "Minería",
+      "desc": "Cobre, litio, oro y la cadena de minerales críticos."
+    },
+    {
+      "slug": "agricultura",
+      "name": "Agricultura",
+      "desc": "Commodities agrícolas, alimentos y mercados globales."
+    },
+    {
+      "slug": "retail",
+      "name": "Retail",
+      "desc": "Consumo, comercio minorista y e-commerce."
+    },
+    {
+      "slug": "banca",
+      "name": "Banca",
+      "desc": "Bancos, fintech, crédito y regulación financiera."
+    },
+    {
+      "slug": "energia",
+      "name": "Energía y Medioambiente",
+      "desc": "Petróleo, gas, renovables, transición energética y clima."
+    },
+    {
+      "slug": "mercados",
+      "name": "Mercados y Cripto",
+      "desc": "Bolsas, divisas, materias primas y activos digitales."
+    },
+    {
+      "slug": "internacional",
+      "name": "Internacional",
+      "desc": "Geopolítica, comercio y política internacional."
+    },
+    {
+      "slug": "startups",
+      "name": "Startups",
+      "desc": "Venture capital, emprendimiento e innovación de LatAm y el mundo."
+    }
   ],
   "articles": [
     {
@@ -24,7 +64,11 @@
       "subtitle": "Gobiernos y grandes laboratorios avanzan hacia estándares comunes mientras el consumo eléctrico de los centros de datos marca récords.",
       "date": "2026-07-05",
       "author": "Redacción Análisis.com",
-      "tags": ["Inteligencia Artificial", "Regulación", "Geopolítica tecnológica"],
+      "tags": [
+        "Inteligencia Artificial",
+        "Regulación",
+        "Geopolítica tecnológica"
+      ],
       "image_prompt": "Sala de negociación internacional con líderes y pantallas de datos sobre inteligencia artificial, luz fría, estilo editorial",
       "image_alt": "Ilustración sobre la gobernanza global de la inteligencia artificial",
       "key_points": [
@@ -42,7 +86,12 @@
         "Detrás de la discusión regulatoria late un problema físico. El consumo eléctrico de los centros de datos que sostienen estos modelos crece a un ritmo que ya preocupa a las redes de suministro, con saltos de dos dígitos en el uso de energía de los principales operadores. La carrera por capacidad de cómputo empuja además a los laboratorios a asegurar chips a medida y acuerdos de fabricación, lo que traslada la competencia desde el software hacia la infraestructura y los semiconductores.",
         "El resultado es un mapa en el que convergen tres fuerzas: la presión regulatoria, el apetito comercial de los propios Estados y los límites materiales de energía y hardware. Ninguna de las tres, por sí sola, define el futuro del sector; su interacción, en cambio, marcará qué modelos se lanzan, dónde y bajo qué condiciones durante el resto del año."
       ],
-      "sources_consulted": ["Tech Startups", "AI Tools Recap", "BuildFastWithAI", "SciTechDaily"]
+      "sources_consulted": [
+        "Tech Startups",
+        "AI Tools Recap",
+        "BuildFastWithAI",
+        "SciTechDaily"
+      ]
     },
     {
       "id": "2026-07-05-cobre-litio-nuevo-ciclo",
@@ -51,7 +100,12 @@
       "subtitle": "Los precios altos conviven con una crisis de márgenes en las fundiciones y una ola de proyectos en Sudamérica.",
       "date": "2026-07-05",
       "author": "Redacción Análisis.com",
-      "tags": ["Cobre", "Litio", "Transición energética", "Sudamérica"],
+      "tags": [
+        "Cobre",
+        "Litio",
+        "Transición energética",
+        "Sudamérica"
+      ],
       "image_prompt": "Mina de cobre a cielo abierto en los Andes con maquinaria, tonos cobrizos, fotografía industrial editorial",
       "image_alt": "Ilustración sobre la minería de cobre y litio en Sudamérica",
       "key_points": [
@@ -69,7 +123,13 @@
         "Chile, principal productor mundial de cobre, observa el nuevo ciclo con una mezcla de oportunidad y desafío: los precios altos favorecen los ingresos, pero la presión sobre las fundiciones y la competencia por inversión obligan a repensar la posición del país en la cadena de valor.",
         "El trasfondo es una demanda estructural al alza. Cobre, litio y níquel encabezan el interés de los inversores porque son insumos indispensables para electrificar el transporte y las redes. La pregunta que ordena el ciclo no es si habrá demanda, sino qué regiones lograrán convertir sus recursos en producción a tiempo."
       ],
-      "sources_consulted": ["Reporte Minero", "Cochilco", "Ámbito", "El Cronista", "Portal Minero"]
+      "sources_consulted": [
+        "Reporte Minero",
+        "Cochilco",
+        "Ámbito",
+        "El Cronista",
+        "Portal Minero"
+      ]
     },
     {
       "id": "2026-07-05-bancos-centrales-giro-restrictivo",
@@ -78,7 +138,12 @@
       "subtitle": "Un shock energético y la política comercial vuelven a poner las tasas en el centro de la escena global.",
       "date": "2026-07-05",
       "author": "Redacción Análisis.com",
-      "tags": ["Bancos centrales", "Inflación", "Tasas de interés", "Comercio"],
+      "tags": [
+        "Bancos centrales",
+        "Inflación",
+        "Tasas de interés",
+        "Comercio"
+      ],
       "image_prompt": "Fachada de un banco central con columnas y gráficos financieros superpuestos, tonos sobrios, estilo editorial",
       "image_alt": "Ilustración sobre bancos centrales y tasas de interés",
       "key_points": [
@@ -96,7 +161,13 @@
         "El panorama de crecimiento es desigual. Las economías avanzadas enfrentan una expansión lenta, mientras algunos mercados emergentes crecen impulsados por reformas. Las estimaciones para el año apuntan a una aceleración apenas moderada del producto global, insuficiente para disipar las dudas sobre la fortaleza de la recuperación.",
         "En conjunto, el mensaje de los bancos centrales es de prudencia: la prioridad vuelve a ser la inflación, y el costo de esa prioridad —tasas más altas por más tiempo— recaerá sobre el crédito, la inversión y el consumo en los próximos trimestres."
       ],
-      "sources_consulted": ["Deloitte Insights", "ING Think", "Yahoo Finance", "MacroMicro", "Rabobank"]
+      "sources_consulted": [
+        "Deloitte Insights",
+        "ING Think",
+        "Yahoo Finance",
+        "MacroMicro",
+        "Rabobank"
+      ]
     },
     {
       "id": "2026-07-05-granos-precios-cosecha",
@@ -105,7 +176,12 @@
       "subtitle": "Los precios rebotan desde mínimos de varios meses mientras el mercado pondera stocks, siembra y el pronóstico del tiempo.",
       "date": "2026-07-05",
       "author": "Redacción Análisis.com",
-      "tags": ["Trigo", "Soja", "Commodities agrícolas", "USDA"],
+      "tags": [
+        "Trigo",
+        "Soja",
+        "Commodities agrícolas",
+        "USDA"
+      ],
       "image_prompt": "Campo de trigo dorado al atardecer con silos al fondo, fotografía agrícola editorial",
       "image_alt": "Ilustración sobre los mercados de granos, trigo y soja",
       "key_points": [
@@ -122,15 +198,1254 @@
         "Hacia adelante, las proyecciones oficiales anticipan un precio promedio de la soja más alto para la próxima campaña que para la actual, lo que sugiere que el mercado espera una mejora gradual de los valores a medida que se ajuste el balance entre oferta y demanda.",
         "El equilibrio, sin embargo, es frágil. La combinación de cosechas voluminosas, un dólar firme y un clima cada vez más determinante mantiene a los granos en una zona de alta sensibilidad, donde cada informe de stocks y cada pronóstico meteorológico puede inclinar la balanza."
       ],
-      "sources_consulted": ["USDA", "AgWeb", "Trading Economics", "DTN Progressive Farmer", "World Bank Blogs"]
+      "sources_consulted": [
+        "USDA",
+        "AgWeb",
+        "Trading Economics",
+        "DTN Progressive Farmer",
+        "World Bank Blogs"
+      ]
+    },
+    {
+      "id": "2026-07-04-semiconductores-capacidad-regional",
+      "section": "tecnologia",
+      "title": "La carrera por los semiconductores empuja nueva capacidad hacia América",
+      "subtitle": "Fabricantes y gobiernos aceleran plantas de empaquetado y prueba fuera de Asia para reducir el riesgo de concentración.",
+      "date": "2026-07-04",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Semiconductores",
+        "Chips",
+        "Fabricación"
+      ],
+      "image_prompt": "Sala limpia de fabricación de semiconductores con obleas y luz amarilla, estilo editorial",
+      "image_alt": "Oblea de semiconductores en una sala limpia de fabricación",
+      "key_points": [
+        "El empaquetado y prueba de chips se descentraliza hacia México y Estados Unidos.",
+        "Los incentivos públicos buscan asegurar suministro para autos y electrónica.",
+        "El cuello de botella sigue en los nodos más avanzados, aún concentrados en Asia."
+      ],
+      "lead": "La escasez de chips de años recientes dejó una lección que gobiernos y fabricantes no quieren repetir: depender de una sola región para un insumo crítico es un riesgo estratégico.",
+      "body": [
+        "La industria de semiconductores vive una reconfiguración silenciosa. Tras los cuellos de botella que paralizaron líneas de ensamblaje automotriz, la prioridad dejó de ser solo el costo y pasó a ser la resiliencia del suministro. Esa lógica está moviendo inversiones hacia el continente americano.",
+        "El grueso del movimiento no ocurre en la fabricación de los nodos más avanzados —que exige inversiones de decenas de miles de millones de dólares y sigue concentrada en Asia— sino en las etapas de empaquetado, prueba y ensamblaje. México, con su cercanía a Estados Unidos y su base manufacturera, aparece como candidato natural para captar parte de esa capacidad.",
+        "Para la región, el desafío es doble: formar el talento técnico especializado que estas plantas requieren y garantizar suministro eléctrico y de agua estable. Sin esas condiciones, los incentivos fiscales por sí solos no bastan para sostener una industria que compite globalmente por cada proyecto."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "Nikkei Asia"
+      ]
+    },
+    {
+      "id": "2026-07-02-ciberseguridad-empresas-latam",
+      "section": "tecnologia",
+      "title": "La ciberseguridad se vuelve prioridad de directorio en las empresas de la región",
+      "subtitle": "El aumento de ataques de ransomware y el costo de las interrupciones llevan la seguridad digital al centro de la estrategia.",
+      "date": "2026-07-02",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Ciberseguridad",
+        "Datos",
+        "Redes"
+      ],
+      "image_prompt": "Centro de operaciones de ciberseguridad con pantallas de monitoreo, tonos azules, estilo editorial",
+      "image_alt": "Pantallas de monitoreo en un centro de operaciones de ciberseguridad",
+      "key_points": [
+        "El ransomware y el robo de datos encabezan las preocupaciones corporativas.",
+        "La escasez de especialistas eleva los costos de defensa.",
+        "Los reguladores endurecen las exigencias de reporte de incidentes."
+      ],
+      "lead": "Lo que antes era un asunto delegado al área de sistemas hoy se discute en las reuniones de directorio: un ataque exitoso puede detener la operación, dañar la reputación y activar sanciones regulatorias.",
+      "body": [
+        "La digitalización acelerada de la economía regional amplió la superficie de ataque. Cada nuevo servicio en línea, cada integración con proveedores y cada dispositivo conectado es también una puerta potencial para intrusos, y los atacantes lo saben.",
+        "El ransomware —el secuestro de datos a cambio de un rescate— se consolidó como la amenaza más costosa. No solo por el pago eventual, sino por los días de operación perdidos, la restauración de sistemas y la pérdida de confianza de clientes y socios.",
+        "Frente a un mercado laboral con escasez crónica de especialistas, muchas empresas optan por servicios gestionados de seguridad y por esquemas de seguros cibernéticos. La tendencia regulatoria, en paralelo, apunta a obligar a reportar incidentes con rapidez, lo que eleva el estándar para todos."
+      ],
+      "sources_consulted": [
+        "CNBC",
+        "Reuters",
+        "The Guardian"
+      ]
+    },
+    {
+      "id": "2026-06-29-computacion-cuantica-inversion",
+      "section": "tecnologia",
+      "title": "La computación cuántica pasa del laboratorio a las primeras aplicaciones comerciales",
+      "subtitle": "Aunque falta para una máquina universal, sectores como logística y materiales ya exploran ventajas concretas.",
+      "date": "2026-06-29",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Computación cuántica",
+        "Tecnología",
+        "Laboratorio"
+      ],
+      "image_prompt": "Procesador cuántico con estructura criogénica dorada, primer plano, estilo editorial",
+      "image_alt": "Procesador de computación cuántica con su estructura criogénica",
+      "key_points": [
+        "La inversión pública y privada en cuántica alcanza máximos históricos.",
+        "Los primeros usos aparecen en optimización y simulación de materiales.",
+        "La corrección de errores sigue siendo el gran obstáculo técnico."
+      ],
+      "lead": "La computación cuántica lleva años prometiendo una revolución. En 2026, sin resolver aún sus mayores desafíos, empieza a mostrar utilidad práctica en nichos muy específicos.",
+      "body": [
+        "El entusiasmo por la computación cuántica convive con una realidad técnica exigente. Los procesadores actuales son ruidosos y propensos a errores, lejos todavía de la máquina universal capaz de romper la criptografía moderna. Pero eso no ha frenado la inversión.",
+        "Donde la tecnología empieza a mostrar valor es en problemas de optimización —rutas logísticas, carteras financieras— y en la simulación de moléculas y materiales, un campo donde los computadores clásicos chocan con límites físicos. Grandes empresas químicas y farmacéuticas exploran estos usos.",
+        "El obstáculo central sigue siendo la corrección de errores: agrupar muchos qubits físicos para formar uno lógico y estable. Los avances en ese frente marcarán el ritmo real de la industria más que los anuncios de récords de qubits."
+      ],
+      "sources_consulted": [
+        "MIT Technology Review",
+        "Reuters",
+        "Nature"
+      ]
+    },
+    {
+      "id": "2026-06-25-centros-datos-energia-ia",
+      "section": "tecnologia",
+      "title": "El auge de la IA dispara la demanda de centros de datos y su factura energética",
+      "subtitle": "La expansión de la infraestructura de cómputo choca con los límites de la red eléctrica y del agua.",
+      "date": "2026-06-25",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Centros de datos",
+        "Servidores",
+        "Nube"
+      ],
+      "image_prompt": "Pasillo de un centro de datos con racks de servidores iluminados, estilo editorial",
+      "image_alt": "Racks de servidores iluminados en un centro de datos",
+      "key_points": [
+        "El entrenamiento de modelos de IA multiplica el consumo eléctrico.",
+        "Operadores buscan ubicaciones con energía barata y clima frío.",
+        "El agua para refrigeración se suma a las tensiones ambientales."
+      ],
+      "lead": "Detrás de cada respuesta de un asistente de inteligencia artificial hay galpones llenos de servidores que consumen electricidad y agua a una escala que empieza a preocupar a reguladores y comunidades.",
+      "body": [
+        "La inteligencia artificial no vive en la nube abstracta: vive en centros de datos físicos que consumen enormes cantidades de energía. El entrenamiento y la operación de los grandes modelos han disparado esa demanda a niveles que tensionan las redes eléctricas de varias regiones.",
+        "Los operadores buscan ubicaciones que combinen energía abundante y barata, conexión de fibra y climas fríos que reduzcan los costos de refrigeración. Esa búsqueda está redibujando el mapa de la inversión tecnológica y abre oportunidades para países con matrices energéticas limpias.",
+        "El agua utilizada para enfriar los equipos se suma a la ecuación ambiental, sobre todo en zonas con estrés hídrico. La presión pública empuja a la industria hacia diseños más eficientes y hacia el compromiso de alimentar estos centros con energía renovable."
+      ],
+      "sources_consulted": [
+        "Bloomberg",
+        "Financial Times",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "2026-07-05-inflacion-servicios-latam",
+      "section": "economia",
+      "title": "La inflación cede en bienes pero se resiste en los servicios de América Latina",
+      "subtitle": "Los bancos centrales miran con cautela un componente que baja más lento y condiciona los recortes de tasas.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Inflación",
+        "Precios",
+        "Economía"
+      ],
+      "image_prompt": "Etiquetas de precios en un mercado con productos variados, estilo editorial",
+      "image_alt": "Etiquetas de precios en un mercado",
+      "key_points": [
+        "La inflación de bienes se modera con el enfriamiento global.",
+        "Los servicios mantienen alzas por salarios y arriendos.",
+        "Los bancos centrales dosifican los recortes de tasas."
+      ],
+      "lead": "La foto general de la inflación mejora en la región, pero el detalle muestra dos velocidades: los bienes se abaratan mientras los servicios siguen presionando el bolsillo de los hogares.",
+      "body": [
+        "El proceso de desinflación en América Latina avanza, pero de forma desigual. Los precios de los bienes —influidos por costos globales y tipos de cambio— se moderaron con rapidez a medida que se enfriaron las presiones internacionales.",
+        "Los servicios cuentan otra historia. Arriendos, educación, salud y gastronomía responden más a la dinámica salarial y a la demanda interna, y tienden a ajustar con rezago. Ese componente, más pegajoso, es el que hoy preocupa a las autoridades monetarias.",
+        "El resultado es una política monetaria de pulso fino: los bancos centrales quieren acompañar la recuperación con recortes de tasas, pero temen relajar demasiado pronto y reavivar expectativas. La decisión de cada mes se juega en esos decimales."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg Línea",
+        "El País"
+      ]
+    },
+    {
+      "id": "2026-07-01-comercio-exterior-puertos",
+      "section": "economia",
+      "title": "El comercio exterior de la región gana terreno con la recomposición de las cadenas globales",
+      "subtitle": "El nearshoring y la demanda de materias primas impulsan el movimiento portuario, pero la infraestructura queda corta.",
+      "date": "2026-07-01",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Comercio exterior",
+        "Puertos",
+        "Contenedores"
+      ],
+      "image_prompt": "Puerto de contenedores con grúas al atardecer, vista amplia, estilo editorial",
+      "image_alt": "Grúas y contenedores en un puerto de carga",
+      "key_points": [
+        "El nearshoring redirige flujos comerciales hacia América.",
+        "Los puertos operan cerca de su capacidad máxima.",
+        "La inversión en logística no acompaña el ritmo del comercio."
+      ],
+      "lead": "La reorganización del comercio mundial le da a América Latina una oportunidad, pero también le pasa la cuenta: los puertos y carreteras que deberían capturar ese flujo están al límite.",
+      "body": [
+        "La recomposición de las cadenas de suministro globales, tras años de disrupciones, favorece a las economías cercanas a los grandes mercados de consumo. México encabeza el fenómeno del nearshoring, pero el efecto se extiende a proveedores de toda la región.",
+        "El movimiento se refleja en los puertos, que registran volúmenes crecientes de contenedores. Sin embargo, muchas terminales operan cerca de su capacidad máxima, y los tiempos de espera y los costos logísticos erosionan parte de la ventaja competitiva.",
+        "El diagnóstico se repite entre analistas: sin inversión sostenida en puertos, ferrocarriles y aduanas digitales, la oportunidad del reacomodo comercial puede quedar a medio aprovechar. La infraestructura, más que los aranceles, aparece como el verdadero cuello de botella."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Financial Times",
+        "AP"
+      ]
+    },
+    {
+      "id": "2026-06-27-empleo-formal-informalidad",
+      "section": "economia",
+      "title": "El empleo formal crece, pero la informalidad sigue anclando a la mitad de la región",
+      "subtitle": "La creación de puestos convive con una economía informal que limita la productividad y la recaudación.",
+      "date": "2026-06-27",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Empleo",
+        "Trabajo",
+        "Oficina"
+      ],
+      "image_prompt": "Personas trabajando en una oficina moderna y luminosa, estilo editorial",
+      "image_alt": "Ambiente de trabajo en una oficina moderna",
+      "key_points": [
+        "El empleo formal se recupera en varios países.",
+        "La informalidad se mantiene cerca de la mitad de la fuerza laboral.",
+        "La baja productividad frena la mejora de los salarios reales."
+      ],
+      "lead": "Los indicadores de empleo mejoran, pero detrás de la cifra agregada persiste un problema estructural: buena parte de los trabajadores de la región sigue sin contrato, sin previsión y sin protección.",
+      "body": [
+        "La recuperación económica se tradujo en creación de empleo formal en varios países de la región, una señal alentadora tras años difíciles. El desempleo abierto retrocedió y algunos sectores reportan dificultades para encontrar trabajadores calificados.",
+        "Sin embargo, el rasgo estructural del mercado laboral latinoamericano no cede: cerca de la mitad de los ocupados trabaja en la informalidad, sin acceso a seguridad social ni a crédito formal. Esa realidad limita la productividad y estrecha la base tributaria.",
+        "Los economistas coinciden en que reducir la informalidad requiere más que crecimiento: exige simplificar la carga regulatoria para las pequeñas empresas, mejorar la educación técnica y hacer que formalizarse resulte conveniente. Sin ello, la mejora del empleo corre el riesgo de ser frágil."
+      ],
+      "sources_consulted": [
+        "CEPAL",
+        "Reuters",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-06-23-deuda-publica-monedas",
+      "section": "economia",
+      "title": "La deuda pública y el costo de financiarse marcan la agenda fiscal de la región",
+      "subtitle": "Con tasas globales aún altas, los gobiernos equilibran gasto social e inversión sin espantar a los mercados.",
+      "date": "2026-06-23",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Deuda pública",
+        "Finanzas",
+        "Dólar"
+      ],
+      "image_prompt": "Billetes de dólar y documentos financieros sobre una mesa, estilo editorial",
+      "image_alt": "Billetes de dólar junto a documentos financieros",
+      "key_points": [
+        "El costo de financiamiento sigue elevado para los emisores emergentes.",
+        "Los gobiernos buscan consolidar sus cuentas sin frenar la actividad.",
+        "El riesgo país y el tipo de cambio condicionan el margen fiscal."
+      ],
+      "lead": "Refinanciar deuda cuesta más caro que hace unos años, y eso obliga a los ministerios de Hacienda a hacer equilibrios finos entre el gasto que la sociedad demanda y la disciplina que los mercados exigen.",
+      "body": [
+        "El endeudamiento público volvió al centro del debate económico regional. Tras el aumento del gasto durante los años de crisis, los gobiernos enfrentan ahora el desafío de estabilizar sus cuentas en un entorno de tasas de interés globales todavía elevadas.",
+        "El costo de refinanciar la deuda pesa sobre los presupuestos: cada punto de riesgo país se traduce en más recursos destinados a intereses y menos a inversión o programas sociales. Los países con marcos fiscales creíbles logran financiarse en mejores condiciones.",
+        "El tipo de cambio agrega complejidad, sobre todo para la deuda emitida en dólares. Una moneda local más débil encarece el servicio de esos pasivos. Por eso la credibilidad de la política económica —más que el nivel de deuda en sí— es lo que determina el margen de maniobra."
+      ],
+      "sources_consulted": [
+        "Bloomberg",
+        "Reuters",
+        "Financial Times"
+      ]
+    },
+    {
+      "id": "2026-07-04-litio-salares-nueva-oferta",
+      "section": "mineria",
+      "title": "El litio ajusta su ciclo: nueva oferta de los salares presiona los precios",
+      "subtitle": "Tras el boom, la entrada de proyectos y la moderación de la demanda de baterías reordenan el mercado.",
+      "date": "2026-07-04",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Litio",
+        "Salar",
+        "Minería"
+      ],
+      "image_prompt": "Piletas de evaporación de litio en un salar de altura, vista aérea, estilo editorial",
+      "image_alt": "Piletas de evaporación de litio en un salar",
+      "key_points": [
+        "La oferta de litio del Triángulo crece con nuevos proyectos.",
+        "La demanda de baterías se modera respecto a las proyecciones más optimistas.",
+        "Los productores de menor costo resisten mejor la baja de precios."
+      ],
+      "lead": "El litio pasó del frenesí a la disciplina: con más oferta entrando en producción y una demanda que crece pero sin la euforia previa, el mercado busca un nuevo equilibrio de precios.",
+      "body": [
+        "El llamado 'oro blanco' vivió años de precios extraordinarios que atrajeron una ola de inversión. Ahora, parte de esos proyectos está entrando en producción, y el Triángulo del Litio —Argentina, Bolivia y Chile— suma capacidad a un mercado global más abastecido.",
+        "Del lado de la demanda, la electromovilidad sigue creciendo, pero a un ritmo algo menor que el proyectado en los picos de entusiasmo. La combinación de más oferta y demanda moderada explica el ajuste de precios respecto a los máximos.",
+        "En este escenario, la ventaja competitiva se define por el costo. Los productores con salares de bajo costo operativo resisten mejor los ciclos bajistas, mientras que los proyectos marginales postergan decisiones. Para los países productores, el desafío es capturar valor sin ahuyentar la inversión de largo plazo."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Mining.com",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-07-01-oro-refugio-bancos-centrales",
+      "section": "mineria",
+      "title": "El oro se sostiene como refugio mientras los bancos centrales siguen comprando",
+      "subtitle": "La incertidumbre geopolítica y la diversificación de reservas mantienen firme al metal precioso.",
+      "date": "2026-07-01",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Oro",
+        "Lingotes",
+        "Minería"
+      ],
+      "image_prompt": "Lingotes de oro apilados con iluminación cálida, primer plano, estilo editorial",
+      "image_alt": "Lingotes de oro apilados",
+      "key_points": [
+        "Los bancos centrales acumulan oro para diversificar reservas.",
+        "La incertidumbre global sostiene la demanda de refugio.",
+        "Los altos precios reactivan proyectos de mediana escala."
+      ],
+      "lead": "En tiempos de incertidumbre, el oro vuelve a cumplir su papel milenario de refugio. La novedad es que quienes más lo compran hoy no son inversionistas nerviosos, sino bancos centrales.",
+      "body": [
+        "El oro mantiene su cotización en niveles elevados, sostenido por una combinación de factores. La incertidumbre geopolítica y las dudas sobre el rumbo de las principales economías empujan a los inversionistas hacia activos considerados seguros.",
+        "El motor más estructural, sin embargo, viene de los bancos centrales. Varios países vienen aumentando la participación del oro en sus reservas como forma de diversificar y reducir la dependencia de una sola moneda internacional. Esa demanda oficial pone un piso al precio.",
+        "Para la industria minera, los precios altos reactivan proyectos que antes no eran rentables, incluidos yacimientos de mediana escala en América Latina. El reto sigue siendo desarrollarlos con estándares ambientales y sociales que hoy son condición para operar."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Mining.com",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-06-28-cobre-fundiciones-margenes",
+      "section": "mineria",
+      "title": "El cobre vive una paradoja: precios firmes y fundiciones en aprietos",
+      "subtitle": "La demanda de la transición energética sostiene el metal, pero el negocio de procesarlo atraviesa márgenes estrechos.",
+      "date": "2026-06-28",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Cobre",
+        "Fundición",
+        "Industria"
+      ],
+      "image_prompt": "Interior de una fundición de cobre con metal fundido incandescente, estilo editorial",
+      "image_alt": "Metal fundido incandescente en una fundición de cobre",
+      "key_points": [
+        "La electrificación mantiene sólida la demanda de cobre.",
+        "Las fundiciones enfrentan cargos de tratamiento a la baja.",
+        "La región evalúa cómo agregar valor más allá del concentrado."
+      ],
+      "lead": "El cobre es la estrella de la transición energética, pero no todo el que participa en su cadena la está pasando bien: las fundiciones, eslabón clave para transformar el concentrado en metal, viven un momento delicado.",
+      "body": [
+        "El cobre goza de un respaldo estructural pocas veces visto. La electrificación del transporte, la expansión de las redes y los centros de datos requieren enormes cantidades de metal, lo que sostiene precios firmes y proyecciones optimistas de largo plazo.",
+        "Sin embargo, el negocio de fundir y refinar concentrado atraviesa un momento adverso. El exceso de capacidad de procesamiento en algunas regiones presiona a la baja los cargos de tratamiento, comprimiendo los márgenes de las fundiciones justo cuando el metal se cotiza alto.",
+        "Para los países productores, la paradoja abre una pregunta de política industrial: cómo capturar más valor de su cobre en lugar de exportar solo concentrado. La respuesta involucra energía competitiva, infraestructura y decisiones que van más allá del precio del día."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Reporte Minero",
+        "Mining.com"
+      ]
+    },
+    {
+      "id": "2026-06-24-mineria-agua-desalada",
+      "section": "mineria",
+      "title": "La minería del desierto apuesta al agua de mar para operar sin secar cuencas",
+      "subtitle": "La desalación y el bombeo desde la costa se vuelven condición para nuevos proyectos en zonas áridas.",
+      "date": "2026-06-24",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Minería",
+        "Agua",
+        "Desierto"
+      ],
+      "image_prompt": "Planta desalinizadora junto a la costa en zona desértica, vista amplia, estilo editorial",
+      "image_alt": "Planta desalinizadora en una costa desértica",
+      "key_points": [
+        "Los nuevos proyectos priorizan agua de mar desalada.",
+        "La presión social por el agua dulce redefine los permisos.",
+        "El costo energético de desalar pesa en la ecuación."
+      ],
+      "lead": "En los desiertos mineros más productivos del mundo, el agua se volvió tan estratégica como el mineral. La solución que se impone es mirar hacia el océano.",
+      "body": [
+        "La disponibilidad de agua se transformó en el factor decisivo para la minería en zonas áridas. La competencia por el recurso con comunidades y agricultura, sumada a la sequía, hizo inviable seguir dependiendo de fuentes continentales para nuevos proyectos.",
+        "La respuesta de la industria es la desalación: plantas en la costa que producen agua de mar tratada y sistemas de bombeo que la elevan cientos de metros hasta las faenas de altura. Cada vez más, contar con agua desalada es requisito para obtener permisos.",
+        "La solución no es gratis. Desalar y bombear agua consume mucha energía, lo que encarece las operaciones y refuerza la necesidad de alimentarlas con electricidad renovable. Aun así, para buena parte de la minería del desierto, es el único camino socialmente viable."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Reporte Minero",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-07-03-soja-cosecha-sudamerica",
+      "section": "agricultura",
+      "title": "La cosecha sudamericana de soja marca el pulso del mercado global de granos",
+      "subtitle": "Un ciclo de buen rendimiento presiona los precios mientras la demanda asiática define el saldo.",
+      "date": "2026-07-03",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Soja",
+        "Cosecha",
+        "Campo"
+      ],
+      "image_prompt": "Campo de soja dorada listo para la cosecha bajo cielo despejado, estilo editorial",
+      "image_alt": "Campo de soja listo para la cosecha",
+      "key_points": [
+        "La producción sudamericana se perfila abundante.",
+        "La demanda de China es el factor decisivo de precios.",
+        "El clima y la logística siguen siendo los grandes riesgos."
+      ],
+      "lead": "Lo que se siembra en las pampas de Sudamérica se siente en los mercados de todo el mundo. Esta campaña, la abundancia manda, y eso pesa sobre los precios.",
+      "body": [
+        "Sudamérica se consolidó como el corazón de la oferta global de soja, y por eso cada campaña es seguida de cerca por operadores de todo el mundo. Este ciclo se perfila con rendimientos sólidos, lo que aumenta la oferta disponible para exportación.",
+        "El equilibrio del mercado, sin embargo, lo define en gran medida la demanda asiática, y en particular la de China, principal comprador. Cualquier señal sobre su ritmo de compras mueve las cotizaciones más que los propios datos de producción.",
+        "Los riesgos no desaparecen con una buena cosecha. El clima puede cambiar el panorama en semanas, y la logística —desde los caminos rurales hasta los puertos fluviales— condiciona la capacidad real de llevar el grano al mercado en tiempo y forma."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "AP"
+      ]
+    },
+    {
+      "id": "2026-06-30-cafe-precios-clima",
+      "section": "agricultura",
+      "title": "El café encara precios altos por un clima que golpea a los grandes productores",
+      "subtitle": "Eventos climáticos y menores inventarios tensionan un mercado sensible a cada helada y sequía.",
+      "date": "2026-06-30",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Café",
+        "Granos de café",
+        "Plantación"
+      ],
+      "image_prompt": "Granos de café rojos madurando en la planta, primer plano, estilo editorial",
+      "image_alt": "Granos de café madurando en la planta",
+      "key_points": [
+        "El clima adverso reduce las cosechas en países clave.",
+        "Los inventarios globales se ubican en niveles ajustados.",
+        "Los pequeños productores enfrentan costos crecientes."
+      ],
+      "lead": "Cada taza de café refleja hoy un mercado tenso: heladas, sequías e inventarios bajos empujan los precios del grano a niveles que no se veían en mucho tiempo.",
+      "body": [
+        "El mercado del café es uno de los más sensibles al clima, y los últimos ciclos lo confirman. Eventos extremos en las principales regiones productoras redujeron cosechas y dejaron los inventarios globales en niveles ajustados, lo que sostiene precios elevados.",
+        "La combinación de menor oferta y demanda estable creó un mercado nervioso, donde cada pronóstico de helada o sequía se traduce de inmediato en movimientos de precio. Los compradores industriales buscan asegurar suministro con anticipación.",
+        "En el eslabón más frágil de la cadena están los pequeños productores, que enfrentan costos crecientes de fertilizantes y mano de obra. Los precios altos ayudan, pero la volatilidad y el cambio climático amenazan la sostenibilidad de un cultivo del que dependen millones de familias."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "The Guardian"
+      ]
+    },
+    {
+      "id": "2026-06-26-ganaderia-carne-exportacion",
+      "section": "agricultura",
+      "title": "La carne sudamericana gana mercados mientras la sostenibilidad entra en la ecuación",
+      "subtitle": "La demanda global abre oportunidades de exportación, pero las exigencias ambientales redefinen las reglas.",
+      "date": "2026-06-26",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Ganado",
+        "Carne",
+        "Campo"
+      ],
+      "image_prompt": "Ganado vacuno pastando en una pradera verde extensa, estilo editorial",
+      "image_alt": "Ganado pastando en una pradera",
+      "key_points": [
+        "La demanda internacional de carne se mantiene firme.",
+        "La trazabilidad y la huella ambiental condicionan el acceso a mercados.",
+        "Los productores invierten en ganadería más eficiente."
+      ],
+      "lead": "La carne de la región tiene demanda en el mundo, pero vender ya no depende solo del precio y la calidad: cada vez más, hay que demostrar cómo se produce.",
+      "body": [
+        "Las exportaciones de carne sudamericana encuentran una demanda internacional sostenida, impulsada por mercados asiáticos y por la reputación de calidad de la producción regional. Para muchos países, el sector es una fuente clave de divisas.",
+        "El acceso a los mercados más exigentes, no obstante, viene acompañado de nuevas condiciones. La trazabilidad del animal, el bienestar y la huella ambiental de la producción se convirtieron en requisitos, no en diferenciales opcionales.",
+        "El sector responde con inversión en genética, manejo de praderas y sistemas que permiten certificar el origen y las prácticas. La ganadería que logre combinar productividad con credenciales de sostenibilidad será la mejor posicionada para capturar la demanda futura."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "AP"
+      ]
+    },
+    {
+      "id": "2026-06-22-riego-sequia-tecnologia",
+      "section": "agricultura",
+      "title": "La sequía empuja al agro a una revolución silenciosa en el uso del agua",
+      "subtitle": "Riego de precisión, sensores y nuevas variedades buscan producir más con menos agua.",
+      "date": "2026-06-22",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Riego",
+        "Sequía",
+        "Agricultura"
+      ],
+      "image_prompt": "Sistema de riego por goteo en un cultivo bajo sol intenso, estilo editorial",
+      "image_alt": "Sistema de riego por goteo en un cultivo",
+      "key_points": [
+        "El riego de precisión reduce el consumo de agua por hectárea.",
+        "Los sensores permiten regar según la necesidad real del cultivo.",
+        "Las variedades resistentes a sequía ganan terreno."
+      ],
+      "lead": "La escasez de agua está haciendo por la eficiencia agrícola lo que ningún subsidio logró: obligar a cada gota a rendir al máximo.",
+      "body": [
+        "La recurrencia de sequías convirtió la eficiencia hídrica en una cuestión de supervivencia para el agro de amplias zonas de la región. El riego por inundación, tradicional y derrochador, cede terreno frente a sistemas que entregan el agua directamente a la raíz.",
+        "La tecnología acelera el cambio. Sensores de humedad, estaciones meteorológicas e imágenes satelitales permiten regar solo cuando y donde el cultivo lo necesita, evitando el desperdicio. Lo que antes era intuición del productor hoy es dato.",
+        "A la par, la genética aporta variedades más resistentes a la falta de agua, capaces de sostener rendimientos en condiciones adversas. La combinación de mejor manejo, tecnología y semillas adaptadas dibuja el futuro de una agricultura que deberá producir más con menos."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "The Guardian",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-07-03-ecommerce-logistica-ultima-milla",
+      "section": "retail",
+      "title": "El e-commerce redibuja la logística y libra su batalla en la última milla",
+      "subtitle": "La entrega rápida se vuelve estándar y presiona los costos de un comercio cada vez más digital.",
+      "date": "2026-07-03",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Logística",
+        "Almacén",
+        "Comercio electrónico"
+      ],
+      "image_prompt": "Interior de un centro logístico con estanterías y paquetes ordenados, estilo editorial",
+      "image_alt": "Estanterías y paquetes en un centro logístico",
+      "key_points": [
+        "La entrega rápida se consolida como expectativa del consumidor.",
+        "La última milla concentra los mayores costos logísticos.",
+        "Los retailers integran tiendas físicas como puntos de despacho."
+      ],
+      "lead": "Comprar en línea es fácil; entregar a tiempo y a bajo costo es el verdadero desafío. La competencia del comercio digital se juega hoy en los últimos kilómetros.",
+      "body": [
+        "El comercio electrónico dejó de ser una alternativa para convertirse en un canal central del consumo regional. Ese cambio obligó a los retailers a reconstruir su logística, con centros de distribución automatizados y sistemas capaces de manejar millones de pedidos pequeños.",
+        "El punto crítico es la última milla: el tramo final hasta la puerta del cliente, que concentra la mayor parte de los costos y de las complicaciones. La expectativa de entregas cada vez más rápidas eleva la presión sobre unos márgenes ya estrechos.",
+        "Para resolverlo, muchas cadenas convierten sus tiendas físicas en minicentros de despacho, acercando el inventario al consumidor. La integración entre lo físico y lo digital —el llamado comercio omnicanal— se vuelve la clave para competir sin quebrar la rentabilidad."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Retail Dive",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-06-29-centros-comerciales-experiencia",
+      "section": "retail",
+      "title": "Los centros comerciales se reinventan como espacios de experiencia",
+      "subtitle": "Frente al avance digital, el retail físico apuesta a servicios, gastronomía y entretenimiento.",
+      "date": "2026-06-29",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Centro comercial",
+        "Compras",
+        "Retail"
+      ],
+      "image_prompt": "Interior luminoso de un centro comercial moderno con gente paseando, estilo editorial",
+      "image_alt": "Interior de un centro comercial moderno",
+      "key_points": [
+        "Los centros comerciales reducen el peso de las tiendas tradicionales.",
+        "Gastronomía y entretenimiento ganan protagonismo.",
+        "La afluencia física se mide para complementar la venta en línea."
+      ],
+      "lead": "El centro comercial no murió a manos de internet: se está transformando en algo que la pantalla no puede ofrecer, un lugar para estar, no solo para comprar.",
+      "body": [
+        "Durante años se pronosticó el fin de los centros comerciales ante el avance del comercio electrónico. La realidad fue más matizada: en lugar de desaparecer, muchos se están reinventando para ofrecer lo que la compra en línea no puede replicar.",
+        "El nuevo mix reduce el peso de las tiendas tradicionales y amplía el de la gastronomía, el entretenimiento, los servicios y los eventos. El objetivo es atraer visitas por la experiencia, con la expectativa de que el consumo llegue como consecuencia.",
+        "Los operadores más sofisticados miden la afluencia y el comportamiento de los visitantes para complementar sus estrategias digitales. El centro comercial se convierte así en un punto de encuentro entre lo físico y lo virtual, más que en un competidor del canal en línea."
+      ],
+      "sources_consulted": [
+        "Retail Dive",
+        "Reuters",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-06-25-consumo-marcas-propias",
+      "section": "retail",
+      "title": "El consumo cauto impulsa a las marcas propias en los supermercados",
+      "subtitle": "Los hogares ajustan el presupuesto y las cadenas responden ampliando sus líneas económicas.",
+      "date": "2026-06-25",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Supermercado",
+        "Consumo",
+        "Góndola"
+      ],
+      "image_prompt": "Góndola de supermercado con productos ordenados, estilo editorial",
+      "image_alt": "Productos ordenados en la góndola de un supermercado",
+      "key_points": [
+        "Las marcas propias ganan participación en la canasta.",
+        "Los consumidores priorizan precio sin resignar calidad percibida.",
+        "Las cadenas fortalecen su negocio con márgenes de marca propia."
+      ],
+      "lead": "Cuando el presupuesto aprieta, el carrito cambia. Y ese cambio está impulsando a las marcas propias de los supermercados a un lugar que antes ocupaban solo las grandes marcas.",
+      "body": [
+        "La cautela en el consumo de los hogares, tras años de inflación que erosionó el poder adquisitivo, se refleja en decisiones cotidianas del supermercado. Los compradores comparan más, buscan promociones y están dispuestos a probar alternativas más económicas.",
+        "En ese contexto, las marcas propias de las cadenas —antes asociadas a lo básico— ganan terreno con productos que mejoraron en calidad y presentación. Para muchos hogares, ya no son una opción de segunda, sino una elección deliberada.",
+        "El fenómeno beneficia a los supermercados, que obtienen mejores márgenes con sus propias líneas y fidelizan clientes. Para las marcas tradicionales, en cambio, es una señal de alerta que las obliga a justificar su precio con innovación y valor percibido."
+      ],
+      "sources_consulted": [
+        "Retail Dive",
+        "Reuters",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-06-21-pagos-digitales-comercio",
+      "section": "retail",
+      "title": "Los pagos digitales transforman el comercio, del gran retail al almacén de barrio",
+      "subtitle": "Billeteras móviles y códigos QR aceleran una bancarización que cambia la relación con el consumidor.",
+      "date": "2026-06-21",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Pago digital",
+        "Compras",
+        "Tarjeta"
+      ],
+      "image_prompt": "Persona pagando con el teléfono mediante código QR en un comercio, estilo editorial",
+      "image_alt": "Pago con teléfono mediante código QR en un comercio",
+      "key_points": [
+        "Las billeteras móviles se masifican en el comercio minorista.",
+        "El pago con QR llega a los pequeños negocios.",
+        "Los datos de pago abren nuevas estrategias comerciales."
+      ],
+      "lead": "El efectivo pierde terreno hasta en el almacén de la esquina. Los pagos digitales no solo cambian cómo compramos, sino la relación entre el comercio y sus clientes.",
+      "body": [
+        "La adopción de pagos digitales avanza a gran velocidad en la región, impulsada por la penetración de los teléfonos inteligentes y por soluciones simples como los códigos QR. Lo que empezó en el gran retail hoy llega al comercio de proximidad.",
+        "Para los pequeños negocios, aceptar pagos digitales dejó de ser una barrera tecnológica costosa. Basta un teléfono para cobrar, lo que acelera la bancarización de sectores antes atados al efectivo y amplía su base de clientes.",
+        "El cambio va más allá del medio de pago. Cada transacción digital genera datos que permiten a los comercios entender mejor a sus clientes, ofrecer crédito y diseñar promociones. La competencia por ese ecosistema enfrenta a bancos, fintech y grandes plataformas."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Finextra",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-07-02-fintech-consolidacion",
+      "section": "banca",
+      "title": "La fintech entra en su fase de consolidación y madurez",
+      "subtitle": "Tras años de expansión, la rentabilidad y la regulación separan a las ganadoras de las que quedan en el camino.",
+      "date": "2026-07-02",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Fintech",
+        "Banca digital",
+        "Móvil"
+      ],
+      "image_prompt": "Persona usando una aplicación de banca digital en el teléfono, estilo editorial",
+      "image_alt": "Uso de una aplicación de banca digital en el teléfono",
+      "key_points": [
+        "El foco pasa del crecimiento a la rentabilidad.",
+        "La regulación equipara exigencias con la banca tradicional.",
+        "Las alianzas entre bancos y fintech se multiplican."
+      ],
+      "lead": "La fiesta del crecimiento a cualquier costo terminó para las fintech. La nueva etapa premia a las que ganan dinero y cumplen las reglas, y depura a las demás.",
+      "body": [
+        "El sector fintech de la región transita de la euforia expansiva a una etapa de madurez. El capital dejó de fluir sin condiciones, y los inversionistas hoy exigen a las empresas un camino claro hacia la rentabilidad, no solo métricas de usuarios.",
+        "La regulación acompaña esa transición. A medida que las fintech ganan escala y manejan ahorros y crédito de millones de personas, los supervisores les aplican exigencias más cercanas a las de la banca tradicional, elevando el estándar y los costos de operar.",
+        "El resultado es una consolidación: fusiones, adquisiciones y alianzas entre bancos establecidos y fintech ágiles. Antes que competidores irreconciliables, muchos descubren que se complementan, combinando la base de clientes y el capital de unos con la tecnología y la agilidad de otros."
+      ],
+      "sources_consulted": [
+        "Finextra",
+        "Reuters",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-06-28-credito-tasas-hogares",
+      "section": "banca",
+      "title": "El crédito busca reactivarse a medida que ceden las tasas",
+      "subtitle": "Bancos y familias recalibran sus decisiones en un ciclo que empieza a girar hacia el estímulo.",
+      "date": "2026-06-28",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Crédito",
+        "Banco",
+        "Finanzas"
+      ],
+      "image_prompt": "Fachada de un banco con columnas, tono sobrio, estilo editorial",
+      "image_alt": "Fachada de una entidad bancaria",
+      "key_points": [
+        "La baja gradual de tasas empieza a reactivar el crédito.",
+        "La morosidad se estabiliza tras años de tensión.",
+        "Los bancos cuidan el riesgo pese al mayor apetito por prestar."
+      ],
+      "lead": "El crédito, motor del consumo y la inversión, comienza a despertar a medida que las tasas ceden. Pero ni bancos ni familias olvidan las lecciones del ciclo anterior.",
+      "body": [
+        "El costo del dinero marca el pulso de la economía, y su descenso gradual empieza a notarse en el crédito. Con tasas más bajas, las cuotas se vuelven más manejables y tanto empresas como hogares recuperan apetito por financiarse.",
+        "El punto de partida es más sano de lo que se temía. La morosidad, que había tensionado a los bancos durante los años de tasas altas e inflación, se estabiliza a medida que mejora el empleo y se ordenan las finanzas de los hogares.",
+        "Aun así, la prudencia domina. Los bancos amplían la oferta de crédito con cautela, priorizando la calidad de los deudores por sobre el volumen. El equilibrio entre reactivar la economía y no repetir excesos define la estrategia del sector para el resto del año."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "Finextra"
+      ]
+    },
+    {
+      "id": "2026-06-24-banca-abierta-datos",
+      "section": "banca",
+      "title": "La banca abierta promete más competencia y pone los datos en manos del cliente",
+      "subtitle": "Los marcos de open finance avanzan en la región y prometen productos más personalizados.",
+      "date": "2026-06-24",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Banca",
+        "Regulación",
+        "Datos"
+      ],
+      "image_prompt": "Oficinas corporativas modernas de una entidad financiera, estilo editorial",
+      "image_alt": "Oficinas corporativas de una entidad financiera",
+      "key_points": [
+        "El open finance permite compartir datos con consentimiento del cliente.",
+        "Nuevos competidores acceden a información antes cautiva.",
+        "La seguridad y la privacidad son la clave de la confianza."
+      ],
+      "lead": "¿De quién son los datos de tu vida financiera? La banca abierta responde que del cliente, y esa idea promete sacudir la competencia en el sector.",
+      "body": [
+        "El concepto de banca abierta, u open finance, avanza en la regulación de varios países de la región. Su premisa es simple pero disruptiva: los datos financieros pertenecen al cliente, que puede autorizar a compartirlos con otros proveedores.",
+        "Ese cambio erosiona una ventaja histórica de los grandes bancos: el control exclusivo sobre la información de sus clientes. Fintech y nuevos competidores pueden acceder, con consentimiento, a esos datos para ofrecer productos más ajustados a cada perfil.",
+        "El potencial de personalización es enorme, pero también lo son los riesgos. La seguridad de los datos y la claridad sobre cómo se usan serán decisivas para que los usuarios confíen en el sistema. Sin esa confianza, la promesa de más competencia y mejores servicios no se materializa."
+      ],
+      "sources_consulted": [
+        "Finextra",
+        "Reuters",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-06-20-medios-pago-interoperables",
+      "section": "banca",
+      "title": "Los sistemas de pago instantáneo empujan a la región hacia la interoperabilidad",
+      "subtitle": "Transferencias inmediatas y gratuitas cambian los hábitos y desafían a las tarjetas tradicionales.",
+      "date": "2026-06-20",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Medios de pago",
+        "Tarjeta",
+        "Banca"
+      ],
+      "image_prompt": "Terminal de pago y tarjetas sobre un mostrador, estilo editorial",
+      "image_alt": "Terminal de pago y tarjetas sobre un mostrador",
+      "key_points": [
+        "Los pagos instantáneos crecen y reducen el uso de efectivo.",
+        "La interoperabilidad conecta bancos, fintech y billeteras.",
+        "El modelo de negocio de las tarjetas se ve presionado."
+      ],
+      "lead": "Transferir dinero en segundos, gratis y desde cualquier aplicación se está volviendo la norma. Ese cambio silencioso está redibujando el negocio de los pagos.",
+      "body": [
+        "Los sistemas de pago instantáneo, que permiten transferencias inmediatas entre personas y comercios, se expanden con rapidez en la región. Su gratuidad y simplicidad los convierten en una alternativa atractiva frente al efectivo y a otros medios.",
+        "La clave de su éxito es la interoperabilidad: la capacidad de mover dinero entre distintos bancos, fintech y billeteras sin fricciones. Cuando el sistema funciona como una red común, el efecto de red multiplica su adopción.",
+        "El avance presiona el modelo de negocio de las tarjetas tradicionales, que dependen de comisiones por transacción. La industria de pagos se reordena, y los actores que no se adapten a un mundo de transferencias instantáneas y de bajo costo arriesgan quedar rezagados."
+      ],
+      "sources_consulted": [
+        "Finextra",
+        "Reuters",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-07-04-solar-almacenamiento-baterias",
+      "section": "energia",
+      "title": "La energía solar suma baterías y deja de depender del sol del mediodía",
+      "subtitle": "El almacenamiento a gran escala permite aprovechar la generación renovable cuando más se necesita.",
+      "date": "2026-07-04",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Energía solar",
+        "Paneles solares",
+        "Renovables"
+      ],
+      "image_prompt": "Extenso parque de paneles solares bajo cielo despejado, vista aérea, estilo editorial",
+      "image_alt": "Parque de paneles solares visto desde el aire",
+      "key_points": [
+        "El almacenamiento en baterías gana escala junto a la solar.",
+        "Guardar energía del mediodía para la noche estabiliza la red.",
+        "Los costos de las baterías siguen a la baja."
+      ],
+      "lead": "El talón de Aquiles de la energía solar siempre fue la noche. Las baterías a gran escala están resolviendo ese problema y cambiando las reglas del sistema eléctrico.",
+      "body": [
+        "La energía solar se abarató hasta convertirse en una de las fuentes más competitivas, pero arrastraba una limitación evidente: solo genera cuando hay sol. El excedente del mediodía y la escasez de la noche complicaban su integración a la red.",
+        "El almacenamiento en baterías a gran escala está cambiando esa ecuación. Guardar la energía barata generada durante el día para inyectarla en las horas de mayor demanda permite estabilizar el sistema y aprovechar al máximo la generación renovable.",
+        "La caída sostenida en el costo de las baterías hace que estos proyectos híbridos de solar más almacenamiento sean cada vez más viables. Para las regiones con alta radiación, la combinación abre la puerta a una matriz eléctrica más limpia y confiable."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "OilPrice"
+      ]
+    },
+    {
+      "id": "2026-06-30-eolica-costa-inversion",
+      "section": "energia",
+      "title": "La energía eólica amplía su huella y tensiona las redes de transmisión",
+      "subtitle": "Nuevos parques aportan potencia limpia, pero llevarla a los centros de consumo es el gran desafío.",
+      "date": "2026-06-30",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Energía eólica",
+        "Molinos de viento",
+        "Renovables"
+      ],
+      "image_prompt": "Aerogeneradores en una colina verde con cielo despejado, estilo editorial",
+      "image_alt": "Aerogeneradores en una colina",
+      "key_points": [
+        "La capacidad eólica instalada sigue creciendo.",
+        "La transmisión es el cuello de botella de las renovables.",
+        "La planificación de red se vuelve prioridad de política energética."
+      ],
+      "lead": "Instalar aerogeneradores es hoy la parte fácil de la transición. El verdadero desafío es construir las autopistas eléctricas que lleven esa energía hasta las ciudades.",
+      "body": [
+        "La energía eólica continúa expandiéndose en la región, con nuevos parques que aprovechan zonas de vientos constantes. Junto con la solar, es uno de los pilares de la descarbonización de la matriz eléctrica.",
+        "El problema aparece después de generar: muchas de las mejores zonas de viento están lejos de los centros de consumo, y las líneas de transmisión no siempre alcanzan para evacuar toda la energía. El resultado son parques que a veces deben limitar su producción.",
+        "La transmisión se convierte así en el verdadero cuello de botella de la transición energética. La planificación y construcción de redes, un proceso lento y costoso, pasó a ser tan estratégica como los propios proyectos de generación. Sin ella, la inversión renovable se frena."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Bloomberg",
+        "OilPrice"
+      ]
+    },
+    {
+      "id": "2026-06-26-petroleo-gas-transicion",
+      "section": "energia",
+      "title": "El petróleo y el gas navegan la transición sin ceder aún su peso global",
+      "subtitle": "La demanda se mantiene mientras la industria equilibra inversión, precios y descarbonización.",
+      "date": "2026-06-26",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Petróleo",
+        "Refinería",
+        "Energía"
+      ],
+      "image_prompt": "Refinería de petróleo con torres y tuberías al atardecer, estilo editorial",
+      "image_alt": "Torres y tuberías de una refinería de petróleo",
+      "key_points": [
+        "La demanda de crudo sigue firme pese al avance renovable.",
+        "La disciplina de inversión sostiene los precios.",
+        "Las petroleras diversifican hacia energías bajas en carbono."
+      ],
+      "lead": "El fin del petróleo se anuncia hace décadas, pero el crudo sigue moviendo al mundo. La transición avanza sin que los hidrocarburos hayan cedido, todavía, su lugar central.",
+      "body": [
+        "Pese al crecimiento de las energías renovables, el petróleo y el gas mantienen un peso decisivo en la matriz energética global. La demanda sigue firme, sostenida por el transporte, la industria y la petroquímica, que no tienen sustitutos inmediatos a escala.",
+        "Los precios se mueven al ritmo de la geopolítica y de la disciplina de inversión de los productores. Tras años de volatilidad, buena parte de la industria prioriza retornos y prudencia por sobre la expansión agresiva de la producción.",
+        "Al mismo tiempo, las grandes petroleras diversifican. Invierten en gas —visto como combustible de transición—, en captura de carbono y en energías limpias, buscando un lugar en un futuro descarbonizado sin abandonar el negocio que aún genera sus ganancias."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "OilPrice",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-06-22-hidrogeno-verde-proyectos",
+      "section": "energia",
+      "title": "El hidrógeno verde busca pasar de la promesa a los primeros proyectos a escala",
+      "subtitle": "La región apuesta a su potencial renovable para producir un combustible limpio y exportable.",
+      "date": "2026-06-22",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Hidrógeno verde",
+        "Energía",
+        "Industria"
+      ],
+      "image_prompt": "Planta industrial de hidrógeno con tanques y tuberías, estilo editorial",
+      "image_alt": "Planta industrial de producción de hidrógeno",
+      "key_points": [
+        "El hidrógeno verde promete descarbonizar la industria pesada.",
+        "La región ofrece energía renovable barata para producirlo.",
+        "El costo y la infraestructura son los grandes desafíos."
+      ],
+      "lead": "El hidrógeno verde es una de las grandes apuestas de la transición energética, y varios países de la región quieren ser protagonistas. El paso del entusiasmo a la realidad es el verdadero examen.",
+      "body": [
+        "El hidrógeno producido con energía renovable —el llamado hidrógeno verde— genera altas expectativas como combustible limpio para descarbonizar sectores difíciles de electrificar, como la industria pesada, la minería y el transporte de carga.",
+        "América Latina parte con una ventaja: su enorme potencial de energía solar y eólica de bajo costo, insumo esencial para producir hidrógeno competitivo. Varios países han anunciado proyectos y estrategias para posicionarse como futuros exportadores.",
+        "El desafío es que el hidrógeno verde todavía es caro y requiere infraestructura que no existe: plantas, ductos y puertos especializados. El sector avanza hacia sus primeros proyectos a escala, cuyo éxito definirá si la promesa se transforma en una industria real."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "OilPrice",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-07-05-bolsas-emergentes-flujos",
+      "section": "mercados",
+      "title": "Las bolsas emergentes captan flujos a la espera del giro de las tasas globales",
+      "subtitle": "El apetito por riesgo mejora, pero los inversionistas distinguen con cuidado entre mercados.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Bolsa de valores",
+        "Mercados",
+        "Finanzas"
+      ],
+      "image_prompt": "Pantallas de cotizaciones bursátiles con gráficos, estilo editorial",
+      "image_alt": "Pantallas con cotizaciones bursátiles",
+      "key_points": [
+        "El giro esperado de las tasas globales favorece a los emergentes.",
+        "Los flujos vuelven, pero con selectividad.",
+        "La estabilidad macro define quién capta la inversión."
+      ],
+      "lead": "Cuando el dinero global busca rendimiento, las bolsas emergentes vuelven al radar. Esta vez, sin embargo, los inversionistas llegan con la lupa en la mano.",
+      "body": [
+        "La perspectiva de un giro en la política monetaria de las grandes economías mejora el ánimo hacia los mercados emergentes. Tasas más bajas en el mundo desarrollado suelen impulsar la búsqueda de rendimiento en activos de mayor riesgo, incluidas las bolsas de la región.",
+        "El regreso de los flujos, sin embargo, no es indiscriminado. Los inversionistas distinguen entre mercados según su estabilidad macroeconómica, su marco institucional y sus perspectivas de crecimiento. La marea sube, pero no levanta todos los botes por igual.",
+        "Para los países de la región, el mensaje es claro: el contexto global ayuda, pero la capacidad de atraer y retener inversión depende de fundamentos propios. La disciplina fiscal y la previsibilidad de las reglas pesan más que nunca en la decisión del capital."
+      ],
+      "sources_consulted": [
+        "Bloomberg",
+        "Reuters",
+        "Financial Times"
+      ]
+    },
+    {
+      "id": "2026-07-01-bitcoin-institucional-madurez",
+      "section": "mercados",
+      "title": "El bitcoin madura como activo y gana espacio en las carteras institucionales",
+      "subtitle": "La llegada de vehículos regulados atrae a inversionistas que antes miraban de lejos.",
+      "date": "2026-07-01",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Bitcoin",
+        "Criptomonedas",
+        "Blockchain"
+      ],
+      "image_prompt": "Representación física de una moneda de bitcoin sobre un fondo oscuro, estilo editorial",
+      "image_alt": "Moneda física que representa al bitcoin",
+      "key_points": [
+        "Los vehículos regulados facilitan la exposición institucional.",
+        "La volatilidad persiste pero con horizontes más largos.",
+        "La regulación clara es condición para la adopción."
+      ],
+      "lead": "El bitcoin dejó de ser territorio exclusivo de entusiastas. Con productos regulados de por medio, inversionistas institucionales que antes lo evitaban empiezan a asignarle un lugar.",
+      "body": [
+        "El bitcoin transita hacia una fase de mayor madurez como clase de activo. La aparición de vehículos de inversión regulados permitió que fondos e inversionistas institucionales tomen exposición sin lidiar directamente con la custodia de los criptoactivos.",
+        "Esa participación institucional cambia el perfil del mercado. Sin eliminar la volatilidad —que sigue siendo alta—, introduce horizontes de inversión más largos y una demanda más estable que la de los ciclos especulativos del pasado.",
+        "El factor decisivo para la adopción sigue siendo regulatorio. La claridad sobre cómo se tratan, custodian y gravan estos activos determina cuánto capital institucional está dispuesto a entrar. Donde las reglas son nítidas, la integración con las finanzas tradicionales avanza más rápido."
+      ],
+      "sources_consulted": [
+        "CoinDesk",
+        "Bloomberg",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "2026-06-27-monedas-latam-dolar",
+      "section": "mercados",
+      "title": "Las monedas latinoamericanas se mueven al compás del dólar y las materias primas",
+      "subtitle": "El tipo de cambio refleja tanto la política de la Reserva Federal como los precios de exportación.",
+      "date": "2026-06-27",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Divisas",
+        "Dólar",
+        "Moneda"
+      ],
+      "image_prompt": "Billetes de distintas monedas latinoamericanas y dólares, estilo editorial",
+      "image_alt": "Billetes de monedas latinoamericanas junto a dólares",
+      "key_points": [
+        "El rumbo del dólar global marca el pulso cambiario.",
+        "Los precios de las materias primas sostienen a las monedas exportadoras.",
+        "La credibilidad local amortigua o amplifica los shocks."
+      ],
+      "lead": "El valor de las monedas de la región se explica por dos fuerzas externas —el dólar y las materias primas— y una interna: la confianza en cada economía.",
+      "body": [
+        "Las monedas latinoamericanas están sujetas a un juego de fuerzas globales. El rumbo del dólar, determinado en buena medida por la política de la Reserva Federal, actúa como marea que sube o baja para todos los mercados emergentes a la vez.",
+        "A esa influencia se suma la de las materias primas. Para economías exportadoras de cobre, petróleo o granos, los precios internacionales de sus productos se traducen casi directamente en fortaleza o debilidad de su moneda.",
+        "Sobre esas fuerzas externas actúa un factor interno decisivo: la credibilidad. Los países con política económica sólida y reservas adecuadas amortiguan mejor los shocks, mientras que los de fundamentos frágiles ven cómo la volatilidad global se amplifica en su tipo de cambio."
+      ],
+      "sources_consulted": [
+        "Bloomberg",
+        "Reuters",
+        "Bloomberg Línea"
+      ]
+    },
+    {
+      "id": "2026-06-23-materias-primas-superciclo",
+      "section": "mercados",
+      "title": "¿Nuevo supra­ciclo? Las materias primas encuentran soporte en la transición energética",
+      "subtitle": "La demanda de metales para electrificar la economía sostiene los precios de largo plazo.",
+      "date": "2026-06-23",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Materias primas",
+        "Commodities",
+        "Comercio"
+      ],
+      "image_prompt": "Barras y minerales metálicos variados sobre superficie industrial, estilo editorial",
+      "image_alt": "Minerales y metales industriales variados",
+      "key_points": [
+        "La electrificación sostiene la demanda de metales clave.",
+        "La oferta responde con lentitud por los largos plazos mineros.",
+        "La volatilidad de corto plazo convive con un piso estructural."
+      ],
+      "lead": "Se habla de un nuevo supra­ciclo de las materias primas. Más allá de la etiqueta, la transición energética está creando una demanda estructural que difícilmente desaparezca pronto.",
+      "body": [
+        "El debate sobre un nuevo supra­ciclo de materias primas volvió a la mesa de los analistas. El argumento central es la transición energética: electrificar el transporte, expandir las redes y desplegar renovables requiere volúmenes de metales sin precedentes.",
+        "Del lado de la oferta, la respuesta es lenta. Desarrollar una mina desde el descubrimiento hasta la producción toma años, cuando no más de una década. Ese desfase entre una demanda que crece rápido y una oferta que reacciona despacio es la base del argumento alcista.",
+        "Nada de esto elimina la volatilidad de corto plazo, sujeta al ciclo económico y a los vaivenes de la demanda china. Pero para muchos inversionistas, la transición energética instaló un piso estructural bajo los precios de los metales estratégicos que antes no existía."
+      ],
+      "sources_consulted": [
+        "Bloomberg",
+        "Reuters",
+        "Mining.com"
+      ]
+    },
+    {
+      "id": "2026-07-03-comercio-global-aranceles",
+      "section": "internacional",
+      "title": "El comercio global se fragmenta en bloques y obliga a la región a elegir puentes",
+      "subtitle": "Las tensiones entre grandes potencias reordenan las reglas y abren espacio para intermediarios.",
+      "date": "2026-07-03",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Comercio internacional",
+        "Puerto",
+        "Contenedores"
+      ],
+      "image_prompt": "Buque portacontenedores navegando cargado, vista amplia, estilo editorial",
+      "image_alt": "Buque portacontenedores cargado en navegación",
+      "key_points": [
+        "El comercio se organiza en bloques geopolíticos.",
+        "Los aranceles y restricciones ganan protagonismo.",
+        "La región puede beneficiarse como proveedor neutral."
+      ],
+      "lead": "La globalización no desaparece, pero cambia de forma: el comercio mundial se organiza en bloques, y eso obliga a los países de la región a moverse con astucia entre potencias.",
+      "body": [
+        "El orden comercial que rigió las últimas décadas se está reconfigurando. Las tensiones entre las grandes potencias derivaron en aranceles, restricciones tecnológicas y una tendencia a comerciar preferentemente entre aliados, fragmentando los flujos globales.",
+        "Para América Latina, este reordenamiento es a la vez riesgo y oportunidad. La región depende del comercio con actores que hoy compiten entre sí, lo que la obliga a un delicado equilibrio diplomático para no quedar atrapada en fuegos cruzados.",
+        "Al mismo tiempo, su condición de proveedor de alimentos, energía y minerales críticos la vuelve atractiva para todos los bloques. Bien gestionada, esa neutralidad relativa puede transformarse en poder de negociación y en atracción de inversiones desde múltiples orígenes."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Financial Times",
+        "BBC"
+      ]
+    },
+    {
+      "id": "2026-06-29-elecciones-ciclo-politico",
+      "section": "internacional",
+      "title": "Un intenso ciclo electoral pone a prueba la estabilidad política de la región",
+      "subtitle": "Sociedades polarizadas y demandas insatisfechas desafían a los gobiernos que asumen.",
+      "date": "2026-06-29",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Política",
+        "Gobierno",
+        "Elecciones"
+      ],
+      "image_prompt": "Edificio gubernamental clásico con banderas, estilo editorial",
+      "image_alt": "Edificio de gobierno con banderas",
+      "key_points": [
+        "Varios países atraviesan procesos electorales clave.",
+        "La polarización dificulta los acuerdos de gobernabilidad.",
+        "Las demandas sociales presionan a las nuevas administraciones."
+      ],
+      "lead": "La región vive un ciclo electoral cargado que definirá su rumbo. El desafío de quienes ganen no será solo llegar al poder, sino gobernar sociedades divididas y exigentes.",
+      "body": [
+        "América Latina atraviesa una secuencia de procesos electorales que renuevan liderazgos y ponen a prueba la solidez de sus instituciones. En un contexto de expectativas insatisfechas, el voto expresa con frecuencia el descontento con lo existente.",
+        "La polarización complica el día después. Muchos gobiernos asumen sin mayorías claras, en congresos fragmentados que dificultan aprobar reformas. La gobernabilidad se vuelve un ejercicio permanente de negociación y construcción de acuerdos.",
+        "Sobre las nuevas administraciones pesan demandas urgentes: seguridad, empleo, servicios públicos. La distancia entre lo que se promete en campaña y lo que permite la realidad fiscal es terreno fértil para la frustración, y el ciclo tiende a repetirse en la elección siguiente."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "BBC",
+        "El País"
+      ]
+    },
+    {
+      "id": "2026-06-25-migracion-cadenas-remesas",
+      "section": "internacional",
+      "title": "La migración redibuja economías a ambos lados de la frontera",
+      "subtitle": "Las remesas sostienen a millones de hogares mientras los países debaten políticas de largo plazo.",
+      "date": "2026-06-25",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Migración",
+        "Frontera",
+        "Comunidad"
+      ],
+      "image_prompt": "Camino fronterizo con señalización al atardecer, estilo editorial",
+      "image_alt": "Camino con señalización en una zona fronteriza",
+      "key_points": [
+        "Las remesas se consolidan como fuente clave de ingreso.",
+        "Los flujos migratorios responden a factores económicos y climáticos.",
+        "Las políticas migratorias siguen dominadas por lo coyuntural."
+      ],
+      "lead": "Detrás de las cifras de la migración hay economías enteras que dependen del dinero que envían quienes se fueron. Es una de las fuerzas silenciosas que sostiene a la región.",
+      "body": [
+        "La migración es un fenómeno estructural de la región, impulsado por la búsqueda de oportunidades, la violencia y, cada vez más, los efectos del cambio climático. Sus consecuencias económicas se sienten con fuerza a ambos lados de las fronteras.",
+        "Las remesas —el dinero que los migrantes envían a sus familias— se consolidaron como una fuente de ingreso fundamental para millones de hogares y para las cuentas externas de varios países. En algunas economías equivalen a una porción significativa del producto.",
+        "Pese a su peso, las políticas migratorias siguen dominadas por la coyuntura y la seguridad, más que por estrategias de largo plazo que reconozcan el aporte económico de la migración. El desafío pendiente es abordarla como lo que es: un rasgo permanente del desarrollo regional."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "BBC",
+        "AP"
+      ]
+    },
+    {
+      "id": "2026-06-21-cadenas-suministro-resiliencia",
+      "section": "internacional",
+      "title": "Las cadenas de suministro globales priorizan la resiliencia sobre el costo",
+      "subtitle": "Tras años de disrupciones, las empresas acortan distancias y diversifican proveedores.",
+      "date": "2026-06-21",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Cadena de suministro",
+        "Carga",
+        "Logística"
+      ],
+      "image_prompt": "Almacén de distribución con montacargas y estanterías altas, estilo editorial",
+      "image_alt": "Montacargas y estanterías en un almacén de distribución",
+      "key_points": [
+        "Las empresas diversifican proveedores para reducir riesgos.",
+        "El nearshoring acerca la producción a los mercados.",
+        "El inventario deja de optimizarse solo por costo."
+      ],
+      "lead": "El mantra de producir donde sea más barato quedó atrás. Tras años de sobresaltos, las empresas globales rediseñan sus cadenas pensando primero en no quedarse sin suministro.",
+      "body": [
+        "La pandemia y las tensiones geopolíticas dejaron una marca duradera en la forma en que las empresas organizan su producción. El modelo de cadenas ultraeficientes y globalizadas, optimizado al último centavo, mostró su fragilidad ante cualquier disrupción.",
+        "La respuesta es una reorganización que privilegia la resiliencia. Las compañías diversifican proveedores, acumulan inventarios estratégicos y acercan parte de la producción a sus mercados, en el fenómeno conocido como nearshoring.",
+        "Ese giro tiene ganadores geográficos. Las regiones cercanas a los grandes centros de consumo, con costos competitivos y estabilidad razonable, se vuelven candidatas a captar inversión. América Latina figura entre las que buscan aprovechar este reacomodo de largo aliento."
+      ],
+      "sources_consulted": [
+        "Reuters",
+        "Financial Times",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "2026-07-02-venture-capital-disciplina",
+      "section": "startups",
+      "title": "El capital de riesgo vuelve con más disciplina y foco en la rentabilidad",
+      "subtitle": "Tras la corrección, los fondos invierten con criterios más estrictos y valuaciones realistas.",
+      "date": "2026-07-02",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Venture capital",
+        "Startup",
+        "Inversión"
+      ],
+      "image_prompt": "Reunión de trabajo en una oficina de startup con pizarra y gráficos, estilo editorial",
+      "image_alt": "Reunión de trabajo en una oficina de startup",
+      "key_points": [
+        "Las valuaciones se ajustan a niveles más realistas.",
+        "Los fondos priorizan negocios con camino a la rentabilidad.",
+        "El capital se concentra en menos operaciones, pero más sólidas."
+      ],
+      "lead": "La resaca del exceso quedó atrás. El capital de riesgo vuelve a fluir hacia las startups de la región, pero con reglas más exigentes que en los años de euforia.",
+      "body": [
+        "Tras el enfriamiento que siguió a los años de dinero abundante, el capital de riesgo regresa a la región con un perfil distinto. La corrección de valuaciones dejó atrás las cifras infladas y trajo un enfoque más sobrio a la mesa de negociación.",
+        "Los fondos ya no premian el crecimiento a cualquier costo. Buscan modelos de negocio con un camino claro hacia la rentabilidad, métricas sanas y equipos capaces de ejecutar con eficiencia de capital. La pregunta ya no es cuán rápido crece, sino cuán sostenible es.",
+        "El resultado es un mercado más selectivo: menos operaciones, pero de mejor calidad. Para los emprendedores, el estándar subió, y levantar capital exige hoy demostrar tracción real. Los proyectos que sobreviven a ese filtro llegan más fuertes a la siguiente etapa."
+      ],
+      "sources_consulted": [
+        "Bloomberg Línea",
+        "TechCrunch",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "2026-06-28-unicornios-latam-expansion",
+      "section": "startups",
+      "title": "Los unicornios de la región buscan crecer sin quemar caja",
+      "subtitle": "Las startups más grandes de América Latina equilibran expansión regional y sostenibilidad financiera.",
+      "date": "2026-06-28",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Startup",
+        "Tecnología",
+        "Oficina"
+      ],
+      "image_prompt": "Espacio de trabajo colaborativo moderno con equipos, estilo editorial",
+      "image_alt": "Espacio de trabajo colaborativo de una empresa tecnológica",
+      "key_points": [
+        "Las startups líderes priorizan eficiencia y márgenes.",
+        "La expansión regional exige adaptarse a cada mercado.",
+        "La salida a bolsa vuelve a aparecer en el horizonte."
+      ],
+      "lead": "Las mayores startups de la región crecieron a punta de capital. Ahora deben demostrar que pueden expandirse y, al mismo tiempo, ganar dinero.",
+      "body": [
+        "Las startups más valiosas de América Latina, las que alcanzaron el estatus de unicornio, entraron en una etapa de maduración. El foco se desplazó de crecer a toda costa hacia crecer de forma sostenible, cuidando los márgenes y la caja.",
+        "La expansión regional sigue siendo el norte, pero se revela más compleja de lo previsto. Cada país tiene su propia regulación, sus hábitos de consumo y su competencia local, lo que obliga a adaptar el modelo en lugar de simplemente replicarlo.",
+        "En el horizonte reaparece la salida a bolsa como vía para obtener capital y liquidez. Pero los mercados premian hoy la rentabilidad, de modo que solo las compañías capaces de mostrar un negocio sólido podrán dar ese paso en buenas condiciones."
+      ],
+      "sources_consulted": [
+        "Bloomberg Línea",
+        "TechCrunch",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "2026-06-24-aceleradoras-ecosistema",
+      "section": "startups",
+      "title": "Las aceleradoras maduran y tejen ecosistemas de emprendimiento en la región",
+      "subtitle": "Más allá del capital semilla, aportan redes, mentoría y acceso a mercados.",
+      "date": "2026-06-24",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Emprendimiento",
+        "Startup",
+        "Equipo"
+      ],
+      "image_prompt": "Equipo joven trabajando en un espacio de coworking luminoso, estilo editorial",
+      "image_alt": "Equipo trabajando en un espacio de coworking",
+      "key_points": [
+        "Las aceleradoras amplían su rol más allá del financiamiento.",
+        "Las redes de mentores y contactos marcan la diferencia.",
+        "Los ecosistemas locales ganan densidad y talento."
+      ],
+      "lead": "El dinero es apenas el comienzo. Las aceleradoras que sostienen el emprendimiento en la región aportan algo más escaso: redes, experiencia y puertas que abrir.",
+      "body": [
+        "El ecosistema emprendedor de la región ganó densidad, y las aceleradoras juegan un papel central en esa maduración. Su función ya no se limita a inyectar capital semilla a proyectos incipientes.",
+        "El valor diferencial está en lo intangible: mentoría de emprendedores con experiencia, acceso a redes de inversionistas y clientes, y acompañamiento para evitar los errores típicos de las etapas tempranas. Ese soporte eleva las probabilidades de supervivencia.",
+        "El efecto acumulado se nota en los ecosistemas locales, que ganan talento, capital y casos de éxito que inspiran a nuevos fundadores. La consolidación de estas redes es una de las claves para que la región genere no solo startups aisladas, sino industrias completas."
+      ],
+      "sources_consulted": [
+        "Bloomberg Línea",
+        "TechCrunch",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "2026-06-20-startups-ia-aplicada",
+      "section": "startups",
+      "title": "Las startups de IA aplicada buscan resolver problemas concretos de la región",
+      "subtitle": "Salud, agro y finanzas concentran una nueva ola de emprendimientos que adaptan la IA al contexto local.",
+      "date": "2026-06-20",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Inteligencia artificial",
+        "Startup",
+        "Innovación"
+      ],
+      "image_prompt": "Desarrolladores frente a pantallas con código e interfaces de IA, estilo editorial",
+      "image_alt": "Desarrolladores trabajando con interfaces de inteligencia artificial",
+      "key_points": [
+        "La IA aplicada supera a la IA genérica en atracción de inversión.",
+        "Salud, agro y finanzas lideran los casos de uso.",
+        "El acceso a datos locales es una ventaja competitiva."
+      ],
+      "lead": "La ola de la inteligencia artificial llegó al emprendimiento regional, pero las startups que destacan no construyen modelos gigantes: aplican la IA a problemas concretos y locales.",
+      "body": [
+        "El auge de la inteligencia artificial se refleja en una nueva camada de startups regionales. A diferencia de las grandes tecnológicas globales, que compiten por construir los modelos más potentes, estas empresas se enfocan en aplicar la IA a problemas específicos.",
+        "Los sectores donde la IA aplicada muestra más tracción son los que combinan alto impacto y datos disponibles: diagnóstico en salud, optimización en el agro, evaluación de riesgo en finanzas. Resolver un dolor concreto resulta más atractivo para los inversionistas que la promesa genérica.",
+        "La ventaja competitiva de estos emprendimientos suele estar en el acceso a datos locales y en el conocimiento del contexto. Entrenar soluciones con información de la propia región permite ofrecer resultados que las herramientas globales, más generales, no logran igualar."
+      ],
+      "sources_consulted": [
+        "TechCrunch",
+        "Bloomberg Línea",
+        "Reuters"
+      ]
     }
   ],
-  "placeholders": [
-    { "section": "retail",        "title": "Ejemplo: el consumo global entre la cautela y el e-commerce" },
-    { "section": "banca",         "title": "Ejemplo: bancos y fintech ante el nuevo ciclo de tasas" },
-    { "section": "energia",       "title": "Ejemplo: la transición energética frente al shock de precios" },
-    { "section": "mercados",      "title": "Ejemplo: bolsas y cripto reaccionan al giro de los bancos centrales" },
-    { "section": "internacional", "title": "Ejemplo: comercio y geopolítica redibujan las cadenas de suministro" },
-    { "section": "startups",      "title": "Ejemplo: el venture capital de LatAm busca su segundo aire" }
-  ]
+  "placeholders": []
 }
