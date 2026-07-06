@@ -44,8 +44,9 @@ jobs:
         run: python3 generator/fetch_data.py || echo "Datos: se conserva el último valor"
 
       - name: (Opcional) Traducir a PT/EN
-        if: ${{ secrets.OPENAI_API_KEY != '' }}
         env:
+          # translate.py se auto-desactiva si falta la clave (no se puede usar el
+          # contexto 'secrets' dentro de un 'if:', rompe la validación del workflow).
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python3 generator/translate.py || echo "Traducción omitida"
 
