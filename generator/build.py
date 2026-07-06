@@ -39,6 +39,7 @@ AUDIO_DIR = os.path.join(ROOT, "content", "audio")
 SITE_URL = os.environ.get("SITE_URL", "https://www.analisis.com").rstrip("/")
 ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com (Plausible)
 GA4_ID = os.environ.get("GA4_ID", "")                      # id de medición GA4 (G-XXXX) para el tracking
+ASK_URL = os.environ.get("ASK_URL", "")                    # endpoint /api/ask (T15); sin él, asistente en modo interno
 PANEL_PASSWORD = os.environ.get("PANEL_PASSWORD") or "analisis"  # clave del panel privado (/panel.html)
 ANALYTICS_JSON = os.path.join(ROOT, "content", "analytics.json")
 DIGEST_JSON = os.path.join(ROOT, "content", "digest.json")
@@ -183,6 +184,28 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .poll-q{font-family:var(--serif);font-size:16px;font-weight:600;margin:0 0 10px}
 .poll-opts{display:flex;gap:8px;flex-wrap:wrap}
 .poll-thanks{font-family:var(--sans);font-size:12.5px;color:var(--red);margin:10px 0 0}
+.ask-hero{margin:14px 0 2px}
+.ask-row{display:flex;gap:8px}
+.ask-q{flex:1;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--ink);border-radius:6px;padding:12px 14px}
+.ask-q:focus{outline:none;border-color:var(--red)}
+.ask-go{font-family:var(--sans);font-size:14px;font-weight:600;color:#fff;background:var(--red);border:1px solid var(--red);border-radius:6px;padding:0 20px;cursor:pointer}
+.ask-go:hover{opacity:.9}
+.ask-chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 0}
+.ask-chip{font-family:var(--sans);font-size:12.5px;color:var(--muted);background:var(--wash);border:1px solid var(--line);border-radius:20px;padding:5px 11px;cursor:pointer}
+.ask-chip:hover{color:var(--red);border-color:var(--red)}
+.ask-out:not(:empty){margin:14px 0 4px;padding:14px 16px;background:var(--wash);border:1px solid var(--line);border-radius:6px}
+.ask-loading{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0}
+.ask-ans p{font-family:var(--serif);font-size:16px;line-height:1.55;margin:0 0 10px}
+.ask-src,.ask-rel{margin:12px 0 0;border-top:1px solid var(--line);padding-top:10px}
+.ask-src h4,.ask-rel h4{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:0 0 7px}
+.ask-src a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink);text-decoration:none;margin:5px 0}
+.ask-src a:hover{color:var(--red)}
+.ask-dom{color:var(--red);font-weight:600}
+.ask-card{display:block;font-family:var(--sans);font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding:7px 0}
+.ask-card:last-child{border-bottom:0}
+.ask-card:hover{color:var(--red)}
+.ask-card .kicker{display:block;margin-bottom:2px}
+.ask-note{margin:12px 0 0}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -441,30 +464,46 @@ SEARCH_JS = r"""
 
 ASK_JS = r"""
 (function(){
-  var d=document;var idx=[];var box=d.getElementById('pregunta');var out=d.getElementById('respuesta');
-  if(!box)return;
-  fetch('search-index.json').then(function(r){return r.json();}).then(function(j){idx=j;});
-  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
-  window.preguntar=function(){var q=box.value.trim();if(!q)return;
-    // Si configuraste un endpoint LLM (RAG generativo), úsalo:
-    if(window.ANALISIS_ASK_URL){out.innerHTML='<p class="meta">Consultando…</p>';
-      fetch(window.ANALISIS_ASK_URL,{method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({q:q})}).then(function(r){return r.json();}).then(function(j){
-        out.innerHTML='<div class="ans">'+j.answer+'</div>';}).catch(render);return;}
-    render();
-    function render(){var nq=norm(q),terms=nq.split(/\s+/);
-      var scored=idx.map(function(a){var hay=norm(a.title+' '+a.subtitle+' '+a.text);
-        var sc=0;terms.forEach(function(t){if(t.length<3)return;sc+=hay.split(t).length-1;
-          if(norm(a.title).indexOf(t)>=0)sc+=3;});return{a:a,sc:sc};})
-        .filter(function(x){return x.sc>0;}).sort(function(x,y){return y.sc-x.sc;}).slice(0,3);
-      if(!scored.length){out.innerHTML='<div class="ans">No encuentro nada en el archivo de Análisis.com sobre eso todavía.</div>';return;}
-      var resp='<div class="ans"><p>Esto es lo que ha publicado Análisis.com al respecto:</p><ul>';
-      scored.forEach(function(x){resp+='<li style="margin:8px 0"><strong><a href="'+x.a.url+'">'+x.a.title+
-        '</a></strong> — '+x.a.subtitle+'</li>';});
-      resp+='</ul><p class="meta">Respuestas basadas únicamente en artículos publicados. '+
-        'Conecta un modelo (window.ANALISIS_ASK_URL) para respuestas redactadas.</p></div>';
-      out.innerHTML=resp;}};
-  box.addEventListener('keydown',function(e){if(e.key==='Enter')preguntar();});
+  var d=document, idx=null;
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function loadIdx(cb){ if(idx){cb();return;}
+    fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){idx=j;cb();}).catch(function(){idx=[];cb();}); }
+  function relInternos(q){ var terms=norm(q).split(/\s+/).filter(function(t){return t.length>=3;});
+    return (idx||[]).map(function(a){var hay=norm(a.title+' '+a.subtitle+' '+a.text+' '+(a.tags||[]).join(' '));
+      var sc=0;terms.forEach(function(t){sc+=hay.split(t).length-1;if(norm(a.title).indexOf(t)>=0)sc+=3;});return {a:a,sc:sc};})
+      .filter(function(x){return x.sc>0;}).sort(function(x,y){return y.sc-x.sc;}).slice(0,4)
+      .map(function(x){return {title:x.a.title,url:'/'+x.a.url,section:x.a.sectionName||x.a.section,date:x.a.dateLong||x.a.date};}); }
+  function tarjetas(rel){ if(!rel||!rel.length)return '';
+    return '<div class="ask-rel"><h4>En Análisis.com</h4>'+rel.map(function(r){
+      return '<a class="ask-card" href="'+r.url+'"><span class="kicker">'+esc(r.section)+'</span>'+esc(r.title)+'</a>';}).join('')+'</div>'; }
+  function fuentes(src){ if(!src||!src.length)return '';
+    return '<div class="ask-src"><h4>Fuentes</h4>'+src.map(function(s){var dom='';try{dom=new URL(s.url).hostname.replace(/^www\./,'');}catch(e){}
+      return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener"><span class="ask-dom">'+esc(dom)+'</span> '+esc(s.title)+'</a>';}).join('')+'</div>'; }
+  function respuesta(text){ return '<div class="ask-ans">'+text.split(/\n+/).filter(function(p){return p.trim();}).map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</div>'; }
+  var AVISO='<p class="meta ask-note">Respuesta generada por IA a partir de fuentes citadas; verifica en los enlaces.</p>';
+  function interno(out,q){ loadIdx(function(){ var rel=relInternos(q);
+    if(!rel.length){out.innerHTML='<div class="ask-ans"><p>No encuentro nada en el archivo de Análisis.com sobre eso todavía.</p></div>';return;}
+    out.innerHTML='<div class="ask-ans"><p>Esto es lo que ha publicado Análisis.com al respecto:</p></div>'+tarjetas(rel)
+      +'<p class="meta ask-note">Respuestas ampliadas con IA y búsqueda web cuando el asistente esté conectado.</p>'; }); }
+  function preguntar(box,q){ var out=box.querySelector('.ask-out'); if(!out)return; q=(q||'').trim(); if(!q)return;
+    out.innerHTML='<p class="ask-loading">Consultando…</p>';
+    if(window.ANALISIS_ASK_URL){
+      fetch(window.ANALISIS_ASK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
+        .then(function(r){return r.json();}).then(function(j){
+          if(!j||j.degrade||!j.answer){interno(out,q);return;}
+          out.innerHTML=respuesta(j.answer)+fuentes(j.sources)+tarjetas(j.related)+AVISO;
+        }).catch(function(){interno(out,q);});
+      return; }
+    interno(out,q); }
+  window.preguntar=function(){var b=d.querySelector('.ask');if(b)preguntar(b,(b.querySelector('.ask-q')||{}).value);};
+  d.querySelectorAll('.ask').forEach(function(box){
+    var inp=box.querySelector('.ask-q'), go=box.querySelector('.ask-go');
+    if(go)go.addEventListener('click',function(){preguntar(box,inp&&inp.value);});
+    if(inp)inp.addEventListener('keydown',function(e){if(e.key==='Enter')preguntar(box,inp.value);});
+    box.querySelectorAll('.ask-chip').forEach(function(c){c.addEventListener('click',function(){
+      if(inp)inp.value=c.textContent;preguntar(box,c.textContent);});});
+  });
 })();
 """
 
@@ -657,6 +696,8 @@ def analytics_tag():
             f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>'
             f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
             f'gtag("js",new Date());gtag("config","{GA4_ID}");</script>')
+    if ASK_URL:
+        tags.append(f'<script>window.ANALISIS_ASK_URL="{ASK_URL}";</script>')
     return "".join(tags)
 
 
@@ -954,7 +995,7 @@ def build():
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
-    app_js = APP_JS + TICKER_JS + WEATHER_JS + REACT_JS
+    app_js = APP_JS + TICKER_JS + WEATHER_JS + REACT_JS + ASK_JS
     write(os.path.join(OUT, "assets", "app.css"), CSS)
     write(os.path.join(OUT, "assets", "app.js"), app_js)
     write(os.path.join(OUT, "favicon.svg"), FAVICON)
@@ -1098,6 +1139,11 @@ def _home(arts):
     # barra "Para ti" (personalización)
     h += ('<div id="parati" style="display:none" class="note">Estás siguiendo secciones: '
           'tu portada prioriza esos temas. Gestiona tus intereses con el botón «Seguir» en cada sección.</div>')
+    # Asistente "Pregúntale a Análisis" (T15): barra principal sobre las 5 claves.
+    h += ('<section class="ask-hero"><div class="section-head"><h2>Pregúntale a Análisis</h2>'
+          '<span class="d">Respuesta elaborada con lo publicado + la web</span></div>'
+          + ask_widget("Pregunta cualquier cosa: ¿cómo va el cobre? ¿y las tasas en la región?")
+          + '</section>')
     # Resumen del día: "Las 5 claves de hoy" (con enlaces a las notas fuente).
     claves = _claves_hoy(arts)
     if claves:
@@ -1331,16 +1377,32 @@ def _buscar():
     write(os.path.join(OUT, "buscar.html"), h)
 
 
+def ask_widget(placeholder, autofocus=False, compact=False):
+    """Barra del asistente 'Pregúntale a Análisis' (T15). El JS (ASK_JS, en el
+    bundle) la cablea: usa el endpoint /ask si ANALISIS_ASK_URL está definido, o
+    el modo interno (extractivo sobre search-index) si no."""
+    chips = ["¿Cómo va el precio del cobre?",
+             "¿Qué pasa con las tasas en la región?",
+             "¿Últimas noticias del litio?"]
+    af = " autofocus" if autofocus else ""
+    cls = "ask ask-compact" if compact else "ask"
+    return (f'<div class="{cls}">'
+            '<div class="ask-row">'
+            f'<input class="ask-q" placeholder="{escape(placeholder)}"{af}>'
+            '<button class="ask-go">Preguntar</button></div>'
+            '<div class="ask-chips">'
+            + "".join(f'<button class="ask-chip">{escape(c)}</button>' for c in chips)
+            + '</div><div class="ask-out"></div></div>')
+
+
 def _asistente():
     h = head(f"Pregúntale a Análisis — {SITE['name']}", depth=0,
-             description="Asistente que responde con los artículos de Análisis.com")
+             description="Asistente que responde con información de Análisis.com y la web")
     h += ('<div class="section-head"><h2>Pregúntale a Análisis</h2>'
-          '<span class="d">Respuestas basadas en lo que hemos publicado</span></div>')
-    h += ('<input id="pregunta" class="searchbox" '
-          'placeholder="Ej.: ¿Cómo va el precio del cobre? ¿Qué pasa con las tasas?" autofocus>'
-          '<div style="margin-top:10px"><button class="chip on" onclick="preguntar()">Preguntar</button></div>'
-          '<div id="respuesta"></div>')
-    h += foot(0, extra_js=ASK_JS)
+          '<span class="d">Respuesta elaborada con lo publicado + la web</span></div>')
+    h += ask_widget("Ej.: ¿Cómo va el precio del cobre? ¿Qué pasa con las tasas?",
+                    autofocus=True)
+    h += foot(0)
     write(os.path.join(OUT, "asistente.html"), h)
 
 

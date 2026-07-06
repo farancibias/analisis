@@ -1,0 +1,28 @@
+name = "analisis-ask"
+main = "ask.js"
+compatibility_date = "2026-01-01"
+
+# Enruta el endpoint al mismo dominio (mismo origen que el sitio -> sin CORS).
+# Ajusta la zona si tu cuenta usa otra. Requiere que analisis.com esté en Cloudflare.
+routes = [
+  { pattern = "www.analisis.com/api/ask", zone_name = "analisis.com" },
+  { pattern = "analisis.com/api/ask", zone_name = "analisis.com" }
+]
+
+# Namespace KV para rate limit + caché + tope de gasto.
+# Crea uno con:  wrangler kv namespace create ASK_KV
+# y pega el id devuelto aquí abajo.
+kv_namespaces = [
+  { binding = "ASK_KV", id = "PON_AQUI_EL_ID_DE_KV" }
+]
+
+[vars]
+SITE = "https://www.analisis.com"
+MODEL = "claude-sonnet-5"
+RATE_PER_HOUR = "20"
+DAILY_CALL_CAP = "20"          # ~US$20/mes con caché + rate limit; súbelo si amplías presupuesto
+ALLOWED_ORIGINS = "https://www.analisis.com,https://analisis.com"
+
+# Secrets (NO van aquí; se cargan con wrangler secret put):
+#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put TURNSTILE_SECRET   (opcional)
