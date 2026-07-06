@@ -60,7 +60,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           IMAGE_QUALITY: medium          # low | medium | high
           IMAGE_SIZE: 1536x1024
-          SITE_URL: https://www.analisis.com
+          SITE_URL: https://analisis.com
           ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
           ADS: ${{ vars.ADS }}                              # "1" para mostrar slots de anuncios
         run: python3 generator/build.py
@@ -72,7 +72,7 @@ jobs:
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_ID: ${{ secrets.WHATSAPP_PHONE_ID }}
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
-          SITE_URL: https://www.analisis.com
+          SITE_URL: https://analisis.com
         run: python3 generator/distribute.py || echo "Distribución omitida"
 
       - name: Guardar nuevas publicaciones en el repo (archivo histórico)
