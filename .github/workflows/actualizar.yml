@@ -39,6 +39,9 @@ jobs:
         run: pip install feedparser openai anthropic requests
 
       - name: Ejecutar pipeline editorial (recolectar + redactar + guardar)
+        # Solo genera en el cron diario y en ejecuciones manuales, NO en cada push
+        # de código (así un commit no dispara la redacción de decenas de notas).
+        if: ${{ github.event_name != 'push' }}
         env:
           # Guarda tus claves en: Settings > Secrets and variables > Actions
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
