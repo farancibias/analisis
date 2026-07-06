@@ -24,6 +24,7 @@ import json
 import os
 import re
 import hashlib
+from collections import Counter
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 
@@ -31,8 +32,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
 SOURCES = os.path.join(ROOT, "generator", "sources.json")
 
-# umbral de similitud para considerar que dos notas hablan de lo mismo
-SIMILARITY = 0.42
+# umbral de similitud de titulares para considerar que dos notas hablan de lo mismo
+SIMILARITY = 0.5
 # nº mínimo de fuentes distintas que deben cubrir un tema para publicarlo
 MIN_SOURCES = 2
 
@@ -74,8 +75,28 @@ def _norm(t):
     return re.sub(r"[^a-záéíóúñ0-9 ]", "", t.lower())
 
 
+def _tokens(t):
+    """Palabras 'significativas' del título (entidades/temas): >= 5 letras."""
+    return {w for w in _norm(t).split() if len(w) >= 5}
+
+
 def _similar(a, b):
     return SequenceMatcher(None, _norm(a), _norm(b)).ratio()
+
+
+def _misma_noticia(a, b):
+    """Dos notas hablan de lo mismo si comparten al menos una palabra
+    significativa (entidad/tema) Y sus titulares se parecen. La condición del
+    token compartido evita agrupar historias distintas de estructura parecida."""
+    if not (_tokens(a["title"]) & _tokens(b["title"])):
+        return False
+    return _similar(a["title"], b["title"]) >= SIMILARITY
+
+
+def _seccion(cluster):
+    """Sección del grupo por mayoría de las fuentes (no la del primer feed)."""
+    cnt = Counter(i.get("section_hint") for i in cluster if i.get("section_hint"))
+    return cnt.most_common(1)[0][0] if cnt else "internacional"
 
 
 def agrupar(items):
@@ -84,7 +105,7 @@ def agrupar(items):
     for it in items:
         colocado = False
         for c in clusters:
-            if _similar(it["title"], c[0]["title"]) >= SIMILARITY:
+            if _misma_noticia(it, c[0]):
                 c.append(it)
                 colocado = True
                 break
@@ -259,7 +280,7 @@ def main():
         art = redactar(c)
         if not art:
             continue  # la IA falló para este tema: se omite, no se rompe el build
-        section = c[0].get("section_hint") or "internacional"
+        section = _seccion(c)
         if PIPELINE_DRY_RUN:
             previsualizar(art, section, c)
             nuevos += 1
