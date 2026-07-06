@@ -56,6 +56,7 @@ jobs:
 
       - name: Generar sitio estático (portadas OpenAI + todas las funciones)
         env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}   # fotos reales con licencia libre
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           IMAGE_QUALITY: medium          # low | medium | high
           IMAGE_SIZE: 1536x1024

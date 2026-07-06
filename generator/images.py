@@ -186,27 +186,102 @@ def generar_imagen_ia(prompt):
     return base64.b64decode(resp.data[0].b64_json)
 
 
-def build_cover(seed, section, prompt, imgdir, basename):
-    """Escribe la portada del artículo y devuelve el nombre de archivo usado.
+# ==========================================================================
+# FOTOS REALES CON LICENCIA LIBRE (PEXELS) — SIN PAGAR DERECHOS
+# ==========================================================================
+# Se activa si existe PEXELS_API_KEY (clave gratuita). Busca una foto real
+# apaisada por palabras clave del artículo. La licencia de Pexels permite el
+# uso comercial sin atribución obligatoria; aun así guardamos y mostramos el
+# crédito del autor por transparencia editorial. Degrada a None ante cualquier
+# fallo (sin clave, sin resultado, error de red) para no romper el build.
+# --------------------------------------------------------------------------
+PEXELS_ENDPOINT = "https://api.pexels.com/v1/search"
 
-    Prioridad:
-      1. Si ya existe un PNG cacheado -> se reutiliza (no se vuelve a cobrar).
-      2. Si hay OPENAI_API_KEY y un prompt -> genera PNG fotorrealista.
-      3. En cualquier otro caso o ante un error -> ilustración SVG.
+
+def buscar_foto_pexels(query):
+    """Devuelve (bytes_jpg, credito) de una foto real de Pexels, o None."""
+    key = os.environ.get("PEXELS_API_KEY")
+    if not key or not query:
+        return None
+    try:
+        import requests  # import diferido: sólo si se usa
+        r = requests.get(
+            PEXELS_ENDPOINT,
+            headers={"Authorization": key},
+            params={"query": query, "orientation": "landscape",
+                    "per_page": 1, "size": "large"},
+            timeout=20)
+        r.raise_for_status()
+        fotos = r.json().get("photos", [])
+        if not fotos:
+            return None
+        p = fotos[0]
+        src = p.get("src", {})
+        url = src.get("large2x") or src.get("large") or src.get("original")
+        img = requests.get(url, timeout=30)
+        img.raise_for_status()
+        return img.content, f"Foto: {p.get('photographer', 'Pexels')} / Pexels"
+    except Exception as e:  # noqa: BLE001
+        print(f"  aviso: falló Pexels ({e}); sigo con el respaldo.")
+        return None
+
+
+def _guardar_credito(imgdir, basename, credito):
+    """Guarda la atribución junto a la imagen (se cachea/versiona con ella)."""
+    try:
+        import json
+        with open(os.path.join(imgdir, basename + ".json"), "w", encoding="utf-8") as f:
+            json.dump({"credit": credito}, f, ensure_ascii=False)
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def _leer_credito(imgdir, basename):
+    try:
+        import json
+        with open(os.path.join(imgdir, basename + ".json"), encoding="utf-8") as f:
+            return json.load(f).get("credit")
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def build_cover(seed, section, prompt, imgdir, basename, query=""):
+    """Escribe la portada del artículo y devuelve (nombre_archivo, credito).
+
+    Prioridad (foto real primero, costo cero):
+      1. Si ya existe una portada cacheada (.jpg/.png) -> se reutiliza.
+      2. Si hay PEXELS_API_KEY -> foto real con licencia libre (.jpg).
+      3. Si hay OPENAI_API_KEY y un prompt -> PNG fotorrealista de IA.
+      4. En cualquier otro caso o ante un error -> ilustración SVG (propia).
+    `credito` es el texto de atribución o None (usa el crédito por defecto).
     """
-    png_name, png_path = basename + ".png", os.path.join(imgdir, basename + ".png")
-    if os.path.exists(png_path):
-        return png_name
+    # 1) caché: reutiliza la portada ya descargada/generada (no se re-cobra)
+    for ext in (".jpg", ".png"):
+        if os.path.exists(os.path.join(imgdir, basename + ext)):
+            return basename + ext, _leer_credito(imgdir, basename)
+    # 2) foto real con licencia libre (Pexels)
+    foto = buscar_foto_pexels(query)
+    if foto:
+        data, credito = foto
+        jpg = basename + ".jpg"
+        with open(os.path.join(imgdir, jpg), "wb") as f:
+            f.write(data)
+        _guardar_credito(imgdir, basename, credito)
+        print(f"  foto real (Pexels): {jpg}")
+        return jpg, credito
+    # 3) imagen fotorrealista de IA (opcional, de pago)
     if os.environ.get("OPENAI_API_KEY") and prompt:
         try:
             data = generar_imagen_ia(prompt)
-            with open(png_path, "wb") as f:
+            png = basename + ".png"
+            with open(os.path.join(imgdir, png), "wb") as f:
                 f.write(data)
-            print(f"  imagen IA generada: {png_name}")
-            return png_name
+            print(f"  imagen IA generada: {png}")
+            return png, None
         except Exception as e:  # noqa: BLE001
             print(f"  aviso: falló la imagen IA ({e}); uso portada SVG.")
-    svg_name = basename + ".svg"
-    with open(os.path.join(imgdir, svg_name), "w", encoding="utf-8") as f:
+    # 4) ilustración SVG generativa (siempre disponible, sin derechos)
+    svg = basename + ".svg"
+    with open(os.path.join(imgdir, svg), "w", encoding="utf-8") as f:
         f.write(cover_svg(seed, section))
-    return svg_name
+    return svg, None

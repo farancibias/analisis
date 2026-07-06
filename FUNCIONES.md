@@ -31,7 +31,8 @@ no se rompe.
 
 | Función | Qué necesitas | Cómo se activa |
 |---------|---------------|----------------|
-| **Portadas fotorrealistas** | `OPENAI_API_KEY` | ver `SETUP-IMAGENES.md` |
+| **Fotos reales de portada (licencia libre)** | `PEXELS_API_KEY` (gratis) | `generator/images.py` · busca por los tags del artículo; degrada a SVG si falta |
+| **Portadas fotorrealistas (IA)** | `OPENAI_API_KEY` | ver `SETUP-IMAGENES.md` |
 | **Redacción automática con IA** | `ANTHROPIC_API_KEY` (o el modelo que uses) | `generator/pipeline.py` |
 | **Datos en vivo** (precios reales) | API de metales/commodities (monedas ya funcionan sin clave) | `generator/fetch_data.py` |
 | **Traducción PT/EN** | `OPENAI_API_KEY` | `generator/translate.py` (genera `articles.pt.json`, `articles.en.json`) |
@@ -45,8 +46,12 @@ no se rompe.
 ## Variables de entorno (resumen)
 
 Secrets (Settings → Secrets and variables → Actions → *Secrets*):
-`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`,
-`WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID`, `EMAIL_API_KEY`.
+`PEXELS_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TELEGRAM_BOT_TOKEN`,
+`TELEGRAM_CHAT_ID`, `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID`, `EMAIL_API_KEY`.
+
+**Prioridad de portada:** caché → foto real (Pexels) → IA (OpenAI, opcional) → SVG.
+Para volver a generar una portada concreta, borra su archivo en `content/covers/`
+(`article-<id>.*`, incluido el `.json` de crédito) y reconstruye.
 
 Variables (pestaña *Variables*): `ANALYTICS_DOMAIN`, `ADS`.
 

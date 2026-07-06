@@ -47,7 +47,8 @@ El workflow `actualizar.yml` ya hace el deploy. Espera a que termine el job
 ## Paso 4 — (Opcional) Conectar claves
 **Settings → Secrets and variables → Actions → Secrets** (todos opcionales; el
 sitio publica sin ellos):
-- `OPENAI_API_KEY` — portadas fotorrealistas y traducción.
+- `PEXELS_API_KEY` — fotos reales de portada con licencia libre (gratis en pexels.com/api).
+- `OPENAI_API_KEY` — portadas fotorrealistas por IA y traducción.
 - `ANTHROPIC_API_KEY` — redacción automática de artículos. **Sin esta clave el
   pipeline NO genera notas nuevas** (se publica el contenido curado actual).
 - `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` — canal de Telegram.

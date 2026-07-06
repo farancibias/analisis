@@ -34,6 +34,7 @@ ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com 
 ADS = os.environ.get("ADS", "") == "1"
 
 COVER = {}
+CREDIT = {}   # id de artículo -> crédito de la foto (atribución), si aplica
 TICKER_HTML = ""
 
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio",
@@ -512,7 +513,7 @@ def foot(depth=0, extra_js=""):
   <a href="{base}datos.html">Datos</a> ·
   <a href="{base}asistente.html">Asistente</a> ·
   <a href="{base}rss.xml">RSS</a><br>
-  © {y} {escape(SITE['domain'])}. Portadas propias, sin derechos de terceros.
+  © {y} {escape(SITE['domain'])}. Portadas propias o con licencia libre, atribuidas a su autor.
 </div></footer>
 {js}
 </body></html>"""
@@ -552,10 +553,15 @@ def write_covers(arts):
     os.makedirs(IMGDIR, exist_ok=True)
     os.makedirs(COVERS_DIR, exist_ok=True)
     for a in arts:
-        fn = build_cover(seed=a["id"], section=a["section"],
-                         prompt=a.get("image_prompt", ""),
-                         imgdir=COVERS_DIR, basename=f"article-{a['id']}")
+        tags = a.get("tags") or []
+        query = " ".join(tags[:2]) if tags else a["section"]
+        fn, credito = build_cover(seed=a["id"], section=a["section"],
+                                  prompt=a.get("image_prompt", ""),
+                                  imgdir=COVERS_DIR, basename=f"article-{a['id']}",
+                                  query=query)
         COVER[a["id"]] = fn
+        if credito:
+            CREDIT[a["id"]] = credito
         shutil.copy(os.path.join(COVERS_DIR, fn), os.path.join(IMGDIR, fn))
     for s in SECTIONS:
         write(os.path.join(IMGDIR, f"section-{s['slug']}.svg"),
@@ -716,7 +722,7 @@ def _articles(arts, temas):
               '<span class="acts">'
               '<button onclick="leer(this)">▶ Escuchar</button>'
               '<button onclick="compartir()">Compartir</button></span></div>')
-        credito = a.get("image_credit", "Portada · Análisis.com")
+        credito = a.get("image_credit") or CREDIT.get(a["id"]) or "Portada · Análisis.com"
         h += (f'<figure class="hero"><div class="thumb">'
               f'<img src="../img/{COVER[a["id"]]}" alt="{alt_for(a)}"></div>'
               f'<figcaption>{escape(credito)}</figcaption></figure>')
