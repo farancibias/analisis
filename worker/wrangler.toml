@@ -13,7 +13,7 @@ routes = [
 # Crea uno con:  wrangler kv namespace create ASK_KV
 # y pega el id devuelto aquí abajo.
 kv_namespaces = [
-  { binding = "ASK_KV", id = "PON_AQUI_EL_ID_DE_KV" }
+  { binding = "ASK_KV", id = "44ea336f92fa4bbb9203b2e0e3b2b9bd" }
 ]
 
 [vars]
