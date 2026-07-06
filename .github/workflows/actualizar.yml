@@ -77,6 +77,7 @@ jobs:
           SITE_URL: https://www.analisis.com
           ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
           GA4_ID: ${{ vars.GA4_ID }}                        # id de medición GA4 (G-XXXX) para el tracking
+          ASK_URL: ${{ vars.ASK_URL }}                      # endpoint /api/ask del asistente IA (T15)
           PANEL_PASSWORD: ${{ secrets.PANEL_PASSWORD }}     # clave del panel privado /panel.html
           ADS: ${{ vars.ADS }}                              # "1" para mostrar slots de anuncios
         run: python3 generator/build.py
