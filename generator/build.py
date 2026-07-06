@@ -602,7 +602,7 @@ I18N_JS = r"""
 (function(){
   var d=document, ls=window.localStorage, DICT=__I18N__;
   var CH='.sub, a.tb, nav.main a, .section-head h2, .section-head .d, .ask-chip, .ask-go, .cd-listen, .claves h4, .faq h4, .react-q, .react button, .poll h4, .byline .acts button, .trust a, .kicker, footer.site a';
-  var CT='.lead-main h1 a, .lead-main .dek, .card h3, .card .dek, .wn-item .t a, article.post h1, article.post .dek, .claves li, #cuerpo p, .faq details summary, .faq details>p, .it .t a, .it .dek';
+  var CT='.cd-t, .lead-main h1 a, .lead-main .dek, .card h3, .card .dek, .wn-item .t a, article.post h1, article.post .dek, .claves li, #cuerpo p, .faq details summary, .faq details>p, .it .t a, .it .dek';
   var detected=null;
   function want(){ return ls.getItem('lang') || detected || 'es'; }
   function hsh(s){var h=5381,i=s.length;while(i)h=(h*33)^s.charCodeAt(--i);return (h>>>0).toString(36);}
@@ -621,20 +621,24 @@ I18N_JS = r"""
     var b=d.getElementById('langbtn'); if(b)b.textContent='🌐 '+lang.toUpperCase();
     d.documentElement.setAttribute('lang',lang);}
   function content(lang){
-    var els=[].slice.call(d.querySelectorAll(CT)).filter(function(el){return el.textContent.trim();}).slice(0,60);
+    var els=[].slice.call(d.querySelectorAll(CT)).filter(function(el){return el.textContent.trim();}).slice(0,150);
     if(!els.length)return;
     els.forEach(function(el){if(el.getAttribute('data-co')==null)el.setAttribute('data-co',el.textContent);});
     if(lang==='es'){els.forEach(function(el){el.textContent=el.getAttribute('data-co');});return;}
-    var texts=els.map(function(el){return el.getAttribute('data-co');});
-    var ck='trc:'+lang+':'+hsh(texts.join(''));
-    var cached=null;try{cached=JSON.parse(ls.getItem(ck));}catch(e){}
-    function apply(arr){els.forEach(function(el,i){if(arr[i]!=null)el.textContent=arr[i];});}
-    if(cached&&cached.length===els.length){apply(cached);return;}
     if(!window.ANALISIS_ASK_URL)return;
     var url=window.ANALISIS_ASK_URL.replace(/\/api\/ask$/,'/api/translate');
-    fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({texts:texts,lang:lang})})
-      .then(function(r){return r.json();}).then(function(j){
-        if(j&&j.t&&j.t.length===els.length){apply(j.t);try{ls.setItem(ck,JSON.stringify(j.t));}catch(e){}}}).catch(function(){});}
+    var CHUNK=20;
+    for(var s=0;s<els.length;s+=CHUNK){ (function(group){
+      var texts=group.map(function(el){return el.getAttribute('data-co');});
+      var ck='trc:'+lang+':'+hsh(texts.join(''));
+      function put(arr){group.forEach(function(el,i){if(arr[i]!=null)el.textContent=arr[i];});}
+      var cached=null;try{cached=JSON.parse(ls.getItem(ck));}catch(e){}
+      if(cached&&cached.length===group.length){put(cached);return;}
+      fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({texts:texts,lang:lang})})
+        .then(function(r){return r.json();}).then(function(j){
+          if(j&&j.t&&j.t.length===group.length){put(j.t);try{ls.setItem(ck,JSON.stringify(j.t));}catch(e){}}}).catch(function(){});
+    })(els.slice(s,s+CHUNK)); }
+  }
   function apply(lang){chrome(lang);content(lang);}
   window.setLang=function(lang){if(['es','en','pt','de'].indexOf(lang)<0)return;ls.setItem('lang',lang);var m=d.getElementById('langmenu');if(m)m.hidden=true;apply(lang);};
   d.addEventListener('DOMContentLoaded',function(){
@@ -1315,7 +1319,7 @@ def _home(arts):
             s = SECTION_BY_SLUG[a["section"]]
             h += (f'<li><a href="articulo/{a["id"]}.html">'
                   f'<span class="kicker">{escape(s["name"])}</span> '
-                  f'{escape(a["title"])}</a></li>')
+                  f'<span class="cd-t">{escape(a["title"])}</span></a></li>')
         h += '</ol></section>'
     h += '<section class="lead-grid"><div class="lead-main">'
     h += f'<div class="thumb"><img src="{img_path(lead, "")}" alt="{alt_for(lead)}"></div>'

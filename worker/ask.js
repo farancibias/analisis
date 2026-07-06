@@ -134,7 +134,7 @@ async function handleTranslate(request, env, ctx, cors) {
 async function translateTexts(texts, lang, apiKey) {
   const payload = {
     model: "claude-haiku-4-5",
-    max_tokens: 3000,
+    max_tokens: 4000,
     system: "Eres un traductor profesional de noticias. Traduce cada elemento del "
       + "array JSON de entrada al idioma indicado, conservando el significado, el tono "
       + "y todas las cifras, nombres y fechas. Devuelve el objeto {\"t\": [...]} con las "
