@@ -5,8 +5,8 @@ compatibility_date = "2026-01-01"
 # Enruta el endpoint al mismo dominio (mismo origen que el sitio -> sin CORS).
 # Ajusta la zona si tu cuenta usa otra. Requiere que analisis.com esté en Cloudflare.
 routes = [
-  { pattern = "www.analisis.com/api/ask", zone_name = "analisis.com" },
-  { pattern = "analisis.com/api/ask", zone_name = "analisis.com" }
+  { pattern = "www.analisis.com/api/*", zone_name = "analisis.com" },
+  { pattern = "analisis.com/api/*", zone_name = "analisis.com" }
 ]
 
 # Namespace KV para rate limit + caché + tope de gasto.

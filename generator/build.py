@@ -209,6 +209,11 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .ask-card:hover{color:var(--red)}
 .ask-card .kicker{display:block;margin-bottom:2px}
 .ask-note{margin:12px 0 0}
+.langwrap{position:relative;display:inline-block}
+.langmenu{position:absolute;right:0;top:100%;margin-top:4px;background:var(--bg);border:1px solid var(--ink);border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.15);z-index:50;min-width:130px;overflow:hidden}
+.langmenu[hidden]{display:none}
+.langmenu a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink);text-decoration:none;padding:8px 14px}
+.langmenu a:hover{background:var(--wash);color:var(--red)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -518,6 +523,132 @@ ASK_JS = r"""
 })();
 """
 
+# Diccionario de INTERFAZ (chrome) es -> {en, pt, de}. El contenido de las notas
+# se traduce aparte con IA (endpoint /api/translate). Multi-idioma (T-idiomas).
+I18N = {
+    "Contexto que importa. Noticias del mundo, analizadas.":
+        {"en": "Context that matters. World news, analyzed.",
+         "pt": "Contexto que importa. Notícias do mundo, analisadas.",
+         "de": "Kontext, der zählt. Weltnachrichten, analysiert."},
+    "Buscar": {"en": "Search", "pt": "Buscar", "de": "Suchen"},
+    "Datos": {"en": "Data", "pt": "Dados", "de": "Daten"},
+    "Portada": {"en": "Home", "pt": "Início", "de": "Startseite"},
+    "Archivo": {"en": "Archive", "pt": "Arquivo", "de": "Archiv"},
+    "Tecnología": {"en": "Technology", "pt": "Tecnologia", "de": "Technologie"},
+    "Economía": {"en": "Economy", "pt": "Economia", "de": "Wirtschaft"},
+    "Minería": {"en": "Mining", "pt": "Mineração", "de": "Bergbau"},
+    "Agricultura": {"en": "Agriculture", "pt": "Agricultura", "de": "Landwirtschaft"},
+    "Retail": {"en": "Retail", "pt": "Varejo", "de": "Einzelhandel"},
+    "Banca": {"en": "Banking", "pt": "Bancos", "de": "Banken"},
+    "Energía y Medioambiente": {"en": "Energy & Environment",
+        "pt": "Energia e meio ambiente", "de": "Energie & Umwelt"},
+    "Mercados y Cripto": {"en": "Markets & Crypto",
+        "pt": "Mercados e cripto", "de": "Märkte & Krypto"},
+    "Internacional": {"en": "International", "pt": "Internacional", "de": "International"},
+    "Startups": {"en": "Startups", "pt": "Startups", "de": "Startups"},
+    "Boletín": {"en": "Newsletter", "pt": "Boletim", "de": "Newsletter"},
+    "Asistente": {"en": "Assistant", "pt": "Assistente", "de": "Assistent"},
+    "Correcciones": {"en": "Corrections", "pt": "Correções", "de": "Korrekturen"},
+    "Pregúntale a Análisis": {"en": "Ask Análisis", "pt": "Pergunte ao Análisis",
+        "de": "Frag Análisis"},
+    "Respuesta elaborada con lo publicado + la web":
+        {"en": "Answer built from our articles + the web",
+         "pt": "Resposta elaborada com o publicado + a web",
+         "de": "Antwort aus unseren Artikeln + dem Web"},
+    "Las 5 claves de hoy": {"en": "Today's 5 key points",
+        "pt": "As 5 chaves de hoje", "de": "Die 5 wichtigsten Punkte heute"},
+    "Más noticias": {"en": "More news", "pt": "Mais notícias", "de": "Weitere Nachrichten"},
+    "Prioriza tu país y las secciones que sigas":
+        {"en": "Prioritizes your country and the sections you follow",
+         "pt": "Prioriza seu país e as seções que você segue",
+         "de": "Priorisiert dein Land und deine Rubriken"},
+    "Lo último": {"en": "Latest", "pt": "Últimas", "de": "Neueste"},
+    "El tiempo": {"en": "Weather", "pt": "O tempo", "de": "Wetter"},
+    "▶ Escuchar el resumen del día": {"en": "▶ Listen to today's briefing",
+        "pt": "▶ Ouvir o resumo do dia", "de": "▶ Tagesüberblick anhören"},
+    "¿Cómo va el precio del cobre?": {"en": "How is the copper price?",
+        "pt": "Como está o preço do cobre?", "de": "Wie steht der Kupferpreis?"},
+    "¿Qué pasa con las tasas en la región?":
+        {"en": "What's happening with rates in the region?",
+         "pt": "O que acontece com as taxas na região?",
+         "de": "Was passiert mit den Zinsen in der Region?"},
+    "¿Últimas noticias del litio?": {"en": "Latest lithium news?",
+        "pt": "Últimas notícias do lítio?", "de": "Neueste Lithium-Nachrichten?"},
+    "Preguntar": {"en": "Ask", "pt": "Perguntar", "de": "Fragen"},
+    "Pregunta cualquier cosa: ¿cómo va el cobre? ¿y las tasas en la región?":
+        {"en": "Ask anything: how's copper? and rates in the region?",
+         "pt": "Pergunte qualquer coisa: como está o cobre? e as taxas na região?",
+         "de": "Frag alles: Wie steht Kupfer? und die Zinsen in der Region?"},
+    "Relacionadas": {"en": "Related", "pt": "Relacionadas", "de": "Verwandte"},
+    "Claves en 30 segundos": {"en": "Key points in 30 seconds",
+        "pt": "Chaves em 30 segundos", "de": "Das Wichtigste in 30 Sekunden"},
+    "Preguntas frecuentes": {"en": "FAQ", "pt": "Perguntas frequentes",
+        "de": "Häufige Fragen"},
+    "¿Qué te pareció?": {"en": "What did you think?", "pt": "O que você achou?",
+        "de": "Was denkst du?"},
+    "👍 Interesante": {"en": "👍 Interesting", "pt": "👍 Interessante", "de": "👍 Interessant"},
+    "🔥 Importante": {"en": "🔥 Important", "pt": "🔥 Importante", "de": "🔥 Wichtig"},
+    "🤔 Me hace pensar": {"en": "🤔 Makes me think", "pt": "🤔 Faz pensar",
+        "de": "🤔 Regt zum Nachdenken an"},
+    "😮 Sorprendente": {"en": "😮 Surprising", "pt": "😮 Surpreendente", "de": "😮 Überraschend"},
+    "▶ Escuchar": {"en": "▶ Listen", "pt": "▶ Ouvir", "de": "▶ Anhören"},
+    "Compartir": {"en": "Share", "pt": "Compartilhar", "de": "Teilen"},
+    "Política de correcciones": {"en": "Corrections policy",
+        "pt": "Política de correções", "de": "Korrekturrichtlinie"},
+    "Encuesta": {"en": "Poll", "pt": "Enquete", "de": "Umfrage"},
+}
+
+I18N_JS = r"""
+(function(){
+  var d=document, ls=window.localStorage, DICT=__I18N__;
+  var CH='.sub, a.tb, nav.main a, .section-head h2, .section-head .d, .ask-chip, .ask-go, .cd-listen, .claves h4, .faq h4, .react-q, .react button, .poll h4, .byline .acts button, .trust a, .kicker, footer.site a';
+  var CT='.lead-main h1 a, .lead-main .dek, .card h3, .card .dek, .wn-item .t a, article.post h1, article.post .dek, .claves li, #cuerpo p, .faq details summary, .faq details>p, .it .t a, .it .dek';
+  var detected=null;
+  function want(){ return ls.getItem('lang') || detected || 'es'; }
+  function hsh(s){var h=5381,i=s.length;while(i)h=(h*33)^s.charCodeAt(--i);return (h>>>0).toString(36);}
+  function detect(cc){cc=(cc||'').toLowerCase();
+    if(cc==='br')return 'pt';
+    if(['de','at','ch','li'].indexOf(cc)>=0)return 'de';
+    if(['us','gb','ca','au','ie','nz','in','za','ng','ph','sg'].indexOf(cc)>=0)return 'en';
+    return 'es';}
+  function chrome(lang){
+    d.querySelectorAll(CH).forEach(function(el){ if(el.children.length)return;
+      var o=el.getAttribute('data-o'); if(o==null){o=el.textContent.trim(); if(!DICT[o])return; el.setAttribute('data-o',o);}
+      el.textContent=(lang==='es')?o:((DICT[o]||{})[lang]||o); });
+    d.querySelectorAll('.ask-q').forEach(function(el){var o=el.getAttribute('data-po');
+      if(o==null){o=el.getAttribute('placeholder')||''; if(!DICT[o])return; el.setAttribute('data-po',o);}
+      el.setAttribute('placeholder',(lang==='es')?o:((DICT[o]||{})[lang]||o));});
+    var b=d.getElementById('langbtn'); if(b)b.textContent='🌐 '+lang.toUpperCase();
+    d.documentElement.setAttribute('lang',lang);}
+  function content(lang){
+    var els=[].slice.call(d.querySelectorAll(CT)).filter(function(el){return el.textContent.trim();}).slice(0,60);
+    if(!els.length)return;
+    els.forEach(function(el){if(el.getAttribute('data-co')==null)el.setAttribute('data-co',el.textContent);});
+    if(lang==='es'){els.forEach(function(el){el.textContent=el.getAttribute('data-co');});return;}
+    var texts=els.map(function(el){return el.getAttribute('data-co');});
+    var ck='trc:'+lang+':'+hsh(texts.join(''));
+    var cached=null;try{cached=JSON.parse(ls.getItem(ck));}catch(e){}
+    function apply(arr){els.forEach(function(el,i){if(arr[i]!=null)el.textContent=arr[i];});}
+    if(cached&&cached.length===els.length){apply(cached);return;}
+    if(!window.ANALISIS_ASK_URL)return;
+    var url=window.ANALISIS_ASK_URL.replace(/\/api\/ask$/,'/api/translate');
+    fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({texts:texts,lang:lang})})
+      .then(function(r){return r.json();}).then(function(j){
+        if(j&&j.t&&j.t.length===els.length){apply(j.t);try{ls.setItem(ck,JSON.stringify(j.t));}catch(e){}}}).catch(function(){});}
+  function apply(lang){chrome(lang);content(lang);}
+  window.setLang=function(lang){if(['es','en','pt','de'].indexOf(lang)<0)return;ls.setItem('lang',lang);var m=d.getElementById('langmenu');if(m)m.hidden=true;apply(lang);};
+  d.addEventListener('DOMContentLoaded',function(){
+    var btn=d.getElementById('langbtn'), menu=d.getElementById('langmenu');
+    if(btn&&menu){btn.addEventListener('click',function(e){e.stopPropagation();menu.hidden=!menu.hidden;});
+      menu.querySelectorAll('[data-lang]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();setLang(a.getAttribute('data-lang'));});});
+      d.addEventListener('click',function(){menu.hidden=true;});}
+    apply(want());
+    if(!ls.getItem('lang'))fetch('https://ipwho.is/').then(function(r){return r.json();}).then(function(j){
+      if(j&&j.country_code){var dl=detect(j.country_code);if(dl!=='es'&&!ls.getItem('lang')){detected=dl;apply(dl);}}}).catch(function(){});
+  });
+})();
+"""
+
 DATOS_JS = r"""
 (function(){
   var d=document;var host=d.getElementById('charts');if(!host)return;
@@ -745,6 +876,11 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
       <a class="tb" href="{base}buscar.html">Buscar</a>
       <a class="tb" href="{base}panel.html">LogIn</a>
       <a class="tb" href="{base}datos.html">Datos</a>
+      <span class="langwrap"><button class="tb" id="langbtn" type="button" title="Idioma / Language">🌐 ES</button>
+        <div class="langmenu" id="langmenu" hidden>
+          <a href="#" data-lang="es">Español</a><a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="pt">Português</a><a href="#" data-lang="de">Deutsch</a>
+        </div></span>
       <button onclick="fuente(-1)" title="Reducir texto">A-</button>
       <button onclick="fuente(1)" title="Aumentar texto">A+</button>
       <button onclick="toggleTema()" title="Modo claro/oscuro">◐</button>
@@ -1005,7 +1141,8 @@ def build():
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
-    app_js = APP_JS + TICKER_JS + WEATHER_JS + REACT_JS + ASK_JS
+    app_js = (APP_JS + TICKER_JS + WEATHER_JS + REACT_JS + ASK_JS
+              + I18N_JS.replace("__I18N__", json.dumps(I18N, ensure_ascii=False)))
     write(os.path.join(OUT, "assets", "app.css"), CSS)
     write(os.path.join(OUT, "assets", "app.js"), app_js)
     write(os.path.join(OUT, "favicon.svg"), FAVICON)

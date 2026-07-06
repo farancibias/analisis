@@ -39,8 +39,10 @@ export default {
 
     if (request.method === "OPTIONS") return new Response(null, { headers: cors });
     const url = new URL(request.url);
-    if (request.method !== "POST" || url.pathname !== "/api/ask")
-      return json({ error: "not found" }, 404, cors);
+    if (request.method !== "POST") return json({ error: "method" }, 405, cors);
+    if (url.pathname === "/api/translate")
+      return handleTranslate(request, env, ctx, cors);
+    if (url.pathname !== "/api/ask") return json({ error: "not found" }, 404, cors);
 
     // --- entrada ---
     let body;
@@ -94,6 +96,67 @@ export default {
     return json(result, 200, cors);
   },
 };
+
+// ------------------------------------------------------------ traducción (T-idiomas)
+const LANG_NAME = { en: "English", pt: "Brazilian Portuguese", de: "German" };
+
+async function handleTranslate(request, env, ctx, cors) {
+  let body;
+  try { body = await request.json(); } catch { return json({ error: "bad json" }, 400, cors); }
+  const lang = String(body.lang || "").slice(0, 2);
+  const texts = Array.isArray(body.texts)
+    ? body.texts.slice(0, 80).map((t) => String(t || "").slice(0, 4000)) : null;
+  if (!texts || !texts.length || !LANG_NAME[lang])
+    return json({ error: "bad params" }, 400, cors);
+  if (!env.ANTHROPIC_API_KEY) return json({ degrade: true }, 200, cors);
+
+  // caché permanente por (idioma + contenido): las notas no cambian.
+  const key = `tr:${lang}:${await sha256(texts.join(""))}`;
+  const cached = await env.ASK_KV.get(key);
+  if (cached) return json({ t: JSON.parse(cached) }, 200, cors);
+
+  // tope diario de traducciones (barato; separado del asistente)
+  const dayKey = `trspend:${new Date().toISOString().slice(0, 10)}`;
+  const cap = parseInt(env.TRANSLATE_CAP || "500", 10);
+  const spend = parseInt((await env.ASK_KV.get(dayKey)) || "0", 10);
+  if (spend >= cap) return json({ degrade: true }, 200, cors);
+
+  try {
+    const out = await translateTexts(texts, lang, env.ANTHROPIC_API_KEY);
+    ctx.waitUntil(env.ASK_KV.put(key, JSON.stringify(out)));            // sin TTL: permanente
+    ctx.waitUntil(env.ASK_KV.put(dayKey, String(spend + 1), { expirationTtl: 90000 }));
+    return json({ t: out }, 200, cors);
+  } catch (e) {
+    return json({ degrade: true }, 200, cors);
+  }
+}
+
+async function translateTexts(texts, lang, apiKey) {
+  const payload = {
+    model: "claude-haiku-4-5",
+    max_tokens: 3000,
+    system: "Eres un traductor profesional de noticias. Traduce cada elemento del "
+      + "array JSON de entrada al idioma indicado, conservando el significado, el tono "
+      + "y todas las cifras, nombres y fechas. Devuelve el objeto {\"t\": [...]} con las "
+      + "traducciones en el MISMO orden y misma longitud. No añadas nada más. Idioma destino: "
+      + LANG_NAME[lang] + ".",
+    messages: [{ role: "user", content: JSON.stringify(texts) }],
+    output_config: {
+      format: {
+        type: "json_schema",
+        schema: {
+          type: "object",
+          properties: { t: { type: "array", items: { type: "string" } } },
+          required: ["t"], additionalProperties: false,
+        },
+      },
+    },
+  };
+  const data = await callAnthropic(payload, apiKey);
+  const arr = (JSON.parse(extractText(data)) || {}).t;
+  if (!Array.isArray(arr) || arr.length !== texts.length) throw new Error("bad translation");
+  return arr;
+}
 
 // ------------------------------------------------------------ recuperación interna
 async function retrieveInternal(q, site, ctx) {
