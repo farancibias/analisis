@@ -285,6 +285,7 @@ Entrega estos campos:
 - image_prompt: descripción visual para una foto editorial, sin texto ni logos.
 - image_alt: texto alternativo accesible de la imagen.
 - image_query: 2 a 4 palabras clave EN INGLÉS para buscar una foto de archivo GENÉRICA y relacionada (objetos, lugares, industria, materiales, paisajes). PROHIBIDO incluir: nombres de personas o políticos, partidos, protestas, manifestaciones, banderas, elecciones, armas, policía o violencia. Ejemplos: "copper mine machinery", "shipping port containers", "office buildings finance".
+- faq: 2 o 3 preguntas frecuentes con su respuesta breve (1-2 frases), basadas SOLO en los hechos de las fuentes. Deben ser preguntas naturales que un lector o un asistente de IA haría sobre la noticia (qué pasó, por qué importa, qué implica). Cada elemento con "question" y "answer".
 
 RESÚMENES DE LAS FUENTES:
 {fuentes}
@@ -303,9 +304,15 @@ _SCHEMA = {
         "image_prompt": {"type": "string"},
         "image_alt": {"type": "string"},
         "image_query": {"type": "string"},
+        "faq": {"type": "array", "items": {
+            "type": "object",
+            "properties": {"question": {"type": "string"},
+                           "answer": {"type": "string"}},
+            "required": ["question", "answer"],
+            "additionalProperties": False}},
     },
     "required": ["title", "subtitle", "tags", "key_points", "lead", "body",
-                 "image_prompt", "image_alt", "image_query"],
+                 "image_prompt", "image_alt", "image_query", "faq"],
     "additionalProperties": False,
 }
 
@@ -378,6 +385,7 @@ def guardar(articulo_ia, section, cluster):
         "image_alt": articulo_ia.get("image_alt") or articulo_ia["title"],
         "image_query": articulo_ia.get("image_query", ""),
         "key_points": articulo_ia.get("key_points", []),
+        "faq": articulo_ia.get("faq", []),
         "lead": articulo_ia.get("lead") or (body[0] if body else ""),
         "body": body,
         "sources_consulted": sorted({i["source"] for i in cluster}),

@@ -166,6 +166,11 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .toolout{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);margin:4px 0 2px}
 .art-chart{margin:22px 0;padding:12px 14px}
 .art-chart canvas{max-height:220px}
+.faq{margin:24px 0;border-top:1px solid var(--line);padding-top:14px}
+.faq h4{font-family:var(--sans);font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}
+.faq details{border-bottom:1px solid var(--line);padding:9px 0}
+.faq summary{font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;color:var(--ink)}
+.faq details p{font-family:var(--serif);font-size:15px;color:var(--ink);margin:8px 0 2px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -837,15 +842,33 @@ def _hub_pages(grupos, carpeta, etiqueta):
 
 def article_ld(a):
     sec = SECTION_BY_SLUG[a["section"]]
-    return {"@context": "https://schema.org", "@type": "NewsArticle",
-            "headline": a["title"], "description": a["subtitle"],
-            "datePublished": a["date"], "dateModified": a["date"],
-            "articleSection": sec["name"],
-            "image": [f"{SITE_URL}/img/{COVER[a['id']]}"],
-            "author": {"@type": "Organization", "name": "Análisis.com"},
-            "publisher": {"@type": "Organization", "name": "Análisis.com"},
-            "mainEntityOfPage": f"{SITE_URL}/articulo/{a['id']}.html",
-            "url": f"{SITE_URL}/articulo/{a['id']}.html"}
+    url = f"{SITE_URL}/articulo/{a['id']}.html"
+    fecha = a.get("updated") or a["date"]
+    noticia = {
+        "@type": "NewsArticle",
+        "headline": a["title"], "description": a.get("lead") or a["subtitle"],
+        "datePublished": fecha, "dateModified": fecha,
+        "articleSection": sec["name"], "inLanguage": "es",
+        "keywords": ", ".join(a.get("tags", [])),
+        "wordCount": sum(len(p.split()) for p in a.get("body", [])),
+        "image": [f"{SITE_URL}/img/{COVER[a['id']]}"],
+        "author": {"@type": "Organization", "name": "Análisis.com", "url": SITE_URL},
+        "publisher": {"@type": "Organization", "name": "Análisis.com",
+                      "logo": {"@type": "ImageObject",
+                               "url": f"{SITE_URL}/favicon.svg"}},
+        "mainEntityOfPage": url, "url": url,
+        "speakable": {"@type": "SpeakableSpecification",
+                      "cssSelector": [".dek", ".claves"]},
+    }
+    faq = [q for q in (a.get("faq") or []) if q.get("question") and q.get("answer")]
+    if faq:
+        faqpage = {"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q["question"],
+             "acceptedAnswer": {"@type": "Answer", "text": q["answer"]}}
+            for q in faq]}
+        return {"@context": "https://schema.org", "@graph": [noticia, faqpage]}
+    noticia["@context"] = "https://schema.org"
+    return noticia
 
 
 # ==================================================================== BUILD
@@ -1137,6 +1160,14 @@ def _articles(arts, temas):
                   f'<script>window.__SERIE__={json.dumps(serie, ensure_ascii=False)}</script>'
                   f'<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>'
                   f'<script>{ART_CHART_JS}</script>')
+        # Preguntas frecuentes (T12): resumen citable + datos estructurados FAQPage.
+        faq = [q for q in (a.get("faq") or []) if q.get("question") and q.get("answer")]
+        if faq:
+            h += '<div class="faq"><h4>Preguntas frecuentes</h4>'
+            for qa in faq:
+                h += (f'<details><summary>{escape(qa["question"])}</summary>'
+                      f'<p>{escape(qa["answer"])}</p></details>')
+            h += '</div>'
         if a.get("tags"):
             h += '<div style="margin-top:22px">' + "".join(
                 f'<a class="tag" href="../tema/{slugify(t)}.html">{escape(t)}</a>'
