@@ -210,10 +210,12 @@ APP_JS = r"""
   var tema=ls.getItem('tema'); if(tema)H.setAttribute('data-tema',tema);
   window.toggleTema=function(){var n=H.getAttribute('data-tema')==='oscuro'?'':'oscuro';
     if(n)H.setAttribute('data-tema',n);else H.removeAttribute('data-tema');ls.setItem('tema',n);};
-  // tamaño de fuente
-  var fs=ls.getItem('fs'); if(fs)H.style.setProperty('--fs',fs);
-  window.fuente=function(step){var cur=parseInt(ls.getItem('fs')||'17');cur=Math.min(22,Math.max(15,cur+step));
-    H.style.setProperty('--fs',cur+'px');ls.setItem('fs',cur+'px');};
+  // tamaño de texto: el CSS usa px, así que escalamos el bloque de contenido con zoom
+  function _zoom(z){var m=d.querySelector('main'); if(m)m.style.zoom=z;}
+  var _z=ls.getItem('zoom'); if(_z)_zoom(_z);
+  window.fuente=function(step){var z=parseFloat(ls.getItem('zoom')||'1');
+    z=Math.min(1.4,Math.max(0.85,Math.round((z+step*0.1)*100)/100));
+    _zoom(z);ls.setItem('zoom',z);};
   // barra de progreso (en artículos)
   var bar=d.querySelector('.progress');
   if(bar)window.addEventListener('scroll',function(){var h=d.body.scrollHeight-innerHeight;
@@ -530,6 +532,7 @@ def head(title, active="", depth=0, description="", image="", ld=None, extra_js=
     <span>{escape(hoy.capitalize())}</span>
     <span class="tools">
       <a class="tb" href="{base}buscar.html">Buscar</a>
+      <a class="tb" href="{base}panel.html">LogIn</a>
       <a class="tb" href="{base}asistente.html">Pregúntale a Análisis</a>
       <a class="tb" href="{base}datos.html">Datos</a>
       <button onclick="fuente(-1)" title="Reducir texto">A-</button>
