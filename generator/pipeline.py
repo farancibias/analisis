@@ -355,6 +355,51 @@ def guardar(articulo_ia, section, cluster):
     return aid
 
 
+# ---------------------------------------------------- 4b. RESUMEN DEL DÍA (T7)
+DIGEST = os.path.join(ROOT, "content", "digest.json")
+
+RESUMEN_PROMPT = """Eres el editor de Análisis.com. A partir de estos titulares y bajadas de la jornada, escribe una SÍNTESIS de 1 o 2 frases (máximo 45 palabras) que capte lo esencial del día para un lector de negocios en América Latina.
+
+Reglas: español neutro, informativa, sin opinión, sin enumerar ni usar viñetas; una mirada de conjunto que conecte los temas principales. Devuelve SOLO el texto de la síntesis, sin encabezados.
+
+TITULARES DE HOY:
+{titulares}
+"""
+
+
+def generar_resumen_dia():
+    """Escribe content/digest.json con una síntesis del día redactada por IA.
+    Degrada a nada (no escribe) si falta la clave o la API falla: en ese caso el
+    build muestra solo las 5 claves con enlaces, sin la frase de síntesis."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        return
+    try:
+        with open(CONTENT, encoding="utf-8") as f:
+            data = json.load(f)
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        hoy = [a for a in data.get("articles", []) if a.get("date") == today]
+        if not hoy:
+            return
+        hoy.sort(key=lambda a: (a.get("region_score", 0),
+                                len(a.get("sources_consulted") or [])), reverse=True)
+        titulares = "\n".join(
+            f"- {a['title']}: {a.get('subtitle', '')}" for a in hoy[:8])
+        import anthropic  # import diferido
+        client = anthropic.Anthropic()
+        resp = client.messages.create(
+            model=MODEL, max_tokens=300,
+            messages=[{"role": "user",
+                       "content": RESUMEN_PROMPT.format(titulares=titulares)}])
+        intro = next((b.text for b in resp.content if b.type == "text"), "").strip()
+        if intro:
+            with open(DIGEST, "w", encoding="utf-8") as f:
+                json.dump({"date": today, "intro": intro}, f,
+                          ensure_ascii=False, indent=2)
+            print("      resumen del día escrito (content/digest.json).")
+    except Exception as e:  # noqa: BLE001
+        print(f"      aviso: no se generó el resumen del día ({e}).")
+
+
 # -------------------------------------------------------------------- MAIN
 def main():
     # La redacción con IA requiere la clave. Sin ANTHROPIC_API_KEY el pipeline
@@ -399,6 +444,8 @@ def main():
     else:
         print(f"      {nuevos} artículos nuevos guardados.")
     print("[4/5] Guardado en content/articles.json (archivo histórico).")
+    if not PIPELINE_DRY_RUN:
+        generar_resumen_dia()  # síntesis del día para la portada (T7)
     print("[5/5] Ejecuta 'python3 generator/build.py' para publicar.")
 
 

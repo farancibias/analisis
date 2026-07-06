@@ -40,6 +40,7 @@ ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com 
 GA4_ID = os.environ.get("GA4_ID", "")                      # id de medición GA4 (G-XXXX) para el tracking
 PANEL_PASSWORD = os.environ.get("PANEL_PASSWORD") or "analisis"  # clave del panel privado (/panel.html)
 ANALYTICS_JSON = os.path.join(ROOT, "content", "analytics.json")
+DIGEST_JSON = os.path.join(ROOT, "content", "digest.json")
 ADS = os.environ.get("ADS", "") == "1"
 
 COVER = {}
@@ -142,6 +143,14 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .section-head .d{font-family:var(--sans);font-size:12px;color:var(--muted)}
 .paispick{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:auto;display:flex;align-items:center;gap:6px}
 .paispick select{font-family:var(--sans);font-size:12px;color:var(--ink);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:4px 6px;cursor:pointer}
+.claves-dia{margin:16px 0 6px;padding:14px 18px 16px;background:var(--wash);border:1px solid var(--line);border-radius:6px}
+.claves-dia .section-head{margin:0 0 8px;border-bottom-width:1px}
+.cd-intro{font-family:var(--serif);font-size:15px;color:var(--ink);margin:0 0 10px}
+.cd-list{margin:0;padding-left:22px}
+.cd-list li{margin:5px 0;font-family:var(--sans);font-size:14px}
+.cd-list a{color:var(--ink);text-decoration:none}
+.cd-list a:hover{color:var(--red)}
+.cd-list .kicker{margin-right:6px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:820px){.lead-grid{grid-template-columns:1fr}.lead-main{border-right:0;padding-right:0}.whatsnews{padding-left:0;margin-top:20px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand .wm{font-size:30px}.brand .mark{width:40px;height:40px}}
@@ -824,6 +833,27 @@ def _dedup(arts):
     return out
 
 
+def _claves_hoy(arts):
+    """Las 5 notas más importantes del día más reciente (ya vienen ordenadas por
+    fecha e importancia). Es el 'resumen del día' con enlaces a las fuentes."""
+    if not arts:
+        return []
+    hoy = arts[0]["date"]
+    return [a for a in arts if a["date"] == hoy][:5]
+
+
+def _digest_intro(fecha):
+    """Síntesis del día (opcional) que redacta el pipeline con IA; '' si no aplica."""
+    try:
+        with open(DIGEST_JSON, encoding="utf-8") as f:
+            dg = json.load(f)
+        if dg.get("date") == fecha:
+            return dg.get("intro", "") or ""
+    except Exception:  # noqa: BLE001
+        pass
+    return ""
+
+
 def _home(arts):
     arts = _dedup(arts)
     lead, rest = arts[0], arts[1:]
@@ -832,6 +862,22 @@ def _home(arts):
     # barra "Para ti" (personalización)
     h += ('<div id="parati" style="display:none" class="note">Estás siguiendo secciones: '
           'tu portada prioriza esos temas. Gestiona tus intereses con el botón «Seguir» en cada sección.</div>')
+    # Resumen del día: "Las 5 claves de hoy" (con enlaces a las notas fuente).
+    claves = _claves_hoy(arts)
+    if claves:
+        intro = _digest_intro(claves[0]["date"])
+        h += '<section class="claves-dia">'
+        h += (f'<div class="section-head"><h2>Las 5 claves de hoy</h2>'
+              f'<span class="d">{fecha_larga(claves[0]["date"])}</span></div>')
+        if intro:
+            h += f'<p class="cd-intro">{escape(intro)}</p>'
+        h += '<ol class="cd-list">'
+        for a in claves:
+            s = SECTION_BY_SLUG[a["section"]]
+            h += (f'<li><a href="articulo/{a["id"]}.html">'
+                  f'<span class="kicker">{escape(s["name"])}</span> '
+                  f'{escape(a["title"])}</a></li>')
+        h += '</ol></section>'
     h += '<section class="lead-grid"><div class="lead-main">'
     h += f'<div class="thumb"><img src="{img_path(lead, "")}" alt="{alt_for(lead)}"></div>'
     h += f'<span class="kicker">{escape(sec["name"])}</span>'

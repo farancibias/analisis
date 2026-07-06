@@ -95,7 +95,7 @@ jobs:
         run: |
           git config user.name "Análisis Bot"
           git config user.email "bot@analisis.com"
-          git add content/articles.json content/covers content/audio content/data.json content/analytics.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
+          git add content/articles.json content/covers content/audio content/data.json content/analytics.json content/digest.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
           git commit -m "Actualización automática $(date -u +%Y-%m-%d)" || echo "Sin cambios que guardar"
           git push || echo "Nada que empujar"
 
