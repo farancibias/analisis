@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+<defs>
+  <linearGradient id="g814" gradientTransform="rotate(20)">
+    <stop offset="0" stop-color="#5a2e0c"/>
+    <stop offset="1" stop-color="#b5651d"/>
+  </linearGradient>
+  <radialGradient id="g814v" cx="50%" cy="42%" r="75%">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
+  </radialGradient>
+  <filter id="g814n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#g814)"/>
+<circle cx="1234" cy="129" r="347" fill="#f2b45c" opacity="0.07"/><circle cx="959" cy="711" r="292" fill="#f2b45c" opacity="0.07"/><circle cx="224" cy="515" r="292" fill="#ffffff" opacity="0.07"/>
+<polygon points="834,349 697,521 616,317" fill="#f2b45c" opacity="0.16" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="668,412 818,320 823,496" fill="#f2b45c" opacity="0.24" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="175,420 91,217 309,246" fill="#f2b45c" opacity="0.16" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="844,191 868,285 799,352 705,326 681,232 750,165" fill="#f2b45c" opacity="0.32" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="865,445 799,553 672,550 612,438 678,330 805,333" fill="#f2b45c" opacity="0.16" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="355,329 632,309 511,558" fill="#f2b45c" opacity="0.32" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/><polygon points="442,31 677,134 470,286" fill="#f2b45c" opacity="0.24" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.4"/>
+<rect width="1200" height="675" fill="url(#g814v)"/>
+<rect width="1200" height="675" filter="url(#g814n)" opacity="0.05"/>
+</svg>

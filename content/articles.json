@@ -1,0 +1,136 @@
+{
+  "site": {
+    "name": "Análisis.com",
+    "tagline": "Contexto que importa. Noticias del mundo, analizadas.",
+    "domain": "analisis.com"
+  },
+  "sections": [
+    { "slug": "tecnologia",   "name": "Tecnología",              "desc": "Inteligencia artificial, software, semiconductores e innovación global." },
+    { "slug": "economia",     "name": "Economía",                "desc": "Macroeconomía, bancos centrales, comercio y política fiscal." },
+    { "slug": "mineria",      "name": "Minería",                 "desc": "Cobre, litio, oro y la cadena de minerales críticos." },
+    { "slug": "agricultura",  "name": "Agricultura",             "desc": "Commodities agrícolas, alimentos y mercados globales." },
+    { "slug": "retail",       "name": "Retail",                  "desc": "Consumo, comercio minorista y e-commerce." },
+    { "slug": "banca",        "name": "Banca",                   "desc": "Bancos, fintech, crédito y regulación financiera." },
+    { "slug": "energia",      "name": "Energía y Medioambiente", "desc": "Petróleo, gas, renovables, transición energética y clima." },
+    { "slug": "mercados",     "name": "Mercados y Cripto",       "desc": "Bolsas, divisas, materias primas y activos digitales." },
+    { "slug": "internacional","name": "Internacional",           "desc": "Geopolítica, comercio y política internacional." },
+    { "slug": "startups",     "name": "Startups",                "desc": "Venture capital, emprendimiento e innovación de LatAm y el mundo." }
+  ],
+  "articles": [
+    {
+      "id": "2026-07-05-gobernanza-ia-global",
+      "section": "tecnologia",
+      "title": "La gobernanza de la inteligencia artificial entra en su fase de acuerdos globales",
+      "subtitle": "Gobiernos y grandes laboratorios avanzan hacia estándares comunes mientras el consumo eléctrico de los centros de datos marca récords.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": ["Inteligencia Artificial", "Regulación", "Geopolítica tecnológica"],
+      "image_prompt": "Sala de negociación internacional con líderes y pantallas de datos sobre inteligencia artificial, luz fría, estilo editorial",
+      "image_alt": "Ilustración sobre la gobernanza global de la inteligencia artificial",
+      "key_points": [
+        "EE.UU. negocia estándares voluntarios con las grandes empresas de IA; anuncio inminente.",
+        "La ONU y la UIT crean una comisión global de gobernanza con primera reunión en Ginebra.",
+        "California lanza el mayor despliegue de IA de un gobierno estatal en EE.UU.",
+        "El consumo eléctrico de los centros de datos crece a dos dígitos y tensiona las redes."
+      ],
+      "lead": "El debate sobre cómo gobernar la inteligencia artificial dejó de ser una discusión académica para convertirse, en las últimas semanas, en una negociación concreta entre Estados y empresas.",
+      "body": [
+        "El debate sobre cómo gobernar la inteligencia artificial dejó de ser una discusión académica para convertirse, en las últimas semanas, en una negociación concreta entre Estados y empresas. Varias iniciativas paralelas —unas impulsadas por gobiernos, otras por organismos multilaterales— apuntan en la misma dirección: establecer reglas mínimas antes de que la próxima generación de modelos llegue al mercado.",
+        "En Estados Unidos, la administración federal mantiene conversaciones avanzadas con las principales compañías del sector para definir estándares voluntarios sobre el lanzamiento de modelos de gran capacidad. La expectativa es que exista un anuncio en cuestión de días. El enfoque de estándares voluntarios contrasta con el modelo europeo, más basado en obligaciones legales, y refleja la tensión de fondo entre fomentar la innovación y contener sus riesgos.",
+        "El plano multilateral también se activó. Naciones Unidas y la Unión Internacional de Telecomunicaciones anunciaron la creación de una comisión global orientada a reunir a líderes tecnológicos y jefes de Estado en un mismo foro de gobernanza, con una primera reunión prevista en Ginebra. La apuesta es coordinar criterios que hasta ahora se definían país por país, en un terreno donde las decisiones de una jurisdicción tienen efectos inmediatos sobre las demás.",
+        "A nivel subnacional, los gobiernos empiezan a convertirse en grandes compradores de la tecnología que buscan regular. En California se anunció el mayor despliegue de IA de un gobierno estatal en Estados Unidos, con acceso para agencias estatales y para los condados y ciudades que decidan sumarse. La medida ilustra una doble condición del sector público: es al mismo tiempo regulador y cliente.",
+        "Detrás de la discusión regulatoria late un problema físico. El consumo eléctrico de los centros de datos que sostienen estos modelos crece a un ritmo que ya preocupa a las redes de suministro, con saltos de dos dígitos en el uso de energía de los principales operadores. La carrera por capacidad de cómputo empuja además a los laboratorios a asegurar chips a medida y acuerdos de fabricación, lo que traslada la competencia desde el software hacia la infraestructura y los semiconductores.",
+        "El resultado es un mapa en el que convergen tres fuerzas: la presión regulatoria, el apetito comercial de los propios Estados y los límites materiales de energía y hardware. Ninguna de las tres, por sí sola, define el futuro del sector; su interacción, en cambio, marcará qué modelos se lanzan, dónde y bajo qué condiciones durante el resto del año."
+      ],
+      "sources_consulted": ["Tech Startups", "AI Tools Recap", "BuildFastWithAI", "SciTechDaily"]
+    },
+    {
+      "id": "2026-07-05-cobre-litio-nuevo-ciclo",
+      "section": "mineria",
+      "title": "Cobre sobre US$6 y litio en recuperación: la minería de la transición energética entra en un nuevo ciclo",
+      "subtitle": "Los precios altos conviven con una crisis de márgenes en las fundiciones y una ola de proyectos en Sudamérica.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": ["Cobre", "Litio", "Transición energética", "Sudamérica"],
+      "image_prompt": "Mina de cobre a cielo abierto en los Andes con maquinaria, tonos cobrizos, fotografía industrial editorial",
+      "image_alt": "Ilustración sobre la minería de cobre y litio en Sudamérica",
+      "key_points": [
+        "El cobre se mantiene sobre US$6 la libra, muy por encima del promedio del año pasado.",
+        "Las fundiciones sufren una crisis de márgenes por menores cargos de tratamiento.",
+        "El litio se estabiliza en torno a US$17.000 por tonelada tras el desplome de precios.",
+        "Argentina lidera la nueva ola: cartera minera sobre US$50.000 millones."
+      ],
+      "lead": "Los metales asociados a la transición energética atraviesan un momento de precios firmes, pero el buen dato de mercado esconde tensiones en distintos eslabones de la cadena.",
+      "body": [
+        "Los metales asociados a la transición energética atraviesan un momento de precios firmes, pero el buen dato de mercado esconde tensiones en distintos eslabones de la cadena. El cobre se mantiene por encima de los seis dólares la libra, con un promedio anual muy superior al del año pasado, mientras el litio empieza a dejar atrás el desplome que golpeó a numerosos proyectos.",
+        "El precio del cobre por encima de ese umbral debería ser una buena noticia para toda la industria, pero no lo es de manera uniforme. Las fundiciones enfrentan una crisis de márgenes por la caída de los cargos de tratamiento y refinación, en un contexto de mayor competencia global por concentrado. La paradoja es clara: el metal vale más, pero transformarlo deja menos.",
+        "En el litio, el ajuste fue todavía más brusco. La producción de carbonato creció de forma sostenida en los últimos años, pero el exceso de oferta hundió los precios desde sus máximos y obligó a revisar planes de inversión. Las proyecciones actuales ubican el carbonato en torno a los diecisiete mil dólares por tonelada, un nivel que sugiere estabilización antes que euforia, sostenido por la expectativa de una recuperación de la demanda de vehículos eléctricos.",
+        "El epicentro de la nueva ola de inversión está en Sudamérica. En Argentina, la cartera de proyectos mineros aprobados y en evaluación supera los cincuenta mil millones de dólares, y la cámara del sector proyecta exportaciones por encima de los nueve mil millones para el año, impulsadas por el oro, la plata y el litio. En cobre, los desarrollos de mayor escala se concentran en las provincias del noroeste y de Cuyo, con nombres que se repiten en cada análisis del sector.",
+        "Chile, principal productor mundial de cobre, observa el nuevo ciclo con una mezcla de oportunidad y desafío: los precios altos favorecen los ingresos, pero la presión sobre las fundiciones y la competencia por inversión obligan a repensar la posición del país en la cadena de valor.",
+        "El trasfondo es una demanda estructural al alza. Cobre, litio y níquel encabezan el interés de los inversores porque son insumos indispensables para electrificar el transporte y las redes. La pregunta que ordena el ciclo no es si habrá demanda, sino qué regiones lograrán convertir sus recursos en producción a tiempo."
+      ],
+      "sources_consulted": ["Reporte Minero", "Cochilco", "Ámbito", "El Cronista", "Portal Minero"]
+    },
+    {
+      "id": "2026-07-05-bancos-centrales-giro-restrictivo",
+      "section": "economia",
+      "title": "Los bancos centrales giran hacia una postura más restrictiva ante una inflación persistente",
+      "subtitle": "Un shock energético y la política comercial vuelven a poner las tasas en el centro de la escena global.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": ["Bancos centrales", "Inflación", "Tasas de interés", "Comercio"],
+      "image_prompt": "Fachada de un banco central con columnas y gráficos financieros superpuestos, tonos sobrios, estilo editorial",
+      "image_alt": "Ilustración sobre bancos centrales y tasas de interés",
+      "key_points": [
+        "El BCE inicia un giro restrictivo con una subida de sus tasas de referencia.",
+        "Japón proyecta llevar su tasa al 1%, un cambio histórico tras años de tipos negativos.",
+        "Un shock energético alimenta una inflación persistente y difícil de bajar.",
+        "La revisión de acuerdos comerciales mantiene cautelosas a las empresas."
+      ],
+      "lead": "Después de meses de expectativas de recortes, varios de los principales bancos centrales del mundo endurecen su discurso y sus decisiones.",
+      "body": [
+        "Después de meses de expectativas de recortes, varios de los principales bancos centrales del mundo endurecen su discurso y sus decisiones. El cambio de tono responde a una inflación que se resiste a ceder, alimentada por un shock energético que volvió a tensionar los precios a escala global.",
+        "El Banco Central Europeo abrió la secuencia con una subida de sus tasas de referencia, en un giro que el mercado interpreta como el inicio de una fase más restrictiva. En Japón, las proyecciones apuntan a que la tasa de política monetaria alcance el uno por ciento, un movimiento históricamente significativo para una economía que convivió durante años con tipos negativos. La Reserva Federal estadounidense y el Banco de Inglaterra son observados con atención ante la posibilidad de seguir el mismo camino.",
+        "El detonante inmediato de la presión inflacionaria es energético. Las disrupciones en el suministro elevaron los costos y se filtraron al resto de los precios, en un fenómeno que los analistas describen como una inflación pegajosa: baja despacio y limita el margen de los bancos centrales para relajar la política monetaria aun cuando la actividad se enfría.",
+        "A la ecuación se suma la política comercial. La revisión de acuerdos comerciales de gran alcance mantiene a las empresas en una actitud cautelosa, a la espera de definiciones que pueden alterar costos y cadenas de suministro. Esa incertidumbre pesa sobre las decisiones de inversión tanto como el nivel de las tasas.",
+        "El panorama de crecimiento es desigual. Las economías avanzadas enfrentan una expansión lenta, mientras algunos mercados emergentes crecen impulsados por reformas. Las estimaciones para el año apuntan a una aceleración apenas moderada del producto global, insuficiente para disipar las dudas sobre la fortaleza de la recuperación.",
+        "En conjunto, el mensaje de los bancos centrales es de prudencia: la prioridad vuelve a ser la inflación, y el costo de esa prioridad —tasas más altas por más tiempo— recaerá sobre el crédito, la inversión y el consumo en los próximos trimestres."
+      ],
+      "sources_consulted": ["Deloitte Insights", "ING Think", "Yahoo Finance", "MacroMicro", "Rabobank"]
+    },
+    {
+      "id": "2026-07-05-granos-precios-cosecha",
+      "section": "agricultura",
+      "title": "Trigo y soja buscan piso: los granos se estabilizan entre cosechas abundantes y clima adverso",
+      "subtitle": "Los precios rebotan desde mínimos de varios meses mientras el mercado pondera stocks, siembra y el pronóstico del tiempo.",
+      "date": "2026-07-05",
+      "author": "Redacción Análisis.com",
+      "tags": ["Trigo", "Soja", "Commodities agrícolas", "USDA"],
+      "image_prompt": "Campo de trigo dorado al atardecer con silos al fondo, fotografía agrícola editorial",
+      "image_alt": "Ilustración sobre los mercados de granos, trigo y soja",
+      "key_points": [
+        "El trigo rebota hacia US$6 por bushel tras mínimos de varios meses.",
+        "La soja se mueve cerca de US$11, presionada por el dólar y el petróleo.",
+        "Informes oficiales muestran menores existencias y menor superficie sembrada.",
+        "El pronóstico de precio de la soja mejora para la próxima campaña."
+      ],
+      "lead": "Los principales granos del comercio mundial intentan recuperar terreno tras tocar sus niveles más bajos en meses, en un mercado que se mueve entre la abundancia de la oferta y las señales de riesgo climático.",
+      "body": [
+        "Los principales granos del comercio mundial intentan recuperar terreno tras tocar sus niveles más bajos en meses, en un mercado que se mueve entre la abundancia de la oferta y las señales de riesgo climático. Trigo y soja rebotaron en los primeros días de julio después de una racha bajista.",
+        "El trigo se acercó nuevamente a los seis dólares por bushel tras haber caído a su nivel más bajo desde marzo. La presión bajista provino del avance de la cosecha de invierno en Estados Unidos, que reforzó las expectativas de una oferta amplia. El rebote posterior se apoyó en informes oficiales que mostraron menores existencias y una superficie sembrada más reducida de lo previsto.",
+        "La soja siguió un patrón parecido. El poroto se movió en torno a los once dólares por bushel, cerca de mínimos de cuatro meses, presionado por la baja del petróleo y por un dólar más fuerte, factores que restan competitividad a las exportaciones estadounidenses. Al mismo tiempo, el calor en zonas productivas de Estados Unidos encendió alertas sobre el estado de los cultivos y aportó soporte a los precios.",
+        "Hacia adelante, las proyecciones oficiales anticipan un precio promedio de la soja más alto para la próxima campaña que para la actual, lo que sugiere que el mercado espera una mejora gradual de los valores a medida que se ajuste el balance entre oferta y demanda.",
+        "El equilibrio, sin embargo, es frágil. La combinación de cosechas voluminosas, un dólar firme y un clima cada vez más determinante mantiene a los granos en una zona de alta sensibilidad, donde cada informe de stocks y cada pronóstico meteorológico puede inclinar la balanza."
+      ],
+      "sources_consulted": ["USDA", "AgWeb", "Trading Economics", "DTN Progressive Farmer", "World Bank Blogs"]
+    }
+  ],
+  "placeholders": [
+    { "section": "retail",        "title": "Ejemplo: el consumo global entre la cautela y el e-commerce" },
+    { "section": "banca",         "title": "Ejemplo: bancos y fintech ante el nuevo ciclo de tasas" },
+    { "section": "energia",       "title": "Ejemplo: la transición energética frente al shock de precios" },
+    { "section": "mercados",      "title": "Ejemplo: bolsas y cripto reaccionan al giro de los bancos centrales" },
+    { "section": "internacional", "title": "Ejemplo: comercio y geopolítica redibujan las cadenas de suministro" },
+    { "section": "startups",      "title": "Ejemplo: el venture capital de LatAm busca su segundo aire" }
+  ]
+}

@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Sitio generado (se reconstruye con build.py; GitHub Actions lo publica)
+site/
+
+# Traducciones generadas (opcionales)
+content/articles.pt.json
+content/articles.en.json
+
+# Entorno
+.env
+.DS_Store
+
+# NOTA: content/covers/ SÍ se versiona (caché de portadas para no re-pagar).

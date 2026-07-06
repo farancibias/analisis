@@ -1,0 +1,21 @@
+{
+  "_comment": "Fuentes fiables por región y sección. Feeds RSS públicos. Amplía o ajusta según tu línea editorial. Verifica los términos de uso de cada medio; los RSS están pensados para consumo de titulares/resúmenes, y los artículos que publiques deben ser redacción propia y original.",
+  "feeds": [
+    { "name": "Reuters World",        "region": "global",  "section": "internacional", "url": "https://www.reutersagency.com/feed/?best-topics=international&post_type=best" },
+    { "name": "BBC Business",         "region": "europa",  "section": "economia",      "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
+    { "name": "BBC Technology",       "region": "europa",  "section": "tecnologia",    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml" },
+    { "name": "The Guardian Business","region": "europa",  "section": "economia",      "url": "https://www.theguardian.com/uk/business/rss" },
+    { "name": "El País Economía",     "region": "europa",  "section": "economia",      "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada" },
+    { "name": "AP Technology",        "region": "america", "section": "tecnologia",    "url": "https://apnews.com/hub/technology?output=rss" },
+    { "name": "CNBC Economy",         "region": "america", "section": "economia",      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258" },
+    { "name": "Nikkei Asia",          "region": "asia",    "section": "internacional", "url": "https://www.nikkei.com/rss/" },
+    { "name": "Mining.com",           "region": "global",  "section": "mineria",       "url": "https://www.mining.com/feed/" },
+    { "name": "Reporte Minero",       "region": "america", "section": "mineria",       "url": "https://www.reporteminero.cl/rss" },
+    { "name": "Reuters Agriculture",  "region": "global",  "section": "agricultura",   "url": "https://www.reutersagency.com/feed/?best-sectors=commodities&post_type=best" },
+    { "name": "Retail Dive",          "region": "america", "section": "retail",        "url": "https://www.retaildive.com/feeds/news/" },
+    { "name": "Finextra",             "region": "europa",  "section": "banca",         "url": "https://www.finextra.com/rss/headlines.aspx" },
+    { "name": "OilPrice",             "region": "global",  "section": "energia",       "url": "https://oilprice.com/rss/main" },
+    { "name": "CoinDesk",             "region": "global",  "section": "mercados",      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/" },
+    { "name": "TechCrunch",           "region": "america", "section": "startups",      "url": "https://techcrunch.com/feed/" }
+  ]
+}

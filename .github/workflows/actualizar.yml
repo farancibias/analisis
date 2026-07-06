@@ -1,0 +1,86 @@
+name: Actualizar Análisis.com cada 24h
+
+# Corre todos los días a las 09:00 UTC (06:00 en Chile/Argentina).
+# Ajusta el cron a tu zona horaria. También se puede lanzar a mano.
+on:
+  push:
+    branches: [main]        # publica al subir cambios (el primer push despliega)
+  schedule:
+    - cron: "0 9 * * *"     # y cada día a las 09:00 UTC (06:00 en Chile/Argentina)
+  workflow_dispatch:         # o manualmente desde la pestaña Actions
+
+# Evita corridas solapadas
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # para hacer commit del nuevo articles.json
+  pages: write      # para publicar en GitHub Pages
+  id-token: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install feedparser openai requests
+
+      - name: Ejecutar pipeline editorial (recolectar + redactar + guardar)
+        env:
+          # Guarda tus claves en: Settings > Secrets and variables > Actions
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 generator/pipeline.py
+
+      - name: Actualizar datos regionales (tablero)
+        run: python3 generator/fetch_data.py || echo "Datos: se conserva el último valor"
+
+      - name: (Opcional) Traducir a PT/EN
+        if: ${{ secrets.OPENAI_API_KEY != '' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python3 generator/translate.py || echo "Traducción omitida"
+
+      - name: Generar sitio estático (portadas OpenAI + todas las funciones)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          IMAGE_QUALITY: medium          # low | medium | high
+          IMAGE_SIZE: 1536x1024
+          SITE_URL: https://analisis.com
+          ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
+          ADS: ${{ vars.ADS }}                              # "1" para mostrar slots de anuncios
+        run: python3 generator/build.py
+
+      - name: Distribuir titulares (Telegram / WhatsApp / email)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+          WHATSAPP_PHONE_ID: ${{ secrets.WHATSAPP_PHONE_ID }}
+          EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
+          SITE_URL: https://analisis.com
+        run: python3 generator/distribute.py || echo "Distribución omitida"
+
+      - name: Guardar nuevas publicaciones en el repo (archivo histórico)
+        run: |
+          git config user.name "Análisis Bot"
+          git config user.email "bot@analisis.com"
+          git add content/articles.json content/covers content/data.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
+          git commit -m "Actualización automática $(date -u +%Y-%m-%d)" || echo "Sin cambios que guardar"
+          git push || echo "Nada que empujar"
+
+      - name: Preparar artefacto de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Desplegar en GitHub Pages
+        uses: actions/deploy-pages@v4
