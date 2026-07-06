@@ -112,6 +112,12 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .wn-item{padding:12px 0;border-bottom:1px solid var(--line)}
 .wn-item .t{font-size:17px;font-weight:700;line-height:1.22}
 .wn-item .t a:hover{color:var(--red)}
+.wn-list{max-height:380px;overflow-y:auto;overflow-x:hidden;padding-right:10px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.wn-list::-webkit-scrollbar{width:8px}
+.wn-list::-webkit-scrollbar-thumb{background:var(--line2);border-radius:4px}
+.wn-list::-webkit-scrollbar-track{background:var(--wash);border-radius:4px}
+.wn-list .wn-item:first-child{padding-top:2px}
+.wn-list .wn-item:last-child{border-bottom:0}
 .section-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);margin:28px 0 16px;padding-bottom:6px;flex-wrap:wrap}
 .section-head h2{font-family:var(--sans);font-size:15px;text-transform:uppercase;letter-spacing:1px;margin:0}
 .section-head .d{font-family:var(--sans);font-size:12px;color:var(--muted)}
@@ -665,12 +671,12 @@ def _home(arts):
     h += f'<div class="meta">{fecha_larga(lead["date"])} · {reading_time(lead)} min de lectura</div>'
     h += ('</div><aside class="whatsnews">'
           '<div class="wx" id="wx"><div class="wx-cond" style="padding:6px 0">Cargando el tiempo…</div></div>'
-          '<h4>Lo último</h4>')
+          '<h4>Lo último</h4><div class="wn-list">')
     for a in rest:
         s2 = SECTION_BY_SLUG[a["section"]]
         h += (f'<div class="wn-item"><span class="kicker">{escape(s2["name"])}</span>'
               f'<div class="t"><a href="articulo/{a["id"]}.html">{escape(a["title"])}</a></div></div>')
-    h += '</aside></section>'
+    h += '</div></aside></section>'
     if ADS:
         h += '<div class="ad">Espacio publicitario</div>'
     h += ('<div class="section-head"><h2>Más noticias</h2>'
