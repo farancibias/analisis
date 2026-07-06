@@ -125,32 +125,44 @@ async function askClaude(q, related, cfg, apiKey) {
     : "";
   const payload = {
     model: cfg.MODEL,
-    max_tokens: 1024,
+    max_tokens: 900,
     system: SYSTEM_PROMPT,
-    tools: [{ type: "web_search_20260209", name: "web_search", max_uses: 3 }],
+    // thinking desactivado + pocas búsquedas -> respuesta en segundos (dentro del
+    // presupuesto del Worker). Sonnet 5 acepta {type:"disabled"}.
+    thinking: { type: "disabled" },
+    tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 2 }],
     messages: [{ role: "user", content: `Pregunta: ${q}${contexto}` }],
   };
+  const t0 = Date.now();
   let data = await callAnthropic(payload, apiKey);
   // el bucle server-side puede pausar; se reanuda re-enviando (una vez)
   if (data.stop_reason === "pause_turn") {
     payload.messages.push({ role: "assistant", content: data.content });
     data = await callAnthropic(payload, apiKey);
   }
+  console.log(`ask ok ${Date.now() - t0}ms stop=${data.stop_reason}`);
   return { answer: extractText(data), sources: extractSources(data) };
 }
 
 async function callAnthropic(payload, apiKey) {
-  const r = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify(payload),
-  });
-  if (!r.ok) throw new Error(`anthropic ${r.status}`);
-  return r.json();
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 30000); // corta si tarda demasiado
+  try {
+    const r = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      signal: ctrl.signal,
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!r.ok) throw new Error(`anthropic ${r.status}`);
+    return r.json();
+  } finally {
+    clearTimeout(t);
+  }
 }
 
 function extractText(data) {

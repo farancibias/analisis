@@ -487,13 +487,14 @@ ASK_JS = r"""
     out.innerHTML='<div class="ask-ans"><p>Esto es lo que ha publicado Análisis.com al respecto:</p></div>'+tarjetas(rel)
       +'<p class="meta ask-note">Respuestas ampliadas con IA y búsqueda web cuando el asistente esté conectado.</p>'; }); }
   function preguntar(box,q){ var out=box.querySelector('.ask-out'); if(!out)return; q=(q||'').trim(); if(!q)return;
-    out.innerHTML='<p class="ask-loading">Consultando…</p>';
+    out.innerHTML='<p class="ask-loading">Buscando en Análisis y en la web… (unos segundos)</p>';
     if(window.ANALISIS_ASK_URL){
-      fetch(window.ANALISIS_ASK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
-        .then(function(r){return r.json();}).then(function(j){
+      var ctrl=new AbortController(), to=setTimeout(function(){ctrl.abort();},28000);
+      fetch(window.ANALISIS_ASK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q}),signal:ctrl.signal})
+        .then(function(r){return r.json();}).then(function(j){ clearTimeout(to);
           if(!j||j.degrade||!j.answer){interno(out,q);return;}
           out.innerHTML=respuesta(j.answer)+fuentes(j.sources)+tarjetas(j.related)+AVISO;
-        }).catch(function(){interno(out,q);});
+        }).catch(function(){clearTimeout(to);interno(out,q);});
       return; }
     interno(out,q); }
   window.preguntar=function(){var b=d.querySelector('.ask');if(b)preguntar(b,(b.querySelector('.ask-q')||{}).value);};
