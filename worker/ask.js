@@ -24,12 +24,12 @@ const DEFAULTS = {
 };
 
 const SYSTEM_PROMPT =
-  "Eres el asistente de Análisis.com, un portal de noticias económicas de América Latina. " +
-  "Respondes en español neutro, con una síntesis ORIGINAL, informativa y concreta. " +
-  "Usas la búsqueda web para hechos actuales y CITAS las fuentes externas; NO copias su texto " +
-  "(si citas textual, <15 palabras entre comillas y atribuido). Aclara que es una respuesta " +
-  "generada por IA cuando aporte. Si te paso artículos de Análisis.com relacionados, tenlos en " +
-  "cuenta y menciónalos cuando sean pertinentes. Sé conciso (2-4 párrafos).";
+  "Eres el asistente de Análisis.com, portal de economía de América Latina. " +
+  "Responde en español neutro SINTETIZANDO CON TUS PROPIAS PALABRAS (nunca pegues frases " +
+  "de los resultados de búsqueda). Formato: 1 o 2 frases de contexto y, si aporta, 2 o 3 " +
+  "viñetas MUY cortas, cada una en UNA sola línea que empieza con '- ' seguida del texto. " +
+  "Directo al grano: sin preámbulos, saludos, relleno, URLs, enlaces ni sección de fuentes, " +
+  "y sin markdown de negrita (**). Máximo 80 palabras en total.";
 
 export default {
   async fetch(request, env, ctx) {
@@ -125,7 +125,7 @@ async function askClaude(q, related, cfg, apiKey) {
     : "";
   const payload = {
     model: cfg.MODEL,
-    max_tokens: 900,
+    max_tokens: 500,
     system: SYSTEM_PROMPT,
     // thinking desactivado + pocas búsquedas -> respuesta en segundos (dentro del
     // presupuesto del Worker). Sonnet 5 acepta {type:"disabled"}.
@@ -166,8 +166,11 @@ async function callAnthropic(payload, apiKey) {
 }
 
 function extractText(data) {
+  // Con web_search el texto llega en muchos bloques (uno por cita); se unen SIN
+  // separador para no partir frases. Los saltos de línea reales (viñetas) van
+  // dentro del texto de cada bloque y se conservan.
   return (data.content || [])
-    .filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
+    .filter((b) => b.type === "text").map((b) => b.text).join("").trim();
 }
 
 function extractSources(data) {

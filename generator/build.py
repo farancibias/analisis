@@ -196,6 +196,8 @@ nav.main a:hover,nav.main a.active{color:var(--red)}
 .ask-out:not(:empty){margin:14px 0 4px;padding:14px 16px;background:var(--wash);border:1px solid var(--line);border-radius:6px}
 .ask-loading{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0}
 .ask-ans p{font-family:var(--serif);font-size:16px;line-height:1.55;margin:0 0 10px}
+.ask-ans ul{margin:0 0 10px;padding-left:20px}
+.ask-ans li{font-family:var(--serif);font-size:15px;line-height:1.5;margin:4px 0}
 .ask-src,.ask-rel{margin:12px 0 0;border-top:1px solid var(--line);padding-top:10px}
 .ask-src h4,.ask-rel h4{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:0 0 7px}
 .ask-src a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink);text-decoration:none;margin:5px 0}
@@ -480,8 +482,15 @@ ASK_JS = r"""
   function fuentes(src){ if(!src||!src.length)return '';
     return '<div class="ask-src"><h4>Fuentes</h4>'+src.map(function(s){var dom='';try{dom=new URL(s.url).hostname.replace(/^www\./,'');}catch(e){}
       return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener"><span class="ask-dom">'+esc(dom)+'</span> '+esc(s.title)+'</a>';}).join('')+'</div>'; }
-  function respuesta(text){ return '<div class="ask-ans">'+text.split(/\n+/).filter(function(p){return p.trim();}).map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</div>'; }
-  var AVISO='<p class="meta ask-note">Respuesta generada por IA a partir de fuentes citadas; verifica en los enlaces.</p>';
+  function respuesta(text){ text=(text||'').replace(/\*\*/g,'');
+    var lines=text.split(/\n+/).map(function(s){return s.trim();}).filter(Boolean);
+    var html='',inList=false;
+    lines.forEach(function(l){ var m=/^[-*•]\s+(.*)/.exec(l);
+      if(m){ if(!inList){html+='<ul>';inList=true;} html+='<li>'+esc(m[1])+'</li>'; }
+      else { if(inList){html+='</ul>';inList=false;} html+='<p>'+esc(l)+'</p>'; } });
+    if(inList)html+='</ul>';
+    return '<div class="ask-ans">'+html+'</div>'; }
+  var AVISO='<p class="meta ask-note">Respuesta generada con IA.</p>';
   function interno(out,q){ loadIdx(function(){ var rel=relInternos(q);
     if(!rel.length){out.innerHTML='<div class="ask-ans"><p>No encuentro nada en el archivo de Análisis.com sobre eso todavía.</p></div>';return;}
     out.innerHTML='<div class="ask-ans"><p>Esto es lo que ha publicado Análisis.com al respecto:</p></div>'+tarjetas(rel)
@@ -493,7 +502,7 @@ ASK_JS = r"""
       fetch(window.ANALISIS_ASK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q}),signal:ctrl.signal})
         .then(function(r){return r.json();}).then(function(j){ clearTimeout(to);
           if(!j||j.degrade||!j.answer){interno(out,q);return;}
-          out.innerHTML=respuesta(j.answer)+fuentes(j.sources)+tarjetas(j.related)+AVISO;
+          out.innerHTML=respuesta(j.answer)+tarjetas(j.related)+AVISO;
         }).catch(function(){clearTimeout(to);interno(out,q);});
       return; }
     interno(out,q); }
