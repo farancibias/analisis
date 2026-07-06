@@ -17,6 +17,7 @@ import re
 import shutil
 import unicodedata
 from datetime import datetime
+from difflib import SequenceMatcher
 from html import escape
 
 import sys
@@ -672,9 +673,9 @@ def build():
     global TICKER_HTML
     TICKER_HTML = build_ticker()
     # Orden de portada: primero por fecha (frescura) y, dentro del mismo día,
-    # por RELEVANCIA REGIONAL (LatAm). Usa region_score si el pipeline lo guardó;
-    # si no (notas antiguas), lo calcula al vuelo desde el propio texto.
-    arts = sorted(ARTICLES, key=lambda x: (x["date"], _region_score(x)), reverse=True)
+    # por IMPORTANCIA (sección prioritaria + fuentes contrastadas + relevancia
+    # regional). Así el líder es la nota más relevante del día, no la primera.
+    arts = sorted(ARTICLES, key=lambda x: (x["date"], _importancia(x)), reverse=True)
     write_covers(arts)
     write_audio(arts)
     temas = build_temas(arts)
@@ -739,7 +740,48 @@ def _region_score(a):
         + " ".join(a.get("body", [])) + " " + " ".join(a.get("tags", [])))
 
 
+# Prioridad editorial por sección (T3): pondera qué secciones encabezan.
+SECTION_PRIORITY = {
+    "economia": 3, "mercados": 3, "mineria": 3, "energia": 2, "banca": 2,
+    "internacional": 2, "tecnologia": 2, "agricultura": 1, "retail": 1,
+    "startups": 1,
+}
+
+
+def _importancia(a):
+    """Score de importancia (T3): prioridad de sección + nº de fuentes
+    contrastadas (tope 4) + relevancia regional. La recencia se aplica como
+    clave primaria en el orden, no aquí, para no anteponer notas viejas."""
+    fuentes = len(a.get("sources_consulted") or [])
+    return (SECTION_PRIORITY.get(a["section"], 1)
+            + min(fuentes, 4)
+            + _region_score(a))
+
+
+def _mismo_tema(a, b):
+    """Dos notas son casi el mismo tema si comparten >=2 tags o sus titulares
+    se parecen mucho (para deduplicar la portada)."""
+    ta = {t.lower() for t in a.get("tags", [])}
+    tb = {t.lower() for t in b.get("tags", [])}
+    if ta and len(ta & tb) >= 2:
+        return True
+    return SequenceMatcher(None, a.get("title", "").lower(),
+                           b.get("title", "").lower()).ratio() >= 0.6
+
+
+def _dedup(arts):
+    """Quita casi-duplicados del MISMO día para la portada, conservando el de
+    mayor importancia (ya vienen ordenados)."""
+    out = []
+    for a in arts:
+        if any(a["date"] == b["date"] and _mismo_tema(a, b) for b in out):
+            continue
+        out.append(a)
+    return out
+
+
 def _home(arts):
+    arts = _dedup(arts)
     lead, rest = arts[0], arts[1:]
     sec = SECTION_BY_SLUG[lead["section"]]
     h = head(f"{SITE['name']} — {SITE['tagline']}", depth=0)
