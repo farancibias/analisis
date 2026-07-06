@@ -19,6 +19,7 @@ import base64
 import hashlib
 import os
 import random
+import re
 
 # Paleta por sección: (color oscuro, color medio, acento claro)
 PALETTES = {
@@ -197,33 +198,102 @@ def generar_imagen_ia(prompt):
 # --------------------------------------------------------------------------
 PEXELS_ENDPOINT = "https://api.pexels.com/v1/search"
 
+# Términos sensibles (ES+EN). Si aparecen en el QUERY se quitan; si aparecen en
+# el texto alternativo de una foto, esa foto se descarta SIEMPRE (seguridad
+# editorial innegociable): evita protestas, banderas, políticos, violencia, etc.
+BLACKLIST = {
+    "protest", "protesta", "protestas", "riot", "disturbio", "manifestacion",
+    "manifestación", "rally", "march", "marcha", "flag", "bandera", "banderas",
+    "election", "eleccion", "elección", "trump", "biden", "president",
+    "presidente", "politician", "político", "politico", "war", "guerra",
+    "weapon", "arma", "armas", "gun", "guns", "soldier", "soldado", "police",
+    "policía", "policia", "crowd", "banner", "pancarta", "demonstration",
+    "strike", "huelga", "activist", "activista",
+}
+
+# Ancla visual segura y relevante por sección (en inglés: más y mejores
+# resultados en Pexels). Garantiza que el query nunca quede vacío ni ambiguo.
+SECTION_VISUAL = {
+    "mineria": "copper mine industrial",
+    "energia": "power plant energy",
+    "economia": "finance economy charts",
+    "mercados": "stock market trading",
+    "banca": "bank building finance",
+    "retail": "retail store shopping",
+    "tecnologia": "technology data center",
+    "startups": "startup office team",
+    "agricultura": "farm field agriculture",
+    "internacional": "world map global",
+}
+
+
+def _tokens_all(t):
+    """Todas las palabras (sin filtro de largo) — para cotejar la lista negra."""
+    return set(re.sub(r"[^a-z0-9 ]", " ", (t or "").lower()).split())
+
+
+def _palabras(t):
+    """Tokens 'temáticos' (>= 4 letras) — para medir pertinencia."""
+    return {w for w in _tokens_all(t) if len(w) >= 4}
+
+
+def _sensible(texto):
+    """True si el texto contiene algún término de la lista negra."""
+    return bool(_tokens_all(texto) & BLACKLIST)
+
+
+def _sanear_query(query):
+    """Quita términos sensibles del query de búsqueda. '' si no queda nada útil."""
+    return " ".join(w for w in _tokens_all(query) if w not in BLACKLIST).strip()
+
 
 def buscar_foto_pexels(query):
-    """Devuelve (bytes_jpg, credito) de una foto real de Pexels, o None."""
+    """Devuelve (bytes_jpg, credito) de una foto real de Pexels PERTINENTE y no
+    sensible, o None (para que el llamador caiga a la ilustración SVG).
+
+    Salvaguardas (T1):
+      - Del query se quitan los términos de la lista negra; si queda vacío -> None.
+      - Toda foto cuyo texto alternativo sea sensible se descarta SIEMPRE.
+      - Se prefiere una foto cuyo 'alt' comparta tema con el query (pertinencia);
+        si ninguna coincide, se usa la primera foto SEGURA como respaldo
+        (umbral suave: conserva más fotos sin bajar la guardia de seguridad).
+      - Sin clave, sin query útil o sin candidata segura -> None (ilustración).
+    """
     key = os.environ.get("PEXELS_API_KEY")
-    if not key or not query:
+    q = _sanear_query(query)
+    if not key or not q:
         return None
     try:
         import requests  # import diferido: sólo si se usa
         r = requests.get(
             PEXELS_ENDPOINT,
             headers={"Authorization": key},
-            params={"query": query, "orientation": "landscape",
-                    "per_page": 1, "size": "large"},
+            params={"query": q, "orientation": "landscape",
+                    "per_page": 10, "size": "large"},
             timeout=20)
         r.raise_for_status()
         fotos = r.json().get("photos", [])
-        if not fotos:
-            return None
-        p = fotos[0]
-        src = p.get("src", {})
+        tema = _palabras(q)
+        pertinente = respaldo = None
+        for p in fotos:
+            alt = p.get("alt") or ""
+            if _sensible(alt):
+                continue                      # foto sensible -> nunca
+            if pertinente is None and (_palabras(alt) & tema):
+                pertinente = p                # segura + relacionada al tema
+            if respaldo is None and alt:
+                respaldo = p                  # segura (respaldo suave)
+        elegida = pertinente or respaldo
+        if not elegida:
+            return None                       # nada seguro -> ilustración SVG
+        src = elegida.get("src", {})
         base = src.get("large2x") or src.get("large") or src.get("original") or ""
         # Forzar JPEG comprimido y ancho acotado: evita descargar PNG originales
         # de varios MB y mantiene las portadas livianas.
         url = base.split("?")[0] + "?auto=compress&cs=tinysrgb&fm=jpg&w=1600"
         img = requests.get(url, timeout=30)
         img.raise_for_status()
-        return img.content, f"Foto: {p.get('photographer', 'Pexels')} / Pexels"
+        return img.content, f"Foto: {elegida.get('photographer', 'Pexels')} / Pexels"
     except Exception as e:  # noqa: BLE001
         print(f"  aviso: falló Pexels ({e}); sigo con el respaldo.")
         return None
@@ -281,12 +351,16 @@ def build_cover(seed, section, prompt, imgdir, basename, query=""):
             png = basename + ".png"
             with open(os.path.join(imgdir, png), "wb") as f:
                 f.write(data)
+            credito = "Ilustración IA · Análisis.com"
+            _guardar_credito(imgdir, basename, credito)
             print(f"  imagen IA generada: {png}")
-            return png, None
+            return png, credito
         except Exception as e:  # noqa: BLE001
             print(f"  aviso: falló la imagen IA ({e}); uso portada SVG.")
     # 4) ilustración SVG generativa (siempre disponible, sin derechos)
     svg = basename + ".svg"
     with open(os.path.join(imgdir, svg), "w", encoding="utf-8") as f:
         f.write(cover_svg(seed, section))
-    return svg, None
+    credito = "Ilustración · Análisis.com"
+    _guardar_credito(imgdir, basename, credito)
+    return svg, credito

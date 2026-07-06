@@ -21,7 +21,7 @@ from html import escape
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from images import cover_svg, build_cover  # noqa: E402
+from images import cover_svg, build_cover, SECTION_VISUAL  # noqa: E402
 from audio import build_audio  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -609,8 +609,10 @@ def write_covers(arts):
     os.makedirs(IMGDIR, exist_ok=True)
     os.makedirs(COVERS_DIR, exist_ok=True)
     for a in arts:
-        tags = a.get("tags") or []
-        query = " ".join(tags[:2]) if tags else a["section"]
+        # Query de imagen: prioriza el image_query seguro que redacta el pipeline;
+        # si no existe (notas antiguas), usa tags; y ancla SIEMPRE con la sección.
+        base = a.get("image_query") or " ".join((a.get("tags") or [])[:2])
+        query = f"{base} {SECTION_VISUAL.get(a['section'], a['section'])}".strip()
         fn, credito = build_cover(seed=a["id"], section=a["section"],
                                   prompt=a.get("image_prompt", ""),
                                   imgdir=COVERS_DIR, basename=f"article-{a['id']}",

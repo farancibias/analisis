@@ -158,6 +158,7 @@ Entrega estos campos:
 - body: lista de párrafos (6 a 8).
 - image_prompt: descripción visual para una foto editorial, sin texto ni logos.
 - image_alt: texto alternativo accesible de la imagen.
+- image_query: 2 a 4 palabras clave EN INGLÉS para buscar una foto de archivo GENÉRICA y relacionada (objetos, lugares, industria, materiales, paisajes). PROHIBIDO incluir: nombres de personas o políticos, partidos, protestas, manifestaciones, banderas, elecciones, armas, policía o violencia. Ejemplos: "copper mine machinery", "shipping port containers", "office buildings finance".
 
 RESÚMENES DE LAS FUENTES:
 {fuentes}
@@ -175,9 +176,10 @@ _SCHEMA = {
         "body": {"type": "array", "items": {"type": "string"}},
         "image_prompt": {"type": "string"},
         "image_alt": {"type": "string"},
+        "image_query": {"type": "string"},
     },
     "required": ["title", "subtitle", "tags", "key_points", "lead", "body",
-                 "image_prompt", "image_alt"],
+                 "image_prompt", "image_alt", "image_query"],
     "additionalProperties": False,
 }
 
@@ -247,6 +249,7 @@ def guardar(articulo_ia, section, cluster):
         "tags": articulo_ia.get("tags", []),
         "image_prompt": articulo_ia.get("image_prompt", ""),
         "image_alt": articulo_ia.get("image_alt") or articulo_ia["title"],
+        "image_query": articulo_ia.get("image_query", ""),
         "key_points": articulo_ia.get("key_points", []),
         "lead": articulo_ia.get("lead") or (body[0] if body else ""),
         "body": body,
