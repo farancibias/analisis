@@ -60,6 +60,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           IMAGE_QUALITY: medium          # low | medium | high
           IMAGE_SIZE: 1536x1024
+          AUDIO_TTS: ${{ vars.AUDIO_TTS }}   # "1" para generar voz neuronal por nota (necesita OPENAI_API_KEY)
+          TTS_VOICE: ${{ vars.TTS_VOICE }}   # opcional: nova, alloy, shimmer, ...
           SITE_URL: https://analisis.com
           ANALYTICS_DOMAIN: ${{ vars.ANALYTICS_DOMAIN }}   # p.ej. analisis.com (Plausible)
           ADS: ${{ vars.ADS }}                              # "1" para mostrar slots de anuncios
@@ -79,7 +81,7 @@ jobs:
         run: |
           git config user.name "Análisis Bot"
           git config user.email "bot@analisis.com"
-          git add content/articles.json content/covers content/data.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
+          git add content/articles.json content/covers content/audio content/data.json content/articles.*.json 2>/dev/null || git add content/articles.json content/covers content/data.json
           git commit -m "Actualización automática $(date -u +%Y-%m-%d)" || echo "Sin cambios que guardar"
           git push || echo "Nada que empujar"
 

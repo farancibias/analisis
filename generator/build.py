@@ -21,6 +21,7 @@ from html import escape
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from images import cover_svg, build_cover  # noqa: E402
+from audio import build_audio  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content", "articles.json")
@@ -28,6 +29,8 @@ DATA = os.path.join(ROOT, "content", "data.json")
 OUT = os.path.join(ROOT, "site")
 IMGDIR = os.path.join(OUT, "img")
 COVERS_DIR = os.path.join(ROOT, "content", "covers")
+AUDIO_OUT = os.path.join(OUT, "audio")
+AUDIO_DIR = os.path.join(ROOT, "content", "audio")
 
 SITE_URL = os.environ.get("SITE_URL", "https://analisis.com").rstrip("/")
 ANALYTICS_DOMAIN = os.environ.get("ANALYTICS_DOMAIN", "")  # p.ej. analisis.com (Plausible)
@@ -35,6 +38,7 @@ ADS = os.environ.get("ADS", "") == "1"
 
 COVER = {}
 CREDIT = {}   # id de artículo -> crédito de la foto (atribución), si aplica
+AUDIO = {}    # id de artículo -> nombre del MP3 de voz neuronal, si existe
 TICKER_HTML = ""
 
 MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio",
@@ -210,12 +214,40 @@ APP_JS = r"""
   var bar=d.querySelector('.progress');
   if(bar)window.addEventListener('scroll',function(){var h=d.body.scrollHeight-innerHeight;
     bar.style.width=(h>0?(scrollY/h*100):0)+'%';});
-  // escuchar nota (Web Speech API, gratis)
-  window.leer=function(btn){var sy=window.speechSynthesis;if(!sy){alert('Tu navegador no soporta lectura de voz.');return;}
-    if(sy.speaking){sy.cancel();btn.textContent='▶ Escuchar';return;}
-    var t=d.getElementById('cuerpo');if(!t)return;var u=new SpeechSynthesisUtterance(t.innerText);
-    u.lang='es-ES';u.rate=1;u.onend=function(){btn.textContent='▶ Escuchar';};
-    sy.speak(u);btn.textContent='⏹ Detener';};
+  // escuchar nota: audio neural pregenerado si existe; si no, la MEJOR voz del navegador
+  var _voz=null,_vocesListas=false;
+  function _elegirVoz(){var sy=window.speechSynthesis;if(!sy)return null;
+    var vs=sy.getVoices()||[];var es=vs.filter(function(v){return /^es(-|_|$)/i.test(v.lang);});
+    if(!es.length)es=vs;
+    var buenas=/(natural|neural|online|enhanced|premium|google|siri|m[oó]nica|paulina|elvira|dalia|lupe|lucia|sergio)/i;
+    var malas=/(compact|eloquence|espeak|pico)/i;
+    function sc(v){var s=0;if(buenas.test(v.name))s+=10;if(malas.test(v.name))s-=8;
+      if(/es[-_]ES/i.test(v.lang))s+=2;if(/es[-_](MX|US|419|AR|CL)/i.test(v.lang))s+=1;
+      if(!v.localService)s+=3;return s;}
+    es.sort(function(a,b){return sc(b)-sc(a);});return es[0]||null;}
+  function _cargarVoces(cb){var sy=window.speechSynthesis;if(!sy){cb();return;}
+    var v=sy.getVoices();if(v&&v.length){_voz=_elegirVoz();_vocesListas=true;cb();return;}
+    sy.onvoiceschanged=function(){if(_vocesListas)return;_voz=_elegirVoz();_vocesListas=true;cb();};
+    setTimeout(function(){if(_vocesListas)return;_voz=_elegirVoz();_vocesListas=true;cb();},500);}
+  function _hablar(texto,btn){var sy=window.speechSynthesis;
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]*/g)||[texto];var i=0;
+    function sig(){if(i>=partes.length){btn.textContent='▶ Escuchar';return;}
+      var frag=partes[i].trim();if(!frag){i++;return sig();}
+      var u=new SpeechSynthesisUtterance(frag);u.lang=(_voz&&_voz.lang)||'es-ES';
+      if(_voz)u.voice=_voz;u.rate=1;u.pitch=1;
+      u.onend=function(){i++;sig();};u.onerror=function(){btn.textContent='▶ Escuchar';};
+      sy.speak(u);}
+    sig();}
+  window.leer=function(btn){
+    var pre=d.querySelector('audio.tts');
+    if(pre){if(pre.paused){pre.play();btn.textContent='⏸ Pausar';
+        pre.onended=function(){btn.textContent='▶ Escuchar';};}
+      else{pre.pause();btn.textContent='▶ Escuchar';}return;}
+    var sy=window.speechSynthesis;
+    if(!sy){alert('Tu navegador no soporta lectura de voz.');return;}
+    if(sy.speaking||sy.pending){sy.cancel();btn.textContent='▶ Escuchar';return;}
+    var t=d.getElementById('cuerpo');if(!t)return;
+    btn.textContent='⏹ Detener';_cargarVoces(function(){_hablar(t.innerText,btn);});};
   // compartir
   window.compartir=function(){var u=location.href,t=d.title;
     if(navigator.share)navigator.share({title:t,url:u}).catch(function(){});
@@ -574,6 +606,17 @@ def write_covers(arts):
               cover_svg(f"section-{s['slug']}", s["slug"]))
 
 
+def write_audio(arts):
+    """Voz neuronal por nota: usa el MP3 cacheado/generado si existe (si no,
+    el sitio usa la voz del navegador). Ver generator/audio.py."""
+    for a in arts:
+        fn = build_audio(a, audiodir=AUDIO_DIR, basename=f"article-{a['id']}")
+        if fn:
+            AUDIO[a["id"]] = fn
+            os.makedirs(AUDIO_OUT, exist_ok=True)
+            shutil.copy(os.path.join(AUDIO_DIR, fn), os.path.join(AUDIO_OUT, fn))
+
+
 # ---- temas (entidades) a partir de tags ----
 def build_temas(arts):
     temas = {}
@@ -609,6 +652,7 @@ def build():
     TICKER_HTML = build_ticker()
     arts = sorted(ARTICLES, key=lambda x: x["date"], reverse=True)
     write_covers(arts)
+    write_audio(arts)
     temas = build_temas(arts)
 
     # ---- assets estáticos ----
@@ -728,6 +772,9 @@ def _articles(arts, temas):
               '<span class="acts">'
               '<button onclick="leer(this)">▶ Escuchar</button>'
               '<button onclick="compartir()">Compartir</button></span></div>')
+        if AUDIO.get(a["id"]):
+            h += (f'<audio class="tts" preload="none" '
+                  f'src="../audio/{AUDIO[a["id"]]}"></audio>')
         credito = a.get("image_credit") or CREDIT.get(a["id"]) or "Portada · Análisis.com"
         h += (f'<figure class="hero"><div class="thumb">'
               f'<img src="../img/{COVER[a["id"]]}" alt="{alt_for(a)}"></div>'
