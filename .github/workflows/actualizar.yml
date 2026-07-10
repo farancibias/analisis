@@ -1,12 +1,14 @@
-name: Actualizar Análisis.com cada 24h
+name: Actualizar Análisis.com cada 72h
 
-# Corre todos los días a las 09:00 UTC (06:00 en Chile/Argentina).
+# Corre cada 3 días a las 09:00 UTC (06:00 en Chile/Argentina).
+# Nota: cron no expresa "cada 72h" exactas; */3 usa el día del mes (1,4,7,…,31)
+# y se reinicia en cada cambio de mes (algún hueco puntual de 1-4 días).
 # Ajusta el cron a tu zona horaria. También se puede lanzar a mano.
 on:
   push:
     branches: [main]        # publica al subir cambios (el primer push despliega)
   schedule:
-    - cron: "0 9 * * *"     # y cada día a las 09:00 UTC (06:00 en Chile/Argentina)
+    - cron: "0 9 */3 * *"   # cada 3 días a las 09:00 UTC (06:00 en Chile/Argentina)
   workflow_dispatch:         # o manualmente desde la pestaña Actions
 
 # Evita corridas solapadas
