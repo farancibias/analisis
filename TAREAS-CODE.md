@@ -3,10 +3,16 @@
 Basado en la revisión del sitio en vivo (`REVISION-SITIO.md`). Tareas ordenadas
 por prioridad, con archivos, cambios concretos y criterios de aceptación.
 
-> **Estado de ejecución (2026-07-06):** ✅ HECHAS y en vivo — **T1, T2, T3, T4,
-> T5, T7, T8, T9, T11, T12** (commit por tarea; verificadas en producción).
-> ⏳ Pendientes — **T6** (Mi Análisis/Login), **T10** (traducción PT/EN),
-> **T13** (formatos), **T14** (monetización). Orden restante sugerido: T6 → T10.
+> **Estado de ejecución (2026-07-06):** ✅ HECHAS y en vivo — **T1–T5, T7–T9, T11,
+> T12, T15**, además de **reacciones/encuesta** al pie y **multi-idioma ES/EN/PT/DE**
+> (botón + auto por país + traducción IA vía Worker). Commit por tarea, verificadas
+> en producción. ⏳ Pendientes — **T6** (Mi Análisis/Login), **T10** (pre-generar
+> páginas por idioma con hreflang; el multi-idioma actual es cliente/on-demand),
+> **T13** (formatos), **T14** (monetización).
+>
+> Infra añadida: sitio tras **Cloudflare** (HTTPS + caché), **Worker** `analisis-ask`
+> con `/api/ask` (asistente) y `/api/translate` (idiomas) — ver `worker/README.md`.
+> Assets versionados (`app.js?v=hash`) para bustar la caché del edge.
 
 ## Cómo trabajar (para Code)
 - Antes de empezar lee: `ESTADO.md`, `REVISION-SITIO.md`, y el código actual de
