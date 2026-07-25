@@ -12626,6 +12626,1307 @@
         "cl"
       ],
       "companies": []
+    },
+    {
+      "id": "2026-07-25-el-mercado-de-commodities-agr-colas-c-mo-se-fijan-los-precio-a77a07",
+      "section": "agricultura",
+      "title": "El mercado de commodities agrícolas: cómo se fijan los precios que mueven al agro global",
+      "subtitle": "Un repaso al sistema que conecta a productores, comerciantes e inversores, dominado por las grandes casas comercializadoras conocidas como el 'ABCD'.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:29+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "commodities agrícolas",
+        "ADM",
+        "Cargill",
+        "mercados financieros"
+      ],
+      "image_prompt": "Vista de un gran silo de almacenamiento de granos junto a una terminal portuaria, con cintas transportadoras y montañas de cereal dorado bajo luz de atardecer, sin texto ni logos.",
+      "image_alt": "Silos de almacenamiento de granos en una terminal portuaria agrícola",
+      "image_query": "grain silos agriculture port",
+      "key_points": [
+        "El mercado de commodities agrícolas fija los precios de granos y otras materias primas a escala global.",
+        "Cuatro grandes empresas —ADM, Bunge, Cargill y Louis Dreyfus— conforman el llamado 'ABCD' del comercio agrícola.",
+        "Los inversores pueden acceder a estas materias primas mediante instrumentos financieros como los ETC."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es el 'ABCD' de las commodities agrícolas?",
+          "answer": "Es el nombre que reciben las cuatro grandes comercializadoras del sector: ADM, Bunge, Cargill y Louis Dreyfus, que concentran gran parte del comercio mundial de materias primas agrícolas."
+        },
+        {
+          "question": "¿Cómo pueden los inversores participar en el mercado agrícola?",
+          "answer": "Además del comercio físico, existen instrumentos financieros como los ETC (Exchange Traded Commodities), que permiten exponerse a la evolución de los precios de las materias primas agrícolas sin operar directamente con el producto físico."
+        },
+        {
+          "question": "¿Qué determina los precios de las commodities agrícolas?",
+          "answer": "Los precios se forman a partir de la oferta y la demanda física, así como de expectativas sobre el clima, la logística, la geopolítica y la evolución de la demanda global."
+        }
+      ],
+      "poll": {
+        "question": "¿Considera adecuado que cuatro grandes empresas concentren buena parte del comercio agrícola mundial?",
+        "options": [
+          "Es una preocupación",
+          "Es eficiente para el mercado",
+          "No tengo una opinión formada"
+        ]
+      },
+      "lead": "El comercio internacional de materias primas agrícolas descansa sobre un sistema complejo que enlaza a productores, intermediarios e inversores. En su centro operan cuatro grandes comercializadoras y una creciente oferta de productos financieros.",
+      "body": [
+        "El mercado de commodities agrícolas constituye la infraestructura invisible que determina el precio de granos, oleaginosas y otras materias primas que abastecen la cadena alimentaria mundial. Su funcionamiento combina oferta y demanda física con operaciones financieras en bolsas de futuros.",
+        "Según el análisis de Agrolatam, este sistema no solo refleja las condiciones de las cosechas, sino que también incorpora expectativas sobre el clima, la logística, la geopolítica y la evolución de la demanda global, factores que se traducen en la fijación diaria de precios de referencia.",
+        "En el corazón de este comercio operan cuatro compañías conocidas por sus iniciales como el 'ABCD': ADM (Archer Daniels Midland), Bunge, Cargill y Louis Dreyfus. Estas firmas concentran buena parte del acopio, procesamiento, transporte y comercialización de las principales materias primas agrícolas a nivel internacional.",
+        "De acuerdo con Rankia, el peso de estas cuatro empresas es tal que sus decisiones de compra, almacenamiento y distribución influyen directamente en la formación de precios y en la disponibilidad de alimentos en distintas regiones del planeta.",
+        "Más allá del comercio físico, los mercados agrícolas también atraen a inversores financieros interesados en diversificar sus carteras. Para ellos existen instrumentos específicos que permiten exponerse a la evolución de estas materias primas sin necesidad de operar directamente con productos físicos.",
+        "Entre esos vehículos destacan los ETC (Exchange Traded Commodities), que según el portal extraETF ganan protagonismo de cara a 2026 como una vía para replicar el comportamiento de los precios de las materias primas agrícolas dentro de una estrategia de inversión.",
+        "La combinación de comercio físico, mercados de futuros y productos financieros configura un ecosistema en el que conviven objetivos distintos: garantizar el abastecimiento, cubrir riesgos de precios y buscar rentabilidad, todo ello dentro de un sistema profundamente interconectado."
+      ],
+      "sources_consulted": [
+        "Google News Agro"
+      ],
+      "region_score": 1,
+      "countries": [
+        "pe"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-la-agricultura-regenerativa-gana-terreno-como-modelo-para-el-382603",
+      "section": "agricultura",
+      "title": "La agricultura regenerativa gana terreno como modelo para elevar rentabilidad y recuperar suelos",
+      "subtitle": "El enfoque promete combinar mejores márgenes económicos con la restauración de la salud del suelo, según especialistas del sector.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:29+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "agricultura regenerativa",
+        "suelos",
+        "agronegocios",
+        "sostenibilidad"
+      ],
+      "image_prompt": "Campo de cultivo saludable con suelo oscuro y fértil, hileras de plantas verdes bajo cielo despejado, vista de tierra agrícola bien cuidada sin personas ni texto",
+      "image_alt": "Campo de cultivo con suelo fértil y plantas verdes en hileras",
+      "image_query": "healthy farm soil crops",
+      "key_points": [
+        "La agricultura regenerativa se presenta como un modelo capaz de aumentar la rentabilidad y frenar la degradación de los suelos.",
+        "El enfoque prioriza la salud del suelo como base para la productividad a largo plazo.",
+        "El interés crece en el sector agropecuario latinoamericano como alternativa a prácticas convencionales."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es la agricultura regenerativa?",
+          "answer": "Es un modelo productivo que busca recuperar y mantener la salud del suelo mientras mejora la rentabilidad de los productores, en lugar de solo explotar el recurso."
+        },
+        {
+          "question": "¿Por qué se considera un modelo atractivo?",
+          "answer": "Porque plantea que cuidar el suelo puede ir de la mano con mayores ganancias, combinando sostenibilidad ambiental y eficiencia económica."
+        },
+        {
+          "question": "¿Qué problema busca resolver?",
+          "answer": "Apunta a revertir la degradación de los suelos, un factor que compromete el rendimiento de los cultivos a mediano y largo plazo."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que la agricultura regenerativa puede reemplazar a los modelos productivos convencionales?",
+        "options": [
+          "Sí, es el futuro del agro",
+          "Solo de forma parcial",
+          "No, no es viable a gran escala",
+          "No tengo información suficiente"
+        ]
+      },
+      "lead": "La agricultura regenerativa se consolida como una propuesta que busca conciliar la rentabilidad de los productores con la recuperación de los suelos, un recurso clave y cada vez más deteriorado en la producción agropecuaria.",
+      "body": [
+        "La agricultura regenerativa avanza como un modelo productivo que promete un doble beneficio: mejorar los márgenes económicos de los productores y, al mismo tiempo, restaurar la salud de los suelos, según difundió Agrolatam.",
+        "El planteo parte de una premisa central: un suelo sano y biológicamente activo constituye la base de la productividad sostenible en el tiempo. A diferencia de los sistemas más intensivos, este enfoque busca regenerar el recurso en lugar de solo explotarlo.",
+        "Entre los objetivos que persigue este modelo se encuentra revertir la degradación de la tierra, un problema que afecta a extensas zonas productivas y que compromete el rendimiento de los cultivos en el mediano y largo plazo.",
+        "La propuesta gana atención en el sector agropecuario porque plantea que las prácticas orientadas a cuidar el suelo no necesariamente implican resignar ganancias, sino que pueden traducirse en mayor rentabilidad para el productor.",
+        "El interés por estas prácticas se inscribe en un contexto en el que la sostenibilidad ambiental y la eficiencia económica aparecen como demandas cada vez más presentes en la actividad agrícola.",
+        "Para sus promotores, el desafío pasa por difundir el conocimiento técnico y las herramientas necesarias para que los productores puedan adoptar el modelo y medir sus resultados tanto en el plano productivo como en el ambiental.",
+        "El debate se da mientras crece la conciencia sobre la importancia de preservar los recursos naturales de los que depende la producción de alimentos, en especial en regiones con fuerte peso del agro en la economía."
+      ],
+      "sources_consulted": [
+        "Google News Agro"
+      ],
+      "region_score": 1,
+      "countries": [],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-banco-mundial-actualiza-el-mapa-de-ingresos-en-latinoam-r-2711c0",
+      "section": "banca",
+      "title": "El Banco Mundial actualiza el mapa de ingresos en Latinoamérica y cifra en 19.600 millones los daños por terremotos en Venezuela",
+      "subtitle": "Distintos informes del organismo multilateral abordan la brecha de ingresos regional, el impacto de sismos en Venezuela y una causa judicial en Brasil.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:29+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Banco Mundial",
+        "Latinoamérica",
+        "Venezuela",
+        "Brasil"
+      ],
+      "image_prompt": "Vista aérea de un mapa físico de América Latina sobre una mesa de trabajo con gráficos económicos, tonos neutros y luz natural, estilo editorial",
+      "image_alt": "Mapa de América Latina junto a documentos y gráficos económicos sobre una mesa",
+      "image_query": "latin america map economy",
+      "key_points": [
+        "El Banco Mundial difundió un mapa con los países de ingresos más altos y más bajos de la región.",
+        "Los terremotos en Venezuela dejaron daños estimados en 19.600 millones de dólares.",
+        "La Justicia de Brasil autorizó investigar los vínculos de Flávio Bolsonaro con el exCEO del Banco Master.",
+        "Los datos provienen de reportes de medios internacionales como Bloomberg Línea y EL PAÍS."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué informó el Banco Mundial sobre los ingresos en Latinoamérica?",
+          "answer": "Actualizó una clasificación que distingue a los países de la región según su nivel de ingresos, identificando los de renta más alta y los de renta más baja."
+        },
+        {
+          "question": "¿Cuál fue el costo de los terremotos en Venezuela?",
+          "answer": "El Banco Mundial estimó los daños en 19.600 millones de dólares, según EL PAÍS."
+        },
+        {
+          "question": "¿Qué investigación se abrió en Brasil?",
+          "answer": "La Justicia brasileña autorizó investigar los vínculos entre Flávio Bolsonaro y el exCEO del Banco Master, de acuerdo con Bloomberg Línea."
+        }
+      ],
+      "poll": {
+        "question": "¿Cuál de estos temas económicos considera más relevante para la región?",
+        "options": [
+          "La brecha de ingresos entre países",
+          "El impacto de desastres naturales",
+          "La transparencia del sistema financiero"
+        ]
+      },
+      "lead": "El Banco Mundial volvió al centro de la agenda económica latinoamericana con nuevos datos sobre la distribución de ingresos en la región y una valoración de los daños provocados por los terremotos en Venezuela, mientras en Brasil avanza una causa judicial vinculada al sector bancario.",
+      "body": [
+        "El Banco Mundial actualizó su clasificación de los países latinoamericanos según su nivel de ingresos, un ejercicio que permite visualizar la persistente brecha económica dentro de la región. El mapa distingue entre las economías de ingresos más altos y aquellas ubicadas en el extremo más bajo, de acuerdo con reportes de Bloomberg Línea y LaRepublica.co.",
+        "Este tipo de clasificaciones se elabora a partir de indicadores como el ingreso nacional bruto per cápita, la metodología habitual del organismo para agrupar a los países en categorías de renta. Los resultados suelen influir en el acceso a financiamiento y en las condiciones de crédito que enfrentan los gobiernos.",
+        "En paralelo, el Banco Mundial valoró en 19.600 millones de dólares los daños causados por los terremotos en Venezuela, según informó EL PAÍS. La cifra da cuenta de la magnitud del impacto sobre infraestructura y actividad económica en un país que ya atraviesa una prolongada crisis.",
+        "Las estimaciones de daños de este tipo permiten dimensionar las necesidades de reconstrucción y orientar eventuales esfuerzos de cooperación internacional. El monto reportado se ubica entre los más elevados registrados para desastres naturales en la región.",
+        "En el plano judicial, la Justicia de Brasil autorizó investigar los vínculos entre Flávio Bolsonaro y el exdirector ejecutivo del Banco Master, según Bloomberg Línea. La decisión abre una línea de indagación que involucra a una figura política de peso y a una entidad del sistema financiero brasileño.",
+        "El caso se inscribe en el escrutinio creciente sobre las relaciones entre actores políticos y el sector bancario en Brasil, uno de los mercados financieros más grandes de América Latina.",
+        "En conjunto, los tres asuntos reflejan la diversidad de desafíos económicos e institucionales que atraviesan los países de la región, desde las desigualdades de ingreso hasta la vulnerabilidad ante desastres y los controles sobre el sistema financiero.",
+        "Los datos y decisiones citados provienen de los reportes de los medios mencionados, sin que hasta el momento se hayan difundido detalles adicionales sobre las metodologías o los plazos de cada proceso."
+      ],
+      "sources_consulted": [
+        "GN Banca LatAm"
+      ],
+      "region_score": 6,
+      "countries": [
+        "br",
+        "ve"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-nubank-adquiere-banco-porto-real-para-reforzar-su-operaci-n-52f61b",
+      "section": "banca",
+      "title": "Nubank adquiere Banco Porto Real para reforzar su operación en Brasil",
+      "subtitle": "La compra permitiría a la fintech obtener una licencia bancaria plena en su mercado más importante.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:30+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Nubank",
+        "Banco Porto Real",
+        "Brasil",
+        "fintech"
+      ],
+      "image_prompt": "Fachada moderna de un edificio corporativo financiero con líneas limpias y cristales, ambiente urbano de negocios, luz diurna, sin texto ni logotipos.",
+      "image_alt": "Edificio corporativo de oficinas financieras en una ciudad",
+      "image_query": "office buildings finance",
+      "key_points": [
+        "Nubank acordó adquirir Banco Porto Real de Investimentos.",
+        "La operación apunta a obtener una licencia bancaria en Brasil.",
+        "Nubank afirma que 31,5 millones de personas en el país ya acceden a cuentas, crédito y ahorro a través de la plataforma."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué adquirió Nubank?",
+          "answer": "Nubank acordó comprar Banco Porto Real de Investimentos como parte de su estrategia para reforzar su operación en Brasil."
+        },
+        {
+          "question": "¿Cuál es el objetivo de la operación?",
+          "answer": "Según Bloomberg Línea, la compra busca que Nubank obtenga una licencia bancaria en Brasil."
+        },
+        {
+          "question": "¿Cuántos clientes tiene Nubank en Brasil?",
+          "answer": "La compañía afirma que 31,5 millones de personas en el país ya acceden a cuentas, crédito y soluciones de ahorro a través de su plataforma."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo valora la expansión de Nubank en Brasil mediante esta adquisición?",
+        "options": [
+          "Refuerza positivamente su posición",
+          "Genera dudas sobre la concentración",
+          "No tengo una opinión formada"
+        ]
+      },
+      "lead": "Nubank anunció la compra de Banco Porto Real de Investimentos, una operación con la que la fintech busca reforzar su presencia en Brasil y avanzar hacia la obtención de una licencia bancaria plena en el país.",
+      "body": [
+        "Nubank, una de las mayores fintech de América Latina, comunicó la adquisición de Banco Porto Real de Investimentos, en un movimiento orientado a consolidar su posición en Brasil, su principal mercado.",
+        "De acuerdo con Bloomberg Línea, el objetivo central de la operación es que la compañía obtenga una licencia bancaria en Brasil, un paso que ampliaría el rango de servicios financieros que puede ofrecer de forma directa.",
+        "La firma destacó que ya proporciona acceso a cuentas, crédito y soluciones de ahorro a 31,5 millones de personas en el país, una base de clientes que refleja la escala alcanzada por su modelo digital.",
+        "La compra de Banco Porto Real de Investimentos se enmarca en la estrategia de Nubank de fortalecer sus operaciones domésticas y ampliar su infraestructura regulatoria dentro del sistema financiero brasileño.",
+        "Contar con una licencia bancaria permitiría a la empresa operar con mayor autonomía en áreas que actualmente requieren estructuras específicas, reduciendo su dependencia de acuerdos con terceros.",
+        "Nubank ha construido su expansión sobre una propuesta centrada en servicios digitales, sin sucursales físicas, un enfoque que le permitió captar millones de usuarios en Brasil y otros mercados de la región.",
+        "La adquisición confirma el interés de la compañía por profundizar en su mercado de origen, donde concentra la mayor parte de su actividad y su base de clientes.",
+        "Los términos financieros y el calendario detallado de la operación no fueron precisados en la información disponible sobre el anuncio."
+      ],
+      "sources_consulted": [
+        "Finextra",
+        "GN Banca LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "br"
+      ],
+      "companies": [
+        "nubank"
+      ]
+    },
+    {
+      "id": "2026-07-25-los-nuevos-aranceles-de-trump-golpean-de-forma-desigual-a-es-36c1f0",
+      "section": "economia",
+      "title": "Los nuevos aranceles de Trump golpean de forma desigual a España, Argentina y Brasil",
+      "subtitle": "Las medidas comerciales de Estados Unidos elevan los costes para la industria europea y afectan casi a la mitad de las exportaciones brasileñas, mientras Argentina recibe un trato preferencial.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:30+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Aranceles",
+        "Comercio internacional",
+        "Estados Unidos",
+        "Donald Trump"
+      ],
+      "image_prompt": "Vista de un puerto industrial con contenedores apilados y grúas de carga bajo un cielo despejado, sin texto ni logotipos, ambiente de comercio internacional.",
+      "image_alt": "Puerto con contenedores y grúas de carga que representa el comercio internacional afectado por los aranceles.",
+      "image_query": "shipping port containers",
+      "key_points": [
+        "Las medidas de EE. UU. podrían triplicar los costes de exportación de sectores clave de la industria española.",
+        "El gobierno de Lula estima que el 47,3% de las exportaciones brasileñas a EE. UU. quedarán afectadas.",
+        "Argentina recibió un trato preferencial y su acuerdo bilateral no corre riesgo, según AmCham."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué países se ven afectados por los nuevos aranceles de Trump?",
+          "answer": "Las medidas impactan a España, cuya industria vería triplicados sus costes de exportación, y a Brasil, con el 47,3% de sus ventas a EE. UU. afectadas. Argentina, en cambio, recibió un trato preferencial."
+        },
+        {
+          "question": "¿Qué proporción de las exportaciones brasileñas queda alcanzada?",
+          "answer": "El gobierno de Lula estima que el 47,3% de las exportaciones brasileñas a Estados Unidos serán afectadas, tomando en cuenta la tarifa del 12,5% anunciada por Washington."
+        },
+        {
+          "question": "¿Está en riesgo el acuerdo comercial de Argentina con Estados Unidos?",
+          "answer": "Según la AmCham, el acuerdo comercial bilateral no corre riesgo y el gobierno estadounidense otorgó a Argentina un trato preferencial."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo cree que responderán los países afectados por los nuevos aranceles?",
+        "options": [
+          "Negociarán excepciones con EE. UU.",
+          "Aplicarán medidas de represalia",
+          "Buscarán nuevos mercados",
+          "Aceptarán las nuevas condiciones"
+        ]
+      },
+      "lead": "La nueva ofensiva arancelaria del presidente estadounidense Donald Trump está teniendo efectos muy distintos según el país. Mientras la industria española y las exportaciones brasileñas afrontan un golpe considerable, Argentina obtuvo condiciones más favorables.",
+      "body": [
+        "La administración de Donald Trump ha desplegado un nuevo esquema de aranceles que reconfigura las condiciones de acceso al mercado estadounidense para varios socios comerciales. El impacto, sin embargo, no es uniforme: cada economía enfrenta un escenario propio según el sector y el tratamiento otorgado por Washington.",
+        "En el caso de España, las medidas amenazan con triplicar los costes de exportación para sectores clave de su industria. Según El País, los bienes de equipo, los componentes industriales y las manufacturas serán los más golpeados por el encarecimiento de la factura al ingresar en el mercado norteamericano.",
+        "El aumento de estos costes supone un desafío para las cadenas de suministro industriales españolas, que dependen del comercio con Estados Unidos para colocar buena parte de su producción de mayor valor añadido.",
+        "Brasil aparece como uno de los países más afectados. El gobierno de Luiz Inácio Lula da Silva estima que el 47,3% de las exportaciones brasileñas hacia Estados Unidos quedarán alcanzadas por los nuevos gravámenes, según Folha de S.Paulo.",
+        "Ese cálculo considera la tarifa del 12,5% anunciada por la administración estadounidense, una medida que abarca a casi la mitad de las ventas externas del país sudamericano al mercado norteamericano.",
+        "Argentina, en cambio, corre una suerte distinta. La Cámara de Comercio de Estados Unidos en Argentina (AmCham) destacó el trato preferencial que el gobierno estadounidense otorgó al país y aseguró que el acuerdo comercial bilateral no está en riesgo.",
+        "La diferencia de tratamientos evidencia cómo la política arancelaria de Washington puede operar como herramienta de presión y de negociación, con resultados dispares para economías con distintos vínculos y acuerdos con Estados Unidos.",
+        "El desenlace dependerá de la capacidad de cada país para negociar excepciones o compensaciones, en un contexto de creciente tensión comercial y de reordenamiento de los flujos de comercio global."
+      ],
+      "sources_consulted": [
+        "El País Economía",
+        "Folha Mercado (BR)",
+        "Ámbito (AR)"
+      ],
+      "region_score": 3,
+      "countries": [
+        "ar",
+        "br"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-congreso-de-chile-avanza-en-la-reforma-econ-mica-impulsad-1f2ec4",
+      "section": "economia",
+      "title": "El Congreso de Chile avanza en la reforma económica impulsada por José Antonio Kast",
+      "subtitle": "El paquete legislativo contempla recortes de impuestos y se encamina a su aprobación en el Parlamento chileno.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Chile",
+        "José Antonio Kast",
+        "reforma económica",
+        "impuestos"
+      ],
+      "image_prompt": "Fachada de un edificio institucional del Congreso con arquitectura clásica, tomada en un día despejado, sin personas ni texto visible.",
+      "image_alt": "Edificio legislativo con columnas bajo un cielo despejado.",
+      "image_query": "congress building chile",
+      "key_points": [
+        "El Congreso chileno avanza hacia la aprobación de la reforma económica vinculada a José Antonio Kast.",
+        "La propuesta incluye recortes de impuestos.",
+        "Los medios Bloomberg Línea y El Nacional reportaron el avance legislativo."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué contempla la reforma económica impulsada por Kast?",
+          "answer": "La reforma incluye recortes de impuestos como uno de sus ejes centrales, según los reportes de Bloomberg Línea."
+        },
+        {
+          "question": "¿En qué etapa se encuentra la reforma?",
+          "answer": "El Congreso chileno avanza hacia su aprobación; El Nacional reportó que la iniciativa fue aprobada en el Parlamento."
+        },
+        {
+          "question": "¿Por qué es relevante esta reforma?",
+          "answer": "Los cambios tributarios afectan la política fiscal del país y forman parte de la agenda económica vinculada a José Antonio Kast."
+        }
+      ],
+      "poll": {
+        "question": "¿Considera que los recortes de impuestos son una medida adecuada para la economía chilena?",
+        "options": [
+          "Sí, favorecen la inversión",
+          "No, afectan las cuentas fiscales",
+          "Depende de su implementación",
+          "No tengo una opinión"
+        ]
+      },
+      "lead": "El Congreso de Chile se aproxima a la aprobación de una reforma económica impulsada por José Antonio Kast, cuyo eje central es una serie de recortes de impuestos.",
+      "body": [
+        "El Parlamento de Chile avanza en la tramitación de una reforma económica asociada al dirigente José Antonio Kast, según reportes de Bloomberg Línea y El Nacional. El paquete legislativo se encamina a su aprobación en el Congreso.",
+        "De acuerdo con Bloomberg Línea, uno de los componentes centrales de la iniciativa es la reducción de impuestos, una medida que apunta a modificar la carga tributaria vigente en el país.",
+        "El Nacional informó que la reforma económica impulsada por Kast fue aprobada en el Congreso chileno, en línea con el avance legislativo destacado por los medios internacionales.",
+        "La propuesta se enmarca en el debate sobre la política fiscal y económica de Chile, donde las discusiones en torno a los tributos han ocupado un lugar destacado en la agenda pública.",
+        "Los recortes impositivos suelen ser presentados por sus impulsores como un mecanismo para estimular la actividad económica y la inversión, aunque también generan debate sobre su impacto en las cuentas fiscales.",
+        "El avance de la iniciativa en el Legislativo representa un hito para la agenda económica vinculada a Kast, cuya figura ha tenido peso en el escenario político chileno.",
+        "La atención se centra ahora en los pasos finales del proceso legislativo y en la implementación efectiva de las medidas contempladas en la reforma.",
+        "Los detalles específicos sobre el alcance de los recortes y su cronograma de aplicación quedarán definidos conforme avance la tramitación parlamentaria."
+      ],
+      "sources_consulted": [
+        "GN Economía LatAm"
+      ],
+      "region_score": 2,
+      "countries": [
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-am-rica-latina-acelera-estrategias-para-asegurar-minerales-c-4ac7e8",
+      "section": "energia",
+      "title": "América Latina acelera estrategias para asegurar minerales críticos y atraer inversión verde",
+      "subtitle": "La región busca aprovechar sus reservas de minerales estratégicos para captar capital orientado a la transición energética.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "minerales críticos",
+        "América Latina",
+        "inversión verde",
+        "transición energética"
+      ],
+      "image_prompt": "Vista de una mina a cielo abierto en América Latina con maquinaria pesada y montañas de fondo, luz diurna, sin texto ni logos.",
+      "image_alt": "Mina a cielo abierto con maquinaria pesada extrayendo minerales",
+      "image_query": "open pit mine machinery",
+      "key_points": [
+        "América Latina impulsa estrategias para acceder a minerales críticos.",
+        "El interés apunta a detonar inversiones vinculadas a la energía verde.",
+        "Tres naciones de la región salen activamente a buscar inversiones, según BNamericas."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué son los minerales críticos?",
+          "answer": "Son materias primas consideradas esenciales para tecnologías de energía limpia, como baterías y vehículos eléctricos, cuya demanda global crece con la transición energética."
+        },
+        {
+          "question": "¿Qué está haciendo América Latina al respecto?",
+          "answer": "Según las fuentes, la región acelera estrategias para acceder a estos minerales y atraer inversiones verdes, con tres naciones buscando activamente capital."
+        },
+        {
+          "question": "¿Por qué importa esta tendencia?",
+          "answer": "Porque la región cuenta con recursos naturales relevantes y podría convertirse en un proveedor clave de materias primas para la economía baja en carbono."
+        }
+      ],
+      "poll": {
+        "question": "¿América Latina logrará aprovechar sus minerales críticos para atraer inversión verde?",
+        "options": [
+          "Sí, tiene ventaja por sus recursos",
+          "Solo con mejores marcos regulatorios",
+          "No, faltan condiciones adecuadas"
+        ]
+      },
+      "lead": "Varios países de América Latina están intensificando sus estrategias para asegurar el acceso a minerales críticos, un movimiento que apunta a atraer inversiones asociadas a la transición energética global.",
+      "body": [
+        "América Latina se posiciona como un actor relevante en la carrera global por los minerales críticos, materias primas consideradas esenciales para la fabricación de baterías, vehículos eléctricos y tecnologías de energía limpia.",
+        "Según Portal Innova, la región está acelerando estrategias para acceder a estos recursos, en un contexto donde la demanda mundial crece impulsada por la descarbonización de las economías.",
+        "Este impulso busca detonar lo que las fuentes describen como inversiones verdes, es decir, capital orientado a proyectos con foco en sostenibilidad y en las cadenas de suministro de la transición energética.",
+        "BNamericas informó que, en el balance semanal de la región, tres naciones latinoamericanas han salido activamente a cazar inversiones, en línea con el creciente interés por captar recursos financieros.",
+        "El acceso a minerales críticos se ha convertido en un tema estratégico para los gobiernos, que compiten por atraer capital y desarrollar capacidades locales de extracción y procesamiento.",
+        "La abundancia de recursos naturales en América Latina otorga a la región una ventaja potencial frente a otros mercados, siempre que logre traducir esas reservas en proyectos concretos y financiación estable.",
+        "El desafío para los países de la región pasa por ofrecer marcos regulatorios claros y condiciones competitivas que conviertan el interés inversor en desarrollos efectivos.",
+        "La combinación de demanda global, disponibilidad de recursos y búsqueda activa de inversiones perfila un escenario en el que la región podría desempeñar un papel central en el suministro de materias primas para la economía baja en carbono."
+      ],
+      "sources_consulted": [
+        "GN Energía LatAm"
+      ],
+      "region_score": 2,
+      "countries": [],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-gobierno-argentino-aprueba-un-nuevo-proyecto-de-inversi-n-51afc1",
+      "section": "energia",
+      "title": "El Gobierno argentino aprueba un nuevo proyecto de inversión en la cuenca de Vaca Muerta",
+      "subtitle": "Pampa Energía tomó la decisión final de inversión para producir fertilizantes en Argentina.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Vaca Muerta",
+        "Pampa Energía",
+        "Argentina",
+        "Fertilizantes"
+      ],
+      "image_prompt": "Vista de una planta industrial de procesamiento de gas y fertilizantes en un paisaje árido de la Patagonia, con tuberías, tanques de almacenamiento y estructuras metálicas bajo un cielo despejado, sin texto ni logos.",
+      "image_alt": "Instalación industrial energética en un entorno árido con tanques y tuberías.",
+      "image_query": "gas processing plant industrial",
+      "key_points": [
+        "El Gobierno argentino aprobó un proyecto en la cuenca de Vaca Muerta.",
+        "Pampa Energía adoptó la decisión final de inversión.",
+        "La iniciativa apunta a la producción de fertilizantes en Argentina."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué aprobó el Gobierno argentino?",
+          "answer": "El Gobierno dio luz verde a un proyecto de inversión vinculado a la cuenca de Vaca Muerta, en línea con una decisión de inversión de Pampa Energía."
+        },
+        {
+          "question": "¿Qué producirá el proyecto de Pampa Energía?",
+          "answer": "Según Infobae, la iniciativa está orientada a la producción de fertilizantes en Argentina."
+        },
+        {
+          "question": "¿Qué es la decisión final de inversión?",
+          "answer": "Es el paso que confirma el compromiso de capital de una empresa en un proyecto y habilita su avance hacia la etapa de ejecución."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo valora el desarrollo de proyectos industriales en Vaca Muerta?",
+        "options": [
+          "Muy positivo para la economía",
+          "Positivo con reservas",
+          "Genera dudas ambientales",
+          "No tengo una opinión formada"
+        ]
+      },
+      "lead": "El Gobierno de Argentina dio luz verde a un nuevo proyecto vinculado a la cuenca de Vaca Muerta, en el marco de una decisión final de inversión adoptada por la compañía Pampa Energía para producir fertilizantes en el país.",
+      "body": [
+        "El Ejecutivo argentino aprobó un proyecto de inversión asociado a la cuenca de Vaca Muerta, según informaron ANSA Latina e Infobae. La formación, ubicada en el sur del país, se ha consolidado como uno de los polos de desarrollo energético más relevantes de Argentina.",
+        "La aprobación gubernamental acompaña la decisión final de inversión adoptada por Pampa Energía, orientada a la producción de fertilizantes en territorio argentino, de acuerdo con lo publicado por Infobae.",
+        "La denominada decisión final de inversión es el paso clave en los grandes proyectos industriales y energéticos, ya que confirma el compromiso de capital de la empresa y habilita el avance hacia las etapas de ejecución y construcción.",
+        "El respaldo del Gobierno constituye un componente central para este tipo de iniciativas, en las que la validación oficial suele ser requisito para el desarrollo de infraestructura vinculada a los recursos de la cuenca.",
+        "Vaca Muerta es una formación de hidrocarburos no convencionales que ha atraído inversiones destinadas tanto a la extracción de gas y petróleo como a su aprovechamiento en cadenas productivas de mayor valor agregado.",
+        "La producción de fertilizantes representa un eslabón industrial que aprovecha el gas natural como insumo, lo que refuerza la integración entre la actividad extractiva y la manufactura en el país.",
+        "Con esta aprobación, Argentina suma un nuevo proyecto en su cartera de desarrollos vinculados a la cuenca, en un contexto de creciente interés por consolidar el potencial energético de la región.",
+        "Ni ANSA Latina ni Infobae precisaron en sus resúmenes el monto total de la inversión ni el cronograma detallado del proyecto anunciado por Pampa Energía."
+      ],
+      "sources_consulted": [
+        "GN Energía LatAm"
+      ],
+      "region_score": 2,
+      "countries": [
+        "ar"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-chile-lidera-en-calidad-electoral-mientras-ee-uu-mantiene-su-9b51ae",
+      "section": "internacional",
+      "title": "Chile lidera en calidad electoral mientras EE.UU. mantiene su peso económico en América Latina",
+      "subtitle": "El Servel se ubica como el mejor organismo electoral de la región y tercero del mundo, en un contexto de tensiones comerciales y competencia por la inversión.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:32+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Servel",
+        "América Latina",
+        "Estados Unidos",
+        "aranceles"
+      ],
+      "image_prompt": "Edificio institucional moderno con arquitectura sobria bajo cielo despejado, símbolo de instituciones públicas y comercio internacional, sin texto ni logos",
+      "image_alt": "Fachada de un edificio institucional moderno bajo un cielo despejado",
+      "image_query": "government building latin america",
+      "key_points": [
+        "El Servel de Chile es el organismo electoral mejor evaluado de América Latina y tercero a nivel mundial.",
+        "Estados Unidos conserva su liderazgo como principal inversor en la región pese al aumento del gasto de China.",
+        "Washington confirmó aranceles a países latinoamericanos, y Brasil figuraría como el más afectado."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué lugar ocupa el Servel de Chile en las evaluaciones?",
+          "answer": "El Servel es el organismo electoral mejor evaluado de América Latina y ocupa el tercer lugar a nivel mundial, según reportes de CNN Chile y G5noticias."
+        },
+        {
+          "question": "¿Quién es el principal inversor en América Latina?",
+          "answer": "Estados Unidos mantiene su liderazgo como principal inversor en la región, pese al aumento del gasto de China, según Canal 9 Bío Bío Televisión."
+        },
+        {
+          "question": "¿Qué país sería el más afectado por los nuevos aranceles de EE.UU.?",
+          "answer": "Según BNamericas, Brasil figuraría como el país más afectado por los aranceles confirmados por Estados Unidos contra naciones latinoamericanas."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué tema considera más relevante para el futuro de América Latina?",
+        "options": [
+          "La calidad de las instituciones electorales",
+          "La inversión extranjera en la región",
+          "El impacto de los aranceles comerciales"
+        ]
+      },
+      "lead": "Chile se posiciona a la cabeza de la región en materia de institucionalidad electoral, según nuevas evaluaciones que sitúan a su Servicio Electoral (Servel) como el mejor de América Latina y el tercero del mundo. En paralelo, el panorama económico regional muestra a Estados Unidos como principal inversor y una nueva ronda de aranceles que golpearía especialmente a Brasil.",
+      "body": [
+        "El Servicio Electoral de Chile (Servel) fue destacado como el organismo electoral mejor evaluado de América Latina, alcanzando además el tercer lugar en un ranking de alcance mundial, según reportes difundidos por medios como CNN Chile y G5noticias.",
+        "El reconocimiento resalta la solidez institucional del sistema chileno en un momento en que la confianza en los procesos electorales es un tema central en varios países de la región.",
+        "La posición del Servel lo diferencia de otros organismos latinoamericanos y lo coloca como referencia comparativa a nivel internacional, junto a las entidades electorales más valoradas del mundo.",
+        "En el plano económico, Estados Unidos mantiene su condición de principal inversor en América Latina, de acuerdo con Canal 9 Bío Bío Televisión, pese al notable incremento del gasto y la presencia de China en la región.",
+        "Esta competencia entre las dos mayores economías del mundo por la influencia económica sobre América Latina se ha intensificado en los últimos años, con China ganando terreno en infraestructura y comercio.",
+        "Al mismo tiempo, Washington confirmó la aplicación de aranceles contra países latinoamericanos, una medida que impactaría de forma directa en los flujos comerciales de la región.",
+        "Según BNamericas, Brasil sería el país más afectado por esta nueva imposición arancelaria, lo que abre interrogantes sobre las relaciones comerciales bilaterales.",
+        "El escenario combina fortalezas institucionales, como el caso del Servel, con desafíos económicos derivados de la política comercial estadounidense y la disputa de influencia con China."
+      ],
+      "sources_consulted": [
+        "GN Internacional LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "br",
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-investigaci-n-acad-mica-analiza-c-mo-la-fotograf-a-preserva-eab265",
+      "section": "internacional",
+      "title": "Investigación académica analiza cómo la fotografía preserva la memoria LGBTQIA+ en América Latina",
+      "subtitle": "Universidades chilenas abordan el papel de la imagen en la construcción de memoria y resistencia de comunidades diversas en la región.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:32+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "fotografía",
+        "memoria LGBTQIA+",
+        "América Latina",
+        "universidades"
+      ],
+      "image_prompt": "Archivo de fotografías analógicas antiguas dispuestas sobre una mesa de madera, con álbumes y negativos, iluminación cálida y suave, ambiente de estudio de investigación documental, sin texto ni logotipos.",
+      "image_alt": "Fotografías antiguas y álbumes sobre una mesa de madera en un ambiente de archivo documental",
+      "image_query": "vintage photography archive",
+      "key_points": [
+        "Una investigadora estudia el rol de la fotografía en la preservación de la memoria LGBTQIA+ en América Latina.",
+        "La Universidad de Santiago de Chile y la Universidad de Chile difunden trabajos sobre memoria y resistencia de comunidades diversas.",
+        "La iniciativa reflexiona sobre cómo la imagen documenta identidades históricamente marginadas en la región."
+      ],
+      "faq": [
+        {
+          "question": "¿De qué trata la investigación?",
+          "answer": "Estudia cómo la fotografía preserva la memoria de las comunidades LGBTQIA+ en América Latina, según difusión de la Universidad de Santiago de Chile."
+        },
+        {
+          "question": "¿Qué instituciones participan?",
+          "answer": "La Universidad de Santiago de Chile y la Universidad de Chile han difundido trabajos y reflexiones sobre memoria y resistencia de las diversidades en la región."
+        },
+        {
+          "question": "¿Por qué es relevante el uso de la fotografía?",
+          "answer": "Porque permite documentar y conservar experiencias e identidades de comunidades históricamente excluidas de los relatos oficiales."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué papel crees que cumple la fotografía en la preservación de la memoria de comunidades diversas?",
+        "options": [
+          "Fundamental para conservar la historia",
+          "Un complemento a otros archivos",
+          "Debería tener más apoyo institucional"
+        ]
+      },
+      "lead": "Instituciones académicas chilenas han puesto el foco en el valor de la fotografía como herramienta para conservar la memoria y la historia de las comunidades LGBTQIA+ en América Latina, un ámbito que combina documentación visual, identidad y resistencia.",
+      "body": [
+        "Un proyecto de investigación impulsado desde el ámbito universitario chileno se propone examinar de qué manera la fotografía contribuye a preservar la memoria de las comunidades LGBTQIA+ en América Latina, según información difundida por la Universidad de Santiago de Chile.",
+        "La iniciativa parte de la premisa de que las imágenes no solo registran acontecimientos, sino que también permiten conservar experiencias, identidades y trayectorias de grupos que históricamente han sido excluidos de los relatos oficiales.",
+        "En una línea complementaria, la Universidad de Chile ha divulgado una reflexión titulada \"Más allá del arcoíris\", centrada en la idea de habitar la memoria y la resistencia de las diversidades sexuales y de género en la región.",
+        "Ambos enfoques coinciden en subrayar que la producción y conservación de imágenes cumple una función política y cultural, al dar visibilidad a comunidades cuya presencia ha sido invisibilizada o marginada en distintos periodos.",
+        "El interés académico por estos temas se inscribe en un contexto más amplio de estudios sobre memoria en América Latina, donde el archivo visual se ha convertido en una fuente clave para reconstruir historias sociales.",
+        "La fotografía, en este marco, aparece como un soporte capaz de transmitir vivencias entre generaciones y de fortalecer procesos de reconocimiento identitario dentro de las comunidades diversas.",
+        "El impulso de estas investigaciones desde instituciones públicas chilenas refleja el papel de la universidad como espacio para el análisis crítico de la cultura visual y su vínculo con los derechos y la memoria colectiva.",
+        "Estos trabajos aportan herramientas para comprender cómo las imágenes construyen, preservan y disputan los sentidos sobre la diversidad en la historia reciente latinoamericana."
+      ],
+      "sources_consulted": [
+        "GN Internacional LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-peso-colombiano-se-afianza-como-la-divisa-m-s-fuerte-de-s-e97bd8",
+      "section": "mercados",
+      "title": "El peso colombiano se afianza como la divisa más fuerte de Sudamérica frente al dólar",
+      "subtitle": "La moneda de Colombia lidera el desempeño regional y analistas citados por Bloomberg Línea ven margen para nuevas alzas.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:32+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Peso colombiano",
+        "Dólar",
+        "Mercados de divisas",
+        "Colombia"
+      ],
+      "image_prompt": "Billetes de distintas denominaciones y monedas latinoamericanas junto a una pantalla financiera con cotizaciones de divisas, iluminación editorial sobria, enfoque en el dinero, sin texto ni logos.",
+      "image_alt": "Billetes y una pantalla de cotizaciones cambiarias que representan el mercado de divisas",
+      "image_query": "currency exchange banknotes",
+      "key_points": [
+        "El peso colombiano figura como la divisa más fuerte de la región frente al dólar, según Bloomberg Línea.",
+        "Analistas consideran que la moneda aún tendría espacio para apreciarse más.",
+        "El dólar, en tanto, apunta a su mejor semana en un mes en el mercado global."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuál es la divisa más fuerte de Sudamérica frente al dólar?",
+          "answer": "Según Bloomberg Línea, el peso colombiano se ha posicionado como la moneda más fuerte de la región frente al dólar estadounidense."
+        },
+        {
+          "question": "¿Podría el peso colombiano seguir apreciándose?",
+          "answer": "Analistas citados por Bloomberg Línea consideran que la moneda aún tendría espacio para subir más frente al dólar."
+        },
+        {
+          "question": "¿Cómo se comporta el dólar a nivel global?",
+          "answer": "El dólar apunta a su mejor semana en un mes, impulsado por tensiones geopolíticas y la volatilidad de las tasas de interés, según la misma fuente."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que el peso colombiano seguirá fortaleciéndose frente al dólar?",
+        "options": [
+          "Sí, tiene margen para subir",
+          "No, ya tocó su techo",
+          "Depende de los factores externos"
+        ]
+      },
+      "lead": "El peso colombiano se ha consolidado como la moneda más fuerte de Sudamérica frente al dólar, según reportes de Bloomberg Línea, que además apuntan a que la divisa tendría todavía recorrido para seguir apreciándose.",
+      "body": [
+        "La moneda de Colombia se ubicó como la de mejor desempeño en Sudamérica frente al dólar estadounidense, de acuerdo con información difundida por Bloomberg Línea. El comportamiento coloca al peso colombiano al frente de las divisas regionales en un contexto de alta volatilidad en los mercados internacionales.",
+        "Según el medio financiero, distintos analistas estiman que el peso colombiano aún tendría espacio para fortalecerse todavía más frente al dólar, en un escenario que algunos observadores llegan a calificar entre los más sólidos a escala global.",
+        "La fortaleza de la moneda colombiana contrasta con el desempeño del dólar en el plano internacional, donde la divisa estadounidense apunta a cerrar su mejor semana en un mes, de acuerdo con Bloomberg Línea.",
+        "Ese repunte del dólar se produce, según la misma fuente, en medio de tensiones geopolíticas y de una marcada volatilidad en las tasas de interés, factores que suelen impulsar la demanda de activos considerados refugio.",
+        "La combinación de un dólar globalmente firme y un peso colombiano que aun así avanza ilustra la relevancia de las condiciones internas y de flujos específicos que sostienen a la divisa andina por encima de sus pares regionales.",
+        "Para los mercados latinoamericanos, el desempeño de las monedas frente al dólar es un termómetro clave, pues incide en la inflación importada, en el costo de la deuda externa y en las decisiones de inversión de agentes locales y extranjeros.",
+        "Las proyecciones recogidas por Bloomberg Línea sugieren que el margen de apreciación del peso colombiano dependerá de cómo evolucionen tanto los factores externos —tasas y geopolítica— como las variables domésticas de Colombia.",
+        "Con la información disponible, el balance apunta a un peso colombiano que, pese a la firmeza global del dólar, mantiene el liderazgo entre las divisas de la región."
+      ],
+      "sources_consulted": [
+        "GN Mercados LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "co"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-la-bolsa-mexicana-sube-0-88-y-desaf-a-la-tendencia-bajista-d-a69505",
+      "section": "mercados",
+      "title": "La Bolsa mexicana sube 0,88 % y desafía la tendencia bajista de Wall Street",
+      "subtitle": "El principal índice accionario de México cerró en 67.303,83 unidades, en contraste con las caídas de los mercados estadounidenses.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Bolsa mexicana",
+        "Mercados financieros",
+        "Wall Street",
+        "México"
+      ],
+      "image_prompt": "Pantalla electrónica de una bolsa de valores mostrando cotizaciones y gráficos financieros en tonos verdes, ambiente corporativo moderno, sin texto legible ni logotipos.",
+      "image_alt": "Pantallas con gráficos e indicadores financieros en una bolsa de valores",
+      "image_query": "stock exchange trading screen",
+      "key_points": [
+        "El índice de la Bolsa mexicana avanzó 0,88 % en la jornada.",
+        "El indicador se ubicó en 67.303,83 unidades.",
+        "El comportamiento fue contrario al de los mercados de Estados Unidos."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuánto subió la Bolsa mexicana?",
+          "answer": "El principal índice de la Bolsa mexicana avanzó 0,88 % en la jornada, cerrando en 67.303,83 unidades."
+        },
+        {
+          "question": "¿Por qué destaca este movimiento?",
+          "answer": "Porque el alza se produjo en dirección contraria a la tendencia bajista de los mercados de Estados Unidos durante la misma sesión."
+        },
+        {
+          "question": "¿Dónde se reportó esta información?",
+          "answer": "El cierre fue recogido por El Nuevo Diario de República Dominicana dentro de su cobertura de mercados de América Latina."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que la Bolsa mexicana seguirá desligándose de la tendencia de Wall Street?",
+        "options": [
+          "Sí, mantendrá su propio ritmo",
+          "No, volverá a seguir a EE.UU.",
+          "Es difícil de anticipar"
+        ]
+      },
+      "lead": "La Bolsa Mexicana de Valores registró una jornada positiva con un alza del 0,88 %, cerrando en 67.303,83 unidades, en dirección opuesta a la tendencia negativa observada en los mercados de Estados Unidos.",
+      "body": [
+        "El mercado accionario de México cerró la sesión con una ganancia del 0,88 %, alcanzando un nivel de 67.303,83 unidades en su principal índice de referencia, según información difundida por medios financieros de la región.",
+        "El avance resultó particularmente notorio porque se produjo en contraste con la tendencia bajista de las plazas bursátiles de Estados Unidos durante la misma jornada, lo que evidenció un comportamiento diferenciado del mercado mexicano frente a su principal socio comercial.",
+        "La desconexión entre ambos mercados no es habitual, ya que la Bolsa mexicana suele seguir de cerca la evolución de los índices estadounidenses debido a la estrecha integración económica y comercial entre los dos países.",
+        "El nivel de 67.303,83 unidades refleja la valoración conjunta de las principales empresas que cotizan en el mercado mexicano, cuya evolución diaria responde a factores tanto locales como internacionales.",
+        "Movimientos como este suelen estar influidos por variables como los resultados corporativos, las expectativas sobre las tasas de interés, el tipo de cambio del peso frente al dólar y el apetito de los inversionistas por activos de mercados emergentes.",
+        "El desempeño positivo de la plaza mexicana en una sesión marcada por las pérdidas en Wall Street sugiere que factores internos o de flujos regionales pudieron sostener el ánimo de los inversionistas en México.",
+        "La información fue reportada por El Nuevo Diario de República Dominicana, que recogió el cierre de la jornada bursátil mexicana dentro de su cobertura de mercados de América Latina.",
+        "El seguimiento diario de estos indicadores permite a inversionistas y analistas evaluar la salud del mercado y anticipar posibles tendencias en las siguientes sesiones."
+      ],
+      "sources_consulted": [
+        "GN Mercados LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-cobre-y-el-litio-impulsan-las-exportaciones-mineras-por-s-f645f6",
+      "section": "mineria",
+      "title": "El cobre y el litio impulsan las exportaciones mineras por sobre los US$23.606 millones",
+      "subtitle": "Ambos minerales sostienen las cuentas fiscales de Chile y posicionan a Argentina como potencia emergente en la región.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "cobre",
+        "litio",
+        "minería",
+        "exportaciones"
+      ],
+      "image_prompt": "Vista de una mina de cobre a cielo abierto con maquinaria pesada y camiones mineros bajo un cielo despejado, tono editorial documental, sin texto ni logos",
+      "image_alt": "Maquinaria pesada operando en una mina de cobre a cielo abierto",
+      "image_query": "copper mine open pit",
+      "key_points": [
+        "Las exportaciones mineras alcanzaron US$23.606 millones en el primer cuatrimestre, impulsadas por cobre y litio.",
+        "El cobre y el litio son claves para contener el déficit fiscal en Chile.",
+        "Argentina surge como potencia emergente en la producción de cobre y litio."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuánto exportó el sector minero en el primer cuatrimestre?",
+          "answer": "El sector minero exportó US$23.606 millones en el primer cuatrimestre, impulsado principalmente por el cobre y el litio."
+        },
+        {
+          "question": "¿Por qué son importantes el cobre y el litio para Chile?",
+          "answer": "Ambos minerales son claves para las finanzas públicas y para contener el déficit fiscal, dado su peso en los ingresos del Estado."
+        },
+        {
+          "question": "¿Qué papel juega Argentina en este escenario?",
+          "answer": "Según Revista Minera Crisol, Argentina se posiciona como una potencia emergente en la producción de cobre y litio en la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué mineral considera más estratégico para el futuro económico de la región?",
+        "options": [
+          "El cobre",
+          "El litio",
+          "Ambos por igual"
+        ]
+      },
+      "lead": "El sector minero registró exportaciones superiores a los US$23.606 millones durante el primer cuatrimestre, con el cobre y el litio como principales motores, mientras estos minerales consolidan su rol estratégico para la economía de la región.",
+      "body": [
+        "El desempeño exportador de la minería volvió a situarse en el centro de la discusión económica regional. De acuerdo con Reporte Minero, las exportaciones del sector totalizaron US$23.606 millones en el primer cuatrimestre, un resultado que se explica principalmente por el aporte del cobre y del litio.",
+        "Estos dos minerales se han convertido en piezas fundamentales para las finanzas públicas. Distintos análisis destacan que la recaudación asociada a su producción y venta es determinante para contener el déficit fiscal, especialmente en Chile, donde la minería representa un pilar histórico de los ingresos del Estado.",
+        "El cobre mantiene su posición como el principal producto exportado, mientras que el litio ha ganado protagonismo por su papel en la transición energética y la fabricación de baterías para vehículos eléctricos y almacenamiento de energía.",
+        "La discusión sobre los llamados signos vitales del déficit fiscal apunta a cuánto cobre y litio necesita Chile para equilibrar sus cuentas, un debate que vincula directamente la producción minera con la sostenibilidad de las políticas públicas.",
+        "En paralelo, Argentina ha emergido como una potencia en desarrollo en ambos minerales. Según Revista Minera Crisol, el país vecino se perfila como un actor relevante en la oferta de cobre y litio, en un contexto de creciente demanda internacional.",
+        "Este posicionamiento argentino introduce un nuevo factor competitivo en la región, donde la disponibilidad de recursos, la inversión y el talento local resultan determinantes para captar los flujos de capital que busca el sector.",
+        "Revista Nueva Minería subraya el papel del talento local como componente del crecimiento minero, junto al empuje del litio y el cobre en las economías productoras.",
+        "En conjunto, las cifras confirman que la minería sigue siendo un motor exportador clave para la región, con el cobre y el litio como protagonistas de un ciclo marcado por la demanda global de minerales estratégicos."
+      ],
+      "sources_consulted": [
+        "Google News Minería"
+      ],
+      "region_score": 3,
+      "countries": [
+        "ar",
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-chile-y-argentina-reactivan-un-tratado-minero-de-los-a-os-90-be116e",
+      "section": "mineria",
+      "title": "Chile y Argentina reactivan un tratado minero de los años 90 para impulsar litio y cobre",
+      "subtitle": "Ambos países buscan revivir un acuerdo de integración fronteriza para facilitar la explotación conjunta de recursos estratégicos.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "litio",
+        "cobre",
+        "minería",
+        "Chile y Argentina"
+      ],
+      "image_prompt": "Vista aérea de una explotación minera de litio en un salar de alta montaña, con piscinas de evaporación de tonos turquesa y maquinaria industrial, paisaje andino árido.",
+      "image_alt": "Piscinas de evaporación de litio en un salar de alta montaña con maquinaria minera",
+      "image_query": "lithium salt flat mining",
+      "key_points": [
+        "Chile y Argentina retoman un pacto de integración minera firmado en la década de 1990.",
+        "El objetivo es facilitar la explotación de litio y cobre en zonas fronterizas.",
+        "La iniciativa apunta a fortalecer la posición de ambos países en mercados estratégicos."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué buscan Chile y Argentina con este acuerdo?",
+          "answer": "Reactivar un tratado de integración minera de los años 90 para facilitar la explotación conjunta de litio y cobre en zonas fronterizas."
+        },
+        {
+          "question": "¿Por qué son importantes el litio y el cobre?",
+          "answer": "Son minerales estratégicos para la transición energética, la electromovilidad y la fabricación de baterías y componentes electrónicos."
+        },
+        {
+          "question": "¿Ya está en vigor la iniciativa?",
+          "answer": "No se han detallado plazos ni los términos definitivos del acuerdo que ambos países buscarían revivir."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que la integración minera entre Chile y Argentina beneficiará a ambos países?",
+        "options": [
+          "Sí, potenciará inversiones",
+          "No, primero deben resolverse riesgos ambientales",
+          "Depende de los términos del acuerdo"
+        ]
+      },
+      "lead": "Chile y Argentina evalúan reactivar un tratado de integración minera de los años 90 con el fin de blindar la explotación de litio y cobre en la zona fronteriza compartida por ambas naciones.",
+      "body": [
+        "Chile y Argentina impulsan la reactivación de un antiguo acuerdo de integración minera suscrito en la década de 1990, según informó el medio Lmneuquen.com. El pacto busca simplificar la explotación de recursos en la región limítrofe entre los dos países.",
+        "La iniciativa se centra en dos minerales considerados estratégicos en el actual escenario global: el litio y el cobre. Ambos se han vuelto claves para la transición energética y para la fabricación de baterías y componentes electrónicos.",
+        "El tratado original apuntaba a diluir las barreras fronterizas para desarrollar proyectos mineros conjuntos en zonas de difícil acceso, donde los yacimientos suelen extenderse a ambos lados de la línea divisoria.",
+        "La región cordillerana que comparten Chile y Argentina concentra parte importante de las reservas mundiales de litio, dentro del llamado triángulo del litio, así como significativos depósitos de cobre.",
+        "La reactivación del acuerdo se enmarca en la creciente competencia internacional por asegurar el suministro de minerales críticos, en un contexto de fuerte demanda impulsada por la electromovilidad.",
+        "Para ambos países, la cooperación podría traducirse en mayores inversiones, infraestructura compartida y una posición negociadora más sólida frente a los grandes compradores globales.",
+        "La medida, sin embargo, plantea desafíos regulatorios y ambientales, dado que la explotación en zonas fronterizas de alta montaña requiere coordinación entre marcos legales distintos.",
+        "Al cierre de esta información, no se han detallado plazos ni los términos definitivos del acuerdo que ambos gobiernos buscarían revivir."
+      ],
+      "sources_consulted": [
+        "Google News Minería"
+      ],
+      "region_score": 2,
+      "countries": [
+        "ar",
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-retail-de-belleza-y-consumo-acelera-su-expansi-n-en-am-ri-69a050",
+      "section": "retail",
+      "title": "El retail de belleza y consumo acelera su expansión en América Latina",
+      "subtitle": "Marcas globales como The Body Shop, Bath & Body Works, Sephora y cadenas regionales refuerzan su apuesta por el mercado latinoamericano.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "retail",
+        "América Latina",
+        "belleza",
+        "expansión comercial"
+      ],
+      "image_prompt": "Interior moderno de una tienda de cosmética y cuidado personal con estanterías iluminadas y productos ordenados, sin personas ni texto ni logos, ambiente comercial elegante",
+      "image_alt": "Interior de una tienda de productos de belleza y cuidado personal",
+      "image_query": "cosmetics retail store interior",
+      "key_points": [
+        "The Body Shop relanza su comercio electrónico en Chile.",
+        "Bath & Body Works desembarca en Brasil dentro de su ofensiva regional.",
+        "LVMH incorpora talento de El Palacio de Hierro para Sephora.",
+        "EE.UU. lidera la inversión extranjera directa en la región."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué marcas están ampliando su presencia en América Latina?",
+          "answer": "The Body Shop relanza su e-commerce en Chile, Bath & Body Works desembarca en Brasil y Sephora, de LVMH, refuerza su equipo con talento de El Palacio de Hierro en México."
+        },
+        {
+          "question": "¿Qué país lidera la inversión extranjera en la región?",
+          "answer": "Según los reportes citados, Estados Unidos encabeza la inversión extranjera directa en América Latina."
+        },
+        {
+          "question": "¿Qué cadenas regionales están en expansión?",
+          "answer": "La ecuatoriana Tía impulsa el retail de proximidad y la colombiana Vélez avanza en su internacionalización."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué factor impulsa más el retail en América Latina?",
+        "options": [
+          "La digitalización y el e-commerce",
+          "La llegada de marcas internacionales",
+          "La inversión extranjera",
+          "La expansión de cadenas regionales"
+        ]
+      },
+      "lead": "El sector retail en América Latina vive una etapa de aceleración, con marcas internacionales de belleza y consumo que refuerzan su presencia y cadenas regionales que amplían su alcance en varios países.",
+      "body": [
+        "El mercado latinoamericano de retail atraviesa un momento de dinamismo marcado por movimientos de marcas globales y regionales que buscan captar a un consumidor cada vez más digital. Varias compañías del segmento de belleza y cuidado personal encabezan esta ofensiva de expansión.",
+        "En Chile, The Body Shop apuesta por reforzar su estrategia comercial con el relanzamiento de su plataforma de comercio electrónico, un movimiento orientado a acelerar su crecimiento en el canal digital y adaptarse a los nuevos hábitos de compra.",
+        "Por su parte, Bath & Body Works profundiza su ofensiva en la región con su desembarco en Brasil, uno de los mercados de consumo más grandes de América Latina, en línea con su estrategia de ampliar la presencia física y comercial en la zona.",
+        "En el terreno del lujo y la cosmética premium, el grupo francés LVMH incorporó talento proveniente de El Palacio de Hierro para su cadena Sephora, un fichaje que refuerza su apuesta por consolidar operaciones y equipos de alto nivel en el mercado mexicano.",
+        "El flujo de capital respalda estas movidas. Según los reportes del sector, Estados Unidos se mantiene como el principal origen de la inversión extranjera directa en América Latina, lo que aporta impulso a los proyectos de expansión y modernización del comercio minorista.",
+        "En el plano regional, cadenas locales también amplían operaciones: Tía acelera su expansión fortaleciendo el retail de proximidad en Ecuador, mientras que la marca colombiana Vélez avanza en su proceso de internacionalización.",
+        "La agenda de negocios se complementa con iniciativas de cooperación e industria, como el fortalecimiento de vínculos bilaterales entre Panamá y Brasil, la feria Movelsul que impulsa el comercio regional y el evento de marketing CNMD 2026 previsto en México.",
+        "En conjunto, estos movimientos reflejan una tendencia hacia la digitalización, la expansión geográfica y la profesionalización del retail latinoamericano, con la belleza y el consumo de proximidad como sectores especialmente activos de cara a 2026."
+      ],
+      "sources_consulted": [
+        "GN Retail LatAm"
+      ],
+      "region_score": 9,
+      "countries": [
+        "br",
+        "cl",
+        "co",
+        "ec",
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-consumo-en-uruguay-sigue-en-expansi-n-pero-surgen-las-pri-879d0d",
+      "section": "retail",
+      "title": "El consumo en Uruguay sigue en expansión, pero surgen las primeras señales de desaceleración",
+      "subtitle": "El gasto de los hogares uruguayos mantiene una tendencia positiva, aunque el ritmo de crecimiento comienza a moderarse según el análisis del sector minorista.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Uruguay",
+        "consumo",
+        "retail",
+        "economía"
+      ],
+      "image_prompt": "Interior luminoso de un centro comercial moderno con vitrinas de tiendas y personas caminando entre pasillos, ambiente cotidiano de consumo minorista, sin texto ni logotipos",
+      "image_alt": "Pasillo de un centro comercial con tiendas y compradores",
+      "image_query": "shopping mall retail interior",
+      "key_points": [
+        "El consumo privado en Uruguay continúa en terreno positivo.",
+        "Aparecen señales de moderación en el ritmo de crecimiento del gasto.",
+        "El sector minorista sigue de cerca la evolución de la demanda interna."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué está pasando con el consumo en Uruguay?",
+          "answer": "El consumo de los hogares sigue creciendo, pero comienzan a aparecer señales de que ese crecimiento se está moderando."
+        },
+        {
+          "question": "¿Por qué es relevante para el sector minorista?",
+          "answer": "El comercio minorista depende de la fortaleza del gasto de los hogares, por lo que una desaceleración podría afectar sus ventas y estrategias comerciales."
+        },
+        {
+          "question": "¿El consumo está cayendo?",
+          "answer": "No, según el análisis el consumo se mantiene en terreno positivo; lo que se observa es una pérdida de ritmo en la expansión."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo cree que evolucionará el consumo en Uruguay en los próximos meses?",
+        "options": [
+          "Seguirá creciendo con fuerza",
+          "Crecerá, pero más lento",
+          "Se mantendrá estable",
+          "Comenzará a caer"
+        ]
+      },
+      "lead": "El consumo de los hogares en Uruguay conserva una dinámica de crecimiento, aunque en el último período se observan indicios de que la expansión pierde fuerza, según un análisis difundido por medios especializados del sector minorista.",
+      "body": [
+        "El gasto de los consumidores uruguayos mantiene una trayectoria ascendente, un factor que ha sostenido la actividad del comercio minorista en el país. Sin embargo, el análisis reciente advierte que la velocidad de esa expansión empieza a moderarse.",
+        "La combinación de un consumo que sigue creciendo pero a menor ritmo plantea un escenario de vigilancia para las empresas del sector retail, que dependen en buena medida de la fortaleza de la demanda interna.",
+        "Para el comercio, la evolución del consumo es un indicador clave, ya que refleja tanto la capacidad de gasto de los hogares como su nivel de confianza respecto a la situación económica.",
+        "Las señales de moderación pueden estar vinculadas a diversos factores que afectan el poder de compra y las decisiones de gasto de las familias, aunque el balance general se mantiene en positivo por ahora.",
+        "El sector minorista uruguayo, que abarca desde grandes superficies hasta comercios de menor escala, monitorea de cerca estos movimientos para ajustar sus estrategias comerciales y de inventario.",
+        "El comportamiento del consumo suele ser un termómetro anticipado de la salud económica, por lo que cualquier desaceleración sostenida podría tener efectos sobre la inversión y el empleo en el rubro comercial.",
+        "De confirmarse la tendencia, las empresas podrían adoptar una postura más cautelosa frente a los próximos períodos, priorizando la eficiencia y la adaptación a un consumidor más selectivo."
+      ],
+      "sources_consulted": [
+        "GN Retail LatAm"
+      ],
+      "region_score": 2,
+      "countries": [
+        "uy"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-ecosistema-startup-crece-en-europa-y-am-rica-latina-con-l-60620f",
+      "section": "startups",
+      "title": "El ecosistema startup crece en Europa y América Latina con la IA como motor",
+      "subtitle": "Start-Up Chile selecciona 59 empresas con 60% en inteligencia artificial mientras Colombia supera las 2.200 startups y Europa eleva salarios para retener talento.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "startups",
+        "inteligencia artificial",
+        "Start-Up Chile",
+        "Colombia"
+      ],
+      "image_prompt": "Espacio de coworking moderno y luminoso con emprendedores trabajando en computadoras portátiles, pantallas con gráficos de datos, ambiente tecnológico y colaborativo, sin texto ni logotipos",
+      "image_alt": "Oficina de coworking con personas trabajando en un entorno de startups tecnológicas",
+      "image_query": "startup coworking office technology",
+      "key_points": [
+        "Start-Up Chile presenta su generación BIG 12 con 59 startups, el 60% enfocadas en inteligencia artificial.",
+        "Colombia ya supera las 2.200 startups, aunque persiste la concentración en las grandes ciudades.",
+        "En Europa, empresas emergentes elevan los salarios para atraer y retener talento tecnológico.",
+        "Los inversores señalan a las neocloud startups como uno de los segmentos a vigilar."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuántas startups integran la generación BIG 12 de Start-Up Chile?",
+          "answer": "La cohorte BIG 12 está compuesta por 59 startups, de las cuales el 60% desarrolla proyectos de inteligencia artificial."
+        },
+        {
+          "question": "¿Cuántas startups tiene actualmente Colombia?",
+          "answer": "Según Revista Semana, Colombia ya supera las 2.200 startups, aunque la actividad sigue concentrada en las grandes ciudades y no en las regiones."
+        },
+        {
+          "question": "¿Qué tendencia destaca en el ecosistema startup europeo?",
+          "answer": "Según Sifted, varias startups europeas ofrecen los salarios más altos para atraer talento, y las neocloud startups figuran entre los segmentos a seguir según los inversores."
+        }
+      ],
+      "poll": {
+        "question": "¿Cuál cree que es el factor más decisivo para el éxito de las startups actuales?",
+        "options": [
+          "El enfoque en inteligencia artificial",
+          "La capacidad de atraer talento",
+          "El acceso a financiación",
+          "La expansión a nuevas regiones"
+        ]
+      },
+      "lead": "El ecosistema emprendedor tecnológico atraviesa una fase de expansión a ambos lados del Atlántico, con la inteligencia artificial como eje central de las nuevas cohortes de startups y una competencia creciente por el talento en Europa.",
+      "body": [
+        "El programa Start-Up Chile dio a conocer su nueva generación, denominada BIG 12, integrada por 59 startups. De ese total, el 60% desarrolla proyectos vinculados a la inteligencia artificial, según la información difundida por El Ecosistema Startup, lo que confirma el peso creciente de esta tecnología en las aceleradoras de la región.",
+        "La cifra refleja una tendencia que se extiende por América Latina, donde la IA se ha convertido en el sector de mayor atracción tanto para emprendedores como para inversores. Start-Up Chile, una de las aceleradoras públicas de referencia en el continente, orienta así buena parte de su apoyo hacia compañías de base tecnológica.",
+        "En paralelo, Colombia consolida su posición como uno de los ecosistemas emprendedores más dinámicos de la región. Según Revista Semana, el país ya supera las 2.200 startups registradas, una señal del crecimiento sostenido del sector en los últimos años.",
+        "No obstante, el reto colombiano sigue estando en la distribución territorial. La actividad emprendedora permanece concentrada en los principales núcleos urbanos, mientras las regiones enfrentan dificultades para desarrollar y sostener nuevos proyectos tecnológicos.",
+        "En Europa, la competencia por el talento marca la agenda del ecosistema. Según Sifted, varias startups ofrecen ya los salarios más altos del mercado para captar y retener perfiles especializados, en un contexto de fuerte demanda de profesionales técnicos.",
+        "Ese mismo medio identifica además a las llamadas neocloud startups como uno de los segmentos más prometedores según los inversores. Se trata de compañías centradas en infraestructura de nube de nueva generación, un área impulsada por las necesidades de cómputo asociadas a la inteligencia artificial.",
+        "El conjunto de estas señales dibuja un panorama en el que la IA no solo domina las nuevas cohortes de aceleración, sino que también reconfigura la demanda de talento y la infraestructura tecnológica sobre la que se construyen los proyectos.",
+        "La coincidencia de estos movimientos en Chile, Colombia y Europa apunta a un ciclo de maduración del emprendimiento tecnológico, con la inteligencia artificial como denominador común y el acceso al capital y al talento como principales desafíos."
+      ],
+      "sources_consulted": [
+        "GN Startups LatAm",
+        "Sifted"
+      ],
+      "region_score": 4,
+      "countries": [
+        "cl",
+        "co"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-el-ecosistema-de-startups-latinoamericano-acelera-en-2025-20-8735e7",
+      "section": "startups",
+      "title": "El ecosistema de startups latinoamericano acelera en 2025-2026 con foco en IA y agrifoodtech",
+      "subtitle": "Chile y Colombia consolidan cifras de crecimiento en inversión, inteligencia artificial y tecnología para el agro y las pymes.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:35+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Start-Up Chile",
+        "Corfo",
+        "Colombia Tech",
+        "agrifoodtech"
+      ],
+      "image_prompt": "Modern startup office in Latin America with young professionals working on laptops, screens showing data dashboards and code, natural light, clean minimalist workspace, no text or logos",
+      "image_alt": "Espacio de trabajo de una startup tecnológica con personas frente a computadoras y pantallas con datos",
+      "image_query": "startup office technology workspace",
+      "key_points": [
+        "Start-Up Chile seleccionó 59 startups en su generación BIG 12, con 60% enfocadas en IA y una valoración conjunta de US$75 millones.",
+        "Colombia proyecta para 2026 un ecosistema de 2.295 startups y una inversión de US$857 millones.",
+        "El Cono Sur reúne 468 startups agrifoodtech con oportunidades de expansión hacia 2026.",
+        "NeoIA valida su IA contable con 15 pymes en el marco de un programa de Corfo."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuántas startups seleccionó Start-Up Chile en su generación BIG 12?",
+          "answer": "La aceleradora seleccionó 59 startups, de las cuales el 60% se dedica a soluciones de inteligencia artificial, con una valoración conjunta de US$75 millones."
+        },
+        {
+          "question": "¿Qué cifras proyecta Colombia para su ecosistema tecnológico en 2026?",
+          "answer": "Colombia proyecta contar con 2.295 startups y alcanzar una inversión de US$857 millones hacia 2026."
+        },
+        {
+          "question": "¿Qué es el programa NeoIA y quién lo respalda?",
+          "answer": "NeoIA valida una herramienta de inteligencia artificial aplicada a la contabilidad, con la participación de 15 pymes y el apoyo de Corfo, la agencia chilena de fomento productivo."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué sector del ecosistema startup latinoamericano tiene mayor potencial de crecimiento?",
+        "options": [
+          "Inteligencia artificial",
+          "Agrifoodtech",
+          "Soluciones para pymes"
+        ]
+      },
+      "lead": "El ecosistema emprendedor de América Latina muestra señales de maduración de cara a 2026, con Chile y Colombia como referencias regionales en inversión, inteligencia artificial y soluciones tecnológicas para sectores como el agro y las pequeñas y medianas empresas.",
+      "body": [
+        "Distintos indicadores del ecosistema startup latinoamericano apuntan a un período de aceleración durante 2025 y 2026, con la inteligencia artificial como eje transversal y con Chile y Colombia consolidándose como polos regionales de emprendimiento tecnológico.",
+        "En Chile, la aceleradora estatal Start-Up Chile presentó su generación BIG 12, integrada por 59 startups. Según los datos difundidos, el 60% de las empresas seleccionadas trabaja en soluciones basadas en inteligencia artificial, y el conjunto alcanza una valoración de US$75 millones.",
+        "El peso de la IA en esta camada refleja una tendencia más amplia en la región, donde las tecnologías de automatización y análisis de datos se han convertido en el principal foco de la nueva generación de emprendimientos.",
+        "En paralelo, el programa NeoIA avanza en la validación de una herramienta de inteligencia artificial aplicada al ámbito contable. La iniciativa involucra a 15 pymes que participan en pruebas piloto y cuenta con el respaldo de Corfo, la agencia estatal chilena de fomento productivo.",
+        "El sector agroalimentario también gana protagonismo. El Cono Sur concentra 468 startups agrifoodtech, un segmento que combina agricultura, alimentación y tecnología, y que se perfila con oportunidades de crecimiento de cara a 2026.",
+        "Colombia, por su parte, proyecta para 2026 un ecosistema compuesto por 2.295 startups, con una inversión estimada en US$857 millones. Estas cifras posicionan al país como uno de los mercados más dinámicos de la región para el capital emprendedor.",
+        "En conjunto, los datos sugieren que la región transita hacia una etapa de mayor volumen de compañías, montos de inversión más elevados y una especialización creciente en verticales como la IA, el agrifoodtech y las soluciones para pymes.",
+        "El desafío para los próximos años será convertir este impulso en escalabilidad sostenida, atrayendo capital y talento capaz de sostener el crecimiento proyectado."
+      ],
+      "sources_consulted": [
+        "GN Startups LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "cl",
+        "co"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-la-universidad-de-concepci-n-re-ne-a-la-comunidad-cient-fica-0c6096",
+      "section": "tecnologia",
+      "title": "La Universidad de Concepción reúne a la comunidad científica marina de Latinoamérica en el XLV Congreso de Ciencias del Mar",
+      "subtitle": "El encuentro académico congrega en Chile a investigadores de la región para debatir sobre oceanografía y recursos marinos.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:35+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Universidad de Concepción",
+        "Ciencias del Mar",
+        "Chile",
+        "Investigación científica"
+      ],
+      "image_prompt": "Vista de un laboratorio de investigación marina y de la costa del sur de Chile, con equipos de oceanografía, muestras de agua y un ambiente académico luminoso, sin texto ni logos.",
+      "image_alt": "Instalaciones de investigación en ciencias del mar junto a la costa",
+      "image_query": "marine science research ocean",
+      "key_points": [
+        "La Universidad de Concepción (UdeC) es sede del XLV Congreso de Ciencias del Mar.",
+        "El encuentro reúne a especialistas de Chile y Latinoamérica.",
+        "La cita se centra en la investigación oceanográfica y los recursos marinos de la región."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué evento acoge la Universidad de Concepción?",
+          "answer": "La UdeC es sede del XLV Congreso de Ciencias del Mar, un encuentro académico dedicado al estudio de los océanos."
+        },
+        {
+          "question": "¿Quiénes participan en el congreso?",
+          "answer": "Reúne a investigadores, académicos y estudiantes de Chile y de distintos países de Latinoamérica."
+        },
+        {
+          "question": "¿Por qué es relevante este encuentro?",
+          "answer": "Fomenta el intercambio de conocimiento y la creación de redes científicas en torno a la oceanografía y los recursos marinos de la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué importancia le das a los congresos científicos sobre el mar?",
+        "options": [
+          "Muy importantes para la investigación",
+          "Importantes, pero deben tener más difusión",
+          "Poco relevantes para el público general"
+        ]
+      },
+      "lead": "La Universidad de Concepción se convirtió en el punto de encuentro de la comunidad científica marina de Chile y Latinoamérica con la celebración del XLV Congreso de Ciencias del Mar, un espacio dedicado al intercambio de conocimiento sobre los océanos.",
+      "body": [
+        "La Universidad de Concepción (UdeC) acoge la cuadragésima quinta edición del Congreso de Ciencias del Mar, un evento que reúne a investigadores, académicos y estudiantes de Chile y de distintos países de Latinoamérica.",
+        "El congreso constituye una de las citas periódicas más relevantes para la comunidad científica dedicada al estudio de los océanos en la región, y en esta ocasión tiene como anfitriona a una de las principales casas de estudio del sur de Chile.",
+        "La elección de la UdeC como sede subraya el papel de esta institución en la investigación oceanográfica y en la formación de especialistas en ciencias marinas, un ámbito estratégico para un país con una extensa costa como Chile.",
+        "Encuentros de este tipo suelen articular la presentación de trabajos científicos, mesas de debate y espacios de colaboración entre distintos grupos de investigación, favoreciendo la generación de redes académicas a escala regional.",
+        "La participación de delegaciones de diversos países latinoamericanos refuerza el carácter internacional del congreso y facilita el intercambio de experiencias sobre los desafíos comunes que enfrentan los mares del continente.",
+        "El estudio de las ciencias del mar abarca disciplinas como la oceanografía, la biología marina y la gestión de recursos pesqueros, áreas de creciente importancia frente a los efectos del cambio climático sobre los ecosistemas costeros.",
+        "La realización de la edición número 45 da cuenta de la continuidad y consolidación de este espacio de encuentro para la comunidad científica marina.",
+        "Según Noticias UdeC, la universidad se posiciona nuevamente como plataforma para el diálogo académico entre Chile y el resto de Latinoamérica en torno al conocimiento del océano."
+      ],
+      "sources_consulted": [
+        "GN Tecnología LatAm"
+      ],
+      "region_score": 3,
+      "countries": [
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-25-tierras-raras-nube-y-drones-la-tecnolog-a-redefine-el-tabler-2e8d75",
+      "section": "tecnologia",
+      "title": "Tierras raras, nube y drones: la tecnología redefine el tablero geopolítico de Latinoamérica",
+      "subtitle": "Tres frentes tecnológicos —minerales estratégicos, infraestructura digital y drones de bajo costo— marcan nuevas oportunidades y riesgos en la región.",
+      "date": "2026-07-25",
+      "updated": "2026-07-25T10:36+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Tierras raras",
+        "Computación en la nube",
+        "Drones",
+        "Latinoamérica"
+      ],
+      "image_prompt": "Vista industrial de maquinaria minera extrayendo minerales en una explotación a cielo abierto, con equipos de servidores y un dron sobrevolando al fondo, luz natural, estilo editorial, sin texto ni logos",
+      "image_alt": "Maquinaria minera junto a infraestructura tecnológica que representa minerales estratégicos, nube y drones",
+      "image_query": "rare earth mining machinery",
+      "key_points": [
+        "Las tierras raras posicionan a Latinoamérica como actor geopolítico ante la demanda global de minerales estratégicos.",
+        "La empresa Omid negocia con un socio mexicano para desplegar sus servicios de nube en la región.",
+        "El crimen organizado adopta drones de bajo costo como nuevo desafío para la seguridad regional."
+      ],
+      "faq": [
+        {
+          "question": "¿Por qué las tierras raras son importantes para Latinoamérica?",
+          "answer": "Según DW.com, la demanda global de estos minerales estratégicos convierte a la región en un actor geopolítico relevante ante potencias que buscan diversificar su suministro."
+        },
+        {
+          "question": "¿Qué planea hacer la empresa Omid en la región?",
+          "answer": "De acuerdo con BNamericas, Omid negocia con un socio mexicano para llevar sus servicios de computación en la nube a Latinoamérica."
+        },
+        {
+          "question": "¿Cómo usa el crimen organizado los drones?",
+          "answer": "Según Diálogo Américas, los grupos delictivos emplean drones de bajo costo, lo que representa un nuevo desafío para las fuerzas de seguridad de la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Cuál de estos frentes tecnológicos considera más determinante para el futuro de Latinoamérica?",
+        "options": [
+          "Las tierras raras y los minerales estratégicos",
+          "La expansión de la infraestructura de nube",
+          "El desafío de seguridad por los drones"
+        ]
+      },
+      "lead": "Latinoamérica aparece en el centro de varias tendencias tecnológicas que combinan oportunidades económicas con desafíos de seguridad, según reportes de distintos medios internacionales. Desde los minerales críticos hasta la infraestructura digital y el uso de drones, la región enfrenta un nuevo mapa de intereses.",
+      "body": [
+        "El acceso a las tierras raras se ha convertido en una carta geopolítica de creciente valor, y Latinoamérica podría capitalizar esa demanda global, según un análisis de DW.com. Estos minerales son esenciales para tecnologías avanzadas, desde dispositivos electrónicos hasta energías limpias y equipos de defensa.",
+        "La relevancia estratégica de estos recursos ha crecido a medida que las principales potencias buscan diversificar sus fuentes de suministro y reducir la dependencia de proveedores concentrados. En ese contexto, los países latinoamericanos con reservas de estos minerales adquieren un peso negociador inédito.",
+        "En paralelo, el sector de la infraestructura digital también avanza en la región. Según BNamericas, la empresa Omid mantiene negociaciones con un socio mexicano con el objetivo de llevar sus servicios de computación en la nube a Latinoamérica.",
+        "El interés por expandir la nube hacia México y otros mercados refleja el atractivo de una región con creciente demanda de servicios digitales, tanto en el sector privado como en el público. Las alianzas locales suelen ser clave para acelerar el despliegue de este tipo de infraestructura.",
+        "No todas las tendencias tecnológicas traen beneficios. De acuerdo con Diálogo Américas, el crimen organizado ha comenzado a emplear drones de bajo costo, lo que plantea un desafío emergente para las fuerzas de seguridad en la región.",
+        "El uso de estos dispositivos aéreos no tripulados amplía las capacidades de los grupos delictivos, que pueden aprovecharlos para vigilancia, contrabando u operaciones logísticas ilícitas, obligando a las autoridades a adaptar sus estrategias de respuesta.",
+        "En conjunto, estos tres frentes ilustran cómo la tecnología está reconfigurando el papel de Latinoamérica en el escenario internacional. Los minerales críticos, la infraestructura de nube y las herramientas de bajo costo dibujan un panorama de oportunidades económicas y riesgos de seguridad.",
+        "El reto para los gobiernos y actores privados de la región será aprovechar las ventajas competitivas que ofrecen estos recursos y capacidades, mientras contienen los usos indebidos que acompañan a la difusión de nuevas tecnologías."
+      ],
+      "sources_consulted": [
+        "GN Tecnología LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "mx"
+      ],
+      "companies": []
     }
   ],
   "placeholders": []
