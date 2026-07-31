@@ -15221,6 +15221,1297 @@
         "br"
       ],
       "companies": []
+    },
+    {
+      "id": "2026-07-31-el-engranaje-de-las-commodities-agr-colas-c-mo-se-forman-los-3165de",
+      "section": "agricultura",
+      "title": "El engranaje de las commodities agrícolas: cómo se forman los precios que mueven el agro global",
+      "subtitle": "Bolsas, grandes traders y productos financieros determinan el valor de granos y oleaginosas en un mercado interconectado a escala mundial.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "commodities agrícolas",
+        "ADM Bunge Cargill Dreyfus",
+        "mercados de granos",
+        "ETC materias primas"
+      ],
+      "image_prompt": "Vista aérea de una gran terminal de granos junto a un puerto, con silos metálicos, cintas transportadoras y un buque cargando cereales, luz de atardecer, ambiente industrial y logístico, sin texto ni logotipos.",
+      "image_alt": "Terminal portuaria con silos de granos y un buque de carga durante la exportación de commodities agrícolas",
+      "image_query": "grain terminal port silos",
+      "key_points": [
+        "El precio del agro se define en mercados globales donde intervienen bolsas, traders y productos financieros.",
+        "Cuatro compañías —ADM, Bunge, Cargill y Dreyfus— concentran buena parte del comercio mundial de granos.",
+        "Los ETC permiten a inversores exponerse a materias primas agrícolas sin operar físicamente los productos."
+      ],
+      "faq": [
+        {
+          "question": "¿Quiénes son las empresas del 'ABCD' de las commodities?",
+          "answer": "Son ADM, Bunge, Cargill y Dreyfus, cuatro grandes casas comerciales que, según Rankia, concentran buena parte del comercio mundial de granos y controlan logística, almacenamiento y distribución."
+        },
+        {
+          "question": "¿Qué es un ETC de materias primas agrícolas?",
+          "answer": "Es un producto cotizado en bolsa (Exchange Traded Commodity) que permite invertir en materias primas agrícolas sin operar físicamente los productos, según explica extraETF."
+        },
+        {
+          "question": "¿Cómo se determinan los precios del agro?",
+          "answer": "Se forman en mercados globales donde interactúan bolsas de referencia, grandes traders y productos financieros, reflejando oferta, demanda y factores macroeconómicos, según Agrolatam."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué actor considera más determinante en la formación de los precios agrícolas?",
+        "options": [
+          "Las grandes casas comerciales",
+          "Las bolsas y mercados de futuros",
+          "Los inversores financieros y ETC",
+          "La oferta y demanda física real"
+        ]
+      },
+      "lead": "El precio de los granos y oleaginosas no se fija únicamente en el campo: es el resultado de un sistema financiero global en el que confluyen bolsas de referencia, grandes casas comerciales e instrumentos de inversión que canalizan capital hacia las materias primas.",
+      "body": [
+        "El mercado de commodities agrícolas es una maquinaria compleja que conecta a productores, exportadores, industriales e inversores de todo el mundo. Según Agrolatam, este sistema es el que en última instancia determina los precios que reciben los agricultores y los que pagan los compradores internacionales.",
+        "En el centro de ese engranaje operan mercados de referencia donde se negocian contratos sobre productos como soja, maíz y trigo. Allí las cotizaciones reflejan expectativas de oferta y demanda, condiciones climáticas, existencias globales y factores macroeconómicos que influyen sobre el valor de cada materia prima.",
+        "Un papel decisivo lo cumplen las grandes casas comerciales conocidas como el 'ABCD' del agro: ADM, Bunge, Cargill y Dreyfus. De acuerdo con Rankia, estas cuatro compañías concentran una parte sustancial del comercio mundial de granos, gestionando la logística, el almacenamiento, el transporte y la comercialización a escala internacional.",
+        "Su capacidad para operar en múltiples países y a lo largo de toda la cadena las convierte en actores estructurales del mercado. Al integrar originación, procesamiento y distribución, influyen sobre los flujos físicos de mercadería que sostienen el sistema de precios.",
+        "A este universo se suman los instrumentos financieros que permiten a los inversores participar sin manipular los productos físicos. Los ETC (Exchange Traded Commodities) ofrecen exposición a materias primas agrícolas mediante títulos cotizados en bolsa, según analiza extraETF en su selección para 2026.",
+        "Estos productos facilitan el acceso de pequeños y grandes inversores a un segmento tradicionalmente reservado a operadores especializados, aportando liquidez adicional y ampliando la base de participantes del mercado.",
+        "La interacción entre la producción física, la intermediación de los grandes traders y la capa financiera de derivados y ETC configura un ecosistema donde los precios del agro se forman de manera continua y global. Comprender ese entramado resulta clave para productores e inversores por igual."
+      ],
+      "sources_consulted": [
+        "Google News Agro"
+      ],
+      "region_score": 1,
+      "countries": [],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-la-agricultura-regenerativa-gana-terreno-como-modelo-para-re-c8f9b9",
+      "section": "agricultura",
+      "title": "La agricultura regenerativa gana terreno como modelo para recuperar suelos y mejorar rentabilidad",
+      "subtitle": "Un enfoque productivo que combina salud del suelo y ganancias atrae la atención del sector agropecuario en América Latina.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "agricultura regenerativa",
+        "suelos",
+        "agro",
+        "sostenibilidad"
+      ],
+      "image_prompt": "Campo agrícola con suelo fértil y cultivos verdes, primer plano de tierra oscura y raíces, luz natural de la mañana, sin personas ni texto",
+      "image_alt": "Campo de cultivo con suelo fértil y plantas verdes bajo luz natural",
+      "image_query": "regenerative farming soil",
+      "key_points": [
+        "La agricultura regenerativa se presenta como un modelo que busca recuperar la salud de los suelos.",
+        "Sus impulsores sostienen que puede mejorar la rentabilidad de las explotaciones agrícolas.",
+        "El enfoque combina objetivos productivos y ambientales en un solo esquema de manejo."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es la agricultura regenerativa?",
+          "answer": "Es un enfoque productivo que prioriza la salud del suelo con el objetivo de recuperar tierras degradadas mientras se mantiene o mejora la producción."
+        },
+        {
+          "question": "¿Por qué se dice que mejora la rentabilidad?",
+          "answer": "Sus impulsores sostienen que, al mejorar la salud del suelo y reducir la degradación, el modelo puede aumentar los márgenes de los productores a largo plazo."
+        },
+        {
+          "question": "¿Dónde se difunde este modelo?",
+          "answer": "Portales especializados del agro latinoamericano, como Agrolatam, están dando visibilidad a estas prácticas entre los productores de la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que la agricultura regenerativa puede combinar rentabilidad y cuidado del suelo?",
+        "options": [
+          "Sí, es el futuro del sector",
+          "Depende de cada caso",
+          "No, es difícil de sostener"
+        ]
+      },
+      "lead": "La agricultura regenerativa se consolida como una alternativa que promete a los productores mayores ganancias y, al mismo tiempo, la recuperación de suelos degradados, según difundió el portal especializado Agrolatam.",
+      "body": [
+        "La agricultura regenerativa viene ganando espacio en el debate del sector agropecuario latinoamericano como un modelo que promete conciliar dos objetivos históricamente vistos como opuestos: aumentar la rentabilidad y preservar el recurso suelo, de acuerdo con la información divulgada por Agrolatam.",
+        "A diferencia de los esquemas productivos convencionales, este enfoque pone el foco en la salud del suelo como base del sistema. La premisa es que un suelo vivo y con mayor materia orgánica sostiene la productividad a largo plazo y reduce la necesidad de insumos externos.",
+        "Los defensores del modelo sostienen que las prácticas regenerativas pueden traducirse en mayores márgenes para el productor, al combinar la mejora de los rendimientos con una reducción de costos asociados a la degradación de la tierra.",
+        "El interés por estas técnicas se enmarca en una preocupación creciente por la erosión y el agotamiento de los suelos agrícolas, un problema que afecta la capacidad productiva de amplias regiones dedicadas a la producción de alimentos.",
+        "La propuesta busca así responder a un doble desafío: mantener la competitividad de la actividad agrícola y frenar el deterioro ambiental que amenaza la sustentabilidad de largo plazo del negocio.",
+        "Portales especializados como Agrolatam han contribuido a difundir estas experiencias entre productores de la región, en un contexto de mayor demanda internacional por prácticas agrícolas sostenibles.",
+        "El avance del modelo dependerá, según sus promotores, de la adopción por parte de los productores y de la evidencia sobre sus resultados económicos y ambientales en el terreno.",
+        "Aunque la información disponible es todavía general, el creciente interés refleja un cambio de mirada en el sector hacia sistemas que integran productividad y conservación de los recursos naturales."
+      ],
+      "sources_consulted": [
+        "Google News Agro"
+      ],
+      "region_score": 3,
+      "countries": [],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-felaban-revela-los-diez-pa-ses-donde-la-banca-latinoamerican-dd476a",
+      "section": "banca",
+      "title": "Felaban revela los diez países donde la banca latinoamericana genera mayores utilidades",
+      "subtitle": "Un análisis de la federación regional identifica los mercados bancarios más rentables, mientras Deutsche Bank advierte sobre el impacto de El Niño en varias economías.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:31+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Felaban",
+        "banca latinoamericana",
+        "Deutsche Bank",
+        "El Niño"
+      ],
+      "image_prompt": "Fachadas de edificios corporativos de bancos con vidrio y acero bajo cielo despejado, ambiente financiero moderno, sin texto ni logos, luz natural del atardecer.",
+      "image_alt": "Edificios de oficinas del sector financiero en una ciudad latinoamericana",
+      "image_query": "latin america bank buildings finance",
+      "key_points": [
+        "Felaban elaboró un ranking de los 10 países latinoamericanos donde los bancos obtienen más utilidades.",
+        "Deutsche Bank identificó las economías de la región más expuestas al fenómeno climático de El Niño.",
+        "Ambos análisis fueron difundidos por Bloomberg Línea y ofrecen una radiografía de riesgos y oportunidades del sector."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué información publicó Felaban?",
+          "answer": "La Federación Latinoamericana de Bancos elaboró un ranking de los diez países de América Latina donde las entidades financieras generan las mayores utilidades, según lo difundido por Bloomberg Línea."
+        },
+        {
+          "question": "¿Qué advirtió Deutsche Bank sobre El Niño?",
+          "answer": "Deutsche Bank identificó los países latinoamericanos más expuestos al fenómeno climático de El Niño, que puede afectar la agricultura, la energía y el crecimiento económico de la región."
+        },
+        {
+          "question": "¿Por qué importan estos análisis?",
+          "answer": "Ofrecen una lectura complementaria sobre la fortaleza del negocio bancario y los riesgos externos, como los climáticos, que podrían condicionar el desempeño de las economías de la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué factor considera más determinante para la banca latinoamericana?",
+        "options": [
+          "La rentabilidad del sector",
+          "Los riesgos climáticos como El Niño",
+          "El contexto macroeconómico general"
+        ]
+      },
+      "lead": "Dos análisis recientes recogidos por Bloomberg Línea ponen el foco sobre la salud del sistema financiero latinoamericano y los riesgos externos que enfrenta la región: uno mide la rentabilidad de la banca según Felaban y otro advierte sobre el impacto climático de El Niño según Deutsche Bank.",
+      "body": [
+        "La Federación Latinoamericana de Bancos (Felaban) presentó un ranking con los diez países de América Latina en los que las entidades financieras generan las mayores utilidades, un indicador clave para evaluar el desempeño y la solidez del sector en la región.",
+        "El estudio, difundido por Bloomberg Línea, busca ofrecer una fotografía comparativa del negocio bancario latinoamericano, en un contexto marcado por tasas de interés elevadas y una demanda de crédito que varía notablemente entre economías.",
+        "La rentabilidad de la banca es un termómetro relevante no solo para inversionistas y accionistas, sino también para reguladores, ya que refleja la capacidad del sistema para absorber choques y sostener la intermediación financiera.",
+        "En paralelo, Deutsche Bank publicó un análisis que identifica los países latinoamericanos más expuestos al fenómeno climático de El Niño, cuyos efectos pueden alterar la producción agrícola, la generación de energía y los patrones de precipitaciones.",
+        "El Niño se caracteriza por el calentamiento anómalo de las aguas del océano Pacífico, lo que suele traducirse en sequías en algunas zonas y lluvias intensas o inundaciones en otras, con consecuencias directas sobre economías dependientes de las materias primas.",
+        "Para los sistemas financieros, un evento climático de gran magnitud puede afectar la calidad de la cartera de crédito, especialmente en sectores como el agropecuario, y presionar el crecimiento económico de los países más vulnerables.",
+        "La combinación de ambos análisis ofrece una lectura complementaria de la región: por un lado, la rentabilidad y fortaleza del negocio bancario; por otro, los riesgos externos y ambientales que podrían condicionar el desempeño futuro de esas mismas economías.",
+        "Bloomberg Línea recopiló ambos informes como parte de su cobertura sobre la banca y las perspectivas macroeconómicas de América Latina."
+      ],
+      "sources_consulted": [
+        "GN Banca LatAm"
+      ],
+      "region_score": 2,
+      "countries": [],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-chile-lidera-la-densidad-de-fintech-per-c-pita-en-am-rica-la-d94c5e",
+      "section": "banca",
+      "title": "Chile lidera la densidad de fintech per cápita en América Latina, según FinteChile",
+      "subtitle": "José Gabriel Carrasco destacó en Radio Sonar el posicionamiento del país en el ecosistema de tecnología financiera de la región.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:32+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "FinteChile",
+        "Fintech Chile",
+        "Tecnología financiera",
+        "América Latina"
+      ],
+      "image_prompt": "Persona usando una aplicación bancaria en un teléfono inteligente moderno, con gráficos financieros digitales de fondo, ambiente de oficina tecnológica, luz natural, sin texto ni logos.",
+      "image_alt": "Manos usando una aplicación financiera en un teléfono móvil junto a una pantalla con datos",
+      "image_query": "fintech mobile banking app",
+      "key_points": [
+        "Chile tiene el índice de fintech per cápita más alto de América Latina, según José Gabriel Carrasco.",
+        "La afirmación se hizo en el programa de Radio Sonar.",
+        "FinteChile es la asociación gremial del sector fintech en el país."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué afirmó José Gabriel Carrasco sobre el sector fintech en Chile?",
+          "answer": "Sostuvo en Radio Sonar que Chile tiene el índice de fintech per cápita más alto de América Latina, reflejando la densidad de estas empresas frente a su población."
+        },
+        {
+          "question": "¿Qué es FinteChile?",
+          "answer": "Es la asociación gremial que agrupa a las empresas de tecnología financiera en Chile y promueve el diálogo con reguladores y autoridades del sector."
+        },
+        {
+          "question": "¿Qué mide el índice de fintech per cápita?",
+          "answer": "Relaciona el número de empresas fintech con el tamaño de la población, permitiendo comparar la penetración del sector más allá del volumen absoluto de cada mercado."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo valora el crecimiento del sector fintech en Chile?",
+        "options": [
+          "Es positivo para la inclusión financiera",
+          "Genera dudas sobre su regulación",
+          "No tengo una opinión formada"
+        ]
+      },
+      "lead": "El vocero de FinteChile, José Gabriel Carrasco, afirmó en Radio Sonar que Chile encabeza en la región el índice de empresas fintech por habitante, un indicador que refleja la madurez del ecosistema local de tecnología financiera.",
+      "body": [
+        "En una entrevista concedida a Radio Sonar, José Gabriel Carrasco, vinculado a la asociación FinteChile, sostuvo que Chile presenta el índice de fintech per cápita más elevado de América Latina, situando al país como referente regional en el desarrollo de este tipo de compañías.",
+        "El indicador per cápita mide la cantidad de empresas de tecnología financiera en relación con el tamaño de la población. Según Carrasco, este parámetro coloca a Chile por delante de otras economías latinoamericanas donde el sector también ha experimentado un crecimiento acelerado en los últimos años.",
+        "Las fintech agrupan a firmas que ofrecen servicios financieros apoyados en tecnología, como pagos digitales, préstamos, gestión de inversiones, seguros y herramientas de crédito, compitiendo o colaborando con la banca tradicional.",
+        "FinteChile es la entidad gremial que reúne a las empresas del rubro en el país y que ha impulsado el diálogo con reguladores y autoridades para consolidar el marco en que operan estas compañías.",
+        "La declaración de Carrasco apunta a subrayar el dinamismo del ecosistema chileno, que ha sido acompañado por avances regulatorios orientados a dar mayor certeza a las empresas y a los usuarios de servicios financieros digitales.",
+        "El posicionamiento per cápita resulta relevante porque permite comparar el grado de penetración del sector más allá del tamaño absoluto de cada mercado, un aspecto en el que economías más grandes suelen destacar por volumen pero no necesariamente por densidad.",
+        "La difusión de estas cifras se enmarca en el esfuerzo del gremio por visibilizar el aporte de las fintech a la inclusión financiera y a la competencia dentro del sistema.",
+        "No se detallaron en la intervención los datos específicos ni la fuente estadística que respalda el cálculo del índice mencionado por el vocero."
+      ],
+      "sources_consulted": [
+        "GN Banca LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-tec-de-monterrey-supera-a-la-unam-y-entra-al-top-5-de-lat-059fb8",
+      "section": "economia",
+      "title": "El Tec de Monterrey supera a la UNAM y entra al top 5 de Latinoamérica en el ranking QS 2026",
+      "subtitle": "La universidad privada más cara de México avanza a los primeros cinco lugares del listado regional, pese a que la UNAM obtuvo mejores puntajes en algunos indicadores.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:32+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Tec de Monterrey",
+        "UNAM",
+        "QS América Latina",
+        "Educación superior"
+      ],
+      "image_prompt": "Campus universitario moderno con edificios de arquitectura contemporánea, áreas verdes y estudiantes caminando, luz natural, ambiente académico, sin texto ni logotipos.",
+      "image_alt": "Campus universitario moderno con edificios contemporáneos y estudiantes en un día soleado",
+      "image_query": "university campus students",
+      "key_points": [
+        "El Tecnológico de Monterrey se ubica entre las cinco mejores universidades de América Latina según el QS América Latina 2026.",
+        "La institución privada superó a la Universidad Nacional Autónoma de México (UNAM) en la clasificación general.",
+        "La UNAM registró mejores puntuaciones que el Tec en algunos indicadores del ranking."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué logró el Tec de Monterrey en el ranking QS América Latina 2026?",
+          "answer": "Avanzó a los primeros cinco lugares de la clasificación regional y superó en la tabla general a la UNAM, según Expansión."
+        },
+        {
+          "question": "¿La UNAM quedó por debajo del Tec en todos los indicadores?",
+          "answer": "No. La UNAM obtuvo mejores puntuaciones en algunos indicadores, pero el Tec la superó en el resultado global del ranking."
+        },
+        {
+          "question": "¿Por qué es relevante este resultado?",
+          "answer": "Marca un reacomodo entre las principales universidades mexicanas, ya que la UNAM ha sido históricamente el referente en las clasificaciones internacionales."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué debería pesar más al evaluar a una universidad?",
+        "options": [
+          "La calidad académica e investigación",
+          "La proyección internacional",
+          "El costo y acceso para los estudiantes"
+        ]
+      },
+      "lead": "El Tecnológico de Monterrey escaló hasta los primeros cinco lugares del ranking QS América Latina 2026 y desplazó a la UNAM, según reportó Expansión. El resultado marca un cambio en la jerarquía de las principales universidades mexicanas dentro del listado regional.",
+      "body": [
+        "El Tecnológico de Monterrey, la universidad privada más cara de México, avanzó a los primeros cinco lugares del ranking QS América Latina 2026, de acuerdo con Expansión. Con ello, la institución superó en la clasificación general a la Universidad Nacional Autónoma de México (UNAM), tradicionalmente referente de la educación superior en el país.",
+        "El resultado destaca porque la UNAM obtuvo mejores puntuaciones que el Tec de Monterrey en algunos de los indicadores que integran la metodología del ranking, según la información difundida. Sin embargo, el desempeño combinado del Tec le permitió posicionarse por encima en la tabla final.",
+        "El QS América Latina es una de las clasificaciones de referencia para medir el desempeño de las universidades de la región. Su metodología pondera diversos criterios académicos e institucionales, lo que explica que una institución pueda superar a otra en el resultado global aun cuando su rival la aventaje en indicadores puntuales.",
+        "La UNAM es la universidad pública más grande de México y ha ocupado durante años posiciones destacadas en los principales rankings internacionales, por lo que el avance del Tec representa un reacomodo relevante entre las instituciones mexicanas mejor valoradas.",
+        "El Tecnológico de Monterrey es una institución de carácter privado con presencia en distintos estados del país. Su ascenso al top 5 regional refuerza su perfil como una de las universidades mexicanas con mayor proyección en las mediciones comparativas de calidad educativa.",
+        "La comparación entre ambas instituciones ilustra el contraste entre un modelo público de gran escala, como el de la UNAM, y uno privado con matrícula de alto costo, como el del Tec, dentro del panorama de la educación superior mexicana.",
+        "Los rankings como el QS suelen influir en decisiones de estudiantes, investigadores y en la reputación internacional de las universidades, lo que otorga peso a este tipo de resultados anuales."
+      ],
+      "sources_consulted": [
+        "Expansión (MX)"
+      ],
+      "region_score": 3,
+      "countries": [
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-milei-presenta-una-reforma-del-banco-central-que-califica-co-f4885b",
+      "section": "economia",
+      "title": "Milei presenta una reforma del Banco Central que califica como la más importante en 91 años",
+      "subtitle": "El presidente argentino busca modificar la Carta Orgánica de la entidad que prometió destruir durante su campaña de 2023.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Javier Milei",
+        "Banco Central de Argentina",
+        "reforma económica",
+        "política monetaria"
+      ],
+      "image_prompt": "Fachada de un edificio institucional bancario de estilo clásico en una capital latinoamericana, con columnas de piedra, bajo un cielo despejado, sin personas ni texto visible.",
+      "image_alt": "Fachada de un edificio de banco central de arquitectura clásica",
+      "image_query": "central bank building architecture",
+      "key_points": [
+        "Milei presentó el 30 de julio un proyecto para reformar la Carta Orgánica del Banco Central argentino.",
+        "El mandatario lo describió como el conjunto de reformas estructurales más importante de los últimos 91 años.",
+        "Durante su campaña de 2023, Milei apareció en un video sugiriendo destruir el Banco Central con un martillo.",
+        "El presidente sostiene que la reforma busca terminar con lo que llama un mecanismo que financia a la clase política."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué anunció Javier Milei?",
+          "answer": "Presentó un proyecto para reformar la Carta Orgánica del Banco Central de Argentina, que calificó como el conjunto de reformas estructurales más importante en 91 años."
+        },
+        {
+          "question": "¿Por qué es relevante el Banco Central para Milei?",
+          "answer": "Durante su campaña de 2023, Milei prometió eliminar la entidad e incluso apareció en un video sugiriendo destruirla con un martillo, convirtiéndola en un símbolo de su discurso económico."
+        },
+        {
+          "question": "¿Qué busca lograr la reforma según el presidente?",
+          "answer": "Milei afirma que la iniciativa apunta a terminar con un mecanismo que, según él, sirve para financiar a la clase política del país."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué opina sobre la reforma del Banco Central propuesta por Milei?",
+        "options": [
+          "Es una medida necesaria",
+          "Genera dudas",
+          "Estoy en contra",
+          "No tengo información suficiente"
+        ]
+      },
+      "lead": "El presidente de Argentina, Javier Milei, presentó este jueves 30 de julio un proyecto para modificar la Carta Orgánica del Banco Central, una institución que prometió eliminar durante su campaña electoral de 2023.",
+      "body": [
+        "Javier Milei anunció una iniciativa destinada a reformar la Carta Orgánica del Banco Central de la República Argentina, en lo que definió como el conjunto de reformas estructurales más importante de los últimos 91 años, según informó el diario brasileño Folha de S.Paulo.",
+        "La presentación, realizada el jueves 30 de julio, apunta directamente a la institución que el propio Milei había planteado desechar durante su carrera hacia la Casa Rosada, sede del gobierno argentino.",
+        "El presidente vinculó la reforma con la necesidad de poner fin a lo que describió como un esquema que, a su juicio, sirve para financiar a la clase política del país.",
+        "El Banco Central ocupó un lugar central en la retórica de campaña de Milei, quien en 2023 protagonizó un video en el que sugería destruir la entidad con un martillo, una imagen que se convirtió en símbolo de su propuesta económica.",
+        "La Carta Orgánica es el marco legal que regula las funciones, competencias y límites de actuación del Banco Central, por lo que cualquier modificación afecta el diseño de la política monetaria argentina.",
+        "Con esta iniciativa, Milei traslada al plano legislativo una de las banderas más reconocibles de su discurso, en el que ha responsabilizado a la emisión monetaria de los problemas económicos del país.",
+        "El anuncio se enmarca en la agenda de reformas estructurales que el gobierno argentino ha impulsado desde la llegada de Milei al poder, con foco en la reducción del papel del Estado en la economía.",
+        "Las fuentes disponibles no detallan aún los contenidos específicos del proyecto ni los plazos previstos para su tratamiento legislativo."
+      ],
+      "sources_consulted": [
+        "Folha Mercado (BR)"
+      ],
+      "region_score": 4,
+      "countries": [
+        "ar",
+        "br"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-la-mitad-del-petr-leo-y-gas-que-importa-am-rica-latina-ya-pr-f677dc",
+      "section": "energia",
+      "title": "La mitad del petróleo y gas que importa América Latina ya proviene de la propia región",
+      "subtitle": "El comercio energético intrarregional gana peso mientras Brasil, México y Venezuela encabezan la producción y Colombia pierde terreno frente a Guyana.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "petróleo",
+        "América Latina",
+        "energía",
+        "Brasil"
+      ],
+      "image_prompt": "Vista de una refinería de petróleo con torres de destilación y tuberías al atardecer, sin personas ni logotipos, ambiente industrial.",
+      "image_alt": "Instalaciones industriales de refinería de petróleo con torres y tuberías al atardecer",
+      "image_query": "oil refinery industry",
+      "key_points": [
+        "El 50% del petróleo y gas importado por la región procede de países latinoamericanos.",
+        "Brasil, México y Venezuela lideran la producción regional de crudo.",
+        "Colombia quedó rezagada entre los productores, superada incluso por Guyana."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué proporción del petróleo y gas importado por América Latina proviene de la región?",
+          "answer": "Aproximadamente la mitad, es decir cerca del 50%, del petróleo y gas que importa América Latina ya procede de otros países de la propia región."
+        },
+        {
+          "question": "¿Qué países lideran la producción de petróleo en América Latina?",
+          "answer": "Brasil, México y Venezuela encabezan la producción de crudo en la región, según ElOriente.com."
+        },
+        {
+          "question": "¿Cuál es la situación de Colombia frente a otros productores?",
+          "answer": "Colombia quedó rezagada entre los productores latinoamericanos, superada incluso por Guyana, según es-us.noticias.yahoo.com."
+        }
+      ],
+      "poll": {
+        "question": "¿La mayor integración energética entre países de América Latina es positiva para la región?",
+        "options": [
+          "Sí, reduce la dependencia externa",
+          "No, aumenta riesgos regionales",
+          "Depende de cada país"
+        ]
+      },
+      "lead": "La integración energética de América Latina avanza: la mitad del petróleo y gas que la región importa ya se origina dentro de sus propias fronteras, según reportes especializados del sector. El dato refleja un reacomodo en los flujos comerciales y en el liderazgo de los principales productores.",
+      "body": [
+        "América Latina ha incrementado el peso del comercio intrarregional en su abastecimiento de hidrocarburos. De acuerdo con la información difundida por medios especializados del sector, cerca del 50% del petróleo y del gas que importan los países de la región proviene de otros productores latinoamericanos, en lugar de fuentes extrarregionales.",
+        "Este dato apunta a una mayor integración de los mercados energéticos, en la que los excedentes de unos países cubren los déficits de otros dentro del mismo bloque geográfico, reduciendo la dependencia de proveedores de fuera del continente.",
+        "En el mapa de la producción, Brasil, México y Venezuela se mantienen como los principales productores de petróleo de América Latina, según ElOriente.com. Estos tres países concentran buena parte del volumen extraído en la región.",
+        "Brasil ha consolidado su posición gracias al desarrollo de sus yacimientos, mientras México y Venezuela conservan un peso histórico en la producción latinoamericana, pese a las distintas dificultades que enfrentan sus industrias.",
+        "En contraste, Colombia aparece rezagada en la comparación regional. Según información difundida por es-us.noticias.yahoo.com, el país quedó atrás entre los productores de petróleo de América Latina, incluso por detrás de Guyana.",
+        "El caso de Guyana ilustra el cambio de dinámica en la región: el país sudamericano ha emergido como un actor petrolero relevante tras el hallazgo y explotación de importantes reservas, escalando posiciones frente a productores tradicionales.",
+        "El avance del comercio intrarregional y la reconfiguración del ranking de productores plantean interrogantes sobre la estrategia energética de los países que pierden participación, como Colombia, y sobre las oportunidades de integración para quienes ganan protagonismo.",
+        "En conjunto, estas tendencias señalan un escenario en el que la seguridad de suministro y la complementariedad entre economías vecinas cobran creciente importancia para el futuro energético de América Latina."
+      ],
+      "sources_consulted": [
+        "GN Energía LatAm"
+      ],
+      "region_score": 7,
+      "countries": [
+        "br",
+        "co",
+        "mx",
+        "ve"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-brasil-m-xico-y-venezuela-lideraron-la-producci-n-de-petr-le-614a3f",
+      "section": "energia",
+      "title": "Brasil, México y Venezuela lideraron la producción de petróleo en América Latina",
+      "subtitle": "Los tres países se posicionaron como los mayores productores de crudo de la región, según GN Energía LatAm.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:33+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "petróleo",
+        "América Latina",
+        "Brasil",
+        "Venezuela"
+      ],
+      "image_prompt": "Instalación de extracción petrolera con torres y tuberías bajo un cielo despejado, vista industrial amplia sin texto ni logos.",
+      "image_alt": "Instalaciones industriales de extracción de petróleo con torres y tuberías",
+      "image_query": "oil drilling rig industry",
+      "key_points": [
+        "Brasil, México y Venezuela encabezaron la producción petrolera regional.",
+        "La medición fue difundida por GN Energía LatAm y reportada por Banca y Negocios.",
+        "El podio confirma el peso histórico de estas tres economías en el sector energético latinoamericano."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuáles fueron los principales productores de petróleo en América Latina?",
+          "answer": "Brasil, México y Venezuela ocuparon las tres primeras posiciones como productores de crudo de la región, según GN Energía LatAm."
+        },
+        {
+          "question": "¿De dónde provienen estos datos?",
+          "answer": "La información fue difundida por GN Energía LatAm y reportada por el portal Banca y Negocios."
+        },
+        {
+          "question": "¿Por qué destacan estos tres países?",
+          "answer": "Históricamente concentran gran parte de la producción petrolera latinoamericana y cuentan con industrias nacionales consolidadas y amplias reservas."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que el petróleo seguirá siendo clave para las economías latinoamericanas?",
+        "options": [
+          "Sí, seguirá siendo estratégico",
+          "No, la transición energética lo reducirá",
+          "Dependerá de cada país"
+        ]
+      },
+      "lead": "Brasil, México y Venezuela se consolidaron como los tres principales productores de petróleo de América Latina, de acuerdo con datos difundidos por GN Energía LatAm y recogidos por el portal Banca y Negocios.",
+      "body": [
+        "América Latina mantiene un papel relevante en el mercado energético global gracias a un puñado de países con amplias reservas y capacidad extractiva. Según el reporte de GN Energía LatAm citado por Banca y Negocios, Brasil, México y Venezuela ocuparon las tres primeras posiciones como productores de crudo de la región.",
+        "La presencia de estos tres países en el podio no resulta sorpresiva, pues históricamente han concentrado buena parte de la producción petrolera latinoamericana y cuentan con industrias nacionales de larga trayectoria en el sector.",
+        "Brasil ha impulsado en los últimos años su producción a partir de yacimientos costa afuera, un factor que lo ha posicionado como uno de los mayores extractores del continente y con proyección internacional.",
+        "México, por su parte, mantiene una industria petrolera estructurada en torno a su empresa estatal, con una tradición extractiva que se remonta a varias décadas y que sigue siendo un pilar de su economía.",
+        "Venezuela, pese a los desafíos que enfrenta su industria, conserva un lugar destacado por la magnitud de sus reservas, consideradas entre las mayores del mundo, lo que la mantiene en el grupo de cabeza regional.",
+        "El ordenamiento reportado refleja la estructura del sector petrolero en América Latina, donde la producción se concentra en pocos actores con capacidad para influir en la oferta regional de hidrocarburos.",
+        "La información publicada por Banca y Negocios se basa en datos atribuidos a GN Energía LatAm, sin que el resumen disponible precise cifras específicas de producción para cada uno de los tres países.",
+        "El liderazgo de estas naciones subraya la importancia del petróleo como recurso estratégico para las economías latinoamericanas, en un contexto global marcado por la transición energética y la volatilidad de los precios del crudo."
+      ],
+      "sources_consulted": [
+        "GN Energía LatAm"
+      ],
+      "region_score": 6,
+      "countries": [
+        "br",
+        "mx",
+        "ve"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-milei-denuncia-una-supuesta-campa-a-anti-argentina-vinculada-320d94",
+      "section": "internacional",
+      "title": "Milei denuncia una supuesta 'campaña anti-Argentina' vinculada al Mundial y culpa a demócratas de EE.UU.",
+      "subtitle": "El presidente argentino atribuye las críticas a la selección a una operación coordinada con participación de Brasil y México.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Javier Milei",
+        "Argentina",
+        "Mundial de fútbol",
+        "Lionel Messi"
+      ],
+      "image_prompt": "Estadio de fútbol lleno durante un partido internacional, vista amplia de las gradas y el césped iluminado, sin texto ni logos, ambiente nocturno con reflectores.",
+      "image_alt": "Estadio de fútbol iluminado durante un partido internacional con gradas llenas.",
+      "image_query": "soccer stadium crowd",
+      "key_points": [
+        "Milei habla de una 'campaña anti-Argentina' coordinada en torno al Mundial.",
+        "Señala a demócratas estadounidenses, además de Brasil y México.",
+        "España ganó el título con un gol de Ferran Torres en la prórroga."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué denunció Javier Milei?",
+          "answer": "El presidente argentino afirmó que hubo una 'campaña anti-Argentina' coordinada detrás de las críticas a la selección durante el Mundial."
+        },
+        {
+          "question": "¿A quiénes señaló como responsables?",
+          "answer": "Milei acusó a sectores del Partido Demócrata de Estados Unidos de financiarla y también mencionó a Brasil y México."
+        },
+        {
+          "question": "¿Cómo terminó el Mundial?",
+          "answer": "España se consagró campeona con un gol de Ferran Torres en la prórroga, logrando su segundo título mundial."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué opina sobre las declaraciones de Milei acerca de una 'campaña anti-Argentina'?",
+        "options": [
+          "Son fundadas",
+          "Son exageradas",
+          "No tengo una opinión formada"
+        ]
+      },
+      "lead": "Más de una semana después de la final del Mundial, el presidente argentino Javier Milei sostiene que las críticas a la selección respondieron a una supuesta 'campaña anti-Argentina' orquestada desde el exterior.",
+      "body": [
+        "El presidente de Argentina, Javier Milei, afirmó que existió una 'campaña anti-Argentina' coordinada que, según su relato, estuvo detrás de las críticas dirigidas a la selección nacional durante el reciente Mundial de fútbol.",
+        "Milei incluyó entre los responsables a sectores del Partido Demócrata de Estados Unidos, a los que acusó de financiar esa ofensiva, y también señaló a Brasil y México como parte del supuesto entramado.",
+        "El mandatario sostuvo que los críticos en línea 'no quieren que las ideas de la libertad triunfen', vinculando así el debate deportivo con su agenda política e ideológica.",
+        "Entre los cuestionamientos que Milei atribuye a esa campaña figuran las acusaciones de racismo hacia parte de la afición argentina y las teorías conspirativas que sostenían que la FIFA favorecía en secreto al equipo liderado por Lionel Messi.",
+        "Las declaraciones llegan cuando ya ha transcurrido más de una semana desde que España se consagró campeona del mundo, en un torneo que para el presidente argentino, según sus palabras, aún no habría terminado.",
+        "La final se resolvió con un gol de Ferran Torres en el tiempo suplementario, que le dio a España su segundo título mundial, de acuerdo con la información difundida por The Guardian.",
+        "El episodio refleja el estilo confrontativo de Milei, que suele trasladar sus disputas políticas a distintos ámbitos y presentar las críticas como parte de una supuesta ofensiva contra su proyecto.",
+        "Hasta el momento, los gobiernos y actores señalados por el mandatario no figuran con respuestas en los reportes disponibles sobre estas acusaciones."
+      ],
+      "sources_consulted": [
+        "The Guardian World"
+      ],
+      "region_score": 4,
+      "countries": [
+        "ar",
+        "br",
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-am-rica-latina-giro-pol-tico-hacia-la-derecha-coincide-con-a-e28763",
+      "section": "internacional",
+      "title": "América Latina: giro político hacia la derecha coincide con auge de inversión, IA y capital de riesgo",
+      "subtitle": "Diversos análisis internacionales describen un panorama regional marcado por cambios políticos, retos laborales y nuevas apuestas tecnológicas y de inversión.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "América Latina",
+        "Venture capital",
+        "Inteligencia artificial",
+        "Mercado laboral"
+      ],
+      "image_prompt": "Vista panorámica de un distrito financiero latinoamericano con edificios corporativos modernos y cielo despejado, ambiente de negocios, sin texto ni logotipos.",
+      "image_alt": "Edificios corporativos modernos en un distrito financiero de América Latina",
+      "image_query": "latin america finance buildings",
+      "key_points": [
+        "La derecha ha ampliado su presencia política en varios países de América Latina, según un análisis de la BBC.",
+        "México encabeza la actividad de capital de riesgo (venture capital) en la región.",
+        "La inteligencia artificial gana impulso, con foco en ética y capacidades.",
+        "Energía e infraestructura también avanzan como sectores de crecimiento regional."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué tendencia política describe el análisis de la BBC?",
+          "answer": "La BBC señala que la derecha ha ampliado su poder político en varios países de América Latina y analiza las causas de esta expansión regional."
+        },
+        {
+          "question": "¿Qué país lidera el capital de riesgo en la región?",
+          "answer": "Según Funds Society, México encabeza la actividad de venture capital en América Latina."
+        },
+        {
+          "question": "¿Qué sectores están ganando impulso en América Latina?",
+          "answer": "De acuerdo con BNamericas, la energía, la inteligencia artificial y la infraestructura son sectores que están cobrando fuerza en la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Cuál cree que será el factor más determinante para el futuro de América Latina?",
+        "options": [
+          "El giro político",
+          "La inversión y el capital de riesgo",
+          "El desarrollo de la inteligencia artificial",
+          "El mercado laboral"
+        ]
+      },
+      "lead": "América Latina atraviesa un momento de transformaciones simultáneas: un desplazamiento del mapa político hacia la derecha convive con un renovado dinamismo en inversión, capital de riesgo, energía e inteligencia artificial, según coinciden varios medios y organismos internacionales.",
+      "body": [
+        "Un análisis publicado por la BBC describe cómo la derecha ha extendido su poder político en distintos países de América Latina, y explora las razones detrás de esta tendencia regional. El reporte plantea un mapa que ilustra la magnitud del cambio en el color político del continente.",
+        "En el terreno económico, el capital de riesgo emerge como uno de los indicadores del apetito inversor. Según Funds Society, México lidera la actividad de venture capital en América Latina, consolidándose como referente para los inversionistas que buscan oportunidades en la región.",
+        "La competitividad de las inversiones también se está redefiniendo. El Mostrador destaca el papel de la IFC (Corporación Financiera Internacional) como estándar que orienta y evalúa la calidad de las inversiones en América Latina, en un contexto donde los criterios de sostenibilidad y desempeño ganan peso.",
+        "La inteligencia artificial ocupa un lugar central en el debate regional. EL PAÍS aborda el desarrollo de la IA en América Latina y el Caribe como una cuestión que combina ética y capacidades, subrayando la necesidad de fortalecer las condiciones locales para su adopción responsable.",
+        "BNamericas resume que sectores como la energía, la IA y la infraestructura están ganando impulso en la región, señales de un movimiento hacia la modernización productiva y la atracción de proyectos de mayor escala.",
+        "En paralelo, la Organización Internacional del Trabajo (OIT) analiza las tendencias del mercado laboral en América Latina y el Caribe, un factor clave para medir si el crecimiento económico se traduce en empleo de calidad.",
+        "El panorama se completa con debates sociales y académicos: CLACSO impulsa una agenda sobre libertad académica para la región, mientras que en el ámbito de la salud se discute un abordaje integral del estilo de vida frente al deterioro cognitivo.",
+        "En conjunto, estos análisis dibujan una América Latina en transición, donde los cambios políticos se entrelazan con nuevas dinámicas de inversión, tecnología y transformación social."
+      ],
+      "sources_consulted": [
+        "GN Internacional LatAm"
+      ],
+      "region_score": 2,
+      "countries": [
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-mercado-de-etf-en-brasil-se-triplica-y-potencia-el-auge-d-58beca",
+      "section": "mercados",
+      "title": "El mercado de ETF en Brasil se triplica y potencia el auge de fondos en América Latina",
+      "subtitle": "El crecimiento de los fondos cotizados en la región coincide con una rotación en Wall Street y expectativas de mayores dividendos ligados a las materias primas.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:34+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "ETF",
+        "Brasil",
+        "América Latina",
+        "Materias primas"
+      ],
+      "image_prompt": "Pantallas financieras con gráficos bursátiles ascendentes en una sala de operaciones moderna, luz natural, ambiente profesional, sin texto ni logotipos",
+      "image_alt": "Pantallas con gráficos de cotizaciones bursátiles en una sala de operaciones",
+      "image_query": "stock market trading screens",
+      "key_points": [
+        "El mercado de ETF de Brasil se triplicó en medio del lanzamiento de nuevos fondos en América Latina.",
+        "Las materias primas apuntalarían un nuevo ciclo de aumento de dividendos en la región.",
+        "En Wall Street, el S&P 500 y el Dow Jones subieron por la rotación del mercado, mientras los chips presionaron al Nasdaq."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué está pasando con los ETF en Brasil?",
+          "answer": "Según Bloomberg Línea, el mercado de fondos cotizados de Brasil se triplicó en medio del lanzamiento de nuevos fondos en América Latina."
+        },
+        {
+          "question": "¿Por qué podrían aumentar los dividendos en América Latina?",
+          "answer": "Las materias primas sostendrían un nuevo ciclo de aumento de dividendos en la región, dado el peso de los sectores de recursos naturales en sus bolsas."
+        },
+        {
+          "question": "¿Cómo reaccionaron los índices de Wall Street?",
+          "answer": "El S&P 500 y el Dow Jones subieron por la rotación del mercado, mientras que el Nasdaq cayó por el retroceso de las acciones de semiconductores."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué factor cree que impulsará más a los mercados latinoamericanos?",
+        "options": [
+          "El auge de los ETF",
+          "Los dividendos de las materias primas",
+          "La rotación en los mercados globales"
+        ]
+      },
+      "lead": "El mercado de fondos cotizados (ETF) de Brasil se ha triplicado, según Bloomberg Línea, en un contexto de mayor apetito por los nuevos productos financieros latinoamericanos y de expectativas favorables para los dividendos vinculados a las materias primas.",
+      "body": [
+        "El mercado de ETF de Brasil experimentó una fuerte expansión y llegó a triplicarse, de acuerdo con Bloomberg Línea, impulsado por la aparición de nuevos fondos cotizados en América Latina. El fenómeno refleja un mayor interés de los inversionistas por instrumentos que permiten diversificar posiciones en la región.",
+        "Los ETF son fondos que se negocian en bolsa como si fueran acciones y que suelen replicar índices, sectores o canastas de activos. Su expansión en Brasil sugiere una profundización de los mercados de capitales locales y una oferta más amplia para los inversionistas minoristas e institucionales.",
+        "El crecimiento brasileño se enmarca en un auge más amplio de nuevos fondos latinoamericanos, lo que apunta a un ecosistema regional en desarrollo que busca captar el interés por los activos emergentes.",
+        "En paralelo, Bloomberg Línea señala que las materias primas podrían sostener un nuevo ciclo de aumento de dividendos en América Latina. Dado el peso de los sectores extractivos y de recursos naturales en las bolsas de la región, un entorno favorable de precios podría traducirse en mayores repartos a los accionistas.",
+        "Ese vínculo entre commodities y dividendos es relevante para los inversionistas que priorizan flujos de ingresos estables, y podría reforzar el atractivo de los mercados latinoamericanos frente a otras plazas.",
+        "En Estados Unidos, el S&P 500 y el Dow Jones registraron alzas impulsadas por una rotación del mercado, un movimiento en el que los capitales se desplazan entre sectores. El Nasdaq, en cambio, se vio golpeado por el retroceso de las acciones de semiconductores.",
+        "La rotación suele reflejar un cambio de preferencia de los inversionistas, que rebalancean sus carteras entre compañías tecnológicas y otros segmentos considerados más defensivos o cíclicos.",
+        "En conjunto, los tres desarrollos —el auge de los ETF, la perspectiva de dividendos ligados a las materias primas y la dinámica de Wall Street— ofrecen un panorama de mayor actividad y reacomodo en los mercados financieros de la región y del mundo."
+      ],
+      "sources_consulted": [
+        "GN Mercados LatAm"
+      ],
+      "region_score": 4,
+      "countries": [
+        "br"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-d-lar-pierde-terreno-frente-a-las-monedas-de-am-rica-lati-b5a25f",
+      "section": "mercados",
+      "title": "El dólar pierde terreno frente a las monedas de América Latina",
+      "subtitle": "La divisa estadounidense se debilita ante las divisas regionales mientras los mercados evalúan factores locales como el escenario político en Perú.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:35+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Dólar",
+        "América Latina",
+        "Mercados",
+        "Perú"
+      ],
+      "image_prompt": "Primer plano de billetes de dólares estadounidenses junto a monedas y pantallas financieras con cotizaciones, iluminación editorial sobria, sin texto ni logotipos.",
+      "image_alt": "Billetes de dólar y pantallas con cotizaciones de mercado",
+      "image_query": "us dollar currency exchange",
+      "key_points": [
+        "El dólar viene perdiendo terreno frente a varias monedas latinoamericanas.",
+        "Los mercados analizan hasta cuándo podría extenderse esta tendencia.",
+        "En Perú, el precio del dólar y la bolsa quedan sujetos a factores políticos y económicos."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué está ocurriendo con el dólar en América Latina?",
+          "answer": "El dólar estadounidense viene perdiendo terreno frente a varias monedas de la región, según Bloomberg Línea, y los mercados evalúan hasta cuándo podría extenderse esa tendencia."
+        },
+        {
+          "question": "¿Qué factores influyen en el dólar y la bolsa en Perú?",
+          "answer": "Según Bloomberg Línea, el precio del dólar y la bolsa peruana dependen de un conjunto de factores, entre ellos el escenario político tras la posesión de Keiko Fujimori."
+        },
+        {
+          "question": "¿Por qué importa el movimiento del dólar?",
+          "answer": "La fortaleza o debilidad del dólar afecta el comercio, los precios de importación y las decisiones de empresas, importadores y ahorristas en la región."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que el dólar seguirá perdiendo terreno frente a las monedas latinoamericanas?",
+        "options": [
+          "Sí, la tendencia continuará",
+          "No, se revertirá pronto",
+          "Dependerá de cada país"
+        ]
+      },
+      "lead": "El dólar estadounidense atraviesa un periodo de debilitamiento frente a las principales monedas de América Latina, un movimiento que los inversores siguen de cerca para anticipar hasta cuándo podría prolongarse la tendencia.",
+      "body": [
+        "El dólar ha venido cediendo terreno frente a diversas monedas latinoamericanas, según reportó Bloomberg Línea, en un contexto que ha reavivado el interés de los mercados por determinar la duración y el alcance de esta tendencia en la región.",
+        "La pregunta central que se plantean analistas e inversores es hasta cuándo se mantendrá el retroceso de la divisa estadounidense frente a las monedas locales, un fenómeno que impacta directamente en el comercio, la inflación importada y los flujos de capital.",
+        "El comportamiento del dólar en la región responde a una combinación de factores globales y a las condiciones particulares de cada economía, lo que explica por qué las trayectorias de las monedas latinoamericanas pueden diferir entre sí.",
+        "En el caso de Perú, Bloomberg Línea señaló que el precio del dólar y el desempeño de la bolsa local quedan condicionados por un conjunto de factores que incluyen el escenario político tras la posesión de Keiko Fujimori.",
+        "La política interna suele constituir una variable clave para los mercados peruanos, ya que la percepción de estabilidad institucional influye en la confianza de los inversores y en la valoración de los activos denominados en moneda local.",
+        "Para los operadores, la evolución del tipo de cambio y de los índices bursátiles dependerá de cómo se articulen esas señales políticas con las tendencias externas que afectan al dólar en toda la región.",
+        "El seguimiento de estos factores resulta relevante para empresas, importadores y ahorristas, cuyas decisiones financieras se ven afectadas por la fortaleza o debilidad relativa de la divisa estadounidense."
+      ],
+      "sources_consulted": [
+        "GN Mercados LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "pe"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-auge-minero-de-litio-y-cobre-en-argentina-despierta-alarm-244ebb",
+      "section": "mineria",
+      "title": "El auge minero de litio y cobre en Argentina despierta alarmas ambientales y sociales",
+      "subtitle": "La expansión de proyectos extractivos genera preocupación por su impacto en ecosistemas y comunidades locales.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:35+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Minería",
+        "Argentina",
+        "Litio",
+        "Cobre"
+      ],
+      "image_prompt": "Vista aérea de una explotación minera en un paisaje árido de altiplano, con piletas de evaporación y maquinaria industrial, luz natural, sin personas ni texto.",
+      "image_alt": "Instalación minera con piletas de evaporación en un paisaje árido de montaña",
+      "image_query": "lithium mine evaporation ponds",
+      "key_points": [
+        "El avance de la minería del litio y el cobre se intensifica en Argentina.",
+        "Ambientalistas y comunidades advierten sobre presiones al medioambiente.",
+        "El debate enfrenta desarrollo económico y sostenibilidad territorial."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué minerales impulsan la expansión minera en Argentina?",
+          "answer": "El litio y el cobre, recursos con alta demanda internacional vinculada a las baterías y la transición energética."
+        },
+        {
+          "question": "¿Cuál es la principal preocupación de las comunidades y ambientalistas?",
+          "answer": "La presión que la actividad minera ejerce sobre el medioambiente y sobre las poblaciones cercanas a los proyectos, según Mongabay Latam."
+        },
+        {
+          "question": "¿Por qué son estratégicos el litio y el cobre?",
+          "answer": "El litio es clave para las baterías de vehículos eléctricos y el cobre resulta esencial para la electrificación y las energías limpias."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo debería gestionarse el avance de la minería de litio y cobre en Argentina?",
+        "options": [
+          "Priorizar la protección ambiental",
+          "Impulsar el desarrollo económico",
+          "Buscar un equilibrio con controles estrictos"
+        ]
+      },
+      "lead": "El crecimiento de la actividad minera en Argentina, impulsado por la demanda global de litio y cobre, ha encendido las alarmas de organizaciones ambientales y comunidades locales que advierten sobre su impacto en los ecosistemas y la vida de las poblaciones cercanas a los proyectos.",
+      "body": [
+        "Argentina atraviesa una fase de expansión de su actividad minera, con el litio y el cobre como protagonistas de una nueva ola de proyectos extractivos que buscan aprovechar la creciente demanda internacional de estos minerales.",
+        "El litio se ha convertido en un recurso estratégico por su papel en la fabricación de baterías para vehículos eléctricos y sistemas de almacenamiento energético, mientras que el cobre resulta esencial para la transición hacia energías más limpias y la electrificación.",
+        "Según Mongabay Latam, este avance despierta preocupación por la presión que la minería ejerce sobre el medioambiente y sobre las comunidades que habitan en las zonas donde se desarrollan las explotaciones.",
+        "Las organizaciones ambientales señalan que la extracción de estos minerales puede afectar recursos hídricos, alterar ecosistemas frágiles y modificar las dinámicas de las poblaciones locales, especialmente en regiones sensibles.",
+        "El debate reproduce una tensión recurrente en países con abundantes recursos naturales: el equilibrio entre las oportunidades económicas que ofrece la minería y la necesidad de proteger el entorno y garantizar el consentimiento de las comunidades afectadas.",
+        "La extracción de litio suele implicar un uso intensivo de agua en áreas donde este recurso ya es escaso, lo que agrava las inquietudes de quienes viven en las cercanías de los proyectos.",
+        "El seguimiento de estos impactos cobra relevancia a medida que la transición energética global aumenta la presión sobre los territorios que concentran las reservas de minerales críticos.",
+        "La discusión plantea el reto de definir marcos que permitan un desarrollo minero responsable, con controles ambientales adecuados y participación efectiva de las comunidades locales."
+      ],
+      "sources_consulted": [
+        "Google News Minería"
+      ],
+      "region_score": 2,
+      "countries": [
+        "ar"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-gobierno-proyecta-un-aporte-fiscal-r-cord-de-la-miner-a-p-dfcc84",
+      "section": "mineria",
+      "title": "El Gobierno proyecta un aporte fiscal récord de la minería privada en 2026 por el alza del cobre y el litio",
+      "subtitle": "Las mayores cotizaciones de ambos metales impulsarían las contribuciones tributarias del sector al Fisco chileno el próximo año.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:35+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "minería",
+        "cobre",
+        "litio",
+        "Chile"
+      ],
+      "image_prompt": "Vista panorámica de una mina de cobre a cielo abierto con maquinaria pesada y camiones de transporte en terrazas de roca, luz diurna, tono documental y editorial, sin texto ni logos.",
+      "image_alt": "Mina de cobre a cielo abierto con maquinaria y camiones operando en terrazas de roca",
+      "image_query": "copper mine open pit",
+      "key_points": [
+        "El Gobierno anticipa que la minería privada aportará una cifra récord al Fisco en 2026.",
+        "El alza en los precios del cobre y el litio es el principal motor de esa mayor recaudación.",
+        "El sector minero es visto como una pieza clave para enfrentar el déficit fiscal.",
+        "La feria FEXMIN 2026 exhibirá más de 15 proyectos de exploración ante el renovado interés por ambos metales."
+      ],
+      "faq": [
+        {
+          "question": "¿Por qué aumentaría el aporte fiscal de la minería en 2026?",
+          "answer": "Principalmente por el alza en los precios internacionales del cobre y el litio, que incrementa los impuestos y contribuciones pagados por las empresas del sector."
+        },
+        {
+          "question": "¿Qué relación tiene esto con el déficit fiscal de Chile?",
+          "answer": "Los ingresos de la minería son claves para las cuentas públicas, por lo que un mayor aporte ayudaría a enfrentar el déficit fiscal, según el debate planteado por medios especializados."
+        },
+        {
+          "question": "¿Qué es FEXMIN 2026?",
+          "answer": "Es una feria que, según Portal Innova, exhibirá más de 15 proyectos de exploración minera en medio del renovado interés por el cobre y el litio."
+        }
+      ],
+      "poll": {
+        "question": "¿Debería Chile reducir su dependencia fiscal de los precios del cobre y el litio?",
+        "options": [
+          "Sí, urge diversificar los ingresos",
+          "No, la minería es la principal fortaleza",
+          "Depende de la evolución de los precios"
+        ]
+      },
+      "lead": "El Ejecutivo chileno proyecta que la minería privada elevará su aporte tributario al Fisco en 2026 hasta niveles récord, impulsada por el incremento en las cotizaciones internacionales del cobre y el litio, según las estimaciones oficiales difundidas por varios medios especializados.",
+      "body": [
+        "Las proyecciones gubernamentales apuntan a que la minería privada realizará una contribución fiscal sin precedentes durante 2026, un escenario atribuido principalmente a la recuperación y el fortalecimiento de los precios del cobre y el litio en los mercados internacionales.",
+        "El cobre continúa siendo el principal producto de exportación de Chile y una de las fuentes más relevantes de ingresos para el Estado. El aumento de su cotización se traduce de forma directa en mayores impuestos y regalías pagados por las compañías del rubro.",
+        "A este impulso se suma el litio, mineral cuya demanda ha crecido de la mano de la transición energética y la industria de baterías, y que se ha consolidado como un segundo pilar en la generación de recursos fiscales asociados a la actividad extractiva.",
+        "Según El Mostrador y Nuevo Poder, las estimaciones del Ejecutivo sitúan el aporte de la minería privada en una cifra récord, lo que refleja la sensibilidad de las cuentas públicas frente a la evolución de los precios de las materias primas.",
+        "El contexto se enmarca en el debate sobre las finanzas públicas del país. Revista Minera Crisol planteó la discusión en torno a los llamados signos vitales del déficit fiscal y a cuánto cobre y litio necesita Chile para equilibrar sus cuentas.",
+        "El renovado interés por ambos metales también se traslada al terreno de la exploración. Según Portal Innova, la feria FEXMIN 2026 exhibirá más de 15 proyectos de exploración, una muestra del dinamismo que atraviesa el sector.",
+        "La dependencia de la recaudación respecto de los precios internacionales implica, sin embargo, un riesgo estructural: una eventual caída en las cotizaciones podría erosionar rápidamente los ingresos proyectados y presionar de nuevo las cuentas fiscales.",
+        "En conjunto, las proyecciones subrayan el papel central que la minería mantiene en la economía chilena, tanto como fuente de recursos para el Estado como motor de nueva inversión y exploración en los próximos años."
+      ],
+      "sources_consulted": [
+        "Google News Minería"
+      ],
+      "region_score": 3,
+      "countries": [
+        "cl"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-consumo-en-am-rica-latina-muestra-crecimiento-con-se-ales-c21db9",
+      "section": "retail",
+      "title": "El consumo en América Latina muestra crecimiento con señales mixtas en Uruguay, Perú y Colombia",
+      "subtitle": "El comercio minorista de la región avanza impulsado por el café premium, el comercio electrónico y un consumo que empieza a moderarse.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:36+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Retail LatAm",
+        "comercio electrónico",
+        "consumo",
+        "café premium"
+      ],
+      "image_prompt": "Interior de un supermercado moderno en América Latina con estantes de productos de consumo masivo, iluminación cálida y un carrito de compras en primer plano, sin texto ni logotipos.",
+      "image_alt": "Estantes de un supermercado con productos de consumo masivo",
+      "image_query": "supermarket shelves retail",
+      "key_points": [
+        "El consumo en Uruguay sigue creciendo, aunque surgen señales de moderación.",
+        "NESCAFÉ Gold impulsa la expansión del café premium en Perú.",
+        "El comercio electrónico acelera su crecimiento en Colombia."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué está pasando con el consumo en Uruguay?",
+          "answer": "El consumo uruguayo mantiene su crecimiento, pero comienzan a aparecer señales de moderación, según el reporte de AmericaMalls & Retail."
+        },
+        {
+          "question": "¿Qué impulsa el café premium en Perú?",
+          "answer": "NESCAFÉ Gold, la marca de Nestlé, está impulsando el crecimiento de la categoría de café premium en el mercado peruano."
+        },
+        {
+          "question": "¿Cómo evoluciona el comercio electrónico en Colombia?",
+          "answer": "El comercio electrónico acelera su crecimiento en Colombia, consolidándose como un canal clave de expansión para el retail."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué tendencia del retail latinoamericano le parece más relevante?",
+        "options": [
+          "El auge del comercio electrónico",
+          "El crecimiento del café premium",
+          "La moderación del consumo"
+        ]
+      },
+      "lead": "El sector minorista latinoamericano atraviesa una etapa de crecimiento diverso, según reportes de AmericaMalls & Retail que analizan mercados clave como Uruguay, Perú y Colombia.",
+      "body": [
+        "El panorama del consumo en América Latina refleja dinámicas contrastantes entre países, de acuerdo con distintos informes de GN Retail LatAm difundidos por AmericaMalls & Retail. Mientras algunos mercados mantienen un ritmo sólido, otros comienzan a mostrar signos de desaceleración.",
+        "En Uruguay, el consumo continúa en expansión, según el reporte. No obstante, la publicación advierte que empiezan a aparecer señales de moderación, un matiz que apunta a un posible enfriamiento del gasto de los hogares tras un periodo de crecimiento sostenido.",
+        "La aparición de esas señales de moderación suele estar asociada a factores como la evolución del poder adquisitivo, la inflación y la confianza del consumidor, elementos que las empresas del sector monitorean para ajustar sus estrategias comerciales.",
+        "En Perú, el segmento del café premium gana terreno impulsado por NESCAFÉ Gold, la marca del grupo suizo Nestlé. Según el informe, este producto se ha convertido en un motor del crecimiento de una categoría cada vez más valorada por los consumidores peruanos.",
+        "El avance del café premium refleja una tendencia más amplia en la región: la disposición de ciertos segmentos a pagar por productos de mayor valor agregado, incluso en contextos donde el gasto general se muestra más cauteloso.",
+        "En Colombia, el comercio electrónico acelera su crecimiento, de acuerdo con el reporte. El canal digital se consolida como una vía de expansión para el retail colombiano, en línea con la mayor adopción de compras en línea observada en toda América Latina.",
+        "En conjunto, los tres mercados ilustran un retail regional heterogéneo, donde conviven categorías en auge, como el café premium y el e-commerce, con señales de prudencia en el consumo, como las detectadas en Uruguay.",
+        "Estas tendencias resultan relevantes para las cadenas minoristas y las marcas de consumo masivo que operan en la región, ya que definen dónde concentrar inversiones y cómo adaptar su oferta a un comprador cada vez más selectivo."
+      ],
+      "sources_consulted": [
+        "GN Retail LatAm"
+      ],
+      "region_score": 8,
+      "countries": [
+        "co",
+        "pe",
+        "uy"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-elephant-and-castle-la-regeneraci-n-de-500-millones-de-libra-74e697",
+      "section": "retail",
+      "title": "Elephant and Castle: la regeneración de 500 millones de libras que dejó fuera a sus comerciantes históricos",
+      "subtitle": "El nuevo centro urbano del sur de Londres recibe a su primer inquilino mientras los negocios desplazados denuncian promesas incumplidas de retorno.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:36+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Elephant and Castle",
+        "Londres",
+        "gentrificación",
+        "comercio urbano"
+      ],
+      "image_prompt": "Modern glass residential towers rising above an older, worn commercial area in a South London neighbourhood at dusk, contrast between shiny new construction and empty storefronts, editorial documentary style, no text or logos",
+      "image_alt": "Torres de vidrio modernas junto a una zona comercial más antigua en un barrio del sur de Londres",
+      "image_query": "london urban regeneration buildings",
+      "key_points": [
+        "El nuevo centro urbano de Elephant and Castle, valorado en 500 millones de libras, estrena su primer inquilino este mes.",
+        "Comerciantes desplazados aseguran que se rompió la promesa de que podrían regresar.",
+        "El antiguo centro comercial fue demolido en 2021.",
+        "Casos como el de Diana Sach ilustran el impacto sobre pequeños negocios."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es el nuevo centro urbano de Elephant and Castle?",
+          "answer": "Es un desarrollo valorado en 500 millones de libras que sustituye al antiguo centro comercial demolido en 2021 y que recibe a su primer inquilino este mes."
+        },
+        {
+          "question": "¿Por qué protestan los comerciantes desplazados?",
+          "answer": "Afirman que se les prometió que podrían regresar al nuevo complejo una vez finalizado, pero sostienen que esa promesa se ha incumplido."
+        },
+        {
+          "question": "¿Quién es Diana Sach?",
+          "answer": "Es una comerciante que regentaba un restaurante y charcutería de comida latinoamericana en el antiguo centro; llegó a emplear a más de 30 personas antes de la demolición."
+        }
+      ],
+      "poll": {
+        "question": "¿Cómo deberían gestionarse los grandes proyectos de renovación urbana?",
+        "options": [
+          "Priorizar el retorno de los comerciantes originales",
+          "Buscar un equilibrio entre inversión y comunidad",
+          "Dejarlo al criterio de los inversores"
+        ]
+      },
+      "lead": "El estreno del nuevo centro urbano de Elephant and Castle, en el sur de Londres, reaviva el debate sobre la gentrificación: mientras el complejo de 500 millones de libras recibe a su primer inquilino, los comerciantes que operaban en el antiguo edificio dicen haber quedado excluidos pese a las promesas de retorno.",
+      "body": [
+        "El distrito de Elephant and Castle, en el sur de Londres, se ha convertido en el escenario de una de las transformaciones urbanas más controvertidas de la capital británica. Este mes, el nuevo centro urbano, con un valor de 500 millones de libras, da la bienvenida a su primer inquilino, según The Guardian.",
+        "La renovación implicó la demolición, en 2021, del antiguo centro comercial, un edificio de aspecto envejecido pero de colores llamativos que durante décadas albergó una comunidad diversa de pequeños negocios, muchos de ellos regentados por migrantes latinoamericanos.",
+        "Entre quienes ocupaban esos locales estaba Diana Sach, propietaria de un restaurante y una charcutería de comida latinoamericana reconocidos por sus empanadas peruanas. En su momento de mayor actividad, llegó a emplear a más de 30 personas y a atender a cientos de clientes cada día.",
+        "Hoy, Sach observa con nostalgia las nuevas torres relucientes que se levantan donde antes estaba su negocio, un espacio que describía como su segundo hogar antes de que las máquinas lo derribaran.",
+        "Los comerciantes desplazados sostienen que las garantías que recibieron —según las cuales podrían volver a instalarse en el nuevo desarrollo una vez terminado— no se han cumplido. Esa ruptura de compromisos alimenta la percepción de que la regeneración ha priorizado la inversión inmobiliaria sobre la comunidad preexistente.",
+        "The Guardian plantea que Elephant and Castle corre el riesgo de convertirse en el 'paciente cero' de la gentrificación londinense, un caso emblemático de cómo la renovación urbana puede expulsar a los residentes y negocios que dieron identidad al barrio.",
+        "El debate trasciende el caso concreto y toca una tensión creciente en Londres y otras grandes ciudades: cómo equilibrar la modernización de espacios deteriorados con la protección de las economías locales y las comunidades migrantes que las sostienen."
+      ],
+      "sources_consulted": [
+        "The Guardian Retail"
+      ],
+      "region_score": 2,
+      "countries": [
+        "pe"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-magnar-la-startup-de-ia-legal-usada-por-m-s-de-25-000-abogad-b789ca",
+      "section": "startups",
+      "title": "Magnar, la startup de IA legal usada por más de 25.000 abogados, desembarca en Argentina",
+      "subtitle": "La plataforma latinoamericana de inteligencia artificial para profesionales del derecho amplía su presencia regional con la llegada al mercado argentino.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:37+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Magnar",
+        "inteligencia artificial",
+        "legaltech",
+        "Argentina"
+      ],
+      "image_prompt": "Un abogado trabajando en una oficina moderna frente a una computadora portátil con documentos legales sobre el escritorio, iluminación natural, ambiente profesional, sin texto ni logos.",
+      "image_alt": "Profesional del derecho trabajando con una computadora portátil en una oficina moderna",
+      "image_query": "lawyer laptop office",
+      "key_points": [
+        "Magnar es una startup de inteligencia artificial orientada al sector legal.",
+        "Su tecnología ya es utilizada por más de 25.000 abogados en Latinoamérica.",
+        "La compañía anuncia su llegada al mercado argentino."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es Magnar?",
+          "answer": "Es una startup de inteligencia artificial aplicada al sector legal, cuya tecnología ya utilizan más de 25.000 abogados en Latinoamérica."
+        },
+        {
+          "question": "¿Qué anunció la empresa?",
+          "answer": "Magnar anunció su llegada al mercado argentino como parte de su expansión regional."
+        },
+        {
+          "question": "¿A quién está dirigida la plataforma?",
+          "answer": "Está orientada a profesionales del derecho que buscan agilizar tareas jurídicas mediante herramientas de inteligencia artificial."
+        }
+      ],
+      "poll": {
+        "question": "¿Cree que la inteligencia artificial mejorará el ejercicio de la abogacía?",
+        "options": [
+          "Sí, agilizará el trabajo",
+          "No, no reemplaza el criterio humano",
+          "Depende del uso que se le dé"
+        ]
+      },
+      "lead": "La startup Magnar, especializada en inteligencia artificial aplicada al ejercicio del derecho, anunció su desembarco en Argentina, donde buscará sumar profesionales a una base de usuarios que ya supera los 25.000 abogados en América Latina.",
+      "body": [
+        "Magnar, una empresa emergente enfocada en el uso de inteligencia artificial para tareas legales, oficializó su llegada al mercado argentino como parte de su expansión regional. La plataforma se presenta como una herramienta destinada a profesionales del derecho en distintos países de América Latina.",
+        "Según la información difundida, la compañía ya cuenta con más de 25.000 abogados que utilizan su tecnología en la región, una cifra que respalda su intención de escalar hacia nuevos mercados como el argentino.",
+        "El anuncio se inscribe en el crecimiento del segmento conocido como legaltech, en el que numerosas startups desarrollan soluciones basadas en inteligencia artificial para agilizar tareas propias del trabajo jurídico, como la redacción, revisión y análisis de documentos.",
+        "La incorporación de Argentina al mapa de operaciones de Magnar representa un paso más en la estrategia de la empresa por consolidar su presencia en Latinoamérica, una región donde la adopción de herramientas digitales en el ámbito profesional ha ido en aumento.",
+        "La llegada de este tipo de plataformas plantea, además, un debate creciente sobre el rol de la inteligencia artificial en profesiones tradicionalmente basadas en el conocimiento experto, como la abogacía, y sobre cómo estas tecnologías pueden complementar el trabajo humano.",
+        "Con su desembarco, Magnar apunta a captar una porción del mercado argentino de servicios legales, sumándose a la tendencia de digitalización que atraviesa el sector en distintos países de habla hispana.",
+        "El anuncio fue difundido por el portal ITSitio, que reseñó la expansión de la startup y su base de usuarios en la región."
+      ],
+      "sources_consulted": [
+        "GN Startups LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "ar"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-un-emprendedor-uruguayo-pivota-desde-una-startup-de-pencas-h-d639d4",
+      "section": "startups",
+      "title": "Un emprendedor uruguayo pivota desde una startup de pencas hacia la fidelización digital y se expande a África",
+      "subtitle": "El fundador radicado en Israel transformó su proyecto inicial en una plataforma de juegos y experiencias para retener usuarios.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:37+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "startups",
+        "Uruguay",
+        "Israel",
+        "fidelización digital"
+      ],
+      "image_prompt": "Espacio de trabajo moderno de una startup tecnológica con pantallas mostrando interfaces de aplicaciones y personas colaborando, iluminación natural, ambiente profesional y dinámico.",
+      "image_alt": "Oficina de una startup tecnológica con pantallas y personas trabajando en desarrollo digital",
+      "image_query": "tech startup office",
+      "key_points": [
+        "Un emprendedor uruguayo radicado en Israel lidera la compañía.",
+        "El proyecto comenzó como una startup de pencas (quinielas deportivas).",
+        "La empresa pivoteó hacia un modelo de fidelización con juegos y experiencias.",
+        "La expansión actual apunta al mercado africano."
+      ],
+      "faq": [
+        {
+          "question": "¿Cuál fue el negocio original de la startup?",
+          "answer": "Comenzó como una empresa de pencas, es decir, quinielas o apuestas vinculadas a resultados deportivos."
+        },
+        {
+          "question": "¿Hacia qué modelo pivotó la empresa?",
+          "answer": "Se reorientó hacia la fidelización de usuarios mediante juegos y experiencias interactivas."
+        },
+        {
+          "question": "¿A qué mercado apunta ahora la expansión?",
+          "answer": "La compañía busca crecer hacia el continente africano."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué factor considera más determinante para el éxito de una startup?",
+        "options": [
+          "La capacidad de pivotar",
+          "El acceso a mercados internacionales",
+          "La ubicación en un polo tecnológico",
+          "La idea original"
+        ]
+      },
+      "lead": "Un emprendedor uruguayo instalado en Israel reconvirtió su startup original, dedicada a las pencas deportivas, en una plataforma que busca fidelizar usuarios mediante juegos y experiencias, y ahora encara su expansión hacia África.",
+      "body": [
+        "La historia refleja un fenómeno cada vez más común en el ecosistema emprendedor latinoamericano: la capacidad de un fundador para reorientar por completo su modelo de negocio cuando el planteo inicial no alcanza la tracción esperada. En este caso, el protagonista es un uruguayo que desarrolla su actividad desde Israel, uno de los polos tecnológicos más dinámicos del mundo.",
+        "El punto de partida fue una startup enfocada en las pencas, las populares apuestas o quinielas asociadas a resultados deportivos. Ese formato, muy arraigado culturalmente en Uruguay y en la región, sirvió como primera prueba de mercado para el proyecto.",
+        "Con el tiempo, y según relató El Observador, la compañía decidió pivotar hacia un enfoque distinto: en lugar de centrarse en las apuestas, apostó por un modelo orientado a la fidelización de usuarios a través de juegos y experiencias interactivas.",
+        "Ese giro se enmarca en una tendencia más amplia dentro de la industria digital, donde las empresas buscan aumentar la retención y el compromiso de sus audiencias mediante mecánicas lúdicas, un enfoque conocido en el sector como gamificación.",
+        "La propuesta actual apunta a ofrecer a otras compañías herramientas para mantener enganchados a sus clientes, un servicio con demanda creciente en sectores que van desde el entretenimiento hasta el consumo masivo.",
+        "El siguiente paso en la estrategia de crecimiento es la expansión hacia África, un continente que en los últimos años ha ganado protagonismo como mercado emergente para soluciones tecnológicas y modelos de negocio digitales.",
+        "La combinación de un fundador latinoamericano, una base operativa en Israel y una ambición de crecimiento hacia mercados africanos ilustra la naturaleza cada vez más global de los emprendimientos tecnológicos actuales.",
+        "El caso también subraya la importancia de la flexibilidad estratégica: la disposición a abandonar la idea original para adaptarse a las oportunidades del mercado suele ser un factor determinante en la supervivencia de las startups."
+      ],
+      "sources_consulted": [
+        "GN Startups LatAm"
+      ],
+      "region_score": 3,
+      "countries": [
+        "uy"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-el-sector-tecnol-gico-acelera-su-expansi-n-en-latinoam-rica-d23aab",
+      "section": "tecnologia",
+      "title": "El sector tecnológico acelera su expansión en Latinoamérica con nuevas alianzas e inversiones",
+      "subtitle": "Insurtech, automatización logística, inteligencia artificial y soluciones de medios marcan la agenda de crecimiento regional.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:37+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "Tecnología LatAm",
+        "Insurtech",
+        "Inteligencia Artificial",
+        "Automatización logística"
+      ],
+      "image_prompt": "Modern automated warehouse with robotic systems and technology equipment, clean industrial environment, professional editorial photography, no text or logos",
+      "image_alt": "Almacén logístico automatizado con equipos tecnológicos",
+      "image_query": "warehouse automation technology",
+      "key_points": [
+        "Chile se posiciona como el tercer mercado insurtech de Latinoamérica.",
+        "Symple y Geek+ firman una alianza para impulsar la automatización logística en México y la región.",
+        "Intel refuerza su apuesta por la IA en Latinoamérica con un ejecutivo procedente de Lenovo.",
+        "Omnicom Media lanza Flywheel y Aputure amplía su oferta de iluminación profesional en la región."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué posición ocupa Chile en el mercado insurtech regional?",
+          "answer": "Según Revista Gerencia, Chile se ha consolidado como el tercer mercado insurtech de Latinoamérica."
+        },
+        {
+          "question": "¿En qué consiste la alianza entre Symple y Geek+?",
+          "answer": "Ambas compañías firmaron un acuerdo estratégico para impulsar la automatización logística en México y en el resto de Latinoamérica."
+        },
+        {
+          "question": "¿Cómo refuerza Intel su presencia en la región?",
+          "answer": "Intel reorganizó su estrategia en Latinoamérica y nombró a un ejecutivo con trayectoria en Lenovo para liderar su apuesta por la inteligencia artificial."
+        }
+      ],
+      "poll": {
+        "question": "¿Qué sector tecnológico crees que tendrá mayor impacto en Latinoamérica?",
+        "options": [
+          "Seguros digitales (insurtech)",
+          "Automatización logística",
+          "Inteligencia artificial",
+          "Medios y publicidad digital"
+        ]
+      },
+      "lead": "Diversas compañías tecnológicas anunciaron movimientos estratégicos en Latinoamérica que abarcan seguros digitales, robótica logística, inteligencia artificial y servicios de medios, en un contexto de creciente apuesta por la digitalización regional.",
+      "body": [
+        "El ecosistema tecnológico latinoamericano muestra señales de dinamismo con una serie de anuncios que atraviesan sectores como los seguros digitales, la logística automatizada, la inteligencia artificial y la industria audiovisual. Los movimientos reflejan el interés sostenido de empresas globales y regionales por expandir su presencia en mercados en proceso de digitalización.",
+        "En el segmento de seguros digitales, Chile se ha consolidado como el tercer mercado insurtech de Latinoamérica, según Revista Gerencia. La posición del país lo ubica entre los principales polos regionales para el desarrollo de tecnología aplicada al sector asegurador, un ámbito que ha ganado tracción en los últimos años.",
+        "En logística, las compañías Symple y Geek+ sellaron una alianza estratégica orientada a impulsar la automatización logística en México y en el conjunto de Latinoamérica. El acuerdo, informado por Revista Logistec, apunta a incorporar soluciones robóticas y de eficiencia operativa en cadenas de suministro de la región.",
+        "La inteligencia artificial también figura en el centro de las estrategias corporativas. Según MasContainer, Intel reorganizó su apuesta en Latinoamérica y designó a un ejecutivo con experiencia previa en Lenovo para liderar sus iniciativas vinculadas a la IA en la región.",
+        "En el terreno de los medios y la publicidad, Omnicom Media lanzó Flywheel en Latinoamérica, de acuerdo con Adlatina. La plataforma busca ampliar la oferta de servicios digitales y de comercio para anunciantes en un mercado publicitario cada vez más orientado a los datos.",
+        "Por su parte, la firma Aputure consolidó su crecimiento en la región con nuevas soluciones de iluminación profesional, según produ.com, en respuesta a la demanda de la industria audiovisual y de producción de contenidos.",
+        "En conjunto, estos anuncios ilustran la diversidad de frentes en los que la tecnología avanza en Latinoamérica, con actores locales e internacionales que buscan capturar oportunidades en mercados emergentes.",
+        "La combinación de inversión, alianzas y expansión de productos sugiere que la región continúa atrayendo capital y capacidades técnicas en múltiples verticales, desde los servicios financieros hasta la producción audiovisual."
+      ],
+      "sources_consulted": [
+        "GN Tecnología LatAm"
+      ],
+      "region_score": 5,
+      "countries": [
+        "cl",
+        "mx"
+      ],
+      "companies": []
+    },
+    {
+      "id": "2026-07-31-la-transformaci-n-digital-y-la-ia-se-consolidan-como-priorid-46a642",
+      "section": "tecnologia",
+      "title": "La transformación digital y la IA se consolidan como prioridad en América Latina y el Caribe",
+      "subtitle": "Organismos multilaterales y análisis regionales coinciden en el papel de la tecnología para impulsar el crecimiento y modernizar la infraestructura.",
+      "date": "2026-07-31",
+      "updated": "2026-07-31T11:38+00:00",
+      "author": "Redacción Análisis.com",
+      "tags": [
+        "CAF",
+        "BID Invest",
+        "Inteligencia Artificial",
+        "Transformación digital"
+      ],
+      "image_prompt": "Centro de datos moderno con filas de servidores iluminados y cables organizados, ambiente corporativo y limpio, sin texto ni logotipos.",
+      "image_alt": "Interior de un centro de datos con servidores iluminados en una sala tecnológica.",
+      "image_query": "data center servers technology",
+      "key_points": [
+        "CAF promueve la transformación digital como motor de crecimiento en la región.",
+        "BID Invest respalda la expansión de servicios digitales junto a PBS.",
+        "El debate sobre la IA en la región gira en torno a la ética y las capacidades.",
+        "Los datos se posicionan como palanca para modernizar la infraestructura crítica."
+      ],
+      "faq": [
+        {
+          "question": "¿Qué organismos impulsan la transformación digital en América Latina?",
+          "answer": "CAF, el banco de desarrollo de América Latina y el Caribe, y BID Invest, el brazo privado del Banco Interamericano de Desarrollo, promueven la digitalización y la expansión de servicios digitales en la región."
+        },
+        {
+          "question": "¿Qué papel juegan los datos en la infraestructura regional?",
+          "answer": "Según contxto.com, la gestión y explotación de datos está transformando la infraestructura crítica de América Latina, modernizando sistemas y servicios esenciales."
+        },
+        {
+          "question": "¿Cuáles son los desafíos de la inteligencia artificial en la región?",
+          "answer": "Un análisis de EL PAÍS señala que la IA plantea retos de ética y de capacidades, más allá de los aspectos puramente tecnológicos."
+        }
+      ],
+      "poll": {
+        "question": "¿Cuál cree que es la prioridad más importante para la digitalización en América Latina?",
+        "options": [
+          "Inversión en infraestructura",
+          "Formación de talento y capacidades",
+          "Marcos éticos y regulación",
+          "Expansión de servicios digitales"
+        ]
+      },
+      "lead": "Diversos organismos multilaterales y publicaciones especializadas coinciden en que la transformación digital y la inteligencia artificial se han convertido en ejes centrales de la agenda de desarrollo de América Latina y el Caribe.",
+      "body": [
+        "La agenda tecnológica de América Latina y el Caribe cobró protagonismo con iniciativas y análisis que apuntan en una misma dirección: la digitalización como herramienta para acelerar el crecimiento económico y modernizar los servicios en la región.",
+        "CAF, el banco de desarrollo de América Latina y el Caribe, ha impulsado la transformación digital como motor de crecimiento, en línea con el papel que las entidades multilaterales buscan desempeñar para reducir brechas y potenciar la competitividad regional.",
+        "En paralelo, BID Invest, el brazo del sector privado del Banco Interamericano de Desarrollo, respalda la expansión de servicios digitales en la región mediante su apoyo a PBS, una operación orientada a ampliar el alcance de la infraestructura y los servicios tecnológicos.",
+        "El despliegue de estos servicios se enmarca en un contexto donde los datos adquieren un rol clave. Según contxto.com, la explotación y gestión de datos está transformando la infraestructura crítica de América Latina, un cambio que abarca desde redes hasta sistemas esenciales para la operación de sectores estratégicos.",
+        "El auge de la inteligencia artificial añade una capa adicional al debate. Un análisis de EL PAÍS plantea que el desarrollo de la IA en la región no es solo un asunto tecnológico, sino también una cuestión de ética y de capacidades, es decir, de contar con el talento, la formación y los marcos adecuados.",
+        "La conjunción de estos factores dibuja un escenario en el que la inversión multilateral, la modernización de infraestructuras y la adopción de nuevas tecnologías avanzan de forma simultánea, aunque con desafíos pendientes en materia regulatoria y de gobernanza.",
+        "Para las economías de la región, el reto consiste en aprovechar el impulso de organismos como CAF y BID Invest sin descuidar los aspectos éticos ni las carencias de capacidades que, según los análisis, siguen marcando el ritmo de la adopción digital.",
+        "La coincidencia entre distintos actores sobre la relevancia de la transformación digital sugiere que la tecnología seguirá ocupando un lugar central en la planificación del desarrollo latinoamericano en los próximos años."
+      ],
+      "sources_consulted": [
+        "GN Tecnología LatAm"
+      ],
+      "region_score": 2,
+      "countries": [],
+      "companies": []
     }
   ],
   "placeholders": []
