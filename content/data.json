@@ -1,6 +1,6 @@
 {
   "_comment": "Datos regionales de muestra para el tablero. Actualízalos con generator/fetch_data.py (trae valores reales desde APIs). Cada serie: unidad y pares [fecha, valor].",
-  "updated": "2026-08-31",
+  "updated": "2026-09-01",
   "series": [
     {
       "id": "cobre",
@@ -219,6 +219,10 @@
         [
           "2026-08",
           927.58
+        ],
+        [
+          "2026-09",
+          931.5
         ]
       ]
     },
@@ -258,6 +262,10 @@
         ],
         [
           "2026-08",
+          5.18
+        ],
+        [
+          "2026-09",
           5.18
         ]
       ]
@@ -299,6 +307,10 @@
         [
           "2026-08",
           17.03
+        ],
+        [
+          "2026-09",
+          17.01
         ]
       ]
     }
